@@ -82,7 +82,7 @@ class Menu extends React.Component {
 
 	onSwipedRight(e, originalX, endX) {
 		if(endX - originalX > 55) {
-			if(this.state.visible == false) {
+			if(this.state.visible === false) {
 				this.toggleVisibility()
 			}
 		}
@@ -91,7 +91,7 @@ class Menu extends React.Component {
 	onSwipedLeft(e, originalX, endX) {
 		console.log(endX - originalX);
 		if(endX - originalX < -55) {
-			if(this.state.visible == true) {
+			if(this.state.visible === true) {
 				this.toggleVisibility()
 			}
 		}
