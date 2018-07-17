@@ -17,7 +17,21 @@ const menuStyle = {
 			width: '100%'
 		}
 	},
-	transition: "left .4s cubic-bezier(0.4, 0, 0.2, 1)"
+	'@media(min-width: 1250px)': {
+		'.visible': {
+			left: 0
+		},
+		'.notvisible': {
+			left: 0
+		}
+	},
+	transition: "left .4s cubic-bezier(0.4, 0, 0.2, 1)",
+	'.visible': {
+		left: 0
+	},
+	'.notvisible': {
+		left: -248
+	}
 }
 
 const closeStyle = {
@@ -26,7 +40,10 @@ const closeStyle = {
 	height: 36,
 	position: 'absolute',
 	top: '8px',
-	right: '7px'
+	right: '7px',
+	'@media(min-width: 1250px)': {
+		display: 'none'
+	}
 }
 
 const listStyle = {
@@ -49,6 +66,37 @@ const listStyle = {
 		'>a.ac': {
 			color: '#b0d3ff'
 		}
+	},
+	'.visible': {
+		textAlign: 'left'
+	},
+	'.notvisible': {
+		textAlign: 'right'
+	},
+	'@media(min-width: 1250px)': {
+		'.visible': {
+			textAlign: 'left'
+		},
+		'.notvisible': {
+			textAlign: 'left'
+		}
+	}
+}
+
+const textStyle = {
+	position: 'relative',
+	top: -10,
+	marginLeft: '1rem',
+	'.visible': {
+		display: 'inline'
+	},
+	'.notvisible': {
+		display: 'none'
+	},
+	'@media(min-width: 1250px)': {
+		'.visible,.notvisible': {
+			display: 'inline'
+		}
 	}
 }
 
@@ -58,26 +106,11 @@ class Menu extends React.Component {
 		
 		console.log('constructed?');
 
-		if(window.innerWidth >= 1250) {
-			this.state = {visible: true}
-		} else {
-			this.state = {visible: false}
-		}
-		
+		this.state = {visible: false}
 
 		this.toggleVisibility = this.toggleVisibility.bind(this)
 		this.onSwipedRight = this.onSwipedRight.bind(this)
 		this.onSwipedLeft = this.onSwipedLeft.bind(this)
-	}
-
-	componentDidMount() {
-		console.log( this.state.visible );
-		/*
-		if(window.innerWidth >= 1250 && this.state.visible != true){
-			this.setState({
-				visible: true
-			})
-		}	*/	
 	}
 
 	onSwipedRight(e, originalX, endX) {
@@ -98,26 +131,26 @@ class Menu extends React.Component {
 	}
 
 	toggleVisibility() {
-		this.setState({
-			visible: !this.state.visible
-		})
-
-		console.log(this.state.visible);
+		if(window.innerWidth < 1250) {
+			this.setState({
+				visible: !this.state.visible
+			})
+		}
 	}
 
 	render() {
 		return (
 			<ReactSwipeEvents onSwipedRight={this.onSwipedRight} onSwipedLeft={this.onSwipedLeft}>
-				<nav css={menuStyle} className={this.state.visible ? "visible" : "notvisible"} style={this.state.visible ? {left: 0} : {left: -248}}>
+				<nav css={menuStyle} className={this.state.visible ? "visible" : "notvisible"}>
 					<div css={closeStyle} onClick={this.toggleVisibility}>
 						<i className="mdi md-36">{this.state.visible ? "arrow_back" : "menu"}</i>
 					</div>
-						<ul css={listStyle} style={this.state.visible ? {textAlign: 'left'} : {textAlign: 'right'}}>
+						<ul css={listStyle} className={this.state.visible ? 'visible' : 'notvisible'} >
 						{this.props.menuList.map((data, index) => 
 							<li key={index}>
 								<Link to={data.route} exact activeClassName={'ac'}>
 									<i className="mdi md-36">{data.icon}</i>
-									{this.state.visible ? <span css={{position: 'relative', top: -10, marginLeft: '1rem'}}>{data.text}</span> : ""}
+									<span css={textStyle} className={this.state.visible ? 'visible' : 'notvisible'}>{data.text}</span>
 								</Link>
 							</li>
 						)}
