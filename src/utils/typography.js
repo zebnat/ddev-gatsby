@@ -36,7 +36,7 @@ lawton.overrideThemeStyles = ({ rhythm }, options) => ({
     background: "#f8f8f8"
 	},
 	'h1': {
-		color: '#2752d2'
+		color: '#0a61ff'
 	},
 	'@media only screen and (max-width: 480px)' : {
 		html: {

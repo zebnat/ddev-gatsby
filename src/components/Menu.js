@@ -48,10 +48,10 @@ const closeStyle = {
 
 const listStyle = {
 	listStyleType: 'none',
-	margin: '6rem 0 0 3rem',
+	margin: '4rem 0 0 3rem',
 	textTransform: 'uppercase',
 	fontFamily: 'Oswald, Helvetica, sans-serif',
-	lineHeight: '4rem',
+	lineHeight: '3rem',
 	fontSize: '140%',
 	overflow: 'auto',
 	display: 'block',
@@ -64,7 +64,7 @@ const listStyle = {
 			color: '#fff'
 		},
 		'>a.ac': {
-			color: '#b0d3ff'
+			color: '#81dbff'
 		}
 	},
 	'.visible': {
@@ -139,6 +139,8 @@ class Menu extends React.Component {
 	}
 
 	render() {
+		const {defaultLang, currentLang, menuList} = this.props
+
 		return (
 			<ReactSwipeEvents onSwipedRight={this.onSwipedRight} onSwipedLeft={this.onSwipedLeft}>
 				<nav css={menuStyle} className={this.state.visible ? "visible" : "notvisible"}>
@@ -146,9 +148,9 @@ class Menu extends React.Component {
 						<i className="mdi md-36">{this.state.visible ? "arrow_back" : "menu"}</i>
 					</div>
 						<ul css={listStyle} className={this.state.visible ? 'visible' : 'notvisible'} >
-						{this.props.menuList.map((data, index) => 
+						{menuList.map((data, index) => 
 							<li key={index}>
-								<Link to={data.route} exact activeClassName={'ac'}>
+								<Link to={(defaultLang === currentLang ? '' : '/'+currentLang) + data.route} exact activeClassName={'ac'}>
 									<i className="mdi md-36">{data.icon}</i>
 									<span css={textStyle} className={this.state.visible ? 'visible' : 'notvisible'}>{data.text}</span>
 								</Link>
