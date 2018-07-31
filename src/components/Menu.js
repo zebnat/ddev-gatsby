@@ -150,9 +150,9 @@ class Menu extends React.Component {
 						<ul css={listStyle} className={this.state.visible ? 'visible' : 'notvisible'} >
 						{menuList.map((data, index) => 
 							<li key={index}>
-								<Link to={(defaultLang === currentLang ? '' : '/'+currentLang) + data.route} exact activeClassName={'ac'}>
-									<i className="mdi md-36">{data.icon}</i>
-									<span css={textStyle} className={this.state.visible ? 'visible' : 'notvisible'}>{data.text}</span>
+								<Link to={(defaultLang === currentLang ? '' : '/'+currentLang) + data.node.route} exact activeClassName={'ac'}>
+									<i className="mdi md-36">{data.node.icon}</i>
+									<span css={textStyle} className={this.state.visible ? 'visible' : 'notvisible'}>{data.node.text}</span>
 								</Link>
 							</li>
 						)}

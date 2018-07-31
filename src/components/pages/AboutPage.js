@@ -32,23 +32,42 @@ const hrefLangs = [
 	}
 ]
 
+const getInTouch = <Link exact to="/en/contact/">get in touch</Link>;
 const translation = {
 	"en" : {
-		"h1" : "About me",
-		"h2" : "What i do, How all started",
+		"h1" : "Learn about me",
+		"h2" : "What i do? How all started?",
 		"title" : "About me",
-		"intro1" : `¡Hello there! Here you can learn more about me, my name is <b>Daniel Domínguez Rubio</b>, i'm a %age% years old guy, so yeah, i am one of those Millenial in love with the digital world.`
+		"intro1" : `¡Hello there! Here you can learn more about me, my name is <b>Daniel Domínguez Rubio</b>, i'm a %age% years old guy, so yeah, i am one of those Millenial with a passion for the digital world.`,
+		"born" : `Born in 1985, <b>Barcelona</b>, and still living here. Been working all my life here and I would like to continue so.`,
+		"lifestyle" : `I always have been linked to <b>Computers</b>, life circumstances changed my life and i learned everything by myself, now is my job and my Hobbie at the same time. I performed tasks related to the <b>Fullstack Web Developer</b> title, but i also have been in touch with SEO, <b>Technical SEO, semantics and proyect strategy</b> for 9 years.`,
+		"howiam" : `¿What kind of person am i?`,
+		"howiam_reply" : `Well... i think that i am a classic programmer, i don't have glasses tho. I consider myself <b>introverted</b> and also prefer the "engine room", me, and my tools... dealing with clients and such social stuff is not my best weapon. I have worked with small teams, usually 3-4 people so i know how to deal with the environtment.`,
+		"hobbies" : `Computers are everything to me, but i also like the <b>videogames</b> (of course), although lately i'm turning into Netflix and that kind of stuff, maybe i'm aging. Like at home nowhere, in the computer world you need to spend time with your computer, <b>learning new skills</b>. This works moves too fast, you can't miss a thing.`,
+		"current_status": `My current situation`,
+		"status_reply": `After more than 10 years of hard labor, i have decided to slow down a little bit and spend my time into getting some official education (since in the past I could not), so time to <b>Study and earn some Academic degree</b>. If you want to learn more about how i worked as a developer without a degree just keep reading the page.`,
+		"mini_contactme": <>Interested in me? Right now i will only be available part time, you can <Link exact to="/en/contact/">get in touch</Link> or send some email to: zebnat@gmail.com. Also, if you prefer to contact me through <a href="https://www.linkedin.com/in/daniel-developer-seo/">linkedin</a> you can do it, even from my <a href="https://twitter.com/zebnat">Twitter</a> if you want to. Just remember i will be avaible part time or for remote work until i finish my Academic degree. Thanks!</>,
+		"history_title": `How i turned into a self-taught developer, story of my life`
 	},
 	"es" : {
 		"h1" : "Cosas sobre mí",
 		"h2" : "A que me dedico, como llegué hasta aquí",
 		"title" : "Acerca de mí",
-		"intro1" : `¡Hola! Te daré más detalles sobre mí, me llamo <b>Daniel Domínguez Rubio</b>, soy un chico de <b>%age% años</b> de edad, o sea que sí, soy uno de esos Milenial que adoran vivir del mundo digital.`
+		"intro1" : `¡Hola! Te daré más detalles sobre mí, me llamo <b>Daniel Domínguez Rubio</b>, soy un chico de <b>%age% años</b> de edad, o sea que sí, soy uno de esos Milenial que adoran vivir del mundo digital.`,
+		"born" : `Soy de la generación del 85, he nacido y todavía resido en <b>Barcelona</b>. He trabajado toda mi vida por aquí y de momento no quiero cambiar de aires.`,
+		"lifestyle" : `Siempre he estado vinculado con la <b>informática</b>, tanto que por circunstancias de la vida empecé mi carrera de programador gracias aprender de forma autodidacta, y ahora es tanto mi Hobbie como mi trabajo. Me desenvuelvo como <b>Desarrollador Web FullStack</b> y he tenido una estrecha relación con el <b>SEO Técnico, semántico y estratégia de proyectos</b> durante 9 años.`,
+		"howiam" : `¿Que tipo de persona soy?`,
+		"howiam_reply" : `Pues soy el <b>arquetipo clásico</b> del programador de toda la vida, solo que aún no llevo gafas. Me considero una persona <b>introvertida</b> y prefiero trabajar en la sala de máquinas con mis herramientas que no en la vanguardia de cara al cliente. He trabajado en equipo muchas veces asi que ya estoy acostumbrado, aunque me gusta tener mi espacio, entiendo las labores de equipo.`,
+		"hobbies" : `Además de la informática, siempre he sido <b>aficionado a los videojuegos</b> (que raro ¿verdad?), aunque últimamente creo que estoy evolucionando a "seriefilo", no se si es cosa de la edad o que. En cualquier caso, como en casa en ningún sitio, además este oficio requiere de pasar algunas horas <b>renovando las habilidades</b> detrás de la pantalla. En este mundillo que cada día salen herramientas nuevas no puedes perder mucho el tiempo.`,
+		"current_status": `Mi situación actual`,
+		"status_reply": `Después de cotizar más de 10 años a la seguridad social, he decidido <b>tomar un poco de aire</b> y aprovechar este tiempo para hacer lo que debí hacer hace mucho (pero pudo ser), <b>estudiar y obtener un título oficial</b>. Si quieres saber mi historia de como llegué a ser programador sin formación reglada, no dudes en seguir leyendo esta página.`,
+		"mini_contactme": <>Si estás interesado en un desarrollador web a tiempo parcial puedes utilizar el <Link exact to="/contacto/">formulario de contacto</Link> o mi email: zebnat@gmail.com. También puedes contactarme desde <a href="https://www.linkedin.com/in/daniel-developer-seo/">linkedin</a>, o incluso desde <a href="https://twitter.com/zebnat">Twitter</a> si así lo prefieres. Únicamente debes saber que mi horario mientras esté estudiando será reducido, por lo que tendríamos que llegar a algún acuerdo de trabajo remoto o media jornada tardes o mañanas.</>,
+		"history_title": `¿Como me convertí en autodidacta? Resumen de mi historia`
 	}
 }
 
 const AboutPage = (props) => (
-  <Layout hrefLangs={hrefLangs} currentLang={props.lang}>
+  <Layout hrefLangs={hrefLangs} currentLang={props.lang} data={props.data}>
 		<Helmet>
 			<title>{translation[props.lang].title}</title> 
 		</Helmet>
@@ -56,10 +75,25 @@ const AboutPage = (props) => (
 		<Header h1={translation[props.lang].h1} h2={translation[props.lang].h2}/>
 		<Bio photos={photos} />
 		<p dangerouslySetInnerHTML={{__html: 
-        translation[props.lang].intro1.replace(["%age%"], [age])}}></p>
-		<p>Nací en un día lluvioso del año 1985 justo a las puertas de la entrada de Otoño. Vi la luz del sol por primera vez en una ciudad a las afueras de <b>Barcelona</b>, y desde entonces sigo viviendo por aquí.</p>
-		<p>Como buen signo Virgo, me considero un poco <b>perfeccionista</b> y me gusta prestar mucha <b>atención a los detalles</b>, aunque si se puede alcanzar la perfección de forma práctica y sencilla, mucho mejor. Desde siempre se me han dado mucho mejor las cosas que tienen que ver con números, cálculos, resolución de problemas, puzzles, etc, y no tan bien las letras, aunque se hace lo que se puede.</p>
-		<h3>Como en mi juventud me hice aficionado a programar, y hasta hoy</h3>
+      translation[props.lang].intro1.replace(["%age%"], [age])}}></p>
+		<p dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].born
+		}}></p>
+		<p dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].lifestyle}}></p>
+		<h3 dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].howiam}}></h3>
+		<p dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].howiam_reply}}></p>
+		<p dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].hobbies}}></p>
+		<h3 dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].current_status}}></h3>
+		<p dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].status_reply}}></p>
+		<p>{translation[props.lang].mini_contactme}</p>
+		<h3 dangerouslySetInnerHTML={{
+			__html:	translation[props.lang].history_title}}></h3>
 		<p>A continuación vas a leer sobre mi historia, es un poco largo pero merece la pena si quieres saber como tuve contacto con la informática y la programación.</p>
 		<p>A los 6 años de edad mi padre me compró <b>AMSTRAD CPC</b>, con la intención de jugar él también a los "marcianitos" xD, aparte de utilizarlo para jugar, me llamo la atención el libro que traía sobre <b>BASIC</b> (si, los ordenadores de antes te venían con manuales para aprender a programarlos). Un par de años después, sobre los 8 años, ya me dedicaba a copiar el código fuente de los ejemplos del libro para ver lo que ocurría por la pantalla, <b>esos fueron mis inicios en el mundo de la programación</b>.</p>
 		<p>En mi época adolescente, llegó de la mano <b>la tarifa plana de internet en España</b>, con el dichoso <b>modem de 56k</b> con el cual solo podías conectarte a partir de las 18:00 (sino, tus padres lo flipaban en la factura). Cada vez que me conectaba, aparte de ponerme a buscar de todo con el buscador <b>Altavista</b> y descargarme sobretodo emuladores y roms para viciar, me picó el gusanillo con las páginas web, y en seguida me puse a investigar sobre ello. En poco tiempo ya estaba <b>escribiendo archivos HTML</b> en el bloc de notas del Windows 95, creando las míticas webs de fondo negro con marquesinas, frames, GIF, texto amarillo y todo el paquete completo de la época (no existía CSS), las alojábamos en hostings gratuitos que te metían publicidad en un frame.</p>
@@ -85,19 +119,6 @@ const AboutPage = (props) => (
 		<p>Después de un año en la empresa, me dieron la <b>oportunidad de crear el proyecto de futuro</b>, como era un proyecto de 0 no había riesgo de romper el negocio. Tenía que ir haciendo poco a poco lo que sería el sustituto del producto actual de la empresa, reactualizandolo con un diseño profesional y tecnología web 2.0 (AJAX, Usuarios, etc) me puse manos a la obra hasta que vió la luz, <b>mejoró notablemente el SEO y el uso de la página</b> por parte de los usuarios, y nos acabó dando de comer durante 8 años más. <b>Tuve que  diseñar las bases de datos, crearlas, programar todo el backend y todo el frontend y llevar la estratégia SEO</b>. La página tenía un sistema de usuarios, comunidad interna, podían comentar, etc.</p>
 		<p>No quiero tampoco dar todos los detalles aquí sobre los proyectos que hice en la empresa ya que fueron muchos, podeis encontrar esa información en la <Link exact to="/proyectos/">sección proyectos</Link>. Pero resumiendo, estuve en PANAWORLD 9 años, realizando tareas de maquetación, programación, backend, frontend, PHP OOP, Javascript, uso de librerías como jQuery y otras más modernillas tipo React/Angular, además estaba a cargo de todos los temas SEO, me atrajo el tema y decidí hacerme cargo de la optimización, tanto técnica como semántica, desubrí muchas cositas de SEO "whitehat" que aún funcionan hoy en día.</p>
 		<p>Si has leído hasta aquí te doy las gracias, has aguantado toda la chapa, pero al menos ahora sabes quien soy realmente.</p>
-		<h3>Más cositas: Hobbies, Personalidad, Preferencias</h3>
-		<p>Creo que soy el arquetipo clásico del programador de toda la vida, <b>soy introvertido</b>, me gusta más la sala de máquinas que dar la cara frente a clientes o cosas así, aunque eso no significa que cuando hay que planificar las cosas, tengamos comunicación.</p>
-		<p>Desde niño he tenido <b>afición por los videojuegos</b> (venga, dime un programador que no la tenga), aunque últimamente no se si es por la edad o por que la industria ha desmejorado mucho, pero solo juego a algunos nicho, con historia, o de sagas consolidadas. Me mantengo al margen de toda esta moda de juegos online gratuitos tipo League of Legends o Fortnite, me parecen una pérdida de tiempo notable.</p>
-		<p>Soy más de sofá y peli que de fiesta, esta la dejo para eventos especiales. A veces me da por ver series, tanto las "reales" como de animación manga (Anime), o películas.</p>
-		<p>Dedico bastante tiempo al reciclaje, aprender cosas nuevas de lo que se cuece en el mundo de la programación, no exclusivamente al entorno WEB, soy bastante curioso een ese sentido.</p>
-		<h3>Donde puedes encontrarme</h3>
-		<p>En la actualidad, he decidido retomar los estudios y cursar un Ciclo Superior de Desarrollo de Aplicaciones Web, para no ser siempre el segundo plato en procesos de selección al no tener una titulación oficial. También puede que aprenda algo nuevo, aunque es realmente dificil superar lo que se aprende con 9 años de experiencia real.</p>
-		<p>Si tienes interés en ofrecerme un contrato de trabajo en estos momentos deberíamos hablarlo, para hacerlo compatible con mis estudios, a continuación te dejo vias de contacto</p>
-		
-		<div css={{textAlign: 'center', display: 'block', border: '2px solid black', margin: '2rem auto', maxWidth: '300px','>a': {display: 'block', padding: '10px', width: '100%', color: '#0e0e0e'}}}><Link exact to="/contacto/">Formulario de contacto</Link></div>
-		<p>Correo electrónico: zebnat@gmail.com</p>
-		<p>Linkedin: <a href="https://www.linkedin.com/in/daniel-developer-seo/">https://www.linkedin.com/in/daniel-developer-seo/</a></p>
-		<p>Twitter: <a href="https://twitter.com/zebnat">https://twitter.com/zebnat</a></p>
   </Layout>
 )
 //css={{color: '#0e0e0e', textAlign: 'center', display: 'block', border: '2px solid black', padding: '4px', margin: '2rem auto', maxWidth: 300}}

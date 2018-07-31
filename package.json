@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "",
   "dependencies": {
+    "crypto": "^1.0.1",
     "gatsby": "2.0.0-beta.29",
     "gatsby-image": "^1.0.55",
     "gatsby-plugin-glamor": "next",
