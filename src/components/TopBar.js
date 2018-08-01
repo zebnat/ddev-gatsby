@@ -60,12 +60,12 @@ const TopBar = ({languages, defaultLang, currentLang}) => {
 					{
 					languages.map((v, i ) =>  
 					<Link 
-						key={v.lang} 
+						key={i} 
 						exact
-						to={ ((v.lang === defaultLang) ? '' : '/'+ v.lang ) + v.url }
+						to={v.url}
 						activeClassName="ac"
 					>
-						{v.lang}
+						{v.locale}
 					</Link>
 					)
 					}

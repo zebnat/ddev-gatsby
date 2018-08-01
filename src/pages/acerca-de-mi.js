@@ -1,38 +1,25 @@
 import React from 'react'
 import About from '../components/pages/AboutPage'
 import { graphql } from "gatsby"
+import Layout from '../components/layout'
 
 const Page = ({data}) => (
-	<About data={data} lang={data.allMetaData.edges[0].node.currentLang}/>
+	<Layout data={data} pageUniqueId="about">
+		<About data={data} lang={data.allMetaData.edges[0].node.currentLang}/>
+	</Layout>
 )
 
 export default Page
 export const query = graphql`
-query esabout($currentLang: String!) {
+query {
 	site{
-    siteMetadata {
-      defaultLang
-    }
+		...SiteMetadata
   }
-	allMetaData (filter: {currentLang: {eq : $currentLang}}) {
-	  edges {
-	    node {
-	      title
-        shortTitle
-        currentLang
-	    }
-	  }
+	allMetaData (filter: {currentLang: {eq : "es"}}) {
+	  ...MetaData
 	}
-	allMenu (filter: {lang: {eq : $currentLang}}){
-		edges {
-			node {
-				uniqueId
-				icon
-				text
-				route
-				lang
-			}
-		}
+	allMenu (filter: {lang: {eq : "es"}}) {
+		...Menu
 	}
 }
 `

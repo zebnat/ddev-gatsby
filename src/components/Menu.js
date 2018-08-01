@@ -3,6 +3,8 @@ import {Link} from 'gatsby'
 
 import ReactSwipeEvents from 'react-swipe-events'
 
+import { graphql } from "gatsby"
+
 const menuStyle = {
 	position: 'fixed',
 	'zIndex' : 1000,
@@ -164,3 +166,21 @@ class Menu extends React.Component {
 }
 
 export default Menu;
+
+export const MenuFragment = graphql`
+  fragment Menu on MenuConnection {
+		edges {
+			node {
+				uniqueId
+				icon
+				text
+				route
+				lang
+				hrefLangs {
+					locale
+					url
+				}
+			}
+		}
+  }
+`;

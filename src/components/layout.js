@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Menu from './Menu'
 import TopBar from './TopBar'
-import HrefLanger from './HrefLanger'
 
 import './layout.css'
 
@@ -20,27 +19,51 @@ const wrapperStyles = {
 }
 
 
-const Layout = ({ hrefLangs, currentLang, children, data }) => (
-
+const Layout = ({ pageUniqueId, children, data }) => {
+	const hrefLangs = data.allMenu.edges.find((el) => el.node.uniqueId === pageUniqueId).node.hrefLangs
+	return (
       <>
         <Helmet>
-					<html lang={currentLang} />
+					<html lang={data.allMetaData.edges[0].node.currentLang} />
 					{
 						hrefLangs.map((v,i) => 
-						<link key={i} rel="alternate" hreflang={v.lang} href={'https://www.danieldev.es' + (v.lang === data.site.siteMetadata.defaultLang ? v.url : '/'+v.lang+v.url)} />
+						<link key={i} rel="alternate" hreflang={v.locale} href={data.site.siteMetadata.domainUrl + v.url} />
 						)
 					}
         </Helmet>
-				<Menu menuList={data.allMenu.edges} currentLang={currentLang} defaultLang={data.site.siteMetadata.defaultLang} />
-				<TopBar languages={hrefLangs} defaultLang={data.site.siteMetadata.defaultLang} currentLang={currentLang}/>
+				<Menu menuList={data.allMenu.edges} currentLang={data.allMetaData.edges[0].node.currentLang} defaultLang={data.site.siteMetadata.defaultLang} />
+				<TopBar languages={hrefLangs} defaultLang={data.site.siteMetadata.defaultLang} currentLang={data.allMetaData.edges[0].node.currentLang}/>
 				<div 	
 					css={wrapperStyles}
 				>
           {children}
         </div>
       </>
-		
-)
+	)
+}
 
+Layout.propTypes = {
+	pageUniqueId: PropTypes.string.isRequired,
+	data: PropTypes.object.isRequired
+};
 
 export default Layout
+
+export const Fragments = graphql`
+  fragment SiteMetadata on Site {
+		siteMetadata {
+			defaultLang
+			domainUrl
+    }
+	}
+	fragment MetaData on MetaDataConnection {
+		edges {
+	    node {
+	      title
+        shortTitle
+        currentLang
+	    }
+	  }
+  }
+`;
+

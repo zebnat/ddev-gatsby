@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import Layout from '../../components/layout'
 import Header from '../../components/Header'
 import Bio from '../../components/Bio'
 
@@ -21,18 +20,7 @@ const now = new Date();
 const bornDate = new Date('1985-09-22T15:00:00Z')
 const age = Math.abs(new Date(now - bornDate).getUTCFullYear() - 1970)
 
-const hrefLangs = [
-	{
-		url: "/about-me/",
-		lang: 'en'
-	},
-	{
-		url: "/acerca-de-mi/",
-		lang: 'es'
-	}
-]
 
-const getInTouch = <Link exact to="/en/contact/">get in touch</Link>;
 const translation = {
 	"en" : {
 		"h1" : "Learn about me",
@@ -67,7 +55,7 @@ const translation = {
 }
 
 const AboutPage = (props) => (
-  <Layout hrefLangs={hrefLangs} currentLang={props.lang} data={props.data}>
+	<>
 		<Helmet>
 			<title>{translation[props.lang].title}</title> 
 		</Helmet>
@@ -119,7 +107,7 @@ const AboutPage = (props) => (
 		<p>Después de un año en la empresa, me dieron la <b>oportunidad de crear el proyecto de futuro</b>, como era un proyecto de 0 no había riesgo de romper el negocio. Tenía que ir haciendo poco a poco lo que sería el sustituto del producto actual de la empresa, reactualizandolo con un diseño profesional y tecnología web 2.0 (AJAX, Usuarios, etc) me puse manos a la obra hasta que vió la luz, <b>mejoró notablemente el SEO y el uso de la página</b> por parte de los usuarios, y nos acabó dando de comer durante 8 años más. <b>Tuve que  diseñar las bases de datos, crearlas, programar todo el backend y todo el frontend y llevar la estratégia SEO</b>. La página tenía un sistema de usuarios, comunidad interna, podían comentar, etc.</p>
 		<p>No quiero tampoco dar todos los detalles aquí sobre los proyectos que hice en la empresa ya que fueron muchos, podeis encontrar esa información en la <Link exact to="/proyectos/">sección proyectos</Link>. Pero resumiendo, estuve en PANAWORLD 9 años, realizando tareas de maquetación, programación, backend, frontend, PHP OOP, Javascript, uso de librerías como jQuery y otras más modernillas tipo React/Angular, además estaba a cargo de todos los temas SEO, me atrajo el tema y decidí hacerme cargo de la optimización, tanto técnica como semántica, desubrí muchas cositas de SEO "whitehat" que aún funcionan hoy en día.</p>
 		<p>Si has leído hasta aquí te doy las gracias, has aguantado toda la chapa, pero al menos ahora sabes quien soy realmente.</p>
-  </Layout>
+	</>
 )
 //css={{color: '#0e0e0e', textAlign: 'center', display: 'block', border: '2px solid black', padding: '4px', margin: '2rem auto', maxWidth: 300}}
 export default AboutPage

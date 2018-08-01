@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-		defaultLang: 'es'
+		defaultLang: 'es',
+		domainUrl: 'https://www.danieldev.es'
   },
   plugins: [
 		'gatsby-plugin-react-helmet',
