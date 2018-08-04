@@ -7,7 +7,16 @@ const config = require('./data/config')
 
 		// Group routes for each unique menu ie: home, articles, etc
 		var hrefLangForMenus = {}
-
+		localeGlobals.menuList.sort((a, b) => {
+			if (a.sortOrder > b.sortOrder) {
+				return 1;
+			}
+			if (a.sortOrder < b.sortOrder) {
+				return -1;
+			}
+			return 0;
+		})
+		
 		localeGlobals.menuList.forEach(menu => {
 			if(hrefLangForMenus[menu.uniqueId] == undefined) {
 				hrefLangForMenus[menu.uniqueId] = []

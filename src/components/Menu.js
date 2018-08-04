@@ -82,8 +82,21 @@ const listStyle = {
 		'.notvisible': {
 			textAlign: 'left'
 		}
+	},
+	'@media(min-height: 590px) and (min-width: 999px)': {
+		'::-webkit-scrollbar' : {
+			display: 'none'
+		}
 	}
 }
+/*
+.container {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+}
+.container::-webkit-scrollbar { 
+    display: none;  // Safari and Chrome
+}*/
 
 const textStyle = {
 	position: 'relative',
@@ -105,9 +118,6 @@ const textStyle = {
 class Menu extends React.Component {
 	constructor(props) {
 		super(props)
-		
-		console.log('constructed?');
-
 		this.state = {visible: false}
 
 		this.toggleVisibility = this.toggleVisibility.bind(this)

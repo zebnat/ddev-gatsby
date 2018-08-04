@@ -3,8 +3,7 @@ import {Link} from 'gatsby'
 import logo from '../../data/images/logo2.png'
 
 const boxStyles = {
-	borderBottom: '1px solid #ececec',
-	background: '#fff',
+	background: '#f8f8f8',
 	position: 'fixed',
 	top: 0,
 	left: 0,
@@ -16,9 +15,10 @@ const boxStyles = {
 	fontSize: '110%',
 	lineHeight: '35pt',
 	margin: '0 10px',
-	'.visible' : {
-
-	}
+	'.hide' : {
+		top: '-42px'
+	},
+	transition: 'top .25s linear'
 }
 
 const contentBoxStyles = {
@@ -37,42 +37,101 @@ const langSwitcherStyles = {
 		padding: '5px',
 		margin: '0 2px 0 0',
 		borderRadius: '4px',
-		background: '#262626'
+		background: '#262626',
+		fontSize: '80%'
 	},
 	">a.ac" : {
 		color: '#81dbff'
 	}
 }
 
-const TopBar = ({languages, defaultLang, currentLang}) => {
-	//console.log(languages.length);
-	//if(hrefLangs.length < 2) return null;
+class TopBar extends React.Component {
+	constructor(props) {
+		super(props)
+		this.mounted = false;
+		this.state = {
+			hide: false,
+			lastY: 0,
+			mounted: false
+		}
+	}
+
+	componentDidMount() {
+		if(typeof window !== 'undefined'){
+			window.addEventListener('scroll', this.throttle(this.handleScroll.bind(this), 50) );
+			this.mounted = true;
+		}
+	}
+
+	componentWillUnmount() {
+		if(typeof window !== 'undefined'){
+			window.removeEventListener('scroll', this.throttle(this.handleScroll.bind(this), 50));
+			this.mounted = false;
+		}
+	}
 	
+	throttle(fn, wait) {
+		var time = Date.now();
+		return () => {
+			if ((time + wait - Date.now()) < 0) {
+				fn();
+				time = Date.now();
+			}
+		}
+	}
 
-	return (
-		<div css={boxStyles}>
-			<div css={contentBoxStyles}>
-				<Link exact to={(currentLang === defaultLang ? '/' : '/'+currentLang+'/')}>
-					<img src={logo} alt={"DanielDEV"} css={{margin: '0 0px 0 28px', float: 'left'}}/>
-				</Link>
+	handleScroll() {
+		if(this.mounted) {
+			if(window.scrollY > 400) {
+				var hide;
+				if(window.scrollY - this.state.lastY > 0){
+					hide = true
+				}else{
+					hide = false
+				}
 
-				<div css={langSwitcherStyles}>
-					{
-					languages.map((v, i ) =>  
-					<Link 
-						key={i} 
-						exact
-						to={v.url}
-						activeClassName="ac"
-					>
-						{v.locale}
+				window.requestAnimationFrame(() => {
+					this.setState({
+						lastY: window.scrollY,
+						hide: hide
+					})
+				})
+			}
+		}
+		
+		
+
+
+	}
+
+	render() {
+		const {languages, defaultLang, currentLang} = this.props
+
+		return (
+			<div css={boxStyles} className={(this.state.hide === true) ? "hide" : ""} >
+				<div css={contentBoxStyles}>
+					<Link exact to={(currentLang === defaultLang ? '/' : '/'+currentLang+'/')}>
+						<img src={logo} alt={"DanielDEV"} css={{margin: '0 0px 0 28px', float: 'left'}}/>
 					</Link>
-					)
-					}
+
+					<div css={langSwitcherStyles}>
+						{
+						languages.map((v, i ) =>  
+						<Link 
+							key={i} 
+							exact
+							to={v.url}
+							activeClassName="ac"
+						>
+							{v.locale}
+						</Link>
+						)
+						}
+					</div>
 				</div>
 			</div>
-		</div>
 		)
+	}
 }
 
 export default TopBar

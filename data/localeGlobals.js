@@ -16,97 +16,111 @@ module.exports = {
 		icon: 'home',
 		text: 'Inicio',
 		route: '/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 1
 	},
 	{
 		uniqueId: 'about',
-		icon: 'face',
+		icon: 'account_box',
 		text: 'Conóceme',
 		route: '/acerca-de-mi/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 2
 	},
 	{
 		uniqueId: 'tech',
 		icon: 'build',
 		text: 'Habilidad',
 		route: '/tecnologias/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 3
 	},
 	{
 		uniqueId: 'proyect',
-		icon: 'archive',
+		icon: 'backup',
 		text: 'Proyectos',
 		route: '/proyectos/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 4
 	},
 	{
 		uniqueId: 'resume',
 		icon: 'school',
 		text: 'Currículum',
 		route: '/estudios-y-empresas/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 5
 	},
 	{
 		uniqueId: 'articles',
-		icon: 'file_copy',
+		icon: 'create',
 		text: 'Artículos',
 		route: '/articulos/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 6
 	},
 	{
 		uniqueId: 'contact',
-		icon: 'create',
+		icon: 'alternate_email',
 		text: 'Contacto',
 		route: '/contacto/',
-		lang: 'es'
+		lang: 'es',
+		sortOrder: 7
 	},
 	{
 		uniqueId: 'home',
 		icon: 'home',
 		text: 'Home',
 		route: '/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 1
 	},
 	{
 		uniqueId: 'about',
-		icon: 'face',
+		icon: 'account_box',
 		text: 'About',
 		route: '/about-me/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 2
 	},
 	{
 		uniqueId: 'tech',
 		icon: 'build',
 		text: 'Skills',
 		route: '/skills/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 3
 	},
 	{
 		uniqueId: 'proyect',
-		icon: 'archive',
+		icon: 'backup',
 		text: 'Proyects',
 		route: '/proyects/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 4
 	},
 	{
 		uniqueId: 'resume',
 		icon: 'school',
 		text: 'Resume',
 		route: '/resume/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 5
 	},
 	{
 		uniqueId: 'articles',
-		icon: 'file_copy',
+		icon: 'create',
 		text: 'Blog',
 		route: '/blog/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 6
 	},
 	{
 		uniqueId: 'contact',
-		icon: 'create',
+		icon: 'alternate_email',
 		text: 'Contact Me',
 		route: '/contact/',
-		lang: 'en'
+		lang: 'en',
+		sortOrder: 7
 	}]
 }

@@ -6,8 +6,12 @@ const imageContainerStyle = {
 	height: 250,
 	borderRadius: 500,
 	margin: '0 auto',
-	position: 'relative'
+	position: 'relative',
+	borderStyle: 'solid',
+	borderWidth: '8px',
+	animation: 'rainbowslol 5s infinite',
 };
+
 
 const imageStyle = {
 	position: 'absolute',
@@ -19,6 +23,14 @@ const imageStyle = {
 	'.hidding':{
 		opacity: 0
 	}
+}
+
+const quoteStyle = {
+	textAlign: 'center',
+	width: '200px',
+	margin: '10px auto',
+	lineHeight: '1em',
+	fontSize: '90%'
 }
 
 class Bio extends React.Component {
@@ -64,6 +76,9 @@ class Bio extends React.Component {
 					src={value} 
 					alt={'Daniel Domínguez Rubio'} />
 				)}
+				</div>
+				<div css={quoteStyle}>
+					{this.props.quote}
 				</div>
 			</>
 		)
