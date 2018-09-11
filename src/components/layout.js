@@ -10,15 +10,28 @@ import './layout.css'
 
 const wrapperStyles = { 
 	maxWidth: 730, 
-	margin: `50px auto`,
-	padding: "0px 60px 14px 60px",
+	margin: `0 auto`,
+	padding: "50px 60px 14px 60px",
 	borderRadius: 3,
 	'@media(max-width: 420px)': {
 		padding: "14px 10px 14px 60px"
 	}
 }
 
+const appStyles = {
+	background: '#f8f8f8',
+	paddingTop: 60,
+	'@media(min-width: 1300px)' : {
+		background: '#f8f8f8 url("/bg.png") right fixed no-repeat'
+	}
+}
 
+const footerStyles = {
+	fontSize: '50%',
+	color: '#666',
+	margin: '200px 0 0 0',
+
+}
 const Layout = ({ pageUniqueId, children, data }) => {
 	const hrefLangs = data.allMenu.edges.find((el) => el.node.uniqueId === pageUniqueId).node.hrefLangs
 	return (
@@ -31,13 +44,19 @@ const Layout = ({ pageUniqueId, children, data }) => {
 						)
 					}
         </Helmet>
-				<Menu menuList={data.allMenu.edges} currentLang={data.allMetaData.edges[0].node.currentLang} defaultLang={data.site.siteMetadata.defaultLang} />
-				<TopBar languages={hrefLangs} defaultLang={data.site.siteMetadata.defaultLang} currentLang={data.allMetaData.edges[0].node.currentLang}/>
-				<div 	
-					css={wrapperStyles}
-				>
-          {children}
-        </div>
+				<div css={appStyles}>
+					<Menu menuList={data.allMenu.edges} currentLang={data.allMetaData.edges[0].node.currentLang} defaultLang={data.site.siteMetadata.defaultLang} />
+					<TopBar languages={hrefLangs} defaultLang={data.site.siteMetadata.defaultLang} currentLang={data.allMetaData.edges[0].node.currentLang}/>
+					<div 	
+						css={wrapperStyles}
+					>
+						{children}
+					<footer css={footerStyles}>
+						licenses: <a href="http://www.freepik.com" target="_blank" rel="nofollow">Background by Harryarts / Freepik</a>
+					</footer>
+					</div>
+				</div>
+
       </>
 	)
 }

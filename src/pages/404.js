@@ -12,7 +12,8 @@ const NotFoundPage = () => (
 				h2={'Oops'} 
 				quote={'Not found'}
 			/>
-		<Link to="/">HOME</Link>
+		<Link to="/">Inicio</Link><br/>
+		<Link to="/">Homepage</Link><br/>
 		</div>
   </>
 )

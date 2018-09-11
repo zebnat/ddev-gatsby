@@ -15,7 +15,7 @@ export default class HTML extends React.Component {
 					{this.props.headComponents}
 					<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         </head>
-        <body {...this.props.bodyAttributes}>
+        <body {...this.props.bodyAttributes} >
           {this.props.preBodyComponents}
           <div
             key={`body`}

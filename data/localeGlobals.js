@@ -17,7 +17,8 @@ module.exports = {
 		text: 'Inicio',
 		route: '/',
 		lang: 'es',
-		sortOrder: 1
+		sortOrder: 1,
+		disabled: false
 	},
 	{
 		uniqueId: 'about',
@@ -25,7 +26,8 @@ module.exports = {
 		text: 'Conóceme',
 		route: '/acerca-de-mi/',
 		lang: 'es',
-		sortOrder: 2
+		sortOrder: 2,
+		disabled: false
 	},
 	{
 		uniqueId: 'tech',
@@ -33,7 +35,8 @@ module.exports = {
 		text: 'Habilidad',
 		route: '/tecnologias/',
 		lang: 'es',
-		sortOrder: 3
+		sortOrder: 3,
+		disabled: false
 	},
 	{
 		uniqueId: 'proyect',
@@ -41,7 +44,8 @@ module.exports = {
 		text: 'Proyectos',
 		route: '/proyectos/',
 		lang: 'es',
-		sortOrder: 4
+		sortOrder: 4,
+		disabled: false
 	},
 	{
 		uniqueId: 'resume',
@@ -49,7 +53,8 @@ module.exports = {
 		text: 'Currículum',
 		route: '/estudios-y-empresas/',
 		lang: 'es',
-		sortOrder: 5
+		sortOrder: 5,
+		disabled: true
 	},
 	{
 		uniqueId: 'articles',
@@ -57,7 +62,8 @@ module.exports = {
 		text: 'Artículos',
 		route: '/articulos/',
 		lang: 'es',
-		sortOrder: 6
+		sortOrder: 6,
+		disabled: true
 	},
 	{
 		uniqueId: 'contact',
@@ -65,7 +71,8 @@ module.exports = {
 		text: 'Contacto',
 		route: '/contacto/',
 		lang: 'es',
-		sortOrder: 7
+		sortOrder: 7,
+		disabled: true
 	},
 	{
 		uniqueId: 'home',
@@ -73,7 +80,8 @@ module.exports = {
 		text: 'Home',
 		route: '/',
 		lang: 'en',
-		sortOrder: 1
+		sortOrder: 1,
+		disabled: false
 	},
 	{
 		uniqueId: 'about',
@@ -81,7 +89,8 @@ module.exports = {
 		text: 'About',
 		route: '/about-me/',
 		lang: 'en',
-		sortOrder: 2
+		sortOrder: 2,
+		disabled: false
 	},
 	{
 		uniqueId: 'tech',
@@ -89,7 +98,8 @@ module.exports = {
 		text: 'Skills',
 		route: '/skills/',
 		lang: 'en',
-		sortOrder: 3
+		sortOrder: 3,
+		disabled: false
 	},
 	{
 		uniqueId: 'proyect',
@@ -97,7 +107,8 @@ module.exports = {
 		text: 'Proyects',
 		route: '/proyects/',
 		lang: 'en',
-		sortOrder: 4
+		sortOrder: 4,
+		disabled: false
 	},
 	{
 		uniqueId: 'resume',
@@ -105,7 +116,8 @@ module.exports = {
 		text: 'Resume',
 		route: '/resume/',
 		lang: 'en',
-		sortOrder: 5
+		sortOrder: 5,
+		disabled: true
 	},
 	{
 		uniqueId: 'articles',
@@ -113,7 +125,8 @@ module.exports = {
 		text: 'Blog',
 		route: '/blog/',
 		lang: 'en',
-		sortOrder: 6
+		sortOrder: 6,
+		disabled: true
 	},
 	{
 		uniqueId: 'contact',
@@ -121,6 +134,7 @@ module.exports = {
 		text: 'Contact Me',
 		route: '/contact/',
 		lang: 'en',
-		sortOrder: 7
+		sortOrder: 7,
+		disabled: true
 	}]
 }

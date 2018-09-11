@@ -3,7 +3,6 @@ import {Link} from 'gatsby'
 import logo from '../../data/images/logo2.png'
 
 const boxStyles = {
-	background: '#f8f8f8',
 	position: 'fixed',
 	top: 0,
 	left: 0,
@@ -23,7 +22,9 @@ const boxStyles = {
 
 const contentBoxStyles = {
 	maxWidth: 730, 
-	margin: '0 auto'
+	margin: '0 auto',
+	background: '#f8f8f8',
+	height: '100%'
 }
 
 const langSwitcherStyles = {

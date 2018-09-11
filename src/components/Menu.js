@@ -5,6 +5,8 @@ import ReactSwipeEvents from 'react-swipe-events'
 
 import { graphql } from "gatsby"
 
+import {linker} from '../utils/links';
+
 const menuStyle = {
 	position: 'fixed',
 	'zIndex' : 1000,
@@ -160,9 +162,9 @@ class Menu extends React.Component {
 						<i className="mdi md-36">{this.state.visible ? "arrow_back" : "menu"}</i>
 					</div>
 						<ul css={listStyle} className={this.state.visible ? 'visible' : 'notvisible'} >
-						{menuList.map((data, index) => 
+						{menuList.filter((e) => e.node.disabled == false).map((data, index) => 
 							<li key={index}>
-								<Link to={(defaultLang === currentLang ? '' : '/'+currentLang) + data.node.route} exact activeClassName={'ac'}>
+								<Link to={linker(defaultLang, currentLang, data.node.route)} exact activeClassName={'ac'}>
 									<i className="mdi md-36">{data.node.icon}</i>
 									<span css={textStyle} className={this.state.visible ? 'visible' : 'notvisible'}>{data.node.text}</span>
 								</Link>
@@ -186,6 +188,7 @@ export const MenuFragment = graphql`
 				text
 				route
 				lang
+				disabled
 				hrefLangs {
 					locale
 					url
