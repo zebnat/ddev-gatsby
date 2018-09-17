@@ -29,8 +29,9 @@ const appStyles = {
 const footerStyles = {
   fontSize: '50%',
   color: '#666',
-  margin: '200px 0 0 0',
+  margin: '10rem 0 0 0',
 }
+
 const Layout = ({ pageUniqueId, children, data }) => {
   const hrefLangs = data.allMenu.edges.find(
     el => el.node.uniqueId === pageUniqueId
@@ -63,7 +64,11 @@ const Layout = ({ pageUniqueId, children, data }) => {
           {children}
           <footer css={footerStyles}>
             licenses:{' '}
-            <a href="http://www.freepik.com" target="_blank" rel="nofollow noopener noreferrer">
+            <a
+              href="http://www.freepik.com"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
               Background by Harryarts / Freepik
             </a>
           </footer>

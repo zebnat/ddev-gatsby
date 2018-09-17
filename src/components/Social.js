@@ -5,7 +5,7 @@ const styles = {
   flexDirection: 'row',
   flexWrap: 'nowrap',
   '>a': {
-    margin: '5px',
+    margin: '.5rem',
   },
   '>a.in': {
     fill: '#0077B5',
@@ -70,7 +70,9 @@ const Social = props => {
           </svg>
         </a>
       </div>
-      <p>zebnat@gmail.com</p>
+      <p>
+        <code>zebnat@gmail.com</code>
+      </p>
     </>
   )
 }

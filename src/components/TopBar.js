@@ -13,7 +13,7 @@ const boxStyles = {
   height: '3rem',
   fontSize: '110%',
   lineHeight: '35pt',
-  margin: '0 10px',
+  margin: '0 9px',
   '.hide': {
     top: '-42px',
   },
@@ -29,7 +29,7 @@ const contentBoxStyles = {
 
 const langSwitcherStyles = {
   float: 'right',
-  marginRight: '10px',
+  marginRight: '15px',
   '>a': {
     textTransform: 'uppercase',
     color: '#efefef',

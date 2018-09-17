@@ -1,8 +1,10 @@
 import React from 'react'
-import Layout from '../components/layout'
-import { graphql } from 'gatsby'
-import SkillsPage from '../components/pages/SkillsPage'
 
+import Layout from '../../components/layout'
+import Header from '../../components/Header'
+import { graphql } from 'gatsby'
+
+import SkillsPage from '../../components/pages/SkillsPage'
 const Page = ({ data }) => (
   <Layout data={data} pageUniqueId="tech">
     <SkillsPage data={data} lang={data.allMetaData.edges[0].node.currentLang} />
@@ -10,16 +12,15 @@ const Page = ({ data }) => (
 )
 
 export default Page
-
 export const query = graphql`
   query {
     site {
       ...SiteMetadata
     }
-    allMetaData(filter: { currentLang: { eq: "es" } }) {
+    allMetaData(filter: { currentLang: { eq: "en" } }) {
       ...MetaData
     }
-    allMenu(filter: { lang: { eq: "es" } }) {
+    allMenu(filter: { lang: { eq: "en" } }) {
       ...Menu
     }
   }

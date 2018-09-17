@@ -26,8 +26,8 @@ const imageStyle = {
 const quoteStyle = {
   textAlign: 'center',
   width: '200px',
-  margin: '10px auto',
-  lineHeight: '1em',
+  margin: '1rem auto',
+  lineHeight: '1rem',
   fontSize: '90%',
 }
 
