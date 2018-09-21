@@ -25,7 +25,7 @@ const Social = props => {
   return (
     <>
       <div css={styles}>
-        <a className="ml" href="mailto:zebnat@gmail.com" target="_bank">
+        <a className="ml" href="mailto:hiring@danieldev.es" target="_bank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -71,7 +71,7 @@ const Social = props => {
         </a>
       </div>
       <p>
-        <code>zebnat@gmail.com</code>
+        <code>hiring@danieldev.es</code>
       </p>
     </>
   )
