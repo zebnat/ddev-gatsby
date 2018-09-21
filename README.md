@@ -1,2 +1,2 @@
 # danieldev
-Yet another portfolio
+personal website made with GatsbyJS
