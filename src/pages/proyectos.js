@@ -11,18 +11,22 @@ const Proyects = ({ data }) => (
       h2={'Profesionales, personales, de programación y SEO'}
     />
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum
-      nunc diam. Pellentesque malesuada velit in nisl venenatis consequat.
-      Aliquam pharetra massa nisl, eget dignissim turpis lacinia nec. Morbi quis
-      rhoncus arcu. Pellentesque eleifend, urna nec hendrerit lobortis, sem
-      ipsum imperdiet purus, dapibus molestie sem ipsum vel leo. Vestibulum
-      hendrerit fringilla ipsum id dictum. Mauris vel erat accumsan, mattis erat
-      at, lobortis odio. Phasellus in dolor bibendum, placerat velit vel,
-      feugiat justo. Morbi hendrerit a purus sit amet congue. Nulla gravida
-      dignissim velit vitae ultrices. Integer euismod dignissim lectus nec
-      posuere. Suspendisse potenti. Nam a aliquam magna.
-    </p>
+    <video src="/video/fishing-playing-demo.mp4" controls muted width="100%" />
+    <br />
+    <video src="/video/macrojuegos_general.mp4" controls muted width="100%" />
+    <br />
+    <video src="/video/spinwheel-code-demo.mp4" controls muted width="100%" />
+    <br />
+    <video src="/video/spinwheel-demo.mp4" controls muted width="100%" />
+    <br />
+    <video
+      src="/video/unity-fishing-code-demo.mp4"
+      controls
+      muted
+      width="100%"
+    />
+    <br />
+
     <p>
       Proin tempus, ex quis dignissim tincidunt, lectus lectus semper lacus, in
       sagittis purus purus sed nibh. In hac habitasse platea dictumst. Orci
