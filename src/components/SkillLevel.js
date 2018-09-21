@@ -25,7 +25,7 @@ const SkillLevel = props => {
     var isLast = i + 1 === props.level
 
     if (isLast) {
-      if (props.leveling) {
+      if (props.leveling === true) {
         blocks.push(<LevelBlock key={i} blink />)
       } else {
         blocks.push(<LevelBlock key={i} />)
