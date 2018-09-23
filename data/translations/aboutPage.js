@@ -12,32 +12,6 @@ const translation = {
     howiam: `¿What kind of person am i?`,
     howiam_reply: `Well... i think that i am the <b>classic programmer</b>. I consider myself <b>introverted</b> and also prefer the "engine room", playing with tools, fixing stuff, etc. Dealing with clients like a consultant or a seller would do is not my best. I had worked as a team with small team of people, usually 3-4 people, but also had to work alone for some proyects, i know how to deal with the environment. Im my last company, i was the link between the technical team, SEO, content managers and the CEO, it was for a young startup, many things to do!.`,
     hobbies: `Computers are everything to me, but i also like other things like <b>videogames</b> (of course), when i was young i played a lot of online and competition games, but today i prefer slow paced stuff, the gaming scene has become a bit ugly. I enjoy watching football, Netflix, and stuff like that. I'd like to think that "like at home nowhere", in the computer world you need to spend time with your computer learning new skills and playing with the new stuff. Sometimes is worth updating yourself by reading tech books, talks, or just building side proyects with the latest shiny toolset. This field moves too fast, you can't miss a thing.`,
-    current_status: `My current situation`,
-    status_reply: `After more than 10 years of hardwork, i have decided to slow down a little bit and spend my time into getting some official education (since in the past I could not), so right now its time to <b>Study and earn the Academic degree</b>. If you want to learn more about how i ended working as a developer without having a degree or any other qualification, just keep reading.`,
-    mini_contactme: (
-      <>
-        Before we get into my past, are you interested in me? Right now, i will
-        only be available part time, you can send a email:{' '}
-        <code>zebnat@gmail.com</code> . If you prefer to contact me through{' '}
-        <a
-          href="https://www.linkedin.com/in/daniel-developer-seo/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          linkedin
-        </a>{' '}
-        go for it, even from my{' '}
-        <a
-          href="https://twitter.com/zebnat"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Twitter
-        </a>{' '}
-        if you want to DM me. Just remember i will be avaible part time or for
-        remote work until i finish my Academic degree. Thanks!
-      </>
-    ),
     history_title: `How i turned into a self-taught developer, story of my life`,
     history_brief: `Beware that you will start reading a long history, i tried to be brief but still... is worth the time.`,
     child_title: `A 'geeky' childhood`,
@@ -108,11 +82,7 @@ const translation = {
         </Link>
         . In summary, i developed a 9 year career within Panaworld headquarters
         doing all sort of stuff related to the web development world, frontend,
-        backend, libraries like jQuery and a lot more. I also learned a lot of
-        SEO since i was in charge of all of it, technical SEO optimizations,
-        semantics, keyword strategy, content strategy, etc. I consider myself a
-        WhiteHat SEO focused on User Experience, Technical optimizations and
-        ONPAGE semantics.
+        backend, deployment, server, and also learned a lot of SEO.
       </>
     ),
   },
@@ -126,34 +96,6 @@ const translation = {
     howiam: `¿Que tipo de persona soy?`,
     howiam_reply: `Pues creo que soy el <b>arquetipo clásico</b> de programador de toda la vida, nada fuera de lo común. Me considero <b>una persona introvertida</b> y prefiero trabajar en la sala de máquinas con mis herramientas, y no dando la cara al cliente ejerciendo un trabajo más de consultor o vendedor. He trabajado en equipo en algunos proyectos, y otros los he llevado yo solo, así que ya estoy acostumbrado a ambas cosas. He sido durante años la persona que hace de enlace entre el equipo Técnico - SEO - Contenidos y la dirección, para una pequeña startup de entre 8 y 15 empleados ¡había mucho que hacer!.`,
     hobbies: `Además de la informática, siempre he sido <b>aficionado a los videojuegos</b> (que raro ¿verdad?), de joven jugaba a juegos online, lo que fuera competitivo, últimamente me gustan las cosas más calmadas y menos adictivas... ver fútbol, series, leer... tengo otras prioridades. Soy de los que piensan que como en casa, en ningún sitio, además este oficio requiere de pasar algunas horas <b>renovando tus habilidades</b> detrás de la pantalla, bien sea de forma pasiva mediante lectura de libros, documentación o charlas, como de forma activa programando proyectos con nuevas herramientas para probarlas.`,
-    current_status: `Mi situación actual`,
-    status_reply: `Después de estar en el mundo laboral más de 10 años, he decidido <b>realizar una pausa</b> y aprovechar este tiempo para hacer lo que no pude hacer de joven, <b>estudiar y obtener un título oficial de desarrollador</b>. Si quieres saber mi historia de como llegué a ser programador sin formación y mientras sobrevivía en trabajos complicados, no dudes en continuar leyendo.`,
-    mini_contactme: (
-      <>
-        Antes de comenzar con la historia, si estás interesado en mi a tiempo
-        parcial puedes utilizar mi email: <code>zebnat@gmail.com</code> .
-        También puedes contactarme desde{' '}
-        <a
-          href="https://www.linkedin.com/in/daniel-developer-seo/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          linkedin
-        </a>
-        , o incluso desde{' '}
-        <a
-          href="https://twitter.com/zebnat"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Twitter
-        </a>{' '}
-        si así lo prefieres (por privado). Únicamente debes saber que mi horario
-        mientras esté estudiando será reducido, por lo que tendríamos que llegar
-        a algún acuerdo de trabajo remoto desde casa o media jornada, según el
-        horario que mantenga.
-      </>
-    ),
     history_title: `¿Como acabé como desarrollador siendo autodidacta? Mi historia`,
     history_brief: `A continuación vas a leer sobre mi historia, puede ser un poco pesado pero merece la pena.`,
     child_title: `Una infancia ya un poco friki`,
@@ -220,15 +162,12 @@ const translation = {
           sección proyectos
         </Link>
         . A modo de resumen, estuve en PANAWORLD casi 9 años, realizando tareas
-        de maquetación, programación, backend PHP, frontend Javascript,
-        utilizando librerías como jQuery, y algunas que fueron saliendo. Además,
-        estaba a cargo de todos los temas SEO, decidí hacerme cargo de la
-        optimización, tanto técnica como semántica así que descubrí muchas
-        cositas sobre SEO "whitehat" ONPAGE y experiencia del usuario.
+        de maquetación HTML y CSS, programación, backend con PHP, Frontend
+        Javascript y sus librerías, también tuve la oportunidad de aprender
+        mucho sobre SEO.
       </>
     ),
   },
 }
-
 
 export default translation

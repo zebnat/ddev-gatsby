@@ -50,17 +50,6 @@ const AboutPage = props => (
     />
     <h3
       dangerouslySetInnerHTML={{
-        __html: translation[props.lang].current_status,
-      }}
-    />
-    <p
-      dangerouslySetInnerHTML={{
-        __html: translation[props.lang].status_reply,
-      }}
-    />
-    <p>{translation[props.lang].mini_contactme}</p>
-    <h3
-      dangerouslySetInnerHTML={{
         __html: translation[props.lang].history_title,
       }}
     />
