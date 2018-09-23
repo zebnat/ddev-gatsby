@@ -1,47 +1,9 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
-import Social from '../Social'
-import { Link } from 'gatsby'
-import { linker, menuNodeFinder } from '../../utils/links'
 import translation from '../../../data/translations/skillsPage'
 import skills from '../../../data/skills'
 import SkillLevel from '../SkillLevel'
-
-const SkillElement = props => {
-  return (
-    <>
-      <div css={{ width: '245px', height: '50px', margin: 5 }}>
-        <div css={{ float: 'left', width: '125px', textAlign: 'center' }}>
-          <span
-            css={{
-              display: 'inline-block',
-              minWidth: '100px',
-              color: 'white',
-              fontSize: '80%',
-              fontFamily: 'monospace',
-              fontWeight: 'bold',
-              padding: 4,
-              margin: '10px 0',
-              background: 'gray',
-              borderRadius: 10,
-            }}
-          >
-            {props.skill}
-          </span>
-        </div>
-        <div css={{ float: 'right' }}>
-          <SkillLevel
-            wordLevel={props.wordLevel}
-            level={props.level}
-            leveling={props.leveling}
-          />
-        </div>
-        <div css={{ clear: 'both' }} />
-      </div>
-    </>
-  )
-}
 
 const SkillsPage = props => {
   const sortDescByLevel = function(a, b) {
