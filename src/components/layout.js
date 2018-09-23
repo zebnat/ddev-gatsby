@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 
 import Menu from './Menu'
 import TopBar from './TopBar'
+import Social from './Social'
 
 import './layout.css'
 
@@ -27,9 +28,14 @@ const appStyles = {
 }
 
 const footerStyles = {
+  margin: '5rem 0 0 0',
+  padding: '2rem 0',
+  borderTop: '1px solid gray',
+}
+
+const footerLicenseStyles = {
   fontSize: '50%',
   color: '#666',
-  margin: '10rem 0 0 0',
 }
 
 const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
@@ -65,14 +71,32 @@ const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
         <div css={wrapperStyles}>
           {children}
           <footer css={footerStyles}>
-            licenses:{' '}
-            <a
-              href="http://www.freepik.com"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              Background by Harryarts / Freepik
-            </a>
+            <div>
+              <h3>Vías de Contacto</h3>
+              <div
+                css={{
+                  border: '1px solid black',
+                  padding: '1rem',
+                  margin: '1rem 0',
+                  borderRadius: '3px',
+                }}
+              >
+                <b>!!! Atención:</b> Mi disponibilidad para trabajar en estos
+                momentos es limitada a las tardes, estoy cursando unos estudios
+                por la mañana. Gracias.
+              </div>
+              <Social />
+            </div>
+            <p css={footerLicenseStyles}>
+              licenses:{' '}
+              <a
+                href="http://www.freepik.com"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                Background by Harryarts / Freepik
+              </a>
+            </p>
           </footer>
         </div>
       </div>

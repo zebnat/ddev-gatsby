@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
-import Social from '../Social'
 import { linker, menuNodeFinder } from '../../utils/links'
 import translation from '../../../data/translations/homePage'
 import CategoryButton from '../CategoryButton'
@@ -107,20 +106,6 @@ const HomePage = props => {
         mi currículum en PDF.
       </p>
       <CategoryButton route={'/docs/cv.pdf'} inside name="Currículum PDF" />
-      <h3>Vías de Contacto</h3>
-      <div
-        css={{
-          border: '1px solid black',
-          padding: '1rem',
-          margin: '1rem 0',
-          borderRadius: '3px',
-        }}
-      >
-        <b>!!! Atención:</b> Mi disponibilidad para trabajar en estos momentos
-        es limitada a las tardes, estoy cursando unos estudios por la mañana.
-        Gracias.
-      </div>
-      <Social />
     </>
   )
 }
