@@ -36,19 +36,24 @@ const SkillsPage = props => {
         <h3>{translation[props.lang].levels_explained}</h3>
         <ul css={{ fontSize: '80%' }}>
           <li>
-            <b>Nivel 1:</b> {translation[props.lang].help_l1}
+            <b>{translation[props.lang].wordLevel} 1:</b>{' '}
+            {translation[props.lang].help_l1}
           </li>
           <li>
-            <b>Nivel 2:</b> {translation[props.lang].help_l2}
+            <b>{translation[props.lang].wordLevel} 2:</b>{' '}
+            {translation[props.lang].help_l2}
           </li>
           <li>
-            <b>Nivel 3:</b> {translation[props.lang].help_l3}
+            <b>{translation[props.lang].wordLevel} 3:</b>{' '}
+            {translation[props.lang].help_l3}
           </li>
           <li>
-            <b>Nivel 4:</b> {translation[props.lang].help_l4}
+            <b>{translation[props.lang].wordLevel} 4:</b>{' '}
+            {translation[props.lang].help_l4}
           </li>
           <li>
-            <b>Nivel 5:</b> {translation[props.lang].help_l5}
+            <b>{translation[props.lang].wordLevel} 5:</b>{' '}
+            {translation[props.lang].help_l5}
           </li>
           <li>
             <b css={{ animation: 'blink 2s linear infinite' }}>
