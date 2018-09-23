@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import Header from '../../components/Header'
 import { graphql } from 'gatsby'
 
 import SkillsPage from '../../components/pages/SkillsPage'
