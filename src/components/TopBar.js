@@ -2,50 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../data/images/logo2.png'
 
-const boxStyles = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  textAlign: 'center',
-  color: '#1b1b1b',
-  width: '100%',
-  zIndex: 900,
-  height: '3rem',
-  fontSize: '110%',
-  lineHeight: '35pt',
-  margin: '0 9px',
-  '.hide': {
-    top: '-42px',
-  },
-  transition: 'top .25s linear',
-}
-
-const contentBoxStyles = {
-  maxWidth: 730,
-  margin: '0 auto',
-  background: '#f8f8f8',
-  height: '100%',
-}
-
-const langSwitcherStyles = {
-  float: 'right',
-  marginRight: '15px',
-  '>a': {
-    textTransform: 'uppercase',
-    color: '#efefef',
-    textDecoration: 'none',
-    border: '1px solid black',
-    padding: '5px',
-    margin: '0 2px 0 0',
-    borderRadius: '4px',
-    background: '#262626',
-    fontSize: '80%',
-  },
-  '>a.ac': {
-    color: '#81dbff',
-  },
-}
-
 class TopBar extends React.Component {
   constructor(props) {
     super(props)
@@ -138,3 +94,49 @@ class TopBar extends React.Component {
 }
 
 export default TopBar
+
+// COMPONENT STYLES
+
+const boxStyles = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  textAlign: 'center',
+  color: '#1b1b1b',
+  width: '100%',
+  zIndex: 900,
+  height: '3rem',
+  fontSize: '110%',
+  lineHeight: '35pt',
+  margin: '0 9px',
+  '.hide': {
+    top: '-42px',
+  },
+  transition: 'top .25s linear',
+}
+
+const contentBoxStyles = {
+  maxWidth: 730,
+  margin: '0 auto',
+  background: '#f8f8f8',
+  height: '100%',
+}
+
+const langSwitcherStyles = {
+  float: 'right',
+  marginRight: '15px',
+  '>a': {
+    textTransform: 'uppercase',
+    color: '#efefef',
+    textDecoration: 'none',
+    border: '1px solid black',
+    padding: '5px',
+    margin: '0 2px 0 0',
+    borderRadius: '4px',
+    background: '#262626',
+    fontSize: '80%',
+  },
+  '>a.ac': {
+    color: '#81dbff',
+  },
+}

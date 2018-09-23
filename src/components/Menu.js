@@ -1,121 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import ReactSwipeEvents from 'react-swipe-events'
-
 import { graphql } from 'gatsby'
-
 import { linker } from '../utils/links'
-
-const menuStyle = {
-  position: 'fixed',
-  zIndex: 1000,
-  top: 0,
-  left: 0,
-  width: '300px',
-  height: '100%',
-  color: '#f8f8f8',
-  background: '#262626',
-  '@media(max-width: 300px)': {
-    '.visible': {
-      width: '100%',
-    },
-  },
-  '@media(min-width: 1250px)': {
-    '.visible': {
-      left: 0,
-    },
-    '.notvisible': {
-      left: 0,
-    },
-  },
-  transition: 'left .4s cubic-bezier(0.4, 0, 0.2, 1)',
-  '.visible': {
-    left: 0,
-  },
-  '.notvisible': {
-    left: -248,
-  },
-}
-
-const closeStyle = {
-  cursor: 'pointer',
-  width: 36,
-  height: 36,
-  position: 'absolute',
-  top: '8px',
-  right: '7px',
-  '@media(min-width: 1250px)': {
-    display: 'none',
-  },
-}
-
-const listStyle = {
-  listStyleType: 'none',
-  margin: '4rem 0 0 3rem',
-  textTransform: 'uppercase',
-  fontFamily: 'Oswald, Helvetica, sans-serif',
-  lineHeight: '3rem',
-  fontSize: '140%',
-  overflow: 'auto',
-  display: 'block',
-  height: '80%',
-  '>li': {
-    cursor: 'pointer',
-    marginRight: 7,
-    '>a': {
-      textDecoration: 'none',
-      color: '#fff',
-    },
-    '>a.ac': {
-      color: '#81dbff',
-    },
-  },
-  '.visible': {
-    textAlign: 'left',
-  },
-  '.notvisible': {
-    textAlign: 'right',
-  },
-  '@media(min-width: 1250px)': {
-    '.visible': {
-      textAlign: 'left',
-    },
-    '.notvisible': {
-      textAlign: 'left',
-    },
-  },
-  '@media(min-height: 590px) and (min-width: 999px)': {
-    '::-webkit-scrollbar': {
-      display: 'none',
-    },
-  },
-}
-/*
-.container {
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
-}
-.container::-webkit-scrollbar { 
-    display: none;  // Safari and Chrome
-}*/
-
-const textStyle = {
-  position: 'relative',
-  top: -10,
-  marginLeft: '1rem',
-  '.visible': {
-    display: 'inline',
-  },
-  '.notvisible': {
-    display: 'none',
-  },
-  '@media(min-width: 1250px)': {
-    '.visible,.notvisible': {
-      display: 'inline',
-    },
-  },
-}
 
 class Menu extends React.Component {
   constructor(props) {
@@ -219,3 +106,106 @@ export const MenuFragment = graphql`
     }
   }
 `
+
+// COMPONENT STYLES
+const menuStyle = {
+  position: 'fixed',
+  zIndex: 1000,
+  top: 0,
+  left: 0,
+  width: '300px',
+  height: '100%',
+  color: '#f8f8f8',
+  background: '#262626',
+  '@media(max-width: 300px)': {
+    '.visible': {
+      width: '100%',
+    },
+  },
+  '@media(min-width: 1250px)': {
+    '.visible': {
+      left: 0,
+    },
+    '.notvisible': {
+      left: 0,
+    },
+  },
+  transition: 'left .4s cubic-bezier(0.4, 0, 0.2, 1)',
+  '.visible': {
+    left: 0,
+  },
+  '.notvisible': {
+    left: -248,
+  },
+}
+
+const closeStyle = {
+  cursor: 'pointer',
+  width: 36,
+  height: 36,
+  position: 'absolute',
+  top: '8px',
+  right: '7px',
+  '@media(min-width: 1250px)': {
+    display: 'none',
+  },
+}
+
+const listStyle = {
+  listStyleType: 'none',
+  margin: '4rem 0 0 3rem',
+  textTransform: 'uppercase',
+  fontFamily: 'Oswald, Helvetica, sans-serif',
+  lineHeight: '3rem',
+  fontSize: '140%',
+  overflow: 'auto',
+  display: 'block',
+  height: '80%',
+  '>li': {
+    cursor: 'pointer',
+    marginRight: 7,
+    '>a': {
+      textDecoration: 'none',
+      color: '#fff',
+    },
+    '>a.ac': {
+      color: '#81dbff',
+    },
+  },
+  '.visible': {
+    textAlign: 'left',
+  },
+  '.notvisible': {
+    textAlign: 'right',
+  },
+  '@media(min-width: 1250px)': {
+    '.visible': {
+      textAlign: 'left',
+    },
+    '.notvisible': {
+      textAlign: 'left',
+    },
+  },
+  '@media(min-height: 590px) and (min-width: 999px)': {
+    '::-webkit-scrollbar': {
+      display: 'none',
+    },
+  },
+}
+
+const textStyle = {
+  position: 'relative',
+  top: -10,
+  marginLeft: '1rem',
+  '.visible': {
+    display: 'inline',
+  },
+  '.notvisible': {
+    display: 'none',
+  },
+  '@media(min-width: 1250px)': {
+    '.visible,.notvisible': {
+      display: 'inline',
+    },
+  },
+}

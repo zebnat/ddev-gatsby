@@ -34,6 +34,7 @@ const Footer = ({ lang }) => (
 
 export default Footer
 
+// COMPONENT STYLES
 const footerStyles = {
   margin: '5rem 0 0 0',
   padding: '2rem 0',

@@ -1,6 +1,30 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+const CategoryButton = props => {
+  return (
+    <div css={props.inside ? linkInside : null}>
+      {props.gatsbyLink === true ? (
+        <Link css={buttonStyling} to={props.route}>
+          {props.name}
+        </Link>
+      ) : (
+        <a
+          css={buttonStyling}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={props.route}
+        >
+          {props.name}
+        </a>
+      )}
+    </div>
+  )
+}
+
+export default CategoryButton
+
+// COMPONENT STYLES
 const linkInside = {
   marginLeft: 15,
 }
@@ -26,26 +50,3 @@ const buttonStyling = {
     marginRight: 5,
   },
 }
-
-const CategoryButton = props => {
-  return (
-    <div css={props.inside ? linkInside : null}>
-      {props.gatsbyLink === true ? (
-        <Link css={buttonStyling} to={props.route}>
-          {props.name}
-        </Link>
-      ) : (
-        <a
-          css={buttonStyling}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={props.route}
-        >
-          {props.name}
-        </a>
-      )}
-    </div>
-  )
-}
-
-export default CategoryButton

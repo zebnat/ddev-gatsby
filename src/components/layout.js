@@ -9,24 +9,6 @@ import Footer from './Footer'
 
 import './layout.css'
 
-const wrapperStyles = {
-  maxWidth: 730,
-  margin: `0 auto`,
-  padding: '50px 60px 14px 60px',
-  borderRadius: 3,
-  '@media(max-width: 420px)': {
-    padding: '14px 10px 14px 60px',
-  },
-}
-
-const appStyles = {
-  background: '#f8f8f8',
-  paddingTop: 60,
-  '@media(min-width: 1300px)': {
-    background: '#f8f8f8 url("/bg.png") right fixed no-repeat',
-  },
-}
-
 const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
   if (hrefLangs === undefined) {
     hrefLangs = data.allMenu.edges.find(el => el.node.uniqueId === pageUniqueId)
@@ -92,3 +74,22 @@ export const Fragments = graphql`
     }
   }
 `
+
+// COMPONENT STYLES
+const wrapperStyles = {
+  maxWidth: 730,
+  margin: `0 auto`,
+  padding: '50px 60px 14px 60px',
+  borderRadius: 3,
+  '@media(max-width: 420px)': {
+    padding: '14px 10px 14px 60px',
+  },
+}
+
+const appStyles = {
+  background: '#f8f8f8',
+  paddingTop: 60,
+  '@media(min-width: 1300px)': {
+    background: '#f8f8f8 url("/bg.png") right fixed no-repeat',
+  },
+}

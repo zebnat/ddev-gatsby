@@ -1,26 +1,5 @@
 import React from 'react'
 
-const styles = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'nowrap',
-  '>a': {
-    margin: '.5rem',
-  },
-  '>a.in': {
-    fill: '#0077B5',
-  },
-  '>a.tw': {
-    fill: '#1da1f2',
-  },
-  '>a.ml': {
-    fill: '#111',
-  },
-  '>a.gh': {
-    fill: '#000',
-  },
-}
-
 const Social = props => {
   return (
     <>
@@ -78,3 +57,25 @@ const Social = props => {
 }
 
 export default Social
+
+// COMPONENT STYLES
+const styles = {
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'nowrap',
+  '>a': {
+    margin: '.5rem',
+  },
+  '>a.in': {
+    fill: '#0077B5',
+  },
+  '>a.tw': {
+    fill: '#1da1f2',
+  },
+  '>a.ml': {
+    fill: '#111',
+  },
+  '>a.gh': {
+    fill: '#000',
+  },
+}

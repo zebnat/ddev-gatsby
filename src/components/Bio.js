@@ -1,36 +1,5 @@
 import React from 'react'
 
-const imageContainerStyle = {
-  width: 250,
-  height: 250,
-  borderRadius: 500,
-  margin: '0 auto',
-  position: 'relative',
-  borderStyle: 'solid',
-  borderWidth: '8px',
-  animation: 'rainbowslol 5s infinite',
-}
-
-const imageStyle = {
-  position: 'absolute',
-  borderRadius: 500,
-  left: 0,
-  top: 0,
-  transition: 'opacity 2s ease-out',
-  opacity: 1,
-  '.hidding': {
-    opacity: 0,
-  },
-}
-
-const quoteStyle = {
-  textAlign: 'center',
-  width: '200px',
-  margin: '1rem auto',
-  lineHeight: '1rem',
-  fontSize: '90%',
-}
-
 class Bio extends React.Component {
   constructor(props) {
     super(props)
@@ -90,3 +59,35 @@ class Bio extends React.Component {
 }
 
 export default Bio
+
+// COMPONENT STYLES
+const imageContainerStyle = {
+  width: 250,
+  height: 250,
+  borderRadius: 500,
+  margin: '0 auto',
+  position: 'relative',
+  borderStyle: 'solid',
+  borderWidth: '8px',
+  animation: 'rainbowslol 5s infinite',
+}
+
+const imageStyle = {
+  position: 'absolute',
+  borderRadius: 500,
+  left: 0,
+  top: 0,
+  transition: 'opacity 2s ease-out',
+  opacity: 1,
+  '.hidding': {
+    opacity: 0,
+  },
+}
+
+const quoteStyle = {
+  textAlign: 'center',
+  width: '200px',
+  margin: '1rem auto',
+  lineHeight: '1rem',
+  fontSize: '90%',
+}
