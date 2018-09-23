@@ -3,6 +3,9 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import hreflangparser from '../utils/hreflangs'
 
+/**
+ * THIS TEMPLATE IS USED FOR HANDLING PORTFOLIO CONTENT (MARKDOWN FILES)
+ */
 export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
