@@ -3,7 +3,9 @@ import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
 import translation from '../../../data/translations/skillsPage'
 import skills from '../../../data/skills'
-import SkillLevel from '../SkillLevel'
+import SkillElement from '../SkillElement'
+import { linker, menuNodeFinder } from '../../utils/links'
+import CategoryButton from '../CategoryButton'
 
 const SkillsPage = props => {
   const sortDescByLevel = function(a, b) {
@@ -20,7 +22,9 @@ const SkillsPage = props => {
   const otherSkills = skills.other.sort(sortDescByLevel)
   const futureSkills = skills.future.sort(sortDescByLevel)
 
-  console.log(programmingSkills)
+	const homeEl = menuNodeFinder(props.data.allMenu, 'home')
+	const homeLink = linker(props.data.site.siteMetadata.defaultLang, homeEl.lang, homeEl.route)
+	
   return (
     <>
       <Helmet>
@@ -139,6 +143,14 @@ const SkillsPage = props => {
           />
         ))}
       </div>
+			<div css={{textAlign: 'center', margin: '3rem 0'}}>
+				<CategoryButton
+					route={homeLink}
+					inside
+					gatsbyLink
+					name="HOME"
+				/>
+			</div>
     </>
   )
 }
