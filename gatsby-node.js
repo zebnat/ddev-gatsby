@@ -1,6 +1,15 @@
 const crypto = require(`crypto`)
 const localeGlobals = require('./data/localeGlobals')
 const config = require('./data/config')
+const path = require('path');
+
+
+const linker = (defaultLang, lang, route) =>
+  defaultLang === lang ? route : '/' + lang + route
+
+const menuNodeFinder = (allMenu, uniqueID) =>
+  allMenu.edges.find(element => element.node.uniqueId === uniqueID).node
+
 
  exports.sourceNodes = ({ actions }) => {
 		const { createNode } = actions
@@ -70,7 +79,44 @@ const config = require('./data/config')
 
  }
 
- 
+ exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  const blogPostTemplate = path.resolve(`src/templates/portfolio.js`)
+
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 100
+      ) {
+        edges {
+          node {
+            frontmatter {
+							path
+							lang
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+			console.log('will create a page inside: ' + node.frontmatter.path);
+      createPage({
+        path: node.frontmatter.path,
+				component: blogPostTemplate,
+        context: {
+					lang: node.frontmatter.lang
+				}, // additional data can be passed via context
+      })
+    })
+  })
+}
 
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
