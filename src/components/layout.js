@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 
 import Menu from './Menu'
 import TopBar from './TopBar'
-import Social from './Social'
+import Footer from './Footer'
 
 import './layout.css'
 
@@ -27,27 +27,18 @@ const appStyles = {
   },
 }
 
-const footerStyles = {
-  margin: '5rem 0 0 0',
-  padding: '2rem 0',
-  borderTop: '1px solid gray',
-}
-
-const footerLicenseStyles = {
-  fontSize: '50%',
-  color: '#666',
-}
-
 const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
   if (hrefLangs === undefined) {
     hrefLangs = data.allMenu.edges.find(el => el.node.uniqueId === pageUniqueId)
       .node.hrefLangs
   }
 
+  const currentLang = data.allMetaData.edges[0].node.currentLang
+
   return (
     <>
       <Helmet>
-        <html lang={data.allMetaData.edges[0].node.currentLang} />
+        <html lang={currentLang} />
         {hrefLangs.map((v, i) => (
           <link
             key={i}
@@ -60,44 +51,17 @@ const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
       <div css={appStyles}>
         <Menu
           menuList={data.allMenu.edges}
-          currentLang={data.allMetaData.edges[0].node.currentLang}
+          currentLang={currentLang}
           defaultLang={data.site.siteMetadata.defaultLang}
         />
         <TopBar
           languages={hrefLangs}
           defaultLang={data.site.siteMetadata.defaultLang}
-          currentLang={data.allMetaData.edges[0].node.currentLang}
+          currentLang={currentLang}
         />
         <div css={wrapperStyles}>
           {children}
-          <footer css={footerStyles}>
-            <div>
-              <h3>Vías de Contacto</h3>
-              <div
-                css={{
-                  border: '1px solid black',
-                  padding: '1rem',
-                  margin: '1rem 0',
-                  borderRadius: '3px',
-                }}
-              >
-                <b>!!! Atención:</b> Mi disponibilidad para trabajar en estos
-                momentos es limitada a las tardes, estoy cursando unos estudios
-                por la mañana. Gracias.
-              </div>
-              <Social />
-            </div>
-            <p css={footerLicenseStyles}>
-              licenses:{' '}
-              <a
-                href="http://www.freepik.com"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-              >
-                Background by Harryarts / Freepik
-              </a>
-            </p>
-          </footer>
+          <Footer lang={currentLang} />
         </div>
       </div>
     </>
