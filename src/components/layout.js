@@ -32,10 +32,12 @@ const footerStyles = {
   margin: '10rem 0 0 0',
 }
 
-const Layout = ({ pageUniqueId, children, data }) => {
-  const hrefLangs = data.allMenu.edges.find(
-    el => el.node.uniqueId === pageUniqueId
-  ).node.hrefLangs
+const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
+  if (hrefLangs === undefined) {
+    hrefLangs = data.allMenu.edges.find(el => el.node.uniqueId === pageUniqueId)
+      .node.hrefLangs
+  }
+
   return (
     <>
       <Helmet>
