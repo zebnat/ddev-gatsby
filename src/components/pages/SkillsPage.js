@@ -22,9 +22,13 @@ const SkillsPage = props => {
   const otherSkills = skills.other.sort(sortDescByLevel)
   const futureSkills = skills.future.sort(sortDescByLevel)
 
-	const homeEl = menuNodeFinder(props.data.allMenu, 'home')
-	const homeLink = linker(props.data.site.siteMetadata.defaultLang, homeEl.lang, homeEl.route)
-	
+  const homeEl = menuNodeFinder(props.data.allMenu, 'home')
+  const homeLink = linker(
+    props.data.site.siteMetadata.defaultLang,
+    homeEl.lang,
+    homeEl.route
+  )
+
   return (
     <>
       <Helmet>
@@ -148,14 +152,9 @@ const SkillsPage = props => {
           />
         ))}
       </div>
-			<div css={{textAlign: 'center', margin: '3rem 0'}}>
-				<CategoryButton
-					route={homeLink}
-					inside
-					gatsbyLink
-					name="HOME"
-				/>
-			</div>
+      <div css={{ textAlign: 'center', margin: '3rem 0' }}>
+        <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />
+      </div>
     </>
   )
 }
