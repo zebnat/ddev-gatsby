@@ -66,7 +66,6 @@ class Menu extends React.Component {
                 <li key={index}>
                   <Link
                     to={linker(defaultLang, currentLang, data.node.route)}
-                    exact
                     activeClassName={'ac'}
                   >
                     <i className="mdi md-36">{data.node.icon}</i>

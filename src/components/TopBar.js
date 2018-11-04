@@ -70,7 +70,6 @@ class TopBar extends React.Component {
       <div css={boxStyles} className={this.state.hide === true ? 'hide' : ''}>
         <div css={contentBoxStyles}>
           <Link
-            exact
             to={currentLang === defaultLang ? '/' : '/' + currentLang + '/'}
           >
             <img
@@ -82,7 +81,7 @@ class TopBar extends React.Component {
 
           <div css={langSwitcherStyles}>
             {languages.map((v, i) => (
-              <Link key={i} exact to={v.url} activeClassName="ac">
+              <Link key={i} to={v.url} activeClassName="ac">
                 {v.locale}
               </Link>
             ))}
