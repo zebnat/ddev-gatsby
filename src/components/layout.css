@@ -39,12 +39,12 @@
 	0% {border-color: #de4848;}
 	10% {border-color: #de8148;}
 	20% {border-color: #decd48;}
-	30% {border-color: #81de48;transform: rotate(5deg)}
+	30% {border-color: #81de48;}
 	40% {border-color: #48de70;}
 	50% {border-color: #48ded8;}
-	60% {border-color: #484bde;transform: rotate(-5deg)}
+	60% {border-color: #484bde;}
 	70% {border-color: #9f48de;}
-	80% {border-color: #de48ca; transform: rotate(5deg)}
+	80% {border-color: #de48ca;}
 	90% {border-color: #de4885;}
-	100% {border-color: #de4848; transform: rotate(0deg)}
+	100% {border-color: #de4848;}
 }
