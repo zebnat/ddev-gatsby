@@ -16,7 +16,7 @@ const SkillElement = props => {
               fontWeight: 'bold',
               padding: 4,
               margin: '10px 0',
-              background: 'gray',
+              background: '#50606f',
               borderRadius: 10,
             }}
           >

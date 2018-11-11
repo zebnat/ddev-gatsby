@@ -36,15 +36,15 @@
 }
 
 @keyframes rainbowslol {
-	0% {border-color: #de4848;}
-	10% {border-color: #de8148;}
-	20% {border-color: #decd48;}
-	30% {border-color: #81de48;}
-	40% {border-color: #48de70;}
-	50% {border-color: #48ded8;}
-	60% {border-color: #484bde;}
-	70% {border-color: #9f48de;}
-	80% {border-color: #de48ca;}
-	90% {border-color: #de4885;}
-	100% {border-color: #de4848;}
+	0% {border-color: #c98c8c;}
+	10% {border-color: #c5a18a;}
+	20% {border-color: #c2bb89;}
+	30% {border-color: #a4c78e;}
+	40% {border-color: #8ac298;}
+	50% {border-color: #87b8b6;}
+	60% {border-color: #8384bd;}
+	70% {border-color: #a883c2;}
+	80% {border-color: #bb7db3;}
+	90% {border-color: #cf91aa;}
+	100% {border-color: #cc9292;}
 }

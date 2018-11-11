@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Header from '../../components/Header'
 import Bio from '../../components/Bio'
@@ -18,7 +17,7 @@ const photos = [dani1, dani2, dani3].reverse()
 const AboutPage = props => (
   <>
     <Helmet>
-      <title>{translation[props.lang].title}</title>
+      <title>{translation[props.lang].title} - Daniel Domínguez</title>
     </Helmet>
 
     <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
