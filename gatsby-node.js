@@ -33,6 +33,7 @@ const path = require('path');
 
 		localeGlobals.menuList.forEach(menu => {
 			// Add the hrefLangs we gathered above to the menu object
+			hrefLangForMenus[menu.uniqueId].sort((a,b) => (a.locale < b.locale) ? -1 : (a.locale > b.locale) ? 1 : 0)
 			menu['hrefLangs'] = hrefLangForMenus[menu.uniqueId]
 
 			const unique = crypto
