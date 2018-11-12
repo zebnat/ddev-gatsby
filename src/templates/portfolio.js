@@ -2,6 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import hreflangparser from '../utils/hreflangs'
+import { linker, menuNodeFinder } from '../utils/links'
+import CategoryButton from '../components/CategoryButton'
+import translations from '../../data/translations/proyectPage'
+import { Helmet } from 'react-helmet'
 
 /**
  * THIS TEMPLATE IS USED FOR HANDLING PORTFOLIO CONTENT (MARKDOWN FILES)
@@ -12,17 +16,32 @@ export default function Template({ data }) {
 
   const hrefLangs = hreflangparser(data.markdownRemark.frontmatter.hreflangs)
 
+  const proyectsEl = menuNodeFinder(data.allMenu, 'proyect')
+  const proyectsLink = linker(
+    data.site.siteMetadata.defaultLang,
+    proyectsEl.lang,
+    proyectsEl.route
+  )
+  console.log(data)
   return (
     <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="proyect">
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+      <Helmet>
+        <html lang={frontmatter.lang} />
+        <title>{translations[frontmatter.lang].title}</title>
+      </Helmet>
+      <div>
+        <div css={{ textAlign: 'right', fontSize: '80%', fontWeight: 'bold' }}>
+          {frontmatter.date}
         </div>
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+        <CategoryButton
+          gatsbyLink
+          route={proyectsLink}
+          name={translations[frontmatter.lang].proyectPage}
+        />
       </div>
     </Layout>
   )
@@ -33,8 +52,9 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD-MM-YYYY")
         path
+        description
         title
         lang
         hreflangs

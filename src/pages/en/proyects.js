@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
-import ProyectsPage from '../components/pages/ProyectsPage'
+import ProyectsPage from '../../components/pages/ProyectsPage'
 
 const Proyects = () => (
   <StaticQuery
@@ -10,14 +10,14 @@ const Proyects = () => (
         site {
           ...SiteMetadata
         }
-        allMetaData(filter: { currentLang: { eq: "es" } }) {
+        allMetaData(filter: { currentLang: { eq: "en" } }) {
           ...MetaData
         }
-        allMenu(filter: { lang: { eq: "es" } }) {
+        allMenu(filter: { lang: { eq: "en" } }) {
           ...Menu
         }
         allMarkdownRemark(
-          filter: { frontmatter: { lang: { eq: "es" } } }
+          filter: { frontmatter: { lang: { eq: "en" } } }
           sort: { fields: frontmatter___date, order: DESC }
         ) {
           edges {

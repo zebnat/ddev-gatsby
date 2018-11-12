@@ -11,7 +11,8 @@ const HomePage = props => {
   const aboutLink = linker(defaultLan, aboutEl.lang, aboutEl.route)
   const skillsEl = menuNodeFinder(props.data.allMenu, 'tech')
   const skillsLink = linker(defaultLan, skillsEl.lang, skillsEl.route)
-
+  const proyectsEl = menuNodeFinder(props.data.allMenu, 'proyect')
+  const proyectsLink = linker(defaultLan, proyectsEl.lang, proyectsEl.route)
   return (
     <>
       <Helmet>
@@ -66,7 +67,7 @@ const HomePage = props => {
       <h3>{translation[props.lang].proyects}</h3>
       <p>{translation[props.lang].proyectInfo}</p>
       <CategoryButton
-        route={'#'}
+        route={proyectsLink}
         inside
         gatsbyLink
         name={translation[props.lang].fullProyects}
