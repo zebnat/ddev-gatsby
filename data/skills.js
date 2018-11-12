@@ -2,7 +2,7 @@ const skills = {
 	languages: [
 		{skill: 'PHP', level: 4, isRecent: true},
 		{skill: 'Javascript ES5', level: 4, isRecent: true},
-		{skill: 'JS ES6+', level: 3, isRecent: true},
+		{skill: 'Javascript ES6+', level: 3, isRecent: true},
 		{skill: 'MySQL', level: 4, isRecent: true},
 		{skill: 'HTML5', level: 4, isRecent: true},
 		{skill: 'CSS3', level: 4, isRecent: true},

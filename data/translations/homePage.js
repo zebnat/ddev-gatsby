@@ -14,7 +14,7 @@ const translation = {
     proyectInfo: `I've worked during 9 years for the same company, Panaworld S.L. A small self-funded startup that started their products around 2004, a network of websites of browser mini-games (Flash and HTML5) with multilingual support. During these years, myself and the team improved the products improving UX, SEO, performance, Social engagement, design, videogames... Learn more about all the proyects I've work on at the following section.`,
     fullProyects: `Proyects Section`,
     academic: `Academic Training`,
-    academicInfo: `As I said before, I am self-taught in programming. I did 1 year of Bachiller and also 1 year of electronics training, but I had to drop and start working fulltime. I will get an Official Superior Technical Degree about Web Apps soon. You can learn more at the about me section. If you need to download or want to see my PDF Resume or other documents, see the list below.`,
+    academicInfo: `As I said before, I am self-taught in programming. I did 1 year of Bachiller (GCE equivalent) and also 1 year of electronics training (VET equivalent), but I had to drop and start working fulltime. I will get an Official Superior Technical Degree (HNC equivalent) about Web App Development soon. You can learn more at the about me section. If you need to download or want to see my PDF Resume or other documents, see the list below.`,
   },
   es: {
     h1: 'Fullstack Developer en Barcelona',

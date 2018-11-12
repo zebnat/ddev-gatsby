@@ -1,10 +1,10 @@
 const translation = {
   en: {
     h1: 'IT Skill level',
-    h2: `Technologies i've used the most`,
+    h2: `Technologies I've used the most`,
     title: 'IT skills and programming languages - Daniel Domínguez',
     wordLevel: 'Level',
-    levels_explained: 'Comfort levels',
+    levels_explained: 'Comfort levels & experience',
     help_l1: 'Basic knowledge. Theory and basic practice.',
     help_l2: 'Used at least in one real proyect.',
     help_l3: 'Used in some proyects. Decent skill for most use cases.',
@@ -22,7 +22,7 @@ const translation = {
     h2: 'Que herramientas y lenguajes he utilizado',
     title: 'Dominio de tecnologías y lenguajes - Daniel Domínguez',
     wordLevel: 'Nivel',
-    levels_explained: 'Nivel de comfort',
+    levels_explained: 'Experiencia y nivel de desenvoltura',
     help_l1: 'Dominio básico. Teoría y algo de práctica.',
     help_l2: 'Se utilizó al menos en un proyecto real.',
     help_l3:

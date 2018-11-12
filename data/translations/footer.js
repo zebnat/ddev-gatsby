@@ -1,19 +1,20 @@
 const translation = {
   en: {
-    contact: 'Contact Info',
+    contact: 'Contact Me',
     contactInfo:
-      'Do you need a developer like me? If your company is located at the Barcelonés Area (Barcelona), do not think twice, contact me :). I leave different contact options below.',
-    warning: 'Warning',
-    warningInfo:
-      'At this moment i can work only in the afternoons (after 15:00), i am studying on mornings.',
+      'Do you have any questions? Are you interested in hiring? I can work around the Barcelonés area (Barcelona). I leave different contact options below.',
+    warning: 'Attention',
+    warningInfo: `I'm currently studying. My availability is limited to 16:00 in advance. If you need a part-time web developer for the afternoon, contact me.`,
+    developedBy: `This Progressive Web App was made by <b>Daniel Domínguez Rubio</b> (@zebnat) using technologies like ReactJS GatsbyJS GraphQL`,
   },
   es: {
     contact: 'Vías de Contacto',
     contactInfo:
-      '¿Necesitas un programador con mi perfil? Si tu empresa está situada sobre el area del Barcelonés (Barcelona) no dudes en ponerte en contacto conmigo. Aquí te dejo varias opciones para contactar conmigo.',
+      '¿Alguna pregunta? ¿Te gustaría entrevistarme para un empleo? Suelo trabajar en el area del Barcelonés (Barcelona). Abajo dejo varias opciones para contactar.',
     warning: 'Atención',
     warningInfo:
-      'Mi disponibilidad para trabajar en estos momentos está limitada a las tardes, estoy cursando unos estudios por la mañana. Gracias.',
+      'En este momento estoy sacándome un FP Superior, mi disponibilidad está limitada a las 16:00 y adelante. Si necesitas un programador web con experiencia para media jornada de tarde, contacta.',
+    developedBy: `Esta Aplicación Web Progresiva (PWA) ha sido desarrollada por <b>Daniel Domínguez Rubio</b> (@zebnat) usando tecnologías como ReactJS GatsbyJS GraphQL`,
   },
 }
 
