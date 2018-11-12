@@ -19,6 +19,10 @@ const Footer = ({ lang }) => (
       </div>
       <Social />
     </div>
+    <p
+      css={{ textAlign: 'center', fontSize: '80%', margin: '5rem 0' }}
+      dangerouslySetInnerHTML={{ __html: translation[lang].developedBy }}
+    />
     {/*<p css={footerLicenseStyles}>
       licenses:{' '}
       <a
