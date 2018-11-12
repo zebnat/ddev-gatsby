@@ -30,7 +30,7 @@ lawton.overrideThemeStyles = ({ rhythm }, options) => ({
   },
   h1: {
     color: '#0a61ff',
-    fontSize: '280%',
+    fontSize: '220%',
   },
   h2: {
     fontSize: '180%',
@@ -45,6 +45,9 @@ lawton.overrideThemeStyles = ({ rhythm }, options) => ({
     html: {
       fontSize: '100%',
       lineHeight: '24px',
+    },
+    p: {
+      textAlign: 'justify',
     },
   },
 })
