@@ -9,7 +9,8 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
 
@@ -30,8 +31,8 @@
 }
 
 @keyframes blink {
-	50% {
-    opacity: 0.3;
+	80% {
+    opacity: 0.4;
   }
 }
 

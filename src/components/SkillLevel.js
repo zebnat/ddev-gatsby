@@ -11,7 +11,9 @@ const LevelBlock = props => (
         margin: '0 0.05rem',
         display: 'inline-block',
       },
-      props.blink === true ? { animation: 'blink 2s linear infinite' } : null,
+      props.blink === true
+        ? { animation: 'blink 2s linear infinite', background: '#e88609' }
+        : null,
       props.hidden === true ? { opacity: 0 } : null,
     ]}
   />

@@ -90,6 +90,9 @@ const appStyles = {
   background: '#f8f8f8',
   paddingTop: 60,
   '@media(min-width: 1300px)': {
-    background: '#f8f8f8 url("/bg.png") right fixed no-repeat',
+    background: [
+      'linear-gradient(107deg, hsla(308.46, 0%, 97%, 1) 78%, hsla(308.46, 0%, 97%, 0) 95%), linear-gradient(139deg, hsl(197, 42%, 58%) 100%, hsla(203.77, 47.06%, 48.46%, 0) 84%)',
+    ],
+    backgroundAttachment: 'fixed',
   },
 }

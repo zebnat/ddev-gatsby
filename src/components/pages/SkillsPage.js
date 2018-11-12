@@ -14,7 +14,7 @@ const SkillsPage = props => {
     } else if (a.level < b.level) {
       return 1
     } else {
-      return 0
+      return a.isRecent === true && b.isRecent === false ? -1 : 0
     }
   }
   const programmingSkills = skills.languages.sort(sortDescByLevel)
@@ -60,7 +60,7 @@ const SkillsPage = props => {
             {translation[props.lang].help_l5}
           </li>
           <li>
-            <b css={{ animation: 'blink 2s linear infinite' }}>
+            <b css={{ color: '#e88609' }}>
               {translation[props.lang].blinking}:
             </b>{' '}
             {translation[props.lang].help_blinking}
@@ -146,7 +146,7 @@ const SkillsPage = props => {
           <SkillElement
             skill={el.skill}
             wordLevel={translation[props.lang].wordLevel}
-            level={1}
+            level={0}
             leveling={el.isRecent}
             key={el.skill.toLowerCase()}
           />
