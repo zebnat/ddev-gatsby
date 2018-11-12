@@ -19,7 +19,7 @@ const Footer = ({ lang }) => (
       </div>
       <Social />
     </div>
-    <p css={footerLicenseStyles}>
+    {/*<p css={footerLicenseStyles}>
       licenses:{' '}
       <a
         href="http://www.freepik.com"
@@ -28,20 +28,22 @@ const Footer = ({ lang }) => (
       >
         Background by Harryarts / Freepik
       </a>
-    </p>
+			</p>*/}
   </footer>
 )
 
 export default Footer
 
 // COMPONENT STYLES
+
 const footerStyles = {
   margin: '5rem 0 0 0',
   padding: '2rem 0',
   borderTop: '1px solid gray',
 }
-
+/* re-enable if licenses required again
 const footerLicenseStyles = {
   fontSize: '50%',
   color: '#666',
 }
+*/
