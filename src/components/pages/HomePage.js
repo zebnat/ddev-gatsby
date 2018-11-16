@@ -3,7 +3,8 @@ import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
 import { linkToSection} from '../../utils/links'
 import translation from '../../../data/translations/homePage'
-import CategoryButton from '../CategoryButton'
+import Markdown from 'markdown-to-jsx'
+import { Link } from 'gatsby'
 
 const HomePage = props => {
 	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
@@ -44,36 +45,71 @@ const HomePage = props => {
           quote={translation[props.lang].quote}
         />
       </div>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].intro,
-        }}
-      />
-      <CategoryButton
-        route={aboutLink}
-        inside
-        gatsbyLink
-        name={translation[props.lang].moreabout}
-      />
+      <p>
+        <Markdown
+          children={translation[props.lang].intro}
+          options={{
+            overrides: {
+              Link: {
+                component: Link,
+                props: {
+                  to: aboutLink
+                },
+              },
+            },
+          }}
+        />
+      </p>
       <h3>{translation[props.lang].skills}</h3>
-      <p>{translation[props.lang].skillsInfo}</p>
-      <CategoryButton
-        route={skillsLink}
-        inside
-        gatsbyLink
-        name={translation[props.lang].fullSkills}
-      />
+			
+      <p>
+				<Markdown
+          children={translation[props.lang].skillsInfo}
+          options={{
+            overrides: {
+              Link: {
+                component: Link,
+                props: {
+                  to: skillsLink
+                },
+              },
+            },
+          }}
+        />
+			</p>
       <h3>{translation[props.lang].proyects}</h3>
-      <p>{translation[props.lang].proyectInfo}</p>
-      <CategoryButton
-        route={proyectsLink}
-        inside
-        gatsbyLink
-        name={translation[props.lang].fullProyects}
-      />
+			<p>
+				<Markdown
+          children={translation[props.lang].proyectInfo}
+          options={{
+            overrides: {
+              Link: {
+                component: Link,
+                props: {
+                  to: proyectsLink
+                },
+              },
+            },
+          }}
+        />
+			</p>
       <h3>{translation[props.lang].academic}</h3>
-      <p>{translation[props.lang].academicInfo}</p>
-      <ul>
+			<p>
+				<Markdown
+          children={translation[props.lang].academicInfo}
+          options={{
+            overrides: {
+              Link: {
+                component: Link,
+                props: {
+                  to: aboutLink
+                },
+              },
+            },
+          }}
+        />
+			</p>
+      <ul css={{fontSize: '80%', '>li': {margin: '1rem 0'}}}>
         <li>
           <a href="/docs/cv.pdf" target="_blank" rel="noopener noreferrer">
             Currículum PDF
