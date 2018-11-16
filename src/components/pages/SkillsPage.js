@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import translation from '../../../data/translations/skillsPage'
 import skills from '../../../data/skills'
 import SkillElement from '../SkillElement'
-import { linker, menuNodeFinder } from '../../utils/links'
+import { linkToSection } from '../../utils/links'
 import CategoryButton from '../CategoryButton'
 
 const SkillsPage = props => {
@@ -22,12 +22,8 @@ const SkillsPage = props => {
   const otherSkills = skills.other.sort(sortDescByLevel)
   const futureSkills = skills.future.sort(sortDescByLevel)
 
-  const homeEl = menuNodeFinder(props.data.allMenu, 'home')
-  const homeLink = linker(
-    props.data.site.siteMetadata.defaultLang,
-    homeEl.lang,
-    homeEl.route
-  )
+	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
+	const homeLink = linkToSection({sectionId: 'home', ...linkOpts})
 
   return (
     <>

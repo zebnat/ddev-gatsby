@@ -1,18 +1,17 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
-import { linker, menuNodeFinder } from '../../utils/links'
+import { linkToSection} from '../../utils/links'
 import translation from '../../../data/translations/homePage'
 import CategoryButton from '../CategoryButton'
 
 const HomePage = props => {
-  const defaultLan = props.data.site.siteMetadata.defaultLang
-  const aboutEl = menuNodeFinder(props.data.allMenu, 'about')
-  const aboutLink = linker(defaultLan, aboutEl.lang, aboutEl.route)
-  const skillsEl = menuNodeFinder(props.data.allMenu, 'tech')
-  const skillsLink = linker(defaultLan, skillsEl.lang, skillsEl.route)
-  const proyectsEl = menuNodeFinder(props.data.allMenu, 'proyect')
-  const proyectsLink = linker(defaultLan, proyectsEl.lang, proyectsEl.route)
+	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
+
+	const aboutLink = linkToSection({sectionId: 'about', ...linkOpts})
+	const skillsLink = linkToSection({sectionId: 'tech', ...linkOpts})
+	const proyectsLink = linkToSection({sectionId: 'proyect', ...linkOpts})
+
   return (
     <>
       <Helmet>

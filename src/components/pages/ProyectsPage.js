@@ -2,17 +2,13 @@ import React from 'react'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
 import translation from '../../../data/translations/proyectsPage'
-import { linker, menuNodeFinder } from '../../utils/links'
+import { linkToSection } from '../../utils/links'
 import CategoryButton from '../CategoryButton'
 import { Link } from 'gatsby'
 
 const ProyectsPage = props => {
-  const homeEl = menuNodeFinder(props.data.allMenu, 'home')
-  const homeLink = linker(
-    props.data.site.siteMetadata.defaultLang,
-    homeEl.lang,
-    homeEl.route
-  )
+	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
+	const homeLink = linkToSection({sectionId: 'home', ...linkOpts})
   return (
     <>
       <Helmet>

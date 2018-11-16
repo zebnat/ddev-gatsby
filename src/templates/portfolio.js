@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import hreflangparser from '../utils/hreflangs'
-import { linker, menuNodeFinder } from '../utils/links'
+import { linkToSection } from '../utils/links'
 import CategoryButton from '../components/CategoryButton'
 import translations from '../../data/translations/proyectPage'
 import { Helmet } from 'react-helmet'
@@ -16,13 +16,9 @@ export default function Template({ data }) {
 
   const hrefLangs = hreflangparser(data.markdownRemark.frontmatter.hreflangs)
 
-  const proyectsEl = menuNodeFinder(data.allMenu, 'proyect')
-  const proyectsLink = linker(
-    data.site.siteMetadata.defaultLang,
-    proyectsEl.lang,
-    proyectsEl.route
-  )
-  console.log(data)
+	const linkOpts = {allMenuData: data.allMenu, defaultLang: data.site.siteMetadata.defaultLang};
+	const proyectsLink = linkToSection({sectionId: 'proyect', ...linkOpts})
+  
   return (
     <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="proyect">
       <Helmet>

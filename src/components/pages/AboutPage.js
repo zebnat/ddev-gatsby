@@ -11,18 +11,14 @@ import dani3 from '../../../data/images/dani3.jpg'
 
 import { Helmet } from 'react-helmet'
 import CategoryButton from '../CategoryButton'
-import { linker, menuNodeFinder } from '../../utils/links'
+import { linkToSection } from '../../utils/links'
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
 const photos = [dani1, dani2, dani3].reverse()
 
 const AboutPage = props => {
-  const homeEl = menuNodeFinder(props.data.allMenu, 'home')
-  const homeLink = linker(
-    props.data.site.siteMetadata.defaultLang,
-    homeEl.lang,
-    homeEl.route
-  )
+	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
+	const homeLink = linkToSection({sectionId: 'home', ...linkOpts})
 
   return (
     <>

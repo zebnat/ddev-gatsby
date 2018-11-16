@@ -4,4 +4,12 @@ const linker = (defaultLang, lang, route) =>
 const menuNodeFinder = (allMenu, uniqueID) =>
   allMenu.edges.find(element => element.node.uniqueId === uniqueID).node
 
-export { linker, menuNodeFinder }
+
+const linkToSection = (opts) => {
+	const {sectionId, defaultLang, allMenuData } = opts;
+	const el = menuNodeFinder(allMenuData, sectionId)
+	const link = linker(defaultLang, el.lang, el.route)
+
+	return link;
+}
+export { linkToSection, menuNodeFinder, linker }
