@@ -18,7 +18,7 @@ const Proyects = () => (
         }
         allMarkdownRemark(
           filter: { frontmatter: { lang: { eq: "en" } } }
-          sort: { fields: frontmatter___date, order: DESC }
+          sort: { fields: frontmatter___date, order: ASC }
         ) {
           edges {
             node {
