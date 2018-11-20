@@ -17,8 +17,11 @@ import { linkToSection } from '../../utils/links'
 const photos = [dani1, dani2, dani3].reverse()
 
 const AboutPage = props => {
-	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
-	const homeLink = linkToSection({sectionId: 'home', ...linkOpts})
+  const linkOpts = {
+    allMenuData: props.data.allMenu,
+    defaultLang: props.data.site.siteMetadata.defaultLang,
+  }
+  const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
 
   return (
     <>

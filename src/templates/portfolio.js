@@ -16,9 +16,12 @@ export default function Template({ data }) {
 
   const hrefLangs = hreflangparser(data.markdownRemark.frontmatter.hreflangs)
 
-	const linkOpts = {allMenuData: data.allMenu, defaultLang: data.site.siteMetadata.defaultLang};
-	const proyectsLink = linkToSection({sectionId: 'proyect', ...linkOpts})
-  
+  const linkOpts = {
+    allMenuData: data.allMenu,
+    defaultLang: data.site.siteMetadata.defaultLang,
+  }
+  const proyectsLink = linkToSection({ sectionId: 'proyect', ...linkOpts })
+
   return (
     <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="proyect">
       <Helmet>

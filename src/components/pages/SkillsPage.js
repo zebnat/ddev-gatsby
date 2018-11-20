@@ -22,8 +22,11 @@ const SkillsPage = props => {
   const otherSkills = skills.other.sort(sortDescByLevel)
   const futureSkills = skills.future.sort(sortDescByLevel)
 
-	const linkOpts = {allMenuData: props.data.allMenu, defaultLang: props.data.site.siteMetadata.defaultLang};
-	const homeLink = linkToSection({sectionId: 'home', ...linkOpts})
+  const linkOpts = {
+    allMenuData: props.data.allMenu,
+    defaultLang: props.data.site.siteMetadata.defaultLang,
+  }
+  const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
 
   return (
     <>
