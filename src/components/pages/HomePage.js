@@ -14,7 +14,7 @@ const HomePage = props => {
 
   const aboutLink = linkToSection({ sectionId: 'about', ...linkOpts })
   const skillsLink = linkToSection({ sectionId: 'tech', ...linkOpts })
-  const proyectsLink = linkToSection({ sectionId: 'proyect', ...linkOpts })
+  const projectsLink = linkToSection({ sectionId: 'project', ...linkOpts })
 
   return (
     <>
@@ -80,16 +80,16 @@ const HomePage = props => {
           }}
         />
       </p>
-      <h3>{translation[props.lang].proyects}</h3>
+      <h3>{translation[props.lang].projects}</h3>
       <p>
         <Markdown
-          children={translation[props.lang].proyectInfo}
+          children={translation[props.lang].projectInfo}
           options={{
             overrides: {
               Link: {
                 component: Link,
                 props: {
-                  to: proyectsLink,
+                  to: projectsLink,
                 },
               },
             },

@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import hreflangparser from '../utils/hreflangs'
 import { linkToSection } from '../utils/links'
 import CategoryButton from '../components/CategoryButton'
-import translations from '../../data/translations/proyectPage'
+import translations from '../../data/translations/projectPage'
 import { Helmet } from 'react-helmet'
 
 /**
@@ -20,10 +20,10 @@ export default function Template({ data }) {
     allMenuData: data.allMenu,
     defaultLang: data.site.siteMetadata.defaultLang,
   }
-  const proyectsLink = linkToSection({ sectionId: 'proyect', ...linkOpts })
+  const projectsLink = linkToSection({ sectionId: 'project', ...linkOpts })
 
   return (
-    <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="proyect">
+    <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="project">
       <Helmet>
         <html lang={frontmatter.lang} />
         <title>{translations[frontmatter.lang].title}</title>
@@ -38,8 +38,8 @@ export default function Template({ data }) {
         />
         <CategoryButton
           gatsbyLink
-          route={proyectsLink}
-          name={translations[frontmatter.lang].proyectPage}
+          route={projectsLink}
+          name={translations[frontmatter.lang].projectPage}
         />
       </div>
     </Layout>

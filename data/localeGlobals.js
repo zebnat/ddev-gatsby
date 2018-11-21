@@ -39,7 +39,7 @@ module.exports = {
 		disabled: false
 	},
 	{
-		uniqueId: 'proyect',
+		uniqueId: 'project',
 		icon: 'backup',
 		text: 'Proyectos',
 		route: '/proyectos/',
@@ -102,10 +102,10 @@ module.exports = {
 		disabled: false
 	},
 	{
-		uniqueId: 'proyect',
+		uniqueId: 'project',
 		icon: 'backup',
-		text: 'Proyects',
-		route: '/proyects/',
+		text: 'Projects',
+		route: '/projects/',
 		lang: 'en',
 		sortOrder: 4,
 		disabled: false

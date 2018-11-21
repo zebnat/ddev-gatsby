@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
-import ProyectsPage from '../components/pages/ProyectsPage'
+import ProjectsPage from '../components/pages/ProjectsPage'
 
-const Proyects = () => (
+const Projects = () => (
   <StaticQuery
     query={graphql`
       {
@@ -36,8 +36,8 @@ const Proyects = () => (
       }
     `}
     render={data => (
-      <Layout data={data} pageUniqueId="proyect">
-        <ProyectsPage
+      <Layout data={data} pageUniqueId="project">
+        <ProjectsPage
           data={data}
           lang={data.allMetaData.edges[0].node.currentLang}
         />
@@ -46,4 +46,4 @@ const Proyects = () => (
   />
 )
 
-export default Proyects
+export default Projects

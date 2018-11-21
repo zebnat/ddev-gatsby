@@ -2,7 +2,7 @@ const translation = {
   en: {
     contact: 'Contact Me',
     contactInfo:
-      'Do you have any questions? Are you interested in hiring? I work around the Barcelonés area (Barcelona). I leave different contact options below.',
+      'Do you have any questions? Are you interested in hiring me? I work around the Barcelonés area (Barcelona). I leave different contact options below.',
     warning: 'Attention',
     warningInfo: `I'm currently studying. My availability is limited to 16:00 in advance. If you need a part-time web developer for the afternoon, contact me. This will be like this until i finish studying.`,
     developedBy: `This Progressive Web App was made by <b>Daniel Domínguez Rubio</b> (@zebnat) using technologies like ReactJS GatsbyJS GraphQL NodeJS`,

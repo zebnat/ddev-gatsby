@@ -1,8 +1,8 @@
 const translation = {
   en: {
-    title: 'My Proyects - Daniel Domínguez',
-    h1: 'My Proyects',
-    h2: `Professional Work & Personal Proyects`,
+    title: 'My Projects - Daniel Domínguez',
+    h1: 'My Projects',
+    h2: `Professional Work & Personal Projects`,
     attention: `**This section of the website is still under heavy development.**`,
   },
   es: {

@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
-import translation from '../../../data/translations/proyectsPage'
+import translation from '../../../data/translations/projectsPage'
 import { linkToSection } from '../../utils/links'
 import CategoryButton from '../CategoryButton'
 import { Link } from 'gatsby'
 
-const ProyectsPage = props => {
+const ProjectsPage = props => {
   const linkOpts = {
     allMenuData: props.data.allMenu,
     defaultLang: props.data.site.siteMetadata.defaultLang,
@@ -35,4 +35,4 @@ const ProyectsPage = props => {
   )
 }
 
-export default ProyectsPage
+export default ProjectsPage
