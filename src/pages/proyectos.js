@@ -18,7 +18,7 @@ const Projects = () => (
         }
         allMarkdownRemark(
           filter: { frontmatter: { lang: { eq: "es" } } }
-          sort: { fields: frontmatter___date, order: ASC }
+          sort: { fields: frontmatter___date, order: DESC }
         ) {
           edges {
             node {
@@ -27,6 +27,7 @@ const Projects = () => (
                 title
                 lang
                 path
+                tags
                 date(formatString: "DD-MM-YYYY")
                 description
               }

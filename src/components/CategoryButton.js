@@ -46,7 +46,7 @@ const buttonStyling = {
     color: '#fff',
   },
   ':before': {
-    content: '►',
+    content: '<',
     marginRight: 5,
   },
 }

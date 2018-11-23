@@ -6,6 +6,7 @@ import { linkToSection } from '../utils/links'
 import CategoryButton from '../components/CategoryButton'
 import translations from '../../data/translations/projectPage'
 import { Helmet } from 'react-helmet'
+import TagList from '../components/TagList'
 
 /**
  * THIS TEMPLATE IS USED FOR HANDLING PORTFOLIO CONTENT (MARKDOWN FILES)
@@ -33,9 +34,11 @@ export default function Template({ data }) {
           {frontmatter.date}
         </div>
         <div
+          css={{ '>h1,>h2,>h3,>h4': { color: '#404040' } }}
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <TagList tags={frontmatter.tags} />
         <CategoryButton
           gatsbyLink
           route={projectsLink}
@@ -53,6 +56,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "DD-MM-YYYY")
         path
+        tags
         description
         title
         lang

@@ -14,10 +14,11 @@ const SkillElement = props => {
               fontSize: '80%',
               fontFamily: 'monospace',
               fontWeight: 'bold',
-              padding: 4,
-              margin: '10px 0',
+              padding: 2,
+              margin: '24px 0',
               background: '#bfd6ec',
-              borderRadius: 10,
+              borderTop: '1px solid',
+              borderBottom: '1px solid',
             }}
           >
             {props.skill}
