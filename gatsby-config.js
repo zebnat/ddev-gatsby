@@ -19,6 +19,8 @@ module.exports = {
 				pathToConfigModule: 'src/utils/typography.js'
 			}
 		},
+		'gatsby-remark-embed-youtube',
+  	'gatsby-remark-responsive-iframe',
 		'gatsby-transformer-sharp',
 		`gatsby-plugin-sharp`,
 		{
@@ -36,6 +38,13 @@ module.exports = {
 							maxWidth: 590,
 						},
 					},
+					{
+						resolve: "gatsby-remark-embed-youtube",
+						options: {
+							width: 590,
+							height: 400
+						}
+					}
 				],
 			},
 		},
