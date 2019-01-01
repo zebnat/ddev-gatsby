@@ -8,13 +8,14 @@ import translation from '../../../data/translations/aboutPage'
 import dani1 from '../../../data/images/dani1.jpg'
 import dani2 from '../../../data/images/dani2.jpg'
 import dani3 from '../../../data/images/dani3.jpg'
+import dani7 from '../../../data/images/dani7.jpg'
 
 import { Helmet } from 'react-helmet'
 import CategoryButton from '../CategoryButton'
 import { linkToSection } from '../../utils/links'
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
-const photos = [dani1, dani2, dani3].reverse()
+const photos = [dani1, dani2, dani3, dani7].reverse()
 
 const AboutPage = props => {
   const linkOpts = {
