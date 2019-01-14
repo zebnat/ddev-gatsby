@@ -23,11 +23,23 @@ export default function Template({ data }) {
   }
   const projectsLink = linkToSection({ sectionId: 'project', ...linkOpts })
 
+  function PrivateDisclaimer(props) {
+    if (props.tags.indexOf('private-project')) {
+      return (
+        <div
+          css={{ border: '4px double #ff6c00', padding: 20, fontSize: '80%' }}
+        >
+          {translations[props.lang].privateDisclaimer}
+        </div>
+      )
+    }
+  }
+
   return (
     <Layout data={data} hrefLangs={hrefLangs} pageUniqueId="project">
       <Helmet>
         <html lang={frontmatter.lang} />
-        <title>{translations[frontmatter.lang].title}</title>
+        <title>{frontmatter.title}</title>
       </Helmet>
       <div>
         <div css={{ textAlign: 'right', fontSize: '80%', fontWeight: 'bold' }}>
@@ -38,6 +50,7 @@ export default function Template({ data }) {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <PrivateDisclaimer tags={frontmatter.tags} lang={frontmatter.lang} />
         <TagList tags={frontmatter.tags} />
         <CategoryButton
           gatsbyLink
