@@ -20,12 +20,12 @@ const ProjectsPage = props => {
       </Helmet>
       <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
       <p css={{ color: '#ce5c08' }}>{translation[props.lang].attention}</p>
-      {/*
-      <ContentCardList
-        readMoreText={translation[props.lang].readmore}
-        markDownContent={props.data.allMarkdownRemark.edges}
-      />
-			*/}
+      {
+        <ContentCardList
+          readMoreText={translation[props.lang].readmore}
+          markDownContent={props.data.allMarkdownRemark.edges}
+        />
+      }
       <CategoryButton gatsbyLink route={homeLink} name="HOME" />
     </>
   )
