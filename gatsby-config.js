@@ -54,6 +54,7 @@ module.exports = {
 				path: `${__dirname}/data/portfolio/`,
 				name: "md-portfolio",
 			},
-		}
+		},
+		`gatsby-plugin-catch-links`
 	]
 }
