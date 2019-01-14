@@ -1,0 +1,19 @@
+# Release changelog
+Changes tracked and documented for each release about the website https://danieldev.es
+
+Unreleased
+## Added
+- content for the projects section
+- disclaimer for private projects: no public code available
+- plugin gatsby-plugin-catch-links support for markdown local links
+- Auto disclaimer when detects private-project tag within projects
+
+## [1.0.0] - 01-01-2019
+New year, new release! This is a functional PWA website made with gatsby, features include
+- Navigation Menu : A responsive menu to reach the site categories
+- Language Switcher : A simple way to switch to other languages
+- Homepage (en, es) : Summary about who I am, what I do, my skills and projects I've made, academic papers, etc
+- Skills page (en, es) : Fully featured, shows skills levels in a fashionable way
+- About page (en, es) : Info about @me, photo auto-carrousel
+- Projects page (no content yet)
+- Footer layout component
