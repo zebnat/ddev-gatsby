@@ -168,7 +168,7 @@ const listStyle = {
       color: '#fff',
     },
     '>a.ac': {
-      color: '#81dbff',
+      color: '#f3df7a',
     },
   },
   '.visible': {

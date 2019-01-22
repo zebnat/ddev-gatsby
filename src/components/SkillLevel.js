@@ -5,14 +5,14 @@ const LevelBlock = props => (
   <div
     css={[
       {
-        background: '#39568c',
+        background: '#4a4a4a',
         width: '16px',
         height: '13px',
         margin: '0 0.05rem',
         display: 'inline-block',
       },
       props.blink === true
-        ? { animation: 'blink 2s linear infinite', background: '#e88609' }
+        ? { animation: 'blink 2s linear infinite', background: '#f1cc3f' }
         : null,
       props.hidden === true ? { opacity: 0 } : null,
     ]}

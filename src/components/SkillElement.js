@@ -10,13 +10,12 @@ const SkillElement = props => {
             css={{
               display: 'inline-block',
               minWidth: '100px',
-              color: '#003a65',
+              color: '#212121',
               fontSize: '80%',
               fontFamily: 'monospace',
               fontWeight: 'bold',
               padding: 2,
               margin: '24px 0',
-              background: '#bfd6ec',
               borderTop: '1px solid',
               borderBottom: '1px solid',
             }}

@@ -69,7 +69,7 @@ const imageContainerStyle = {
   position: 'relative',
   borderStyle: 'solid',
   borderWidth: '8px',
-  animation: 'rainbowslol 5s infinite',
+  borderColor: '#f3df7a',
 }
 
 const imageStyle = {

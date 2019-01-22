@@ -59,21 +59,12 @@ const SkillsPage = props => {
             {translation[props.lang].help_l5}
           </li>
           <li>
-            <b css={{ color: '#e88609' }}>
-              {translation[props.lang].blinking}:
-            </b>{' '}
+            <b css={{ color: '#000' }}>{translation[props.lang].blinking}:</b>{' '}
             {translation[props.lang].help_blinking}
           </li>
         </ul>
       </div>
-      <div
-        css={{
-          background: '#39568c',
-          color: 'white',
-          padding: '5px 8px',
-          transform: 'skew(-20deg)',
-        }}
-      >
+      <div css={skewStyle}>
         <span>{translation[props.lang].languages}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -88,14 +79,7 @@ const SkillsPage = props => {
         ))}
       </div>
 
-      <div
-        css={{
-          background: '#39568c',
-          color: 'white',
-          padding: '5px 8px',
-          transform: 'skew(-20deg)',
-        }}
-      >
+      <div css={skewStyle}>
         <span>{translation[props.lang].frameworks}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -109,14 +93,7 @@ const SkillsPage = props => {
           />
         ))}
       </div>
-      <div
-        css={{
-          background: '#39568c',
-          color: 'white',
-          padding: '5px 8px',
-          transform: 'skew(-20deg)',
-        }}
-      >
+      <div css={skewStyle}>
         <span>{translation[props.lang].other_tools}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -130,14 +107,7 @@ const SkillsPage = props => {
           />
         ))}
       </div>
-      <div
-        css={{
-          background: '#39568c',
-          color: 'white',
-          padding: '5px 8px',
-          transform: 'skew(-20deg)',
-        }}
-      >
+      <div css={skewStyle}>
         <span>{translation[props.lang].future_skills}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -156,6 +126,14 @@ const SkillsPage = props => {
       </div>
     </>
   )
+}
+
+// old bg #39568c
+const skewStyle = {
+  background: '#0a61ff',
+  color: 'white',
+  padding: '5px 8px',
+  transform: 'skew(-20deg)',
 }
 
 export default SkillsPage

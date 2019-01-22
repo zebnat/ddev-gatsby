@@ -136,6 +136,6 @@ const langSwitcherStyles = {
     fontSize: '80%',
   },
   '>a.ac': {
-    color: '#81dbff',
+    color: '#f3df7a',
   },
 }
