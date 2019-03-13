@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../data/images/logo2.png'
+import { lang } from 'glamor';
 
 class TopBar extends React.Component {
   constructor(props) {
@@ -64,7 +65,9 @@ class TopBar extends React.Component {
   }
 
   render() {
-    const { languages, defaultLang, currentLang } = this.props
+    let { languages, defaultLang, currentLang } = this.props
+
+		languages.sort((a,b) => (a.locale > b.locale) ? 1 : -1)
 
     return (
       <div css={boxStyles} className={this.state.hide === true ? 'hide' : ''}>
