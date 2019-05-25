@@ -1,21 +1,23 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 import Header from '../../components/Header'
 import Bio from '../../components/Bio'
-
-import translation from '../../../data/translations/aboutPage'
-
-import dani1 from '../../../data/images/dani1.jpg'
-import dani2 from '../../../data/images/dani2.jpg'
-import dani3 from '../../../data/images/dani3.jpg'
-import dani7 from '../../../data/images/dani7.jpg'
-
-import { Helmet } from 'react-helmet'
 import CategoryButton from '../CategoryButton'
 import { linkToSection } from '../../utils/links'
 
+import translation from '../../../data/translations/aboutPage'
+
+import p1 from '../../../data/images/about/p1.jpg'
+import p2 from '../../../data/images/about/p2.jpg'
+import p7 from '../../../data/images/about/p7.jpg'
+import p8 from '../../../data/images/about/p8.jpg'
+import p10 from '../../../data/images/about/p10.jpg'
+
+const photoSelection = [p2, p1, p7, p8, p10];
+
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
-const photos = [dani1, dani2, dani3, dani7].reverse()
+const photos = photoSelection.reverse()
 
 const AboutPage = props => {
   const linkOpts = {
