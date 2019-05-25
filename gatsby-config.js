@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
 		defaultLang: 'es',
+		latestVersion: 'v1.0.0',
 		domainUrl: 'https://www.danieldev.es'
   },
   plugins: [
