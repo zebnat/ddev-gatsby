@@ -1,5 +1,6 @@
 import React from 'react'
 import SkillLevel from './SkillLevel'
+import PropTypes from 'prop-types'
 
 const SkillElement = props => {
   return (
@@ -11,9 +12,7 @@ const SkillElement = props => {
               display: 'inline-block',
               minWidth: '100px',
               color: '#212121',
-              fontSize: '80%',
               fontFamily: 'monospace',
-              fontWeight: 'bold',
               padding: 2,
               margin: '24px 0',
               borderTop: '1px solid',
@@ -34,6 +33,13 @@ const SkillElement = props => {
       </div>
     </>
   )
+}
+
+SkillElement.propTypes = {
+  skill: PropTypes.string,
+  wordLevel: PropTypes.string,
+  leveling: PropTypes.bool,
+  level: PropTypes.number.isRequired,
 }
 
 export default SkillElement

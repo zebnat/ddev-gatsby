@@ -5,9 +5,10 @@ import code from 'typography-plugin-code'
 // overriding theme configs
 
 lawton.plugins = [new code()]
-lawton.baseFontSize = '20px'
-lawton.lineHeight = '24px'
+lawton.baseFontSize = '16px'
+lawton.lineHeight = '20px'
 lawton.scaleRatio = 2
+
 lawton.googleFonts = [
   {
     name: 'Oswald',
@@ -21,10 +22,17 @@ lawton.googleFonts = [
 
 lawton.headerFontFamily = ['Oswald', 'Helvetica', 'sans-serif']
 lawton.bodyFontFamily = ['Lato', 'georgia', 'serif']
+
 lawton.bodyGray = 20
 
 // custom styles theme
+const subheadingColor = '#262626'
 lawton.overrideThemeStyles = ({ rhythm }, options) => ({
+  a: {
+    color: '#f38800',
+    textDecoration: 'none',
+    fontWeight: 'normal',
+  },
   body: {
     background: '#f8f8f8',
   },
@@ -33,22 +41,29 @@ lawton.overrideThemeStyles = ({ rhythm }, options) => ({
     fontSize: '220%',
   },
   h2: {
+    color: subheadingColor,
     fontSize: '180%',
   },
   h3: {
+    color: subheadingColor,
     fontSize: '150%',
   },
   h4: {
+    color: subheadingColor,
     fontSize: '120%',
+  },
+  h5: {
+    color: subheadingColor,
+    fontSize: '110%',
   },
   '@media only screen and (max-width: 480px)': {
     html: {
       fontSize: '100%',
       lineHeight: '24px',
-    },
+    } /*,
     p: {
       textAlign: 'justify',
-    },
+    },*/,
   },
 })
 

@@ -9,12 +9,14 @@ const TagList = props => {
         margin: '1rem 0',
         '>li': {
           display: 'inline-block',
-          fontSize: '80%',
-          background: '#e8eaef',
+          fontSize: '90%',
+          fontWeight: 'bold',
+          background: '#ecf3ff',
           marginRight: '0.5rem',
-          color: '#292929',
+          color: '#001e54',
           borderRadius: 2,
           padding: '2px 3px',
+          fontFamily: 'monospace',
         },
       }}
     >

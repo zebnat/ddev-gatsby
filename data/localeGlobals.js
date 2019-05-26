@@ -1,12 +1,12 @@
 module.exports = {
 	siteMetaData : [
 		{
-			title: 'Desarrollador Web Fullstack (Programador) en Barcelona - Daniel',
+			title: 'Desarrollador Web Fullstack (Programador) en Barcelona',
 			shortTitle: 'Daniel D. Portfolio',
 			currentLang: 'es'
 		},
 		{
-			title: 'Fullstack Developer from Barcelona - Daniel D. Portfolio',
+			title: 'Fullstack Developer from Barcelona',
 			shortTitle: 'Daniel D. Portfolio',
 			currentLang: 'en'
 		}
@@ -23,7 +23,7 @@ module.exports = {
 	{
 		uniqueId: 'about',
 		icon: 'account_box',
-		text: 'Conóceme',
+		text: 'Sobre mí',
 		route: '/acerca-de-mi/',
 		lang: 'es',
 		sortOrder: 2,
@@ -32,7 +32,7 @@ module.exports = {
 	{
 		uniqueId: 'tech',
 		icon: 'build',
-		text: 'Habilidad',
+		text: 'Habilidades',
 		route: '/tecnologias/',
 		lang: 'es',
 		sortOrder: 3,

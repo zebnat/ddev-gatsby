@@ -14,7 +14,7 @@ import p7 from '../../../data/images/about/p7.jpg'
 import p8 from '../../../data/images/about/p8.jpg'
 import p10 from '../../../data/images/about/p10.jpg'
 
-const photoSelection = [p2, p1, p7, p8, p10];
+const photoSelection = [p2, p1, p7, p8, p10]
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
 const photos = photoSelection.reverse()
@@ -63,6 +63,7 @@ const AboutPage = props => {
         }}
       />
       <h3
+        id="history"
         dangerouslySetInnerHTML={{
           __html: translation[props.lang].history_title,
         }}
@@ -102,16 +103,6 @@ const AboutPage = props => {
           __html: translation[props.lang].teen_3,
         }}
       />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_4,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_5,
-        }}
-      />
       <h4
         dangerouslySetInnerHTML={{
           __html: translation[props.lang].hard_road_title,
@@ -130,11 +121,6 @@ const AboutPage = props => {
       <p
         dangerouslySetInnerHTML={{
           __html: translation[props.lang].difficulties_3,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].difficulties_4,
         }}
       />
       <h4

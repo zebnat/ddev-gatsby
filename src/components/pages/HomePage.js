@@ -105,7 +105,7 @@ const HomePage = props => {
               Link: {
                 component: Link,
                 props: {
-                  to: aboutLink,
+                  to: aboutLink + '#history',
                 },
               },
             },
@@ -114,8 +114,16 @@ const HomePage = props => {
       </p>
       <ul css={{ fontSize: '80%', '>li': { margin: '1rem 0' } }}>
         <li>
-          <a href="/docs/cv.pdf" target="_blank" rel="noopener noreferrer">
-            Currículum PDF
+          <a
+            href={
+              props.lang === props.data.site.siteMetadata.defaultLang
+                ? '/docs/cv.pdf'
+                : '/docs/cv-' + props.lang + '.pdf'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {translation[props.lang].resume}
           </a>
         </li>
         <li>
@@ -124,7 +132,7 @@ const HomePage = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Carta de recomendación de Panaworld S.L
+            {translation[props.lang].recommendationPW}
           </a>
         </li>
         <li>
@@ -133,7 +141,7 @@ const HomePage = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Certificado de tareas realizadas Panaworld S.L
+            {translation[props.lang].certificate}
           </a>
         </li>
       </ul>

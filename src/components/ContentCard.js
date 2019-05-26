@@ -11,7 +11,7 @@ const ContentCard = props => {
         border: '1px solid #a7a7a7',
         margin: '2rem 2rem',
         borderRadius: 2,
-        boxShadow: '1px 1px 8px #909090',
+        boxShadow: '5px 5px 0px #262626',
         '@media(max-width: 560px)': {
           margin: '2rem 1rem',
         },
@@ -21,7 +21,10 @@ const ContentCard = props => {
         <div css={{ color: '#444', fontSize: '75%', textAlign: 'right' }}>
           {date}
         </div>
-        <Link css={{ fontSize: '120%' }} to={path}>
+        <Link
+          css={{ fontSize: '120%', color: '#3b6cc5', fontWeight: 'bold' }}
+          to={path}
+        >
           {title}
         </Link>
       </div>
@@ -39,7 +42,16 @@ const ContentCard = props => {
         <TagList tags={tags} />
 
         <div css={{ textAlign: 'right' }}>
-          <Link css={{ color: '#fff', textTransform: 'uppercase' }} to={path}>
+          <Link
+            css={{
+              color: '#3b6cc5',
+              background: '#ecf3ff',
+              padding: '6px 10px',
+              borderRadius: 2,
+              fontWeight: 'bold',
+            }}
+            to={path}
+          >
             {readMoreText}
           </Link>
         </div>

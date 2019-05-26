@@ -4,7 +4,7 @@ const Social = props => {
   return (
     <>
       <div css={styles}>
-        <a className="ml" href="mailto:hire@danieldev.es" target="_bank">
+        <a className="ml" href="mailto:contacto@danieldev.es" target="_bank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -51,7 +51,7 @@ const Social = props => {
         </a>*/}
       </div>
       <p>
-        <code>hire@danieldev.es</code>
+        <code>contacto@danieldev.es</code>
       </p>
     </>
   )

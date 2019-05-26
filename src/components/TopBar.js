@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../data/images/logo2.png'
-import { lang } from 'glamor';
 
 class TopBar extends React.Component {
   constructor(props) {
@@ -67,7 +66,7 @@ class TopBar extends React.Component {
   render() {
     let { languages, defaultLang, currentLang } = this.props
 
-		languages.sort((a,b) => (a.locale > b.locale) ? 1 : -1)
+    languages.sort((a, b) => (a.locale > b.locale ? 1 : -1))
 
     return (
       <div css={boxStyles} className={this.state.hide === true ? 'hide' : ''}>
@@ -139,6 +138,6 @@ const langSwitcherStyles = {
     fontSize: '80%',
   },
   '>a.ac': {
-    color: '#f3df7a',
+    color: '#27f3ff',
   },
 }

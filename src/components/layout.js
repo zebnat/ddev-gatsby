@@ -88,9 +88,9 @@ const wrapperStyles = {
 
 const appStyles = {
   background: '#f8f8f8',
-  paddingTop: 60,
+  paddingTop: 40,
   '@media(min-width: 1300px)': {
-    background: '#f8f8f8 url("/bg.jpg") no-repeat bottom right',
+    background: '#f8f8f8 url("/bg-2.jpg") no-repeat bottom right',
     backgroundAttachment: 'fixed',
   },
 }

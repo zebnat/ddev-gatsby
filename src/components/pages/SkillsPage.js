@@ -19,6 +19,7 @@ const SkillsPage = props => {
   }
   const programmingSkills = skills.languages.sort(sortDescByLevel)
   const frameworkSkills = skills.libs.sort(sortDescByLevel)
+  const toolsSkills = skills.tools.sort(sortDescByLevel)
   const otherSkills = skills.other.sort(sortDescByLevel)
   const futureSkills = skills.future.sort(sortDescByLevel)
 
@@ -27,6 +28,18 @@ const SkillsPage = props => {
     defaultLang: props.data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
+
+  const listSkills = skillList => {
+    return skillList.map(el => (
+      <SkillElement
+        skill={el.skill}
+        wordLevel={translation[props.lang].wordLevel[el.level - 1] || '------'}
+        level={el.level}
+        leveling={el.isRecent}
+        key={el.skill.toLowerCase()}
+      />
+    ))
+  }
 
   return (
     <>
@@ -37,89 +50,60 @@ const SkillsPage = props => {
       <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
       <div>
         <h3>{translation[props.lang].levels_explained}</h3>
-        <ul css={{ fontSize: '80%' }}>
+        <ul>
           <li>
-            <b>{translation[props.lang].wordLevel} 1:</b>{' '}
+            <b>{translation[props.lang].wordLevel[0]}:</b>{' '}
             {translation[props.lang].help_l1}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel} 2:</b>{' '}
+            <b>{translation[props.lang].wordLevel[1]}:</b>{' '}
             {translation[props.lang].help_l2}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel} 3:</b>{' '}
+            <b>{translation[props.lang].wordLevel[2]}:</b>{' '}
             {translation[props.lang].help_l3}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel} 4:</b>{' '}
+            <b>{translation[props.lang].wordLevel[3]}:</b>{' '}
             {translation[props.lang].help_l4}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel} 5:</b>{' '}
+            <b>{translation[props.lang].wordLevel[4]}:</b>{' '}
             {translation[props.lang].help_l5}
           </li>
-          <li>
-            <b css={{ color: '#000' }}>{translation[props.lang].blinking}:</b>{' '}
-            {translation[props.lang].help_blinking}
-          </li>
         </ul>
+        <p>{translation[props.lang].help_blinking}</p>
       </div>
       <div css={skewStyle}>
         <span>{translation[props.lang].languages}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {programmingSkills.map(el => (
-          <SkillElement
-            skill={el.skill}
-            wordLevel={translation[props.lang].wordLevel}
-            level={el.level}
-            leveling={el.isRecent}
-            key={el.skill.toLowerCase()}
-          />
-        ))}
+        {listSkills(programmingSkills)}
       </div>
 
       <div css={skewStyle}>
         <span>{translation[props.lang].frameworks}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {frameworkSkills.map(el => (
-          <SkillElement
-            skill={el.skill}
-            wordLevel={translation[props.lang].wordLevel}
-            level={el.level}
-            leveling={el.isRecent}
-            key={el.skill.toLowerCase()}
-          />
-        ))}
+        {listSkills(frameworkSkills)}
       </div>
       <div css={skewStyle}>
         <span>{translation[props.lang].other_tools}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {otherSkills.map(el => (
-          <SkillElement
-            skill={el.skill}
-            wordLevel={translation[props.lang].wordLevel}
-            level={el.level}
-            leveling={el.isRecent}
-            key={el.skill.toLowerCase()}
-          />
-        ))}
+        {listSkills(toolsSkills)}
+      </div>
+      <div css={skewStyle}>
+        <span>{translation[props.lang].other_concepts}</span>
+      </div>
+      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+        {listSkills(otherSkills)}
       </div>
       <div css={skewStyle}>
         <span>{translation[props.lang].future_skills}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {futureSkills.map(el => (
-          <SkillElement
-            skill={el.skill}
-            wordLevel={translation[props.lang].wordLevel}
-            level={0}
-            leveling={el.isRecent}
-            key={el.skill.toLowerCase()}
-          />
-        ))}
+        {listSkills(futureSkills)}
       </div>
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />

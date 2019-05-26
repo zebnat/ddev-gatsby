@@ -12,7 +12,7 @@ const LevelBlock = props => (
         display: 'inline-block',
       },
       props.blink === true
-        ? { animation: 'blink 2s linear infinite', background: '#f1cc3f' }
+        ? { animation: 'blink 2s linear infinite', background: '#efb713' }
         : null,
       props.hidden === true ? { opacity: 0 } : null,
     ]}
@@ -44,8 +44,8 @@ const SkillLevel = props => {
 
   return (
     <div css={{ lineHeight: 1, margin: '.5rem' }}>
-      <div css={{ fontFamily: 'monospace' }}>
-        {props.wordLevel ? props.wordLevel : 'Level'} {props.level}
+      <div css={{ fontFamily: 'monospace', padding: '2px 0' }}>
+        {props.wordLevel}
       </div>
       <div
         css={{
