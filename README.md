@@ -42,5 +42,5 @@ npm install
 Run gatsby in development mode
 
 ```sh
-gatsby develop
+npm run develop
 ```
