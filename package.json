@@ -2,7 +2,11 @@
   "name": "danieldev",
   "description": "Danieldev personal website",
   "version": "1.0.0",
-  "author": "",
+	"author": "Daniel Domínguez Rubio <contacto@danieldev.es> (https://www.danieldev.es)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zebnat/ddev-gatsby.git"
+	},
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "crypto": "^1.0.1",
