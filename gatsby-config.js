@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+		siteUrl: `https://www.danieldev.es`, // required for sitemap plugin
 		defaultLang: 'es',
 		latestVersion: 'v1.0.0',
 		domainUrl: 'https://www.danieldev.es'
@@ -56,6 +57,7 @@ module.exports = {
 				name: "md-portfolio",
 			},
 		},
-		`gatsby-plugin-catch-links`
+		`gatsby-plugin-catch-links`,
+		`gatsby-plugin-sitemap`
 	]
 }

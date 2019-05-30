@@ -4,7 +4,7 @@ Changes tracked and documented for each release about the website [danieldev.es/
 
 ## Untagged
 
-Changes for the next tag
+Changes for the next tag (next: v1.5.4)
 
 ### Added
 
@@ -12,6 +12,7 @@ Changes for the next tag
 - Disclaimer message for private projects when no public code is available
 - Plugin gatsby-plugin-catch-links support for markdown local links
 - Auto disclaimer when detects private-project tag within projects
+- Added sitemap support by using gatsby-plugin-sitemap
 
 ### Fixed/Changed
 
