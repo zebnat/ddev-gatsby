@@ -19,7 +19,7 @@ const ProjectsPage = props => {
         <title>{translation[props.lang].title}</title>
       </Helmet>
       <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
-      <p css={{ color: '#ce5c08' }}>{translation[props.lang].attention}</p>
+      <p>{translation[props.lang].summary}</p>
       {
         <ContentCardList
           readMoreText={translation[props.lang].readmore}

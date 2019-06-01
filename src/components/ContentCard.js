@@ -22,7 +22,7 @@ const ContentCard = props => {
           {date}
         </div>
         <Link
-          css={{ fontSize: '120%', color: '#3b6cc5', fontWeight: 'bold' }}
+          css={{ fontSize: '160%', color: '#3b6cc5', fontWeight: 'bold', fontFamily: 'Oswald, helvetica, sans-serif' }}
           to={path}
         >
           {title}
