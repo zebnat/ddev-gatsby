@@ -4,9 +4,9 @@ Changes tracked and documented for each release about the website [danieldev.es/
 
 ## Untagged
 
-Changes for the next tag (next: v1.5.4)
+Changes for the next tag (next: v1.5.6)
 
-### Added
+### Added/Feature
 
 - Lots of Content added for the projects section
 - Disclaimer message for private projects when no public code is available
@@ -19,6 +19,8 @@ Changes for the next tag (next: v1.5.4)
 - Languages order on topbar
 - Improved design styles
 - Improved README
+- Changed remark images plugin config, more quality, enabled webp.
+- Fixed some docker nginx conf issues
 
 ### Removed
 
