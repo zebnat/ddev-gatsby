@@ -24,7 +24,7 @@ export default function Template({ data }) {
   const projectsLink = linkToSection({ sectionId: 'project', ...linkOpts })
 
   function PrivateDisclaimer(props) {
-    if (props.tags.indexOf('private-project')) {
+    if (props.tags.indexOf('private-project') > 0) {
       return (
         <div
           css={{ border: '4px double #ff6c00', padding: 20, fontSize: '80%' }}
@@ -32,7 +32,9 @@ export default function Template({ data }) {
           {translations[props.lang].privateDisclaimer}
         </div>
       )
-    }
+    } else {
+			return null;
+		}
   }
 
   return (
