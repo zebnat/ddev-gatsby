@@ -2,7 +2,7 @@ import React from 'react'
 import Social from './Social'
 import translation from '../../data/translations/footer'
 
-const Footer = ({ lang }) => (
+const Footer = ({ lang, version }) => (
   <footer css={footerStyles}>
     <div>
       <h3>{translation[lang].contact}</h3>
@@ -20,9 +20,10 @@ const Footer = ({ lang }) => (
       <Social />
     </div>
     <p
-      css={{ textAlign: 'center', fontSize: '80%', margin: '5rem 0' }}
+      css={{ textAlign: 'center', fontSize: '80%', margin: '2rem 0 0 0' }}
       dangerouslySetInnerHTML={{ __html: translation[lang].developedBy }}
     />
+    <p css={{ fontSize: '80%' }}>{version}</p>
     {/*<p css={footerLicenseStyles}>
       licenses:{' '}
       <a

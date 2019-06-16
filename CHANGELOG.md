@@ -4,7 +4,7 @@ Changes tracked and documented for each release about the website [danieldev.es/
 
 ## Untagged
 
-Changes for the next tag (next: v1.5.6)
+Changes for the next tag (next: v1.6.7)
 
 ### Added/Feature
 
@@ -13,6 +13,7 @@ Changes for the next tag (next: v1.5.6)
 - Plugin gatsby-plugin-catch-links support for markdown local links
 - Auto disclaimer when detects private-project tag within projects
 - Added sitemap support by using gatsby-plugin-sitemap
+- Added tag filtering support for the projects list
 
 ### Fixed/Changed
 
@@ -21,6 +22,7 @@ Changes for the next tag (next: v1.5.6)
 - Improved README
 - Changed remark images plugin config, more quality, enabled webp.
 - Fixed some docker nginx conf issues
+- Fixed private disclaimer in projects, now working properly
 
 ### Removed
 

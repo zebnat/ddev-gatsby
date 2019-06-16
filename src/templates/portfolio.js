@@ -33,8 +33,8 @@ export default function Template({ data }) {
         </div>
       )
     } else {
-			return null;
-		}
+      return null
+    }
   }
 
   return (

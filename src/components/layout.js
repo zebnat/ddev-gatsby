@@ -43,7 +43,10 @@ const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
         />
         <div css={wrapperStyles}>
           {children}
-          <Footer lang={currentLang} />
+          <Footer
+            lang={currentLang}
+            version={data.site.siteMetadata.latestVersion}
+          />
         </div>
       </div>
     </>
@@ -62,6 +65,7 @@ export const Fragments = graphql`
     siteMetadata {
       defaultLang
       domainUrl
+      latestVersion
     }
   }
   fragment MetaData on MetaDataConnection {

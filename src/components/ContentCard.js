@@ -13,7 +13,7 @@ const ContentCard = props => {
         borderRadius: 2,
         boxShadow: '5px 5px 0px #262626',
         '@media(max-width: 560px)': {
-          margin: '2rem 1rem',
+          margin: '2rem 0rem',
         },
       }}
     >
@@ -22,7 +22,12 @@ const ContentCard = props => {
           {date}
         </div>
         <Link
-          css={{ fontSize: '160%', color: '#3b6cc5', fontWeight: 'bold', fontFamily: 'Oswald, helvetica, sans-serif' }}
+          css={{
+            fontSize: '160%',
+            color: '#3b6cc5',
+            fontWeight: 'bold',
+            fontFamily: 'Oswald, helvetica, sans-serif',
+          }}
           to={path}
         >
           {title}
