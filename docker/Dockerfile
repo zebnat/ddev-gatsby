@@ -1,4 +1,4 @@
-FROM nginx:mainline-alpine
+FROM nginx:1.17.1-alpine
 RUN apk update
 RUN apk upgrade
 
