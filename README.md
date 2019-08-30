@@ -11,36 +11,3 @@ With Gatsby you can create SEO friendly websites using React, GraphQL and commun
 It can also be hosted anywhere because they are just normal html, css and javascript files.
 
 You can also scale any page to behave like a clientside React app but with HTML served by your webserver for better SEO and performance.
-
-## How to Install
-
-### Prequisites
-
-You need [nodejs](https://nodejs.org/en/download/) in your system.
-
-Install gatsby client globally
-
-```sh
-npm install -g gatsby-cli
-```
-
-### Clone repo and run
-
-Clone this repository
-
-```sh
-git clone REPOURL
-cd repo-folder
-```
-
-Install dependencies
-
-```sh
-npm install
-```
-
-Run gatsby in development mode
-
-```sh
-npm run develop
-```

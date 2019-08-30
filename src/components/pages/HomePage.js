@@ -48,70 +48,49 @@ const HomePage = props => {
           quote={translation[props.lang].quote}
         />
       </div>
-      <p>
-        <Markdown
-          children={translation[props.lang].intro}
-          options={{
-            overrides: {
-              Link: {
-                component: Link,
-                props: {
-                  to: aboutLink,
-                },
+      <Markdown
+        children={translation[props.lang].intro}
+        options={{
+          overrides: {
+            Link: {
+              component: Link,
+              props: {
+                to: aboutLink,
               },
             },
-          }}
-        />
-      </p>
+          },
+        }}
+      />
       <h3>{translation[props.lang].skills}</h3>
-
-      <p>
-        <Markdown
-          children={translation[props.lang].skillsInfo}
-          options={{
-            overrides: {
-              Link: {
-                component: Link,
-                props: {
-                  to: skillsLink,
-                },
+      <Markdown
+        children={translation[props.lang].skillsInfo}
+        options={{
+          overrides: {
+            Link: {
+              component: Link,
+              props: {
+                to: skillsLink,
               },
             },
-          }}
-        />
-      </p>
+          },
+        }}
+      />
       <h3>{translation[props.lang].projects}</h3>
-      <p>
-        <Markdown
-          children={translation[props.lang].projectInfo}
-          options={{
-            overrides: {
-              Link: {
-                component: Link,
-                props: {
-                  to: projectsLink,
-                },
+      <Markdown
+        children={translation[props.lang].projectInfo}
+        options={{
+          overrides: {
+            Link: {
+              component: Link,
+              props: {
+                to: projectsLink,
               },
             },
-          }}
-        />
-      </p>
+          },
+        }}
+      />
       <h3>{translation[props.lang].academic}</h3>
-      <p>
-        <Markdown
-          children={translation[props.lang].academicInfo}
-          options={{
-            overrides: {
-              Link: {
-                component: Link,
-                props: {
-                  to: aboutLink + '#history',
-                },
-              },
-            },
-          }}
-        />
-      </p>
+      <Markdown children={translation[props.lang].academicInfo} />
       <ul css={{ fontSize: '80%', '>li': { margin: '1rem 0' } }}>
         <li>
           <a

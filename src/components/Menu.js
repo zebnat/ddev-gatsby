@@ -4,6 +4,8 @@ import ReactSwipeEvents from 'react-swipe-events'
 import { graphql } from 'gatsby'
 import { linker } from '../utils/links'
 
+import Social from './Social'
+
 class Menu extends React.Component {
   constructor(props) {
     super(props)
@@ -37,6 +39,10 @@ class Menu extends React.Component {
         visible: !this.state.visible,
       })
     }
+  }
+
+  bigScreen() {
+    return window.innerWidth > 1250
   }
 
   render() {
@@ -79,6 +85,9 @@ class Menu extends React.Component {
                 </li>
               ))}
           </ul>
+          {(this.bigScreen() || this.state.visible) && (
+            <Social darkmode={true} />
+          )}
         </nav>
       </ReactSwipeEvents>
     )

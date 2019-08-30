@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 
 import Header from '../../components/Header'
@@ -25,6 +25,13 @@ const AboutPage = props => {
     defaultLang: props.data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
+
+  const timesTrolling = 2
+  const [kamina, setKamina] = useState(0)
+
+  const openKaminaGod = () => {
+    setKamina(kamina + 1)
+  }
 
   return (
     <>
@@ -57,6 +64,11 @@ const AboutPage = props => {
           __html: translation[props.lang].howiam_reply,
         }}
       />
+      <h3
+        dangerouslySetInnerHTML={{
+          __html: translation[props.lang].hobbies_t,
+        }}
+      />
       <p
         dangerouslySetInnerHTML={{
           __html: translation[props.lang].hobbies,
@@ -68,86 +80,92 @@ const AboutPage = props => {
           __html: translation[props.lang].history_title,
         }}
       />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].history_brief,
-        }}
-      />
-      <h4
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].child_title,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].child_history,
-        }}
-      />
-      <h4
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_title,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_1,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_2,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].teen_3,
-        }}
-      />
-      <h4
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].hard_road_title,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].difficulties_1,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].difficulties_2,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].difficulties_3,
-        }}
-      />
-      <h4
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].working_as_dev_title,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].developer_1,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].developer_2,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].developer_3,
-        }}
-      />
-      <p
-        dangerouslySetInnerHTML={{
-          __html: translation[props.lang].developer_4,
-        }}
-      />
+      {[
+        'history_1985',
+        'history_1990',
+        'history_1993',
+        'history_1997',
+        'history_1998',
+        'history_2002',
+        'history_2004',
+        'history_2006',
+        'history_2009',
+        'history_2010',
+        'history_2013',
+        'history_2018',
+      ].map(e => (
+        <p
+          key={e}
+          dangerouslySetInnerHTML={{
+            __html: translation[props.lang][e],
+          }}
+        />
+      ))}
+
+      <h3>Random</h3>
+      <ul>
+        <li>
+          <b>{translation[props.lang].rng_desktop}</b>: Intel, Nvidia, Windows
+          10
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_key}</b>: Logitech K120
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_lap}</b>: Thinkpad + Linux (Arch)
+        </li>
+        <li>
+          <b>Monitor</b>: Dual monitor 24'
+        </li>
+        <li>
+          <b>Editor</b>: Visual Studio Code, VIM
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_lan}</b>: PHP7, C#, Typescript
+        </li>
+        <li>
+          <b>Spaces or tabs?</b>: Autoformat, PSR / standards, Prettier
+        </li>
+        <li>
+          <b>Static types or Dynamic?</b>: Static strong types 😈
+        </li>
+        <li>
+          <b>Dark theme or Light?</b>: Both
+        </li>
+        <li>
+          <b>Quotes</b>: [No pain no gain.] [Dare to be different.]
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_mov}</b>: Interstellar
+        </li>
+        <li>
+          <b>Anime</b>: Death note
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_gam}</b>: Final Fantasy VII
+        </li>
+        <li>
+          <b>{translation[props.lang].rng_son}</b>:{' '}
+          <button onClick={openKaminaGod}>
+            {kamina > timesTrolling ? `😜🤣😜` : `?`.repeat(kamina + 1)}
+          </button>
+        </li>
+      </ul>
+      {kamina > timesTrolling && (
+        <div>
+          <iframe
+            title="[AMV] - Fight The Power!! (Tengen Toppa Gurren Lagann) - YouTube"
+            width="100%"
+            height="360"
+            autoPlay={true}
+            src="https://www.youtube.com/embed/inPAZnJ4EXc?start=29"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />
       </div>

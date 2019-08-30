@@ -24,16 +24,6 @@ const Footer = ({ lang, version }) => (
       dangerouslySetInnerHTML={{ __html: translation[lang].developedBy }}
     />
     <p css={{ fontSize: '80%' }}>{version}</p>
-    {/*<p css={footerLicenseStyles}>
-      licenses:{' '}
-      <a
-        href="http://www.freepik.com"
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-      >
-        Background by Harryarts / Freepik
-      </a>
-			</p>*/}
   </footer>
 )
 
