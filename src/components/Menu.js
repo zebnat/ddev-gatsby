@@ -14,6 +14,7 @@ class Menu extends React.Component {
     this.toggleVisibility = this.toggleVisibility.bind(this)
     this.onSwipedRight = this.onSwipedRight.bind(this)
     this.onSwipedLeft = this.onSwipedLeft.bind(this)
+    this.isBigScreen = null
   }
 
   onSwipedRight(e, originalX, endX) {
@@ -41,8 +42,8 @@ class Menu extends React.Component {
     }
   }
 
-  bigScreen() {
-    return window.innerWidth > 1250
+  componentDidMount() {
+    this.setState({ visible: window.innerWidth > 1250 })
   }
 
   render() {
@@ -85,9 +86,7 @@ class Menu extends React.Component {
                 </li>
               ))}
           </ul>
-          {(this.bigScreen() || this.state.visible) && (
-            <Social darkmode={true} />
-          )}
+          {this.state.visible && <Social darkmode={true} />}
         </nav>
       </ReactSwipeEvents>
     )
