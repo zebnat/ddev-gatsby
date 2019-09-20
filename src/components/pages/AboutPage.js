@@ -133,21 +133,18 @@ const AboutPage = props => {
           <b>Dark theme or Light?</b>: Both
         </li>
         <li>
-          <b>Quotes</b>: [No pain no gain.] [Dare to be different.]
-        </li>
-        <li>
           <b>{translation[props.lang].rng_mov}</b>: Interstellar
         </li>
         <li>
           <b>Anime</b>: Death note
         </li>
         <li>
-          <b>{translation[props.lang].rng_gam}</b>: Final Fantasy VII
+          <b>{translation[props.lang].rng_gam}</b>: Final Fantasy XI
         </li>
         <li>
           <b>{translation[props.lang].rng_son}</b>:{' '}
           <button onClick={openKaminaGod}>
-            {kamina > timesTrolling ? `😜🤣😜` : `?`.repeat(kamina + 1)}
+            {kamina > timesTrolling ? `😜😜😜` : `?`.repeat(kamina + 1)}
           </button>
         </li>
       </ul>
