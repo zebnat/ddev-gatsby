@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom
 
 echo "Install color profiles"
 mkdir -p ~/.vim/colors/
-mv atom-dark.* ~/.vim/colors/
+mv atom-dark* ~/.vim/colors/
 
 # requires curl
 
