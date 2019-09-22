@@ -1,0 +1,47 @@
+"-------------PLUGINS USING PLUGGED--------------"
+call plug#begin('~/.local/share/nvim/plugged')
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+"Plug 'stephpy/vim-php-cs-fixer'
+Plug 'mattn/emmet-vim'
+call plug#end()
+
+"--------------EYE CANDY STUFF---------------------"
+colorscheme atom-dark-256
+
+set tabstop=4                                       "Tabs equals 4 spaces"
+set shiftwidth=4                                    "Tabs equals 4 spaces"
+set softtabstop=4                                   "Tabs equals 4 spaces (insert mode)"
+set expandtab                                       "Converts tab to spaces"
+set number                                          "Sets number of lines"
+set encoding=utf-8                                  "Default UTF8 encoding"
+set clipboard=unnamedplus                           "Shares clipboard with yanking"
+
+let mapleader = ','                                 "Changes default leader key '\' for another
+set backspace=indent,eol,start                      "backspace behaves like other editor
+set fileformat=unix
+
+
+
+
+"-----------------Mappings-----------------------"
+
+nmap <Leader>ev :tabedit ~/.vimrc<CR>
+nmap <C-n> :NERDTreeToggle<CR>
+
+
+
+
+" vim php cs fixer
+
+"let g:php_cs_fixer_level = "psr2"
+"nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
+"autocmd BufWritePost * :call PhpCsFixerFixFile()<CR>
+
+" CtrlP ignore 
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|vendor|.git)$'
+
+" coc.nvim autocomplete 
+"inoremap <silent><expr> <c-space> coc#refresh()
