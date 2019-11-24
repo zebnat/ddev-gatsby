@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SkillLevel from './SkillLevel'
 import PropTypes from 'prop-types'
 
 const SkillElement = props => {
+  let [viewDescription, setViewDescription] = useState(false)
+
+  const showDescription = () => {
+    setViewDescription(true)
+  }
+
   return (
     <>
-      <div css={{ width: '245px', height: '50px', margin: 5 }}>
+      <div css={{ width: '245px', margin: 5 }} onClick={showDescription}>
         <div css={{ float: 'left', width: '125px', textAlign: 'center' }}>
           <span
             css={{
@@ -29,7 +35,12 @@ const SkillElement = props => {
             leveling={props.leveling}
           />
         </div>
-        <div css={{ clear: 'both' }} />
+        <div
+          css={{ clear: 'both', display: 'none' }}
+          style={{ display: viewDescription === true ? 'block' : 'none' }}
+        >
+          {props.description}
+        </div>
       </div>
     </>
   )

@@ -21,7 +21,6 @@ const SkillsPage = props => {
   const frameworkSkills = skills.libs.sort(sortDescByLevel)
   const toolsSkills = skills.tools.sort(sortDescByLevel)
   const otherSkills = skills.other.sort(sortDescByLevel)
-  const futureSkills = skills.future.sort(sortDescByLevel)
 
   const linkOpts = {
     allMenuData: props.data.allMenu,
@@ -36,6 +35,7 @@ const SkillsPage = props => {
         wordLevel={translation[props.lang].wordLevel[el.level - 1] || '------'}
         level={el.level}
         leveling={el.isRecent}
+        description={el.description[props.lang]}
         key={el.skill.toLowerCase()}
       />
     ))
@@ -73,6 +73,17 @@ const SkillsPage = props => {
           </li>
         </ul>
         <p>{translation[props.lang].help_blinking}</p>
+        <p
+          css={{
+            padding: 10,
+            background: '#262626',
+            color: '#ead776',
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
+          {'-->  ' + translation[props.lang].tap_skill + '  <--'}
+        </p>
       </div>
       <div css={skewStyle}>
         <span>{translation[props.lang].languages}</span>
@@ -98,12 +109,6 @@ const SkillsPage = props => {
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {listSkills(otherSkills)}
-      </div>
-      <div css={skewStyle}>
-        <span>{translation[props.lang].future_skills}</span>
-      </div>
-      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {listSkills(futureSkills)}
       </div>
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />

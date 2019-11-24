@@ -142,7 +142,8 @@ const AboutPage = props => {
           <b>{translation[props.lang].rng_gam}</b>: Final Fantasy XI
         </li>
         <li>
-          <b>{translation[props.lang].rng_son}</b>:{' '}
+          <b>{translation[props.lang].rng_son}</b>:
+          {' Do the impossible, see the invisible.'}
           <button onClick={openKaminaGod}>
             {kamina > timesTrolling ? `😜😜😜` : `?`.repeat(kamina + 1)}
           </button>

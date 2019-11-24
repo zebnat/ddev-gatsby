@@ -9,7 +9,7 @@ const translation = {
     howiam: `Why programming?`,
     howiam_reply: `I love the Web. The ability to open an app or just view a lot of information without installing anything was mindblowing enough to turn myself into a web developer. I'm a big fan of having clean and reusable code, thinking about abstractions... so much fun. I also like my things pretty, fast and easy to use. I'm not even close to an artist but I always try hard to have a decent output, at least I care 🤣.`,
     hobbies_t: `Hobbies`,
-    hobbies: `Video games, especially RPG and Strategy. Anime (•̀ ω •́ ) . Reading technical books for fun. Develop side projects for fun and profit. Play with my cat. Watch some football, at least my team. Watch movies. Going for long walks.`,
+    hobbies: `Video games, especially RPG and Strategy. Anime. Reading technical books for fun. Develop side projects for fun and profit. Cats. Watch some football, at least my team. Watch movies. Going for long walks.`,
     history_title: `Timeline`,
     history_1985: `1985 - new Human()`,
     history_1990: `1990 - Got my first computer`,
@@ -30,7 +30,7 @@ const translation = {
     rng_mov: `Movie`,
     rng_ani: `Anime`,
     rng_gam: `Videogame`,
-    rng_son: `Way of life`,
+    rng_son: `Quote`,
   },
   es: {
     bioquote: '¡Hola! ponte cómodo',
@@ -42,7 +42,7 @@ const translation = {
     howiam: `¿Por qué programación?`,
     howiam_reply: `Me encantan las webs. Esa capacidad de poder abrir una aplicación o contenido sencillamente abriendo una URL sin instalar nada fue suficiente para querer dedicarme a esto. Me gusta el tema de tener un código bien escrito, reusable y escalable. Me gusta tener que pensar en nombres de cosas, en abstracciones, a veces tengo incluso que echar el freno... muy divertido. También me gusta ver las cosas visualmente bien hechas, que carguen rápido y sean fáciles de usar. No estoy ni remotamente cerca de ser un artista pero hago lo que puedo, al menos lo intento 🤣.`,
     hobbies_t: `Hobbies`,
-    hobbies: `Videojuegos, especialmente RPG y estrategia. Anime (•̀ ω •́ ) . Leer libros de programación. Crear y sobretodo terminar proyectos personales. Jugar con mi gata. Ver fútbol, al menos a mi equipo. Ver pelis. Salir a pegarme caminatas.`,
+    hobbies: `Videojuegos, especialmente RPG y estrategia. Anime. Leer sobre programación. Crear y sobretodo terminar proyectos personales. Los gatos. Ver fútbol, al menos a mi equipo. Ver pelis. Caminar.`,
     history_title: `Historia`,
     history_1985: `1985 - new Human()`,
     history_1990: `1990 - Me regalan mi primer ordenador`,
@@ -62,7 +62,7 @@ const translation = {
     rng_lan: `Lenguajes`,
     rng_mov: `Peli`,
     rng_gam: `Videojuego`,
-    rng_son: `Estilo de vida`,
+    rng_son: `Frase`,
   },
 }
 
