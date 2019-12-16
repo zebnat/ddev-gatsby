@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.danieldev.es`, // required for sitemap plugin
     defaultLang: 'es',
-    latestVersion: 'v1.7.0',
+    latestVersion: 'v1.8.0',
     domainUrl: 'https://www.danieldev.es',
   },
   plugins: [

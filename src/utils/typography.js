@@ -15,13 +15,13 @@ lawton.googleFonts = [
     styles: ['700'],
   },
   {
-    name: 'Lato',
+    name: 'Roboto',
     styles: ['400', '700i'],
   },
 ]
 
 lawton.headerFontFamily = ['Oswald', 'Helvetica', 'sans-serif']
-lawton.bodyFontFamily = ['Lato', 'georgia', 'serif']
+lawton.bodyFontFamily = ['Roboto', 'georgia', 'serif']
 
 lawton.bodyGray = 20
 

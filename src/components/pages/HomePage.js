@@ -22,32 +22,12 @@ const HomePage = props => {
         <html lang={props.lang} />
         <title>{translation[props.lang].title}</title>
       </Helmet>
-      <div
-        css={{
-          '@media(max-height: 500px)': {
-            '@media(max-width: 420px)': {
-              paddingTop: '0',
-            },
-            '@media(min-width: 421px)': {
-              paddingTop: '0',
-            },
-          },
-          '@media(min-height: 501px)': {
-            '@media(max-width: 420px)': {
-              paddingTop: '100px',
-            },
-            '@media(min-width: 421px)': {
-              paddingTop: '25px',
-            },
-          },
-        }}
-      >
-        <Header
-          h1={translation[props.lang].h1}
-          h2={translation[props.lang].h2}
-          quote={translation[props.lang].quote}
-        />
-      </div>
+      <Header
+        h1={translation[props.lang].h1}
+        h2={translation[props.lang].h2}
+        quote={translation[props.lang].quote}
+        home
+      />
       <Markdown
         children={translation[props.lang].intro}
         options={{

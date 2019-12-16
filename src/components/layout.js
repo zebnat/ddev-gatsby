@@ -83,10 +83,10 @@ export const Fragments = graphql`
 const wrapperStyles = {
   maxWidth: 730,
   margin: `0 auto`,
-  padding: '50px 60px 14px 60px',
+  padding: '0px 60px 0px 60px',
   borderRadius: 3,
   '@media(max-width: 420px)': {
-    padding: '14px 10px 14px 60px',
+    padding: '0px 10px 0px 60px',
   },
 }
 

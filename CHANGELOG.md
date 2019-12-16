@@ -4,10 +4,12 @@ Changes tracked and documented for each release about the website [danieldev.es/
 
 ## Untagged
 
-Changes for the next tag (next: v1.6.7)
+Changes for the next tag (next: v1.8)
 
 ### Added/Feature
 
+- Added animated intro
+- Added skill descriptions with animations
 - Lots of Content added for the projects section
 - Disclaimer message for private projects when no public code is available
 - Plugin gatsby-plugin-catch-links support for markdown local links
@@ -17,6 +19,7 @@ Changes for the next tag (next: v1.6.7)
 
 ### Fixed/Changed
 
+- Translation fixes
 - Languages order on topbar
 - Improved design styles
 - Improved README

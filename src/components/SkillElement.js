@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SkillLevel from './SkillLevel'
 import PropTypes from 'prop-types'
 
 const SkillElement = props => {
   let [viewDescription, setViewDescription] = useState(false)
+  let [changeHeight, setChangeHeight] = useState(false)
 
   const showDescription = () => {
     setViewDescription(true)
+    setTimeout(() => {
+      setChangeHeight(true)
+    }, 100)
   }
 
   return (
     <>
-      <div css={{ width: '245px', margin: 5 }} onClick={showDescription}>
+      <div
+        css={{ width: '245px', margin: 5, cursor: 'pointer' }}
+        onClick={showDescription}
+      >
         <div css={{ float: 'left', width: '125px', textAlign: 'center' }}>
           <span
             css={{
@@ -36,8 +43,18 @@ const SkillElement = props => {
           />
         </div>
         <div
-          css={{ clear: 'both', display: 'none' }}
-          style={{ display: viewDescription === true ? 'block' : 'none' }}
+          css={{
+            clear: 'both',
+            opacity: '0',
+            textAlign: 'justify',
+            transition: 'opacity 1s',
+            overflow: 'hidden',
+            display: 'none',
+          }}
+          style={{
+            display: viewDescription === true ? 'block' : 'none',
+            opacity: changeHeight === true ? '100' : '0',
+          }}
         >
           {props.description}
         </div>

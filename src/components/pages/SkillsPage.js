@@ -75,14 +75,14 @@ const SkillsPage = props => {
         <p>{translation[props.lang].help_blinking}</p>
         <p
           css={{
-            padding: 10,
-            background: '#262626',
-            color: '#ead776',
+            padding: '20px 5px',
+            color: '#0961ff',
             textAlign: 'center',
             textTransform: 'uppercase',
+            fontSize: '134%',
           }}
         >
-          {'-->  ' + translation[props.lang].tap_skill + '  <--'}
+          {translation[props.lang].tap_skill}
         </p>
       </div>
       <div css={skewStyle}>
