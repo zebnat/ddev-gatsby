@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { outOfRange } from 'glamor'
 
 const Header = props => {
   if (props.home) {
     var homeStyle = {
       display: 'flex',
       marginTop: '-40px',
-      height: '100vh',
+      height: '85vh',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
@@ -21,7 +22,11 @@ const Header = props => {
     })
     var [quoteAnim, setQuoteAnim] = useState({
       opacity: 0,
-      transition: 'all 2.5s',
+      display: 'inline-block',
+      overflow: 'hidden',
+      borderRight: '.12em solid orange',
+      whiteSpace: 'nowrap',
+      margin: '0 auto'
     })
 
     useEffect(() => {
@@ -40,7 +45,7 @@ const Header = props => {
       setTimeout(() => {
         setQuoteAnim(prev => {
           let cloned = { ...prev }
-          return Object.assign(cloned, { opacity: 100 })
+          return Object.assign(cloned, { opacity: 100,  animation: 'typing 3.5s steps(40,end), blink-caret .75s step-end infinite'})
         })
       }, 4000)
     }, [])
@@ -71,10 +76,10 @@ const Header = props => {
       <h1 style={props.home ? h1Anim : null}>{props.h1}</h1>
       <h2 style={props.home ? h2Anim : null}>{props.h2}</h2>
       {props.quote ? (
-        <div style={props.home ? quoteAnim : null}>
-          <blockquote>
-            <em>“{props.quote}”</em>
-          </blockquote>
+        <div>
+          <div style={props.home ? quoteAnim : null}>
+              <em>“{props.quote}”</em>
+          </div>
         </div>
       ) : (
         ''

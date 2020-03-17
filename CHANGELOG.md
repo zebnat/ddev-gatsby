@@ -4,9 +4,30 @@ Changes tracked and documented for each release about the website [danieldev.es/
 
 ## Untagged
 
-Changes for the next tag (next: v1.8)
+Changes for the next tag
 
 ### Added/Feature
+
+
+### Fixed/Changed
+
+
+### Removed
+
+- release binaries, now git tags is the proper option for deployment
+
+## Tags
+
+v1.9.0
+
+- Created typewriter effect in intro
+- Fixed text contents
+- Added question and answers content in aboutme
+- Updated cv files
+
+v1.8.0
+
+Additions
 
 - Added animated intro
 - Added skill descriptions with animations
@@ -17,7 +38,7 @@ Changes for the next tag (next: v1.8)
 - Added sitemap support by using gatsby-plugin-sitemap
 - Added tag filtering support for the projects list
 
-### Fixed/Changed
+Fixes
 
 - Translation fixes
 - Languages order on topbar
@@ -26,12 +47,6 @@ Changes for the next tag (next: v1.8)
 - Changed remark images plugin config, more quality, enabled webp.
 - Fixed some docker nginx conf issues
 - Fixed private disclaimer in projects, now working properly
-
-### Removed
-
-- release binaries, now git tags is the proper option for deployment
-
-## Tags
 
 v1.0.0 - 2019-01-17
 

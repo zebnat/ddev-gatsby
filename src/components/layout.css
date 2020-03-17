@@ -36,16 +36,12 @@
   }
 }
 
-@keyframes rainbowslol {
-	0% {border-color: #c98c8c;}
-	10% {border-color: #c5a18a;}
-	20% {border-color: #c2bb89;}
-	30% {border-color: #a4c78e;}
-	40% {border-color: #8ac298;}
-	50% {border-color: #87b8b6;}
-	60% {border-color: #8384bd;}
-	70% {border-color: #a883c2;}
-	80% {border-color: #bb7db3;}
-	90% {border-color: #cf91aa;}
-	100% {border-color: #cc9292;}
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: orange }
 }

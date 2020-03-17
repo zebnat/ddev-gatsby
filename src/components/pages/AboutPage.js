@@ -14,7 +14,7 @@ import p7 from '../../../data/images/about/p7.jpg'
 import p8 from '../../../data/images/about/p8.jpg'
 import p10 from '../../../data/images/about/p10.jpg'
 
-const photoSelection = [p2, p1, p7, p8, p10]
+const photoSelection = [p1, p8, p2, p10]
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
 const photos = photoSelection.reverse()
@@ -25,13 +25,6 @@ const AboutPage = props => {
     defaultLang: props.data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
-
-  const timesTrolling = 2
-  const [kamina, setKamina] = useState(0)
-
-  const openKaminaGod = () => {
-    setKamina(kamina + 1)
-  }
 
   return (
     <>
@@ -102,67 +95,15 @@ const AboutPage = props => {
         />
       ))}
 
-      <h3>Random</h3>
-      <ul>
-        <li>
-          <b>{translation[props.lang].rng_desktop}</b>: Intel, Nvidia, Windows
-          10
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_key}</b>: Logitech K120
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_lap}</b>: Thinkpad + Linux (Arch)
-        </li>
-        <li>
-          <b>Monitor</b>: Dual monitor 24'
-        </li>
-        <li>
-          <b>Editor</b>: Visual Studio Code, VIM
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_lan}</b>: PHP7, C#, Typescript
-        </li>
-        <li>
-          <b>Spaces or tabs?</b>: Autoformat, PSR / standards, Prettier
-        </li>
-        <li>
-          <b>Static types or Dynamic?</b>: Static strong types 😈
-        </li>
-        <li>
-          <b>Dark theme or Light?</b>: Both
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_mov}</b>: Interstellar
-        </li>
-        <li>
-          <b>Anime</b>: Death note
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_gam}</b>: Final Fantasy XI
-        </li>
-        <li>
-          <b>{translation[props.lang].rng_son}</b>:
-          {' Do the impossible, see the invisible.'}
-          <button onClick={openKaminaGod}>
-            {kamina > timesTrolling ? `😜😜😜` : `?`.repeat(kamina + 1)}
-          </button>
-        </li>
-      </ul>
-      {kamina > timesTrolling && (
-        <div>
-          <iframe
-            title="[AMV] - Fight The Power!! (Tengen Toppa Gurren Lagann) - YouTube"
-            width="100%"
-            height="360"
-            autoPlay={true}
-            src="https://www.youtube.com/embed/inPAZnJ4EXc?start=29"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
+      <h3>{translation[props.lang].rng_title}</h3>
+      <h4>{translation[props.lang].rng_q1}</h4>
+      <p>{translation[props.lang].rng_r1}</p>
+
+      <h4>{translation[props.lang].rng_q2}</h4>
+      <p>{translation[props.lang].rng_r2}</p>
+
+      <h4>{translation[props.lang].rng_q3}</h4>
+      <p>{translation[props.lang].rng_r3}</p>
 
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />
