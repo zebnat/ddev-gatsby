@@ -3,14 +3,15 @@ import { outOfRange } from 'glamor'
 
 const Header = props => {
   if (props.home) {
-    var homeStyle = {
+    var [homeStyle, setHomeStyle] = useState({
       display: 'flex',
       marginTop: '-40px',
-      height: '85vh',
+      height: '95vh',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-    }
+      transition: 'height 2s'
+    });
 
     var [h1Anim, setH1Anim] = useState({
       opacity: 0,
@@ -48,6 +49,12 @@ const Header = props => {
           return Object.assign(cloned, { opacity: 100,  animation: 'typing 3.5s steps(40,end), blink-caret .75s step-end infinite'})
         })
       }, 4000)
+      setTimeout(() => {
+        setHomeStyle(prev => {
+          let cloned = { ...prev }
+          return Object.assign(cloned, { height: '60vh' })
+        })
+      }, 7000)
     }, [])
   } else {
     var defaultStyle = {

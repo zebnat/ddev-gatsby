@@ -18,6 +18,9 @@ Changes for the next tag
 
 ## Tags
 
+v1.11.0
+- Reduced vh anim for the home intro animation after it finishes
+
 v1.10.0
 - Content curation
 
