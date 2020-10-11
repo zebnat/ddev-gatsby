@@ -112,7 +112,7 @@ const skills = {
     },
     {
       skill: 'Java',
-      level: 1,
+      level: 3,
       isRecent: false,
       description: {
         en:
@@ -121,11 +121,22 @@ const skills = {
           'Se como utilizar lenguajes de tipado estático y fuerte ya que tengo experiencia en C#. También en OOP. He usado Java mientras me estudiaba FP DAW. Me gustaría hacer cosas con Java en el futuro.',
       },
     },
+    {
+      skill: 'AWS',
+      level: 2,
+      isRecent: false,
+      description: {
+        en:
+          "Created some EC2 instances with elastic IPs for Java tomcat and also some S3 for hosting static sites.",
+        es:
+          'He creado algunas instancias EC2 con IP elástica para Java y tomcat y también algunas instancias S3 para hostear páginas estáticas.',
+      },
+    },
   ],
   libs: [
     {
       skill: 'ReactJS',
-      level: 3,
+      level: 4,
       isRecent: true,
       description: {
         en:
@@ -213,7 +224,7 @@ const skills = {
     },
     {
       skill: 'Webpack',
-      level: 2,
+      level: 4,
       isRecent: false,
       description: {
         en:
@@ -280,7 +291,7 @@ const skills = {
     },
     {
       skill: 'Arch Linux',
-      level: 3,
+      level: 4,
       isRecent: false,
       description: {
         en:

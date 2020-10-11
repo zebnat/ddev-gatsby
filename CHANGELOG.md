@@ -18,6 +18,9 @@ Changes for the next tag
 
 ## Tags
 
+v1.10.0
+- Content curation
+
 v1.9.0
 
 - Created typewriter effect in intro
