@@ -14,7 +14,7 @@ import p3 from '../../../data/images/about/p103.jpg'
 import p4 from '../../../data/images/about/p104.jpg'
 import p5 from '../../../data/images/about/p105.jpg'
 
-const photoSelection = [p1, p2, p4, p5]
+const photoSelection = [p3, p5, p2, p4, p1]
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
 const photos = photoSelection.reverse()

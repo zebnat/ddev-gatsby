@@ -67,7 +67,6 @@ const imageContainerStyle = {
   borderRadius: 500,
   margin: '0 auto',
   position: 'relative',
-  borderStyle: 'dashed',
   borderWidth: '2px',
   borderColor: '#000',
 }
