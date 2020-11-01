@@ -1,3 +1,4 @@
+const siteAddress = new URL("https://www.danieldev.es")
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.danieldev.es`, // required for sitemap plugin
@@ -6,6 +7,20 @@ module.exports = {
     domainUrl: 'https://www.danieldev.es',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+          siteUrl: siteAddress.href.slice(0, -1),
+      }
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: `danieldev`,
+        protocol: siteAddress.protocol.slice(0, -1),
+        hostname: siteAddress.hostname,
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
