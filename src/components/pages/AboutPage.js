@@ -8,12 +8,13 @@ import { linkToSection } from '../../utils/links'
 
 import translation from '../../../data/translations/aboutPage'
 
-import p1 from '../../../data/images/about/p1001.jpg'
 import p2 from '../../../data/images/about/p1002.jpg'
-import p3 from '../../../data/images/about/p1003.jpg'
+import p4 from '../../../data/images/about/p1004.jpg'
+import p5 from '../../../data/images/about/p1005.jpg'
 
 
-const photoSelection = [p3, p2, p1]
+const photoSelection = [p4, p5, p2]
+
 
 // photos in correct order of display, we need reverse to avoid unnecesary zIndex styling :)
 const photos = photoSelection.reverse()
