@@ -75,6 +75,15 @@ module.exports = {
 		disabled: true
 	},
 	{
+		uniqueId: 'streamer',
+		icon: 'alternate_email',
+		text: 'Streamer',
+		route: '/directos/',
+		lang: 'es',
+		sortOrder: 8,
+		disabled: true
+	},
+	{
 		uniqueId: 'home',
 		icon: 'home',
 		text: 'Home',
@@ -136,5 +145,14 @@ module.exports = {
 		lang: 'en',
 		sortOrder: 7,
 		disabled: true
-	}]
+	},
+	{
+		uniqueId: 'streamer',
+		icon: 'alternate_email',
+		text: 'Streamer',
+		route: '/streamer/',
+		lang: 'en',
+		sortOrder: 8,
+		disabled: true
+	},]
 }
