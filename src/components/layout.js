@@ -25,7 +25,7 @@ const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
           <link
             key={i}
             rel="alternate"
-            hreflang={v.locale}
+            hrefLang={v.locale}
             href={data.site.siteMetadata.domainUrl + v.url}
           />
         ))}
