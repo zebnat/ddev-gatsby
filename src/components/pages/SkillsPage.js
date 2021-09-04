@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
 import translation from '../../../data/translations/skillsPage'
@@ -8,6 +9,8 @@ import { linkToSection } from '../../utils/links'
 import CategoryButton from '../CategoryButton'
 
 const SkillsPage = props => {
+  const { lang, data } = props
+
   const sortDescByLevel = function(a, b) {
     if (a.level > b.level) {
       return -1
@@ -23,8 +26,8 @@ const SkillsPage = props => {
   const otherSkills = skills.other.sort(sortDescByLevel)
 
   const linkOpts = {
-    allMenuData: props.data.allMenu,
-    defaultLang: props.data.site.siteMetadata.defaultLang,
+    allMenuData: data.allMenu,
+    defaultLang: data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
 
@@ -32,10 +35,10 @@ const SkillsPage = props => {
     return skillList.map(el => (
       <SkillElement
         skill={el.skill}
-        wordLevel={translation[props.lang].wordLevel[el.level - 1] || '------'}
+        wordLevel={translation[lang].wordLevel[el.level - 1] || '------'}
         level={el.level}
         leveling={el.isRecent}
-        description={el.description[props.lang]}
+        description={el.description[lang]}
         key={el.skill.toLowerCase()}
       />
     ))
@@ -44,35 +47,35 @@ const SkillsPage = props => {
   return (
     <>
       <Helmet>
-        <html lang={props.lang} />
-        <title>{translation[props.lang].title}</title>
+        <html lang={lang} />
+        <title>{translation[lang].title}</title>
       </Helmet>
-      <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
+      <Header h1={translation[lang].h1} h2={translation[lang].h2} />
       <div>
-        <h3>{translation[props.lang].levels_explained}</h3>
+        <h3>{translation[lang].levels_explained}</h3>
         <ul>
           <li>
-            <b>{translation[props.lang].wordLevel[0]}:</b>{' '}
-            {translation[props.lang].help_l1}
+            <b>{translation[lang].wordLevel[0]}:</b>{' '}
+            {translation[lang].help_l1}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel[1]}:</b>{' '}
-            {translation[props.lang].help_l2}
+            <b>{translation[lang].wordLevel[1]}:</b>{' '}
+            {translation[lang].help_l2}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel[2]}:</b>{' '}
-            {translation[props.lang].help_l3}
+            <b>{translation[lang].wordLevel[2]}:</b>{' '}
+            {translation[lang].help_l3}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel[3]}:</b>{' '}
-            {translation[props.lang].help_l4}
+            <b>{translation[lang].wordLevel[3]}:</b>{' '}
+            {translation[lang].help_l4}
           </li>
           <li>
-            <b>{translation[props.lang].wordLevel[4]}:</b>{' '}
-            {translation[props.lang].help_l5}
+            <b>{translation[lang].wordLevel[4]}:</b>{' '}
+            {translation[lang].help_l5}
           </li>
         </ul>
-        <p>{translation[props.lang].help_blinking}</p>
+        <p>{translation[lang].help_blinking}</p>
         <p
           css={{
             padding: '20px 5px',
@@ -82,30 +85,30 @@ const SkillsPage = props => {
             fontSize: '134%',
           }}
         >
-          {translation[props.lang].tap_skill}
+          {translation[lang].tap_skill}
         </p>
       </div>
       <div css={skewStyle}>
-        <span>{translation[props.lang].languages}</span>
+        <span>{translation[lang].languages}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {listSkills(programmingSkills)}
       </div>
 
       <div css={skewStyle}>
-        <span>{translation[props.lang].frameworks}</span>
+        <span>{translation[lang].frameworks}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {listSkills(frameworkSkills)}
       </div>
       <div css={skewStyle}>
-        <span>{translation[props.lang].other_tools}</span>
+        <span>{translation[lang].other_tools}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {listSkills(toolsSkills)}
       </div>
       <div css={skewStyle}>
-        <span>{translation[props.lang].other_concepts}</span>
+        <span>{translation[lang].other_concepts}</span>
       </div>
       <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {listSkills(otherSkills)}
@@ -123,6 +126,14 @@ const skewStyle = {
   color: 'white',
   padding: '5px 8px',
   transform: 'skew(-20deg)',
+}
+
+SkillsPage.propTypes = {
+  lang: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    allMenu: PropTypes.object,
+    site: PropTypes.object
+  }).isRequired
 }
 
 export default SkillsPage
