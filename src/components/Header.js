@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 const Header = props => {
+  const { h1, h2, home, quote } = props
+
   var [homeStyle, setHomeStyle] = useState({
     display: 'flex',
     marginTop: '-40px',
@@ -53,7 +56,7 @@ const Header = props => {
       })
     }, 7000)
   }, [])
-  if (props.home) {
+  if (home) {
 
 
 
@@ -80,13 +83,13 @@ const Header = props => {
     }
   }
   return (
-    <header css={props.home ? homeStyle : defaultStyle}>
-      <h1 style={props.home ? h1Anim : null}>{props.h1}</h1>
-      <h2 style={props.home ? h2Anim : null}>{props.h2}</h2>
-      {props.quote ? (
+    <header css={home ? homeStyle : defaultStyle}>
+      <h1 style={home ? h1Anim : null}>{h1}</h1>
+      <h2 style={home ? h2Anim : null}>{h2}</h2>
+      {quote ? (
         <div>
-          <div style={props.home ? quoteAnim : null}>
-              <em>“{props.quote}”</em>
+          <div style={home ? quoteAnim : null}>
+              <em>“{quote}”</em>
           </div>
         </div>
       ) : (
@@ -96,4 +99,10 @@ const Header = props => {
   )
 }
 
+Header.propTypes = {
+  h1: PropTypes.string.isRequired,
+  h2: PropTypes.string.isRequired,
+  home: PropTypes.bool,
+  quote: PropTypes.string
+}
 export default Header
