@@ -29,7 +29,7 @@ export default CategoryButton
 
 CategoryButton.propTypes = {
   gatsbyLink: PropTypes.bool.isRequired,
-  inside: PropTypes.bool.isRequired,
+  inside: PropTypes.bool,
   name: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired
 }
