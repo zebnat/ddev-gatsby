@@ -8,9 +8,11 @@ import Markdown from 'markdown-to-jsx'
 import { Link } from 'gatsby'
 
 const HomePage = props => {
+  const {lang, data} = props
+
   const linkOpts = {
-    allMenuData: props.data.allMenu,
-    defaultLang: props.data.site.siteMetadata.defaultLang,
+    allMenuData: data.allMenu,
+    defaultLang: data.site.siteMetadata.defaultLang,
   }
 
   const aboutLink = linkToSection({ sectionId: 'about', ...linkOpts })
@@ -20,17 +22,17 @@ const HomePage = props => {
   return (
     <>
       <Helmet>
-        <html lang={props.lang} />
-        <title>{translation[props.lang].title}</title>
+        <html lang={lang} />
+        <title>{translation[lang].title}</title>
       </Helmet>
       <Header
-        h1={translation[props.lang].h1}
-        h2={translation[props.lang].h2}
-        quote={translation[props.lang].quote}
+        h1={translation[lang].h1}
+        h2={translation[lang].h2}
+        quote={translation[lang].quote}
         home
       />
       <Markdown
-        children={translation[props.lang].intro}
+        children={translation[lang].intro}
         options={{
           overrides: {
             Link: {
@@ -42,9 +44,9 @@ const HomePage = props => {
           },
         }}
       />
-      <h3>{translation[props.lang].skills}</h3>
+      <h3>{translation[lang].skills}</h3>
       <Markdown
-        children={translation[props.lang].skillsInfo}
+        children={translation[lang].skillsInfo}
         options={{
           overrides: {
             Link: {
@@ -56,9 +58,9 @@ const HomePage = props => {
           },
         }}
       />
-      <h3>{translation[props.lang].projects}</h3>
+      <h3>{translation[lang].projects}</h3>
       <Markdown
-        children={translation[props.lang].projectInfo}
+        children={translation[lang].projectInfo}
         options={{
           overrides: {
             Link: {
@@ -70,20 +72,20 @@ const HomePage = props => {
           },
         }}
       />
-      <h3>{translation[props.lang].academic}</h3>
-      <Markdown children={translation[props.lang].academicInfo} />
+      <h3>{translation[lang].academic}</h3>
+      <Markdown children={translation[lang].academicInfo} />
       <ul css={{ fontSize: '80%', '>li': { margin: '1rem 0' } }}>
         <li>
           <a
             href={
-              props.lang === props.data.site.siteMetadata.defaultLang
+              lang === data.site.siteMetadata.defaultLang
                 ? '/docs/cv.pdf'
-                : '/docs/cv-' + props.lang + '.pdf'
+                : '/docs/cv-' + lang + '.pdf'
             }
             target="_blank"
             rel="noopener noreferrer"
           >
-            {translation[props.lang].resume}
+            {translation[lang].resume}
           </a>
         </li>
         <li>
@@ -92,7 +94,7 @@ const HomePage = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {translation[props.lang].recommendationPW}
+            {translation[lang].recommendationPW}
           </a>
         </li>
         <li>
@@ -101,7 +103,7 @@ const HomePage = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {translation[props.lang].certificate}
+            {translation[lang].certificate}
           </a>
         </li>
       </ul>
