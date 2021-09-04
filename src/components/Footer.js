@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Social from './Social'
 import translation from '../../data/translations/footer'
 
@@ -26,6 +27,11 @@ const Footer = ({ lang, version }) => (
     <p css={{ fontSize: '80%' }}>{version}</p>
   </footer>
 )
+
+Footer.propTypes = {
+  lang: PropTypes.string.isRequired,
+  version: PropTypes.string.isRequired
+}
 
 export default Footer
 
