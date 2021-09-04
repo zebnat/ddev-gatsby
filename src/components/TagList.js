@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const TagList = props => {
+  const { tags } = props
+
   return (
     <ul
       css={{
@@ -20,7 +22,7 @@ const TagList = props => {
         },
       }}
     >
-      {props.tags.map((e, i) => (
+      {tags.map((e, i) => (
         <li key={i}>{e}</li>
       ))}
     </ul>
