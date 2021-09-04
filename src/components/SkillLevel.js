@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LevelBlock = props => (
-  <div
+const LevelBlock = props => {
+  const { blink, hidden } = props
+
+  return <div
     css={[
       {
         background: '#4a4a4a',
@@ -11,23 +13,25 @@ const LevelBlock = props => (
         margin: '0 0.05rem',
         display: 'inline-block',
       },
-      props.blink === true
+      blink === true
         ? { animation: 'blink 2s linear infinite', background: '#efb713' }
         : null,
-      props.hidden === true ? { opacity: 0 } : null,
+      hidden === true ? { opacity: 0 } : null,
     ]}
   />
-)
+}
 
 const SkillLevel = props => {
+  const { wordLevel, leveling, level } = props
+
   const maxLevel = 5
   var blocks = []
 
-  for (var i = 0; i < props.level; i++) {
-    var isLast = i + 1 === props.level
+  for (var i = 0; i < level; i++) {
+    var isLast = i + 1 === level
 
     if (isLast) {
-      if (props.leveling === true) {
+      if (leveling === true) {
         blocks.push(<LevelBlock key={i} blink />)
       } else {
         blocks.push(<LevelBlock key={i} />)
@@ -37,7 +41,7 @@ const SkillLevel = props => {
     }
   }
 
-  const remainingLevels = maxLevel - props.level
+  const remainingLevels = maxLevel - level
   for (var z = 0; z < remainingLevels; z++) {
     blocks.push(<LevelBlock key={'r' + z} hidden />)
   }
@@ -45,7 +49,7 @@ const SkillLevel = props => {
   return (
     <div css={{ lineHeight: 1, margin: '.5rem' }}>
       <div css={{ fontFamily: 'monospace', padding: '2px 0' }}>
-        {props.wordLevel}
+        {wordLevel}
       </div>
       <div
         css={{
@@ -62,7 +66,7 @@ const SkillLevel = props => {
 }
 
 SkillLevel.propTypes = {
-  wordLevel: PropTypes.string,
+  wordLevel: PropTypes.string.isRequired,
   leveling: PropTypes.bool,
   level: PropTypes.number.isRequired,
 }
