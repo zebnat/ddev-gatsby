@@ -1,9 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 const Social = props => {
+  const { darkmode } = props
+
   return (
     <>
       <div css={styles}>
-        <SocialContent darkmode={props.darkmode} />
+        <SocialContent darkmode={darkmode} />
       </div>
       <p>
         <code>contacto@danieldev.es</code>
@@ -72,6 +76,14 @@ const SocialContent = props => {
       </a>
     </>
   )
+}
+
+SocialContent.propTypes = {
+  darkmode: PropTypes.bool
+}
+
+Social.propTypes = {
+  darkmode: PropTypes.bool
 }
 
 export default Social
