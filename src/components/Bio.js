@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 class Bio extends React.Component {
   constructor(props) {
@@ -56,6 +57,11 @@ class Bio extends React.Component {
       </>
     )
   }
+}
+
+Bio.propTypes = {
+  photos: PropTypes.array.isRequired,
+  quote: PropTypes.string.isRequired
 }
 
 export default Bio
