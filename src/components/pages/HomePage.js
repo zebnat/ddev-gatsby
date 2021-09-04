@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
 import { linkToSection } from '../../utils/links'
@@ -106,6 +107,14 @@ const HomePage = props => {
       </ul>
     </>
   )
+}
+
+HomePage.propTypes = {
+  lang: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    allMenu: PropTypes.object,
+    site: PropTypes.object
+  }).isRequired
 }
 
 export default HomePage
