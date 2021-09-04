@@ -2,23 +2,25 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const TagFilter = props => {
+  const { tags, filterText, onChange } = props
+
   var [aggregatedTags, setAggregatedTags] = useState([])
 
   useEffect(() => {
-    const groupedTags = groupTags(props.tags)
+    const groupedTags = groupTags(tags)
 
     setAggregatedTags(groupedTags)
-  }, [props.tags])
+  }, [tags])
 
   return (
     <>
-      <p css={{ fontWeight: 'bold' }}>{props.filterText}</p>
+      <p css={{ fontWeight: 'bold' }}>{filterText}</p>
       <select
         css={{
           padding: 10,
         }}
         defaultValue=""
-        onChange={props.onChange}
+        onChange={onChange}
       >
         <option value="">-----</option>
         {aggregatedTags.map((e, i) => (
@@ -34,6 +36,7 @@ const TagFilter = props => {
 TagFilter.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.array).isRequired,
   filterText: PropTypes.string.isRequired,
+  onChange: PropTypes.func
 }
 
 export default TagFilter
