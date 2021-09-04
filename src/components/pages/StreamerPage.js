@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet'
 
 import Header from '../../components/Header'
@@ -11,9 +12,11 @@ import translation from '../../../data/translations/streamerPage'
 
 
 const StreamerPage = props => {
+  const { lang, data } = props
+
   const linkOpts = {
-    allMenuData: props.data.allMenu,
-    defaultLang: props.data.site.siteMetadata.defaultLang,
+    allMenuData: data.allMenu,
+    defaultLang: data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
 
@@ -23,22 +26,22 @@ const StreamerPage = props => {
         <title>Zebnat - Twitch Streamer</title>
       </Helmet>
 
-      <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
-      <StreamCard lang={props.lang} />
+      <Header h1={translation[lang].h1} h2={translation[lang].h2} />
+      <StreamCard lang={lang} />
 
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].intro1,
+          __html: translation[lang].intro1,
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].intro2,
+          __html: translation[lang].intro2,
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].intro3,
+          __html: translation[lang].intro3,
         }}
       />
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
@@ -46,6 +49,14 @@ const StreamerPage = props => {
       </div>
     </>
   )
+}
+
+StreamerPage.propTypes = {
+  lang: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    allMenu: PropTypes.object,
+    site: PropTypes.object
+  }).isRequired
 }
 
 export default StreamerPage
