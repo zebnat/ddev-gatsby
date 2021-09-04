@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import logo from '../../data/images/logo2.png'
 
@@ -92,6 +93,15 @@ class TopBar extends React.Component {
       </div>
     )
   }
+}
+
+TopBar.propTypes = {
+  defaultLang: PropTypes.string.isRequired,
+  currentLang: PropTypes.string.isRequired,
+  languages: PropTypes.arrayOf(PropTypes.shape({
+    locale: PropTypes.string,
+    url: PropTypes.string
+  }))
 }
 
 export default TopBar
