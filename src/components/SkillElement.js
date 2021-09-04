@@ -3,6 +3,7 @@ import SkillLevel from './SkillLevel'
 import PropTypes from 'prop-types'
 
 const SkillElement = props => {
+  const { skill, level, leveling, wordLevel, description } = props
   let [viewDescription, setViewDescription] = useState(false)
   let [changeHeight, setChangeHeight] = useState(false)
 
@@ -33,14 +34,14 @@ const SkillElement = props => {
               borderBottom: '1px solid',
             }}
           >
-            {props.skill}
+            {skill}
           </span>
         </div>
         <div css={{ float: 'right' }}>
           <SkillLevel
-            wordLevel={props.wordLevel}
-            level={props.level}
-            leveling={props.leveling}
+            wordLevel={wordLevel}
+            level={level}
+            leveling={leveling}
           />
         </div>
         <div
@@ -57,7 +58,7 @@ const SkillElement = props => {
             opacity: changeHeight === true ? '100' : '0',
           }}
         >
-          {props.description}
+          {description}
         </div>
       </div>
     </>
