@@ -56,6 +56,10 @@ const Layout = ({ pageUniqueId, children, data, hrefLangs }) => {
 Layout.propTypes = {
   pageUniqueId: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired,
+  hrefLangs: PropTypes.arrayOf(PropTypes.shape({
+    locale: PropTypes.string,
+    url: PropTypes.string
+  }))
 }
 
 export default Layout
