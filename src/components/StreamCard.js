@@ -81,8 +81,8 @@ const StreamCard = (props) => {
                 {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].isNotLive }}></h1>}
                 {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].checkIsLive }}></h1>}
 
-                <a href="https://www.twitch.tv/zebnat"><img css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
-                {isLive && <a dangerouslySetInnerHTML={{ __html: translation[props.lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
+                <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat"><img css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
+                {isLive && <a target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[props.lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
                 {!isLive && <div>Siguiente Stream en...<br></br> <span css={{ color: "#dfceff", textShadow: '1px 2px #2c1556' }}>{timeLeft}</span></div>}
                 {plan && <h3 css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[props.lang].program} {programOpen ? `👇` : `👈`}</h3>}
                 {plan && <div style={programOpen ? { display: "block" } : { display: "none" }}>
