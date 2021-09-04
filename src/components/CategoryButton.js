@@ -1,21 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby'
 
 const CategoryButton = props => {
+  const { gatsbyLink, inside, route, name } = props
+
   return (
-    <div css={props.inside ? linkInside : null}>
-      {props.gatsbyLink === true ? (
-        <Link css={buttonStyling} to={props.route}>
-          {props.name}
+    <div css={inside ? linkInside : null}>
+      {gatsbyLink === true ? (
+        <Link css={buttonStyling} to={route}>
+          {name}
         </Link>
       ) : (
         <a
           css={buttonStyling}
           target="_blank"
           rel="noopener noreferrer"
-          href={props.route}
+          href={route}
         >
-          {props.name}
+          {name}
         </a>
       )}
     </div>
@@ -23,6 +26,13 @@ const CategoryButton = props => {
 }
 
 export default CategoryButton
+
+CategoryButton.propTypes = {
+  gatsbyLink: PropTypes.bool.isRequired,
+  inside: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired
+}
 
 // COMPONENT STYLES
 const linkInside = {
