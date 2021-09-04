@@ -8,7 +8,7 @@ const TagFilter = props => {
     const groupedTags = groupTags(props.tags)
 
     setAggregatedTags(groupedTags)
-  }, [])
+  }, [props.tags])
 
   return (
     <>

@@ -81,14 +81,14 @@ const StreamCard = (props) => {
                 {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].isNotLive }}></h1>}
                 {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].checkIsLive }}></h1>}
 
-                <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat"><img css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
-                {isLive && <a target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[props.lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
+                <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat" aria-label="twitch channel"><img alt="zebnat Twitch" css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
+                {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[props.lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
                 {!isLive && <div>Siguiente Stream en...<br></br> <span css={{ color: "#dfceff", textShadow: '1px 2px #2c1556' }}>{timeLeft}</span></div>}
-                {plan && <h3 css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[props.lang].program} {programOpen ? `👇` : `👈`}</h3>}
+                {plan && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[props.lang].program} {programOpen ? `👇` : `👈`}</span>}
                 {plan && <div style={programOpen ? { display: "block" } : { display: "none" }}>
                     {plan.map((e, i) => <div key={i} css={programBlock}><h5>Bloque #{i + 1}: {e.title}</h5><p>{e.description}</p></div>)}
                 </div>}
-                <h3 css={dropDownable} onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[props.lang].goals} {goalsOpen ? `👇` : `👈`}</h3>
+                <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[props.lang].goals} {goalsOpen ? `👇` : `👈`}</span>
                 <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
                     {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[props.lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[props.lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
                 </div>
@@ -100,8 +100,7 @@ const StreamCard = (props) => {
 export default StreamCard
 
 function msToTime(duration) {
-    var milliseconds = Math.floor((duration % 1000) / 100),
-        seconds = Math.floor((duration / 1000) % 60),
+    let seconds = Math.floor((duration / 1000) % 60),
         minutes = Math.floor((duration / (1000 * 60)) % 60),
         hours = Math.floor((duration / (1000 * 60 * 60)) % 24),
         days = Math.floor((duration / (1000 * 60 * 60 * 24)));
@@ -117,7 +116,8 @@ function msToTime(duration) {
 
 const dropDownable = {
     color: "#e2d7f7",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontSize: "110%"
 }
 
 const programBlock = {

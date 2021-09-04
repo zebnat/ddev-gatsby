@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import SkillLevel from './SkillLevel'
 import PropTypes from 'prop-types'
 
@@ -16,6 +16,7 @@ const SkillElement = props => {
   return (
     <>
       <div
+        role="button"
         css={{ width: '245px', margin: 5, cursor: 'pointer' }}
         onClick={showDescription}
       >

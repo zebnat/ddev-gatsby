@@ -58,7 +58,7 @@ class Menu extends React.Component {
           css={menuStyle}
           className={this.state.visible ? 'visible' : 'notvisible'}
         >
-          <div css={closeStyle} onClick={this.toggleVisibility}>
+          <div role="button" css={closeStyle} onClick={this.toggleVisibility}>
             <i className="mdi md-36">
               {this.state.visible ? 'arrow_back' : 'menu'}
             </i>

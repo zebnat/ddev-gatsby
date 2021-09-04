@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { outOfRange } from 'glamor'
 
 const Header = props => {
   var [homeStyle, setHomeStyle] = useState({
