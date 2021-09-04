@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet'
 
 import Header from '../../components/Header'
@@ -20,57 +21,59 @@ const photoSelection = [p4, p5, p2]
 const photos = photoSelection.reverse()
 
 const AboutPage = props => {
+  const {lang, data} = props
+
   const linkOpts = {
-    allMenuData: props.data.allMenu,
-    defaultLang: props.data.site.siteMetadata.defaultLang,
+    allMenuData: data.allMenu,
+    defaultLang: data.site.siteMetadata.defaultLang,
   }
   const homeLink = linkToSection({ sectionId: 'home', ...linkOpts })
 
   return (
     <>
       <Helmet>
-        <title>{translation[props.lang].title} - Daniel Domínguez</title>
+        <title>{translation[lang].title} - Daniel Domínguez</title>
       </Helmet>
 
-      <Header h1={translation[props.lang].h1} h2={translation[props.lang].h2} />
+      <Header h1={translation[lang].h1} h2={translation[lang].h2} />
       <Bio
         photos={photos}
-        quote={'“' + translation[props.lang].bioquote + '”'}
+        quote={'“' + translation[lang].bioquote + '”'}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].intro1,
+          __html: translation[lang].intro1,
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].lifestyle,
+          __html: translation[lang].lifestyle,
         }}
       />
       <h3
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].howiam,
+          __html: translation[lang].howiam,
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].howiam_reply,
+          __html: translation[lang].howiam_reply,
         }}
       />
       <h3
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].hobbies_t,
+          __html: translation[lang].hobbies_t,
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].hobbies,
+          __html: translation[lang].hobbies,
         }}
       />
       <h3
         id="history"
         dangerouslySetInnerHTML={{
-          __html: translation[props.lang].history_title,
+          __html: translation[lang].history_title,
         }}
       />
       {[
@@ -90,20 +93,20 @@ const AboutPage = props => {
         <p
           key={e}
           dangerouslySetInnerHTML={{
-            __html: translation[props.lang][e],
+            __html: translation[lang][e],
           }}
         />
       ))}
 
-      <h3>{translation[props.lang].rng_title}</h3>
-      <h4>{translation[props.lang].rng_q1}</h4>
-      <p>{translation[props.lang].rng_r1}</p>
+      <h3>{translation[lang].rng_title}</h3>
+      <h4>{translation[lang].rng_q1}</h4>
+      <p>{translation[lang].rng_r1}</p>
 
-      <h4>{translation[props.lang].rng_q2}</h4>
-      <p>{translation[props.lang].rng_r2}</p>
+      <h4>{translation[lang].rng_q2}</h4>
+      <p>{translation[lang].rng_r2}</p>
 
-      <h4>{translation[props.lang].rng_q3}</h4>
-      <p>{translation[props.lang].rng_r3}</p>
+      <h4>{translation[lang].rng_q3}</h4>
+      <p>{translation[lang].rng_r3}</p>
 
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />
@@ -112,4 +115,11 @@ const AboutPage = props => {
   )
 }
 
+AboutPage.propTypes = {
+  lang: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    allMenu: PropTypes.object,
+    site: PropTypes.object
+  }).isRequired
+}
 export default AboutPage
