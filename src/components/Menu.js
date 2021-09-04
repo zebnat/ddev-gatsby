@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby'
 import ReactSwipeEvents from 'react-swipe-events'
 import { graphql } from 'gatsby'
@@ -91,6 +92,13 @@ class Menu extends React.Component {
       </ReactSwipeEvents>
     )
   }
+}
+
+Menu.propTypes = {
+  menuList: PropTypes.array.isRequired,
+  defaultLang: PropTypes.string.isRequired,
+  currentLang: PropTypes.string.isRequired
+
 }
 
 export default Menu
