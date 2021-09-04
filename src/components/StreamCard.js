@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import translation from '../../data/translations/streamerPage'
 import { Helmet } from 'react-helmet'
 import cuteImg from '../../data/images/875557672919896105.png'
 
 const StreamCard = (props) => {
+    const { lang } = props
 
     const [isLive, setIsLive] = useState(null)
     const [timeLeft, setTimeLeft] = useState("Desconocido")
@@ -44,17 +46,17 @@ const StreamCard = (props) => {
         {
             maxViewers: 60,
             reached: false,
-            message: translation[props.lang].newModerator
+            message: translation[lang].newModerator
         },
         {
             maxViewers: 80,
             reached: false,
-            message: translation[props.lang].newModerator
+            message: translation[lang].newModerator
         },
         {
             maxViewers: 100,
             reached: false,
-            message: translation[props.lang].newArt
+            message: translation[lang].newArt
         },
 
     ]
@@ -77,24 +79,28 @@ const StreamCard = (props) => {
                 <style>{`html{margin:0; padding:0} body{margin:0;padding:0}`}</style>
             </Helmet>
             <div css={mainCard}>
-                {isLive === true && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].isLive }}></h1>}
-                {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].isNotLive }}></h1>}
-                {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[props.lang].checkIsLive }}></h1>}
+                {isLive === true && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].isLive }}></h1>}
+                {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].isNotLive }}></h1>}
+                {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].checkIsLive }}></h1>}
 
                 <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat" aria-label="twitch channel"><img alt="zebnat Twitch" css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
-                {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[props.lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
+                {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
                 {!isLive && <div>Siguiente Stream en...<br></br> <span css={{ color: "#dfceff", textShadow: '1px 2px #2c1556' }}>{timeLeft}</span></div>}
-                {plan && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[props.lang].program} {programOpen ? `👇` : `👈`}</span>}
+                {plan && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[lang].program} {programOpen ? `👇` : `👈`}</span>}
                 {plan && <div style={programOpen ? { display: "block" } : { display: "none" }}>
                     {plan.map((e, i) => <div key={i} css={programBlock}><h5>Bloque #{i + 1}: {e.title}</h5><p>{e.description}</p></div>)}
                 </div>}
-                <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[props.lang].goals} {goalsOpen ? `👇` : `👈`}</span>
+                <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[lang].goals} {goalsOpen ? `👇` : `👈`}</span>
                 <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
-                    {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[props.lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[props.lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
+                    {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
                 </div>
             </div>
         </>
     )
+}
+
+StreamCard.propTypes = {
+    lang: PropTypes.string.isRequired
 }
 
 export default StreamCard
