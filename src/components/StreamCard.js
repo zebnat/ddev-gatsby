@@ -9,17 +9,17 @@ const StreamCard = (props) => {
 
     const [isLive, setIsLive] = useState(null)
     const [timeLeft, setTimeLeft] = useState("Desconocido")
+    const [title, setTitle] = useState("Desconocido")
     const [goalsOpen, setGoalsOpen] = useState(false)
     const [programOpen, setProgramOpen] = useState(false)
     const [plan, setPlan] = useState(false)
-
 
     useEffect(() => {
         fetch('https://zebnat.github.io/twitch.json')
             .then(response => response.json())
             .then(data => {
                 setIsLive(data.live)
-
+                setTitle(data.title)
                 if (data.program !== undefined) {
                     setPlan(data.program)
                 }
@@ -79,21 +79,26 @@ const StreamCard = (props) => {
                 <style>{`html{margin:0; padding:0} body{margin:0;padding:0}`}</style>
             </Helmet>
             <div css={mainCard}>
-                {isLive === true && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].isLive }}></h1>}
-                {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].isNotLive }}></h1>}
-                {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].checkIsLive }}></h1>}
+                {isLive === true && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: '- ' + translation[lang].isLive + ' -' }}></h1>}
+                {isLive === false && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: translation[lang].isNotLive + '😔' }}></h1>}
+                {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: '- ' + translation[lang].checkIsLive + ' -' }} ></h1>}
 
                 <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat" aria-label="twitch channel"><img alt="zebnat Twitch" css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
                 {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
-                {!isLive && <div>Siguiente Stream en...<br></br> <span css={{ color: "#dfceff", textShadow: '1px 2px #2c1556' }}>{timeLeft}</span></div>}
-                {plan && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[lang].program} {programOpen ? `👇` : `👈`}</span>}
-                {plan && <div style={programOpen ? { display: "block" } : { display: "none" }}>
+                {timeLeft !== "???" && !isLive && <>
+                    <div>Próximo directo</div>
+                    <div css={streamTitle}>{title}</div>
+                    <div css={{ fontSize: '85%' }}>Dentro de {timeLeft}</div>
+                </>}
+                {(timeLeft !== "???" && plan || isLive && plan) && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[lang].program} {programOpen ? `👇` : `👈`}</span>}
+                {(timeLeft !== "???" && plan || isLive && plan) && <div style={programOpen ? { display: "block" } : { display: "none" }}>
                     {plan.map((e, i) => <div key={i} css={programBlock}><h5>Bloque #{i + 1}: {e.title}</h5><p>{e.description}</p></div>)}
                 </div>}
-                <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[lang].goals} {goalsOpen ? `👇` : `👈`}</span>
-                <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
+                {(timeLeft !== "???" && goals || isLive && goals) && <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[lang].goals} {goalsOpen ? `👇` : `👈`}</span>}
+                {(timeLeft !== "???" && goals || isLive && goals) && <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
                     {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
-                </div>
+                </div>}
+                {timeLeft === "???" && isLive === false && <div>¡Síguele y entérate del próximo!</div>}
             </div>
         </>
     )
@@ -126,6 +131,12 @@ const dropDownable = {
     fontSize: "110%"
 }
 
+const streamTitle = {
+    background: '#8d6dca',
+    color: '#fff',
+    padding: 8,
+    borderRadius: 2
+}
 const programBlock = {
     display: "flex",
     flexDirection: "column",
@@ -149,7 +160,10 @@ const mainCard = {
 }
 const streamStatus = {
     color: "#fff298",
-    fontSize: "1.4em"
+    fontSize: "1.4em",
+    border: "1px solid #b699ec",
+    padding: 10,
+    borderRadius: 5
 }
 
 const actionButton = {

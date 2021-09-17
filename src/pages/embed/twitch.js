@@ -1,7 +1,13 @@
 import React from 'react'
 import StreamCard from '../../components/StreamCard'
+import { Helmet } from 'react-helmet'
 const Page = () => (
-    <StreamCard lang="es"/>    
+    <>
+        <Helmet>
+            <style>{`body{background: transparent;}`}</style>
+        </Helmet>
+        <StreamCard lang="es" />
+    </>
 )
 
 export default Page
