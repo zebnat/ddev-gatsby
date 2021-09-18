@@ -18,6 +18,21 @@ const StreamCard = (props) => {
         fetch('https://zebnat.github.io/twitch.json')
             .then(response => response.json())
             .then(data => {
+                data.live = false;
+                data.timeleft = '2021-09-22T20:00:00Z';
+                data.program = [{
+                    "title": "Resident Evil 7 😈",
+                    "description": "Vamos a (intentar) acabar ya el juego. Nos hemos cargado al suegro y a la suegra, espero que no vuelvan. No sé que nos espera pero parece que habrán puzzlecitos ayuda-",
+                    "intermission": {
+                        "title": "Explicando Morpho Dimension",
+                        "description": "En cualquier momento, a mitad del bloque interrumpiremos la partida y nos pondremos a explicar qué es Morpho Dimension y qué significa el acuerdo con Panaworld."
+                    }
+                },
+                {
+                    "title": "Quedan los heroes del stream 😏",
+                    "description": "Veremos si seguís despiertos y debatiremos toda clase de cuestiones entre nosotros. ¿La idea? sacar conclusiones sobre qué cositas podría programar para la comunidad, y vosotros me podéis proponer ideas. Veríamos si son factibles o si se salen de lo posible. Bloque libre y chill con despedida."
+                }
+                ]
                 setIsLive(data.live)
                 setTitle(data.title)
                 if (data.program !== undefined) {
@@ -71,6 +86,10 @@ const StreamCard = (props) => {
         }
         return msToTime(utcDate - now);
     }
+
+    const incomingStream = (timeLeft !== "???");
+    const streamInThePast = (timeLeft === "???");
+    const incomingOrLive = (incomingStream || isLive);
     return (
         <>
             <Helmet>
@@ -84,21 +103,37 @@ const StreamCard = (props) => {
                 {isLive === null && <h1 css={streamStatus} dangerouslySetInnerHTML={{ __html: '- ' + translation[lang].checkIsLive + ' -' }} ></h1>}
 
                 <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zebnat" aria-label="twitch channel"><img alt="zebnat Twitch" css={{ margin: 0 }} src="https://zebnat.github.io/twitchtag.png" /></a>
-                {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: translation[lang].visitStream }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
-                {timeLeft !== "???" && !isLive && <>
+                {isLive && <a aria-label="Visita canal de Twitch" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: title }} css={actionButton} href="https://www.twitch.tv/zebnat"></a>}
+                {incomingStream && !isLive && <>
                     <div>Próximo directo</div>
                     <div css={streamTitle}>{title}</div>
                     <div css={{ fontSize: '85%' }}>Dentro de {timeLeft}</div>
                 </>}
-                {(timeLeft !== "???" && plan || isLive && plan) && <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[lang].program} {programOpen ? `👇` : `👈`}</span>}
-                {(timeLeft !== "???" && plan || isLive && plan) && <div style={programOpen ? { display: "block" } : { display: "none" }}>
-                    {plan.map((e, i) => <div key={i} css={programBlock}><h5>Bloque #{i + 1}: {e.title}</h5><p>{e.description}</p></div>)}
-                </div>}
-                {(timeLeft !== "???" && goals || isLive && goals) && <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[lang].goals} {goalsOpen ? `👇` : `👈`}</span>}
-                {(timeLeft !== "???" && goals || isLive && goals) && <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
-                    {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
-                </div>}
-                {timeLeft === "???" && isLive === false && <div>¡Síguele y entérate del próximo!</div>}
+                {plan && incomingOrLive &&
+                    <> { /* eslint-disable-next-line */ }
+                        <span role="button" css={dropDownable} onClick={() => { setProgramOpen(!programOpen) }}>{programOpen ? `👇` : `👉`} {translation[lang].program} {programOpen ? `👇` : `👈`}</span>
+                        <div style={programOpen ? { display: "block" } : { display: "none" }}>
+                            {plan.map((e, i) =>
+                                <div key={i} css={programBlock}>
+                                    <h5>Bloque #{i + 1} {e.intermission !== undefined && <span css={intermissionStyle}>(Intermisión)</span>} : {e.title}</h5>
+                                    <p>{e.description}</p>
+                                    {e.intermission !== undefined &&
+                                        <>
+                                            <h4><span css={intermissionStyle}>Intermisión:</span> {e.intermission.title}</h4>
+                                            <p>{e.intermission.description}</p>
+                                        </>
+                                    }
+                                </div>)}
+                        </div>
+                    </>}
+                {goals && incomingOrLive &&
+                    <> {  /* eslint-disable-next-line */ }
+                        <span css={dropDownable} role="button" onClick={() => { setGoalsOpen(!goalsOpen) }}>{goalsOpen ? `👇` : `👉`} {translation[lang].goals} {goalsOpen ? `👇` : `👈`}</span>
+                        <div css={goalsBox} style={goalsOpen ? { display: "block" } : { display: "none" }}>
+                            {goals.map((e, i) => <div key={i} css={programBlock}><h5>[{e.reached ? '✓' : '✖'}] {e.maxViewers} {translation[lang].visits}</h5>{e.reached && <p css={{ color: "#12fb12", display: "flex", justifyContent: "center", alignItems: "center" }}>{translation[lang].done} <img aria-label=":Jijis:" src={cuteImg} alt=":Jijis:" draggable="false"></img></p>} <p css={{ padding: "2 5" }}>{e.message}</p></div>)}
+                        </div>
+                    </>}
+                {streamInThePast && !isLive && <div>¡Síguele y entérate del próximo!</div>}
             </div>
         </>
     )
@@ -125,6 +160,10 @@ function msToTime(duration) {
 
 // COMPONENT STYLES
 
+const intermissionStyle = {
+    display: 'inline-block',
+    color: '#00ff1f'
+}
 const dropDownable = {
     color: "#e2d7f7",
     cursor: "pointer",
