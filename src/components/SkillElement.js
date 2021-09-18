@@ -15,7 +15,7 @@ const SkillElement = props => {
   }
 
   return (
-    <>
+    <> { /* eslint-disable-next-line */}
       <div
         role="button"
         css={{ width: '245px', margin: 5, cursor: 'pointer' }}
