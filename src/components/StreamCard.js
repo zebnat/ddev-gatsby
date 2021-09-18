@@ -18,21 +18,6 @@ const StreamCard = (props) => {
         fetch('https://zebnat.github.io/twitch.json')
             .then(response => response.json())
             .then(data => {
-                data.live = false;
-                data.timeleft = '2021-09-22T20:00:00Z';
-                data.program = [{
-                    "title": "Resident Evil 7 😈",
-                    "description": "Vamos a (intentar) acabar ya el juego. Nos hemos cargado al suegro y a la suegra, espero que no vuelvan. No sé que nos espera pero parece que habrán puzzlecitos ayuda-",
-                    "intermission": {
-                        "title": "Explicando Morpho Dimension",
-                        "description": "En cualquier momento, a mitad del bloque interrumpiremos la partida y nos pondremos a explicar qué es Morpho Dimension y qué significa el acuerdo con Panaworld."
-                    }
-                },
-                {
-                    "title": "Quedan los heroes del stream 😏",
-                    "description": "Veremos si seguís despiertos y debatiremos toda clase de cuestiones entre nosotros. ¿La idea? sacar conclusiones sobre qué cositas podría programar para la comunidad, y vosotros me podéis proponer ideas. Veríamos si son factibles o si se salen de lo posible. Bloque libre y chill con despedida."
-                }
-                ]
                 setIsLive(data.live)
                 setTitle(data.title)
                 if (data.program !== undefined) {
