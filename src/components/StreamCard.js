@@ -45,7 +45,7 @@ const StreamCard = (props) => {
         },
         {
             maxViewers: 60,
-            reached: false,
+            reached: true,
             message: translation[lang].newModerator
         },
         {
