@@ -89,6 +89,8 @@ const AboutPage = props => {
         'history_2010',
         'history_2013',
         'history_2018',
+        'history_2020',
+        'history_2023',
       ].map(e => (
         <p
           key={e}

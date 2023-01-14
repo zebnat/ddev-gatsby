@@ -45,6 +45,17 @@ const skills = {
       },
     },
     {
+      skill: 'PostgreSQL',
+      level: 1,
+      isRecent: true,
+      description: {
+        en:
+          "Well... it's still SQL right? I had to use it for some academic projects but never had the pleasure to work with it in production.",
+        es:
+          'Bueno... es SQL no? Lo utilicé para proyectos académicos pero nunca tuve el placer de usarlo en producción.',
+      },
+    },
+    {
       skill: 'HTML5',
       level: 4,
       isRecent: true,
@@ -124,7 +135,7 @@ const skills = {
     {
       skill: 'AWS',
       level: 2,
-      isRecent: false,
+      isRecent: true,
       description: {
         en:
           "Created some EC2 instances with elastic IPs for Java tomcat and also some S3 for hosting static sites.",
@@ -146,20 +157,53 @@ const skills = {
       },
     },
     {
-      skill: 'React Router',
-      level: 1,
+      skill: 'NextJS',
+      level: 3,
       isRecent: true,
       description: {
         en:
-          "Because I haven't used React for real professional projects I've only used Router for static routes.",
+          'I have migrated entire sites with classic PHP SSR to modern NextJS React powered apps with SSG, SSR y ISR.',
         es:
-          'No he usado React lo suficiente para requerir mucho routing, solo he usado Router para algunas rutas estáticas.',
+          'He migrado sitios enteros creados con PHP clásico a sitios creados con NextJS y React, con capacidades como SSG, SSR y ISR.',
+      },
+    },
+    {
+      skill: 'Tailwindcss',
+      level: 4,
+      isRecent: true,
+      description: {
+        en:
+          'I really like the Tailwindcss library to pair it with React and use it instead of "CSS IN JS" libraries.',
+        es:
+          'Me gusta la librería Tailwindcss para emparejarla con React y usarla en vez de librerías de "CSS IN JS".',
+      },
+    },
+    {
+      skill: 'MaterialUI',
+      level: 2,
+      isRecent: true,
+      description: {
+        en:
+          'I\'ve used material UI with React for an academic project which used also serverless AWS lambda stuff.',
+        es:
+          'Utilicé material UI con React para un proyecto académico que además utilizaba AWS lamba y servicios serverless.',
+      },
+    },
+    {
+      skill: 'React Router',
+      level: 3,
+      isRecent: true,
+      description: {
+        en:
+          "Used it mostly for static routes and basic routing.",
+        es:
+          'Utilizado mayormente para rutas estáticas y enrutamiento básico.',
       },
     },
     {
       skill: 'Express',
-      level: 1,
-      isRecent: false,
+      level: 2,
+      isRecent: true,
       description: {
         en:
           "Is not really hard to create a simple REST api with express and node but honestly I lack the experience. I don't know about advances features that maybe you need in a real project. Played with the basics of it.",
@@ -222,6 +266,8 @@ const skills = {
           'Solo lo he usado por que gatsby lo requería, y solo la parte cliente. Un poco confuso al inicio pero se aprendió rápido.',
       },
     },
+  ],
+  tools: [
     {
       skill: 'Webpack',
       level: 4,
@@ -233,8 +279,6 @@ const skills = {
           'Tuve que configurar algunas configs de webpack para hacer funcionar plugins etc. Después de create react/angular/vue app, ya no tanto.',
       },
     },
-  ],
-  tools: [
     {
       skill: 'LESS',
       level: 3,
