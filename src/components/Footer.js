@@ -16,7 +16,7 @@ const Footer = ({ lang, version }) => (
           borderRadius: '3px',
         }}
       >
-        <b>!!! {translation[lang].warning}:</b> {translation[lang].warningInfo}
+        <b>{translation[lang].warning}:</b> {translation[lang].warningInfo}
       </div>
       <Social />
     </div>

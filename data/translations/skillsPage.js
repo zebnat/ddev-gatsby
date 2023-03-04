@@ -30,9 +30,9 @@ const translation = {
     help_l3:
       'Uso en varios proyectos. Nivel aceptable para la mayoría de casos.',
     help_l4: 'Uso durante años. Se tiene confianza y conocimiento avanzado.',
-    help_l5: 'Control absoluto. Muchos años utilizando ya la herramienta.',
+    help_l5: 'Control absoluto. Te han salido canas de los años usando la herramienta (Normalmente cambias antes).',
     blinking: 'Naranja',
-    help_blinking: `En naranja, quere decir que se utilizó en los últimos dos años.`,
+    help_blinking: `En naranja, significa que se utilizó en los últimos dos años.`,
     tap_skill: `Click la skill para +INFO`,
     languages: 'Lenguajes / Engines / Entornos / DB',
     frameworks: 'Frameworks / Librerías / CMS',

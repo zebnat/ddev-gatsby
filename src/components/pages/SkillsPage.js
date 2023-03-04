@@ -85,7 +85,7 @@ const SkillsPage = props => {
             fontSize: '134%',
           }}
         >
-          {translation[lang].tap_skill}
+          
         </p>
       </div>
       <div css={skewStyle}>

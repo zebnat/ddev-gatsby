@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
@@ -8,16 +8,22 @@ import Markdown from 'markdown-to-jsx'
 import { Link } from 'gatsby'
 
 const HomePage = props => {
-  const {lang, data} = props
+  const { lang, data } = props
 
   const linkOpts = {
     allMenuData: data.allMenu,
     defaultLang: data.site.siteMetadata.defaultLang,
   }
+  const [certificateWithIssue, setCertificateWithIssue] = useState('')
 
   const aboutLink = linkToSection({ sectionId: 'about', ...linkOpts })
   const skillsLink = linkToSection({ sectionId: 'tech', ...linkOpts })
   const projectsLink = linkToSection({ sectionId: 'project', ...linkOpts })
+
+  const awaitingTitle = (e, certificateName) => {
+    e.preventDefault()
+    setCertificateWithIssue(certificateName)
+  }
 
   return (
     <>
@@ -74,39 +80,41 @@ const HomePage = props => {
       />
       <h3>{translation[lang].academic}</h3>
       <Markdown children={translation[lang].academicInfo} />
-      <ul css={{ fontSize: '80%', '>li': { margin: '1rem 0' } }}>
-        <li>
-          <a
-            href={
-              lang === data.site.siteMetadata.defaultLang
-                ? '/docs/cv.pdf'
-                : '/docs/cv-' + lang + '.pdf'
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {translation[lang].resume}
-          </a>
-        </li>
-        <li>
-          <a
-            href="/docs/carta-recomendacion-pw.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {translation[lang].recommendationPW}
-          </a>
-        </li>
-        <li>
-          <a
-            href="/docs/certificado-experiencia-laboral-pw.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {translation[lang].certificate}
-          </a>
-        </li>
-      </ul>
+      <table >
+        <tr>
+          <th>Fichero</th>
+          <th>Descarga</th>
+        </tr>
+        <tr>
+          <td>{translation[lang].resume}</td>
+          <td css={{ fontSize: '2rem' }}><a href={
+            lang === data.site.siteMetadata.defaultLang
+              ? '/docs/cv.pdf'
+              : '/docs/cv-' + lang + '.pdf'
+          } target="_blank" rel="noopener noreferrer">💾</a></td>
+        </tr>
+        <tr>
+          <td>{translation[lang].recommendationPW}</td>
+          <td css={{ fontSize: '2rem' }}><a href="/docs/carta-recomendacion-pw.pdf" target="_blank" rel="noopener noreferrer">💾</a></td>
+        </tr>
+        <tr>
+          <td>{translation[lang].certificate}</td>
+          <td css={{ fontSize: '2rem' }}><a href="/docs/certificado-experiencia-laboral-pw.pdf" target="_blank" rel="noopener noreferrer">💾</a></td>
+        </tr>
+        <tr>
+          <td>EFSET English Certificate (C1 Advanced)</td>
+          <td css={{ fontSize: '2rem' }}><a href="https://www.efset.org/cert/vF9UYT" target="_blank" rel="noopener noreferrer">💾</a></td>
+        </tr>
+        <tr>
+          <td>{translation[lang].daw}</td>
+          <td css={{ fontSize: '2rem' }}><a href="#" onClick={(e) => awaitingTitle(e, translation[lang].daw)} target="_blank" rel="noopener noreferrer">💾</a></td>
+        </tr>
+      </table>
+      {certificateWithIssue && <div css={{ textAlign: 'center', padding: '2rem', background: '#ffaf00' }}>
+        <span dangerouslySetInnerHTML={{
+          __html: translation[lang].certIssue.replace('%certName%', `<strong>${certificateWithIssue}</strong>`)
+        }}></span>
+      </div>}
     </>
   )
 }

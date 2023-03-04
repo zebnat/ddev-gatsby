@@ -2,18 +2,18 @@ const translation = {
   en: {
     contact: 'Contact Me',
     contactInfo: `Do you have any questions? I'm from Barcelona. I let you have some different contact options below.`,
-    warning: 'Attention',
-    warningInfo: `I'm currently studying. My availability is limited. If you need a part-time web developer, get in touch.`,
-    developedBy: `This PWA has been created by <b>Daniel Domínguez Rubio</b> using technologies like React Gatsby GraphQL Node. Served from aws S3 and Cloudfront.`,
+    warning: 'Status',
+    warningInfo: `I'm working 100% Remote as a Full Stack, but also looking for oportunities that help me grow my career.`,
+    developedBy: `This PWA has been created by <b>Daniel Domínguez Rubio</b> using technologies like: React, Gatsbyjs, GraphQL, Nodejs, AWS S3 and Cloudfront.`,
   },
   es: {
     contact: 'Vías de Contacto',
     contactInfo:
       '¿Quieres comentarme algo? Soy de Barcelona. Abajo te dejo varias opciones para contactar conmigo.',
-    warning: 'Atención',
+    warning: 'Estado',
     warningInfo:
-      'En este momento estoy ampliando mi formación. Mi disponibilidad está limitada. Si necesitas un programador web con experiencia para media jornada, no dudes en contactar.',
-    developedBy: `Esta PWA ha sido desarrollada por <b>Daniel Domínguez Rubio</b> usando tecnologías como React Gatsby Graph Node. Sirviéndose desde aws S3 y Cloudfront.`,
+      'Estoy trabajando 100% Remoto como Full Stack, pero estoy abierto a oportunidades que me ayuden a hacer crecer mi carrera.',
+    developedBy: `Esta PWA ha sido desarrollada por <b>Daniel Domínguez Rubio</b> usando tecnologías como: React, Gatsbyjs, GraphQL, Nodejs, AWS S3 y Cloudfront.`,
   },
 }
 

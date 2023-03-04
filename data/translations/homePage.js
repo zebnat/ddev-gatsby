@@ -14,10 +14,12 @@ const translation = {
     projectInfo: `<p>Well, to be brief I mainly worked on a big product in a startup for almost 9 years. I built a lot of projects there, from creating new features, fixing bugs, refactoring code and dealing with the business issues like SEO or planning IT technologies. I also built other smaller products or intranets for the company.</p><p>I've also made some side projects like this website using trending tech.</p><p>You can browse the <Link>full list of projects</Link>. You can also have a look at <a href="https://github.com/zebnat" target="_blank">my github profile</a>.</p>`,
     fullProjects: `Projects Section`,
     academic: `Academics`,
-    academicInfo: `<p>I always wanted to study the software engineer career but because life hardshipss I had to drop the dream. I'm mostly self-taught. I practiced and learned theory from books since young age and ended up working for the industry without even having an official education.</p><p>Check my CV/Resume and other certifications below.</p>`,
-    resume: `CV / RESUME in Pdf`,
+    academicInfo: `<p>I always wanted to study the software engineer career but because life hardshipss I had to do something else. I'm started self-taught but I ended up with an official education anyway. I practiced and learned theory from books since young age and ended up working for the industry without even having an official education.</p><p>Check my CV/Resume and other certifications below.</p>`,
+    resume: `Resume (CV)`,
     recommendationPW: `Panaworld's recommendation letter (spanish)`,
     certificate: `Panaworld's Job tasks Certificate (spanish)`,
+    daw: `Higher Technician in Development of Web Applications`,
+    certIssue: `I am waiting for %certName% certificate to be issued (Contact me)`
   },
   es: {
     h1: 'Desarrollador Full Stack en Barcelona',
@@ -34,10 +36,12 @@ const translation = {
     projectInfo: `<p>He trabajado principalmente desarrollando un producto grande para una start up por casi 9 años. Hice un montón de cosas allí, desde crear nuevas características, arreglar bugs, refactorizar código y lidiar con otros problemas de ámbito SEO o tecnológico. También hice otros productos pequeños diversos como intranets de la empresa u otros.</p><p>Me gusta ir haciendo proyectos personales como este sitio, siempre tirando de tecnologías punteras.</p><p>Puedes navegar mi <Link>lista detallada de proyectos</Link>. También ojear <a href="https://github.com/zebnat" target="_blank">mi github</a>.</p>`,
     fullProjects: `Sección de proyectos`,
     academic: `Formación`,
-    academicInfo: `<p>Siempre quise estudiar la carrera de ingeniería de software pero por barreras y circunstancias que te pone la vida tuve que bajarme de la nube. Soy principalmente autodidacta pese a que me he acreditado. He practicado y aprendido teoría con libros desde siempre. Terminé trabajando en la industria sin titulación y eso complementó mi experiencia.</p><p>Currículum y otras certificaciones en los links de abajo.</p>`,
-    resume: `Currículum Vitae PDF`,
-    recommendationPW: `Carta de recomendación de Panaworld`,
-    certificate: `Certificado empresa, descripción de tareas Panaworld`,
+    academicInfo: `<p>Siempre quise estudiar la carrera de ingeniería de software pero por circunstancias que pone la vida tuve que dedicarme a otras cosas. Soy principalmente autodidacta pese a que con el tiempo me he acreditado académicamente igual. He practicado y aprendido teoría con libros desde siempre. Terminé trabajando en la industria sin titulación y eso complementó mi experiencia.</p><p>Currículum y otras certificaciones en los links de abajo.</p>`,
+    resume: `Currículum Vitae`,
+    recommendationPW: `Carta de recomendación (Panaworld SL)`,
+    certificate: `Descripción de tareas (Panaworld SL)`,
+    daw: `CFGS DAW (Desarrollo de Aplicaciones Web)`,
+    certIssue: `Lo siento, estoy todavía esperando el certificado %certName% (Contacta)`
   },
 }
 

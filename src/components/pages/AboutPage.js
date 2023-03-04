@@ -99,7 +99,7 @@ const AboutPage = props => {
           }}
         />
       ))}
-
+      {/*}
       <h3>{translation[lang].rng_title}</h3>
       <h4>{translation[lang].rng_q1}</h4>
       <p>{translation[lang].rng_r1}</p>
@@ -109,7 +109,7 @@ const AboutPage = props => {
 
       <h4>{translation[lang].rng_q3}</h4>
       <p>{translation[lang].rng_r3}</p>
-
+        {*/}
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>
         <CategoryButton route={homeLink} inside gatsbyLink name="HOME" />
       </div>

@@ -18,8 +18,7 @@ const SkillElement = props => {
     <> { /* eslint-disable-next-line */}
       <div
         role="button"
-        css={{ width: '245px', margin: 5, cursor: 'pointer' }}
-        onClick={showDescription}
+        css={{ width: '245px', margin: 5 }}
       >
         <div css={{ float: 'left', width: '125px', textAlign: 'center' }}>
           <span
