@@ -82,8 +82,8 @@ const HomePage = props => {
       <Markdown children={translation[lang].academicInfo} />
       <table >
         <tr>
-          <th>Fichero</th>
-          <th>Descarga</th>
+          <th>{translation[lang].file}</th>
+          <th>{translation[lang].download}</th>
         </tr>
         <tr>
           <td>{translation[lang].resume}</td>
