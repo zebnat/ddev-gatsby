@@ -98,10 +98,6 @@ const HomePage = props => {
           <td css={{ fontSize: '2rem' }}><a href="/docs/carta-recomendacion-pw.pdf" target="_blank" rel="noopener noreferrer">💾</a></td>
         </tr>
         <tr>
-          <td>{translation[lang].certificate}</td>
-          <td css={{ fontSize: '2rem' }}><a href="/docs/certificado-experiencia-laboral-pw.pdf" target="_blank" rel="noopener noreferrer">💾</a></td>
-        </tr>
-        <tr>
           <td>EFSET English Certificate (C1 Advanced)</td>
           <td css={{ fontSize: '2rem' }}><a href="https://www.efset.org/cert/vF9UYT" target="_blank" rel="noopener noreferrer">💾</a></td>
         </tr>

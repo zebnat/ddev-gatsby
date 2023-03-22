@@ -44,6 +44,7 @@ const SkillsPage = props => {
     ))
   }
 
+  const listStyles = { display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '12px', justifyContent: 'space-between' }
   return (
     <>
       <Helmet>
@@ -91,26 +92,26 @@ const SkillsPage = props => {
       <div css={skewStyle}>
         <span>{translation[lang].languages}</span>
       </div>
-      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <div css={listStyles}>
         {listSkills(programmingSkills)}
       </div>
 
       <div css={skewStyle}>
         <span>{translation[lang].frameworks}</span>
       </div>
-      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <div css={listStyles}>
         {listSkills(frameworkSkills)}
       </div>
       <div css={skewStyle}>
         <span>{translation[lang].other_tools}</span>
       </div>
-      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <div css={listStyles}>
         {listSkills(toolsSkills)}
       </div>
       <div css={skewStyle}>
         <span>{translation[lang].other_concepts}</span>
       </div>
-      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <div css={listStyles}>
         {listSkills(otherSkills)}
       </div>
       <div css={{ textAlign: 'center', margin: '3rem 0' }}>

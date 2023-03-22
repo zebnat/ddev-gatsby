@@ -6,9 +6,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I've worked with PHP projects. PHP3, a lot of PHP5 and also PHP7. With it I built websites using the MVC pattern which was implemented in a custom Framework. Implementing new features by using OOP was something I made almost every day with this language.",
+          "I have extensive experience in PHP projects, including PHP3, PHP5, and PHP7. I have developed websites using the MVC pattern in custom frameworks. My daily tasks involved implementing new features using OOP.",
         es:
-          'He trabajado en proyectos PHP. PHP3, bastante PHP5 y un poco de PHP7. Con él hice sitios webs aplicando el patrón MVC que se implementó en un framework propio. Implementar nuevas Features utilizando OOP ha sido mi día a día con este lenguaje.',
+          'Tengo amplia experiencia en proyectos PHP, incluyendo PHP3, PHP5 y PHP7. He desarrollado sitios web usando el patrón MVC en marcos personalizados. Mis tareas diarias incluían implementar nuevas funcionalidades usando OOP.',
       },
     },
     {
@@ -17,9 +17,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I've worked with Javascript for a while. Since the dark age where it was very bad until the gold days of javascript (ES6). Using bundlers with nodejs, babel and webpack and other tools from npm was the norm during the latest years.",
+          "I have worked with Javascript extensively, from its early days to the modern era (ES6). I am proficient in using bundlers with Node.js, Babel, Webpack, and other npm tools.",
         es:
-          'He trabajado con Javascript por una larga temporada. Desde la época dura hasta la dorada (ES6). Usar bundling con nodejs junto a babel, webpack y otras herramientas de npm ha sido lo normal en los últimos años.',
+          'He trabajado extensivamente con Javascript, desde sus inicios hasta la era moderna (ES6). Soy experto en el uso de bundlers con Node.js, Babel, Webpack y otras herramientas npm.',
       },
     },
     {
@@ -28,9 +28,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I made a few projects using typescript. Having static type can be useful but can be also a pain when you import some libraries that don't have the proper typings.",
+          "I have completed several projects using TypeScript. While static typing can be beneficial, it can also be challenging sometimes so it's up to the team and the project.",
         es:
-          'He hecho algunos proyectos con typescript. Tener tipado estático es útil pero también puede ser un engorro cuando importas librerías que no tienen los typings preparados.',
+          'He completado varios proyectos usando TypeScript. Aunque el tipado estático puede ser beneficioso, también puede ser un desafío a veces por lo tanto debe ser una elección de equipo.',
       },
     },
     {
@@ -39,9 +39,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I know a lot about SQL/MySQL. I've used it for years. E/R diagrams, Relational model, advanced queries, config optimization, index optimization. PDO and Mysqli for PHP.",
+          "I am well-versed in SQL/MySQL, with years of experience. My expertise includes E/R diagrams, relational models, advanced queries, configuration optimization, index optimization, and working with PDO and Mysqli for PHP.",
         es:
-          'Conozco bastante sobre SQL y Mysql. Lo he usado durante años. Diagramas E/R transcripción relacional, consultas avanzadas. Optimación del servicio. Uso de índices para optimización. En php, drivers mysqli y PDO.',
+          'Domino SQL/MySQL, con años de experiencia. Mi experiencia incluye diagramas E/R, modelos relacionales, consultas avanzadas, optimización de configuración, optimización de índices y trabajo con PDO y Mysqli para PHP.',
       },
     },
     {
@@ -50,9 +50,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "Well... it's still SQL right? I had to use it for some academic projects but never had the pleasure to work with it in production.",
+          "Though my experience with PostgreSQL is limited to academic projects, I am familiar with SQL and eager to work with it in production.",
         es:
-          'Bueno... es SQL no? Lo utilicé para proyectos académicos pero nunca tuve el placer de usarlo en producción.',
+          'Aunque mi experiencia con PostgreSQL se limita a proyectos académicos, estoy familiarizado con SQL y deseoso de trabajar con él en producción.',
       },
     },
     {
@@ -61,9 +61,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I started writting HTML when I was 12. HTML is not very hard to use. I've used it for all the web project I made.",
+          "I began writing HTML at 12 years old and have used it in all my web projects. HTML is relatively simple to use.",
         es:
-          'Empecé a escribir HTML cuando tenía 12 años. No es demasiado complicado. Para todos los proyectos web que he hecho, he tenido que utilizarlo.',
+          'Empecé a escribir HTML a los 12 años y lo he utilizado en todos mis proyectos web. HTML es relativamente fácil de usar.',
       },
     },
     {
@@ -72,9 +72,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "My skill with raw CSS is very decent. Years of experience. Fonts, google fonts, layouts with float, tables, flexbox and responsive media queries. My weak point can be animations, I don't use them often in my private projects.",
+          "With years of experience, I have honed my skills in raw CSS. I am proficient in fonts, Google fonts, layouts using floats, tables, flexbox, and responsive media queries. However, my weaker area is animations, as I do not often use them in personal projects.",
         es:
-          'Mi habilidad con CSS está pulida con años de práctica. Fuentes, google fonts, maquetación con floats, tablas, flexbox, media queries para responsive. Mi punto débil serían las animaciones, no suelo usarlas demasiado en proyectos personales.',
+          'Con años de experiencia, he perfeccionado mis habilidades en CSS puro. Soy competente en fuentes, Google Fonts, maquetación usando floats, tablas, flexbox y media queries responsivas. Sin embargo, mi área más débil son las animaciones, ya que no las uso a menudo en proyectos personales.',
       },
     },
     {
@@ -83,9 +83,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I've used Nodejs as a backend service only for playing around with express and APIs. As a Frontend tool is the norm nowdays. You must know how to use npm, module bundlers, babel, typescript, and in this field I have a lot of experience.",
+          "I have experimented with Node.js as a backend service using Express and APIs. As a frontend tool, it is essential to be familiar with npm, module bundlers, Babel, TypeScript, and I have gained substantial experience in these areas.",
         es:
-          'Nodejs como servicio backend solo lo he probado un poco, algún api con express. Como herramienta de frontend hoy día es una obligación saber usar npm y usar los module bundlers o babel para mejorar ecmascript y aquí si tengo experiencia.',
+          'He experimentado con Node.js como servicio de backend utilizando Express y APIs. Como herramienta de frontend, es esencial estar familiarizado con npm, bundlers de módulos, Babel, TypeScript y he adquirido una experiencia considerable en estos campos.',
       },
     },
     {
@@ -94,9 +94,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "My C# experience comes from when I was developing mobile games. I don't know a lot about dotNet but I'm very interested and learning it.",
+          "My experience with C# comes from developing mobile games. Although my knowledge of the .NET Framework is limited, I am highly interested in learning more about it.",
         es:
-          'Mi experiencia con C# viene de mi época de desarrollador de juegos mobile. No tengo amplios conocimientos en dotNet Framework pero si mucho interés en él.',
+          'Mi experiencia con C# proviene de mi trabajo en el desarrollo de juegos para móviles. Aunque mi conocimiento del marco .NET es limitado, tengo un gran interés en aprender más al respecto.',
       },
     },
     {
@@ -105,9 +105,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I made a few small games with Unity engine. They were 2D games optimized for mobile. They used some physics and arcade logic. Is not my field but I don't think I would have any issues making other games.",
+          "I have developed a few small games using the Unity engine. These 2D mobile-optimized games incorporated physics and arcade logic. While it is not my specialty, I am confident in my ability to create additional games.",
         es:
-          'Hice algunos juegos pequeños con Unity Engine. Eran juegos 2D optimizados para móviles. Utilicé algo de físicas, algo de lógica arcade. No es mi especialidad pero no tendría muchos problemas en hacer nuevos juegos.',
+          'He desarrollado algunos juegos pequeños utilizando el motor Unity. Estos juegos 2D optimizados para móviles incorporaban físicas y lógica arcade. Aunque no es mi especialidad, confío en mi capacidad para crear juegos adicionales.',
       },
     },
     {
@@ -116,9 +116,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I played a lot with python while I was doing academic training and made a lot of algorithms with it. Never used it on any real project tho.',
+          "I have explored Python extensively during my academic training and implemented numerous algorithms. However, I have yet to use it in any professional projects.",
         es:
-          'He jugado bastante con python mientras estaba estudiando programación y he hecho bastantes algoritmos con él. Nunca lo he usado en proyectos reales de todos modos.',
+          'He explorado Python en profundidad durante mi formación académica e implementado numerosos algoritmos. Sin embargo, aún no lo he utilizado en ningún proyecto profesional.',
       },
     },
     {
@@ -127,9 +127,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I know how to use statically strong typed languages because my C# experience. Also with OOP. I've used Java while I was doing academic training. I would like to do more Java in the future.",
+          "Due to my experience with C# and OOP, I am familiar with statically strong-typed languages. I have used Java during my academic training and would like to further develop my skills in this area.",
         es:
-          'Se como utilizar lenguajes de tipado estático y fuerte ya que tengo experiencia en C#. También en OOP. He usado Java mientras me estudiaba FP DAW. Me gustaría hacer cosas con Java en el futuro.',
+          'Debido a mi experiencia con C# y OOP, estoy familiarizado con lenguajes de tipado estático y fuerte. He utilizado Java durante mi formación académica y me gustaría desarrollar aún más mis habilidades en esta área.',
       },
     },
     {
@@ -138,11 +138,12 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "Created some EC2 instances with elastic IPs for Java tomcat and also some S3 for hosting static sites.",
+          "I have experience creating EC2 instances with elastic IPs for Java Tomcat, as well as S3 instances for hosting static websites.",
         es:
-          'He creado algunas instancias EC2 con IP elástica para Java y tomcat y también algunas instancias S3 para hostear páginas estáticas.',
+          'Tengo experiencia en la creación de instancias EC2 con IP elásticas para Java Tomcat, así como instancias S3 para alojar sitios web estáticos.',
       },
-    },
+    }
+
   ],
   libs: [
     {
@@ -151,9 +152,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I love React. I made a few projects with it, also played with hooks. This website is made entirely with react using Gatsbyjs.',
+          'I have a strong affinity for React and have completed several projects using it, including experimenting with hooks. This website was created entirely with React, utilizing GatsbyJS.',
         es:
-          'Me gusta React. He hecho varios proyectos con él, también he jugado con Hooks. Esta página esta creada enteramente con React usando Gatsbyjs.',
+          'Me encanta trabajar con React. He realizado varios proyectos empleando esta tecnología, así como experimentado con Hooks. Este sitio web fue creado íntegramente con React, utilizando GatsbyJS.',
       },
     },
     {
@@ -162,9 +163,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I have migrated entire sites with classic PHP SSR to modern NextJS React powered apps with SSG, SSR y ISR.',
+          'I have migrated entire websites from classic PHP server-side rendering to modern NextJS-powered React applications featuring SSG, SSR, and ISR capabilities.',
         es:
-          'He migrado sitios enteros creados con PHP clásico a sitios creados con NextJS y React, con capacidades como SSG, SSR y ISR.',
+          'He migrado sitios web completos desde PHP clásico con renderizado en el lado del servidor hacia aplicaciones modernas de React con NextJS, que cuentan con capacidades como SSG, SSR e ISR.',
       },
     },
     {
@@ -173,9 +174,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I really like the Tailwindcss library to pair it with React and use it instead of "CSS IN JS" libraries.',
+          'I appreciate the Tailwind CSS library for its compatibility with React, and I prefer it over "CSS IN JS" libraries.',
         es:
-          'Me gusta la librería Tailwindcss para emparejarla con React y usarla en vez de librerías de "CSS IN JS".',
+          'Me gusta mucho la biblioteca Tailwind CSS por su compatibilidad con React, y la prefiero en lugar de las bibliotecas de "CSS IN JS".',
       },
     },
     {
@@ -184,9 +185,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I\'ve used material UI with React for an academic project which used also serverless AWS lambda stuff.',
+          "I have experience using Material UI with React for an academic project that also incorporated AWS Lambda and serverless services.",
         es:
-          'Utilicé material UI con React para un proyecto académico que además utilizaba AWS lamba y servicios serverless.',
+          'He utilizado Material UI con React en un proyecto académico que también incorporaba AWS Lambda y servicios sin servidor.',
       },
     },
     {
@@ -195,20 +196,20 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "Used it mostly for static routes and basic routing.",
+          "I have mainly used React Router for static routes and basic routing implementations.",
         es:
-          'Utilizado mayormente para rutas estáticas y enrutamiento básico.',
+          'He utilizado React Router principalmente para rutas estáticas y la implementación de enrutamientos básicos.',
       },
-    },
+    },      
     {
       skill: 'Express',
       level: 2,
       isRecent: true,
       description: {
         en:
-          "Is not really hard to create a simple REST api with express and node but honestly I lack the experience. I don't know about advances features that maybe you need in a real project. Played with the basics of it.",
+          "Creating a simple REST API with Express and Node isn't difficult, but I lack experience in advanced features that may be required in real projects. I've only played with the basics.",
         es:
-          'No es muy difícil crear una api REST simple con express y node pero honestamente no tengo la suficiente experiencia con la herramienta. Desconozco características avanzadas que pudiera tneer y se pudieran requerir en proyectos reales. He jugado con lo básico.',
+          'Crear una API REST simple con Express y Node no es complicado, pero me falta experiencia en características avanzadas que podrían ser necesarias en proyectos reales. Solo he trabajado con lo básico.',
       },
     },
     {
@@ -217,9 +218,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I've used it for years from that era where JS was a lot worse and jQuery provided a lot of benefits.",
+          "I've used jQuery for years when JavaScript was less advanced, and jQuery provided many benefits.",
         es:
-          'Lo usé durante años desde esa época donde JS era mucho peor que hoy y jQuery era muy útil.',
+          'Utilicé jQuery durante años cuando JavaScript era menos avanzado y jQuery aportaba muchos beneficios.',
       },
     },
     {
@@ -228,9 +229,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I've used it on some projects but I don't like to use it for every project. It is useful but also adds a lot of load to your website.",
+          "I've used Bootstrap in some projects, but I don't like to use it for every project. It's useful but can also add significant load to a website.",
         es:
-          'Lo he usado en algunos proyectos pero no me gusta abusar. Es útil pero también añade bastante carga a tu web.',
+          'He usado Bootstrap en algunos proyectos, pero no me gusta usarlo en todos. Es útil, pero también puede agregar carga significativa a un sitio web.',
       },
     },
     {
@@ -239,9 +240,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I've worked with other PHP MVC frameworks in the past but not with Laravel. It's not really that different when you take the 80/20 rule into account. Currently learning more about it but I need more practice.",
+          "I've worked with other PHP MVC frameworks but not Laravel. It's not very different considering the 80/20 rule. I'm currently learning more about Laravel, but I need more practice.",
         es:
-          'He trabajado con otros frameworks MVC de PHP pero no con Laravel. No es tan diferente cuando consideras la regla de 80/20. Estoy profundizando más sobre Laravel pero necesito más práctica.',
+          'He trabajado con otros frameworks MVC de PHP, pero no con Laravel. No es muy diferente considerando la regla del 80/20. Actualmente estoy aprendiendo más sobre Laravel, pero necesito más práctica.',
       },
     },
     {
@@ -250,9 +251,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'This website was created entirely with gatsbyjs. I really love this tool. It would be nice to build more stuff with it in the future.',
+          'This website was created entirely with GatsbyJS. I love this tool and would like to build more with it in the future.',
         es:
-          'Este sitio web se hizo enteramente con gatsbyjs. Me encanta esta herramienta. Sería genial crear más cosas con ella en el futuro.',
+          'Este sitio web se creó completamente con GatsbyJS. Me encanta esta herramienta y me gustaría construir más cosas con ella en el futuro.',
       },
     },
     {
@@ -261,9 +262,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'Only used it because gatsbyjs required it, and only the client part. A bit confusing at first but not to hard once you get it.',
+          'I only used GraphQL because GatsbyJS required it, and only for the client-side. It was a bit confusing at first but became easier once I understood it.',
         es:
-          'Solo lo he usado por que gatsby lo requería, y solo la parte cliente. Un poco confuso al inicio pero se aprendió rápido.',
+          'Solo he usado GraphQL porque GatsbyJS lo requería y solo en la parte del cliente. Fue un poco confuso al principio, pero se volvió más fácil una vez que lo entendí.',
       },
     },
   ],
@@ -274,9 +275,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I had to configure webpack configs to make some plugins work sometimes. After create react/angular/vue app, not so much.',
+          'I configured Webpack configs to make some plugins work. After using create-react-app, Angular, and Vue, I relied on it less.',
         es:
-          'Tuve que configurar algunas configs de webpack para hacer funcionar plugins etc. Después de create react/angular/vue app, ya no tanto.',
+          'Configuré Webpack para que funcionaran algunos plugins. Después de usar create-react-app, Angular y Vue, lo utilicé menos.',
       },
     },
     {
@@ -285,9 +286,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I had to deal with less a lot just because bootstrap was too bloated.',
+          'I worked with LESS extensively because Bootstrap was too bloated.',
         es:
-          'Tuve que lidiar bastante con Less solo por que bootstrap era muy bloated.',
+          'Trabajé mucho con LESS debido a que Bootstrap estaba demasiado sobrecargado.',
       },
     },
     {
@@ -296,9 +297,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I've created a lot of regexps. Definitely not an easy thing to do but I have the experience.",
+          "I've created many regular expressions. It's not easy, but I have the experience.",
         es:
-          'He creado bastantes expresiones regulares. Definitivamente no es algo fácil de hacer pero tengo la experiencia.',
+          'He creado muchas expresiones regulares. No es fácil, pero cuento con la experiencia.',
       },
     },
     {
@@ -306,9 +307,9 @@ const skills = {
       level: 2,
       isRecent: false,
       description: {
-        en: "I've used it for pulling some libraries and also for autoload.",
+        en: "I've used Composer to pull libraries and for autoload.",
         es:
-          'Lo he usado alguna vez para instalar algunas librerías y por supuesto como autoloader.',
+          'He utilizado Composer para instalar librerías y como autoloader.',
       },
     },
     {
@@ -317,9 +318,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'This was my main desktop OS for a lot of years. I did a lot of things with it. I have a very good Linux background in general without being a sysadmin expert myself.',
+          'Debian Linux was my main desktop OS for years. I gained a strong Linux background without being a sysadmin expert.',
         es:
-          'Éste fue mi sistema principal durante muchos años. Hice bastantes cosas guays con él. Tengo bastante buen background con Linux en general sin llegar a considerarme experto en sistemas.',
+          'Debian Linux fue mi sistema operativo principal durante muchos años. Adquirí un sólido conocimiento de Linux sin ser un experto en administración de sistemas.',
       },
     },
     {
@@ -328,9 +329,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "I've used it a few times when this was our only option for a dedicated server. After that, debian was the norm.",
+          "I used CentOS when it was the only option for dedicated servers. Later, Debian became the standard.",
         es:
-          'Lo he usado algunas veces cuando era la única opción para servidores dedicados. Después de eso, debian era lo normal.',
+          'Utilicé CentOS cuando era la única opción para servidores dedicados. Luego, Debian se convirtió en el estándar.',
       },
     },
     {
@@ -339,9 +340,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'This is my main system in my laptop. Not like it matters too much but talks about my Linux background and preferences.',
+          'Arch Linux is my main system on my laptop, reflecting my Linux background and preferences.',
         es:
-          'Es el sistema principal en mi portátil. No es que importe mucho pero habla de mi background y preferencias sobre Linux.',
+          'Arch Linux es el sistema principal en mi portátil, lo que refleja mi conocimiento y preferencias en Linux.',
       },
     },
     {
@@ -349,8 +350,8 @@ const skills = {
       level: 4,
       isRecent: false,
       description: {
-        en: 'Usually the norm when I had to work with PHP and Nginx.',
-        es: 'Normalmente lo normal cuando tuve que trabajar con PHP y Nginx.',
+        en: 'I usually worked with PHP-FPM when using PHP and Nginx.',
+        es: 'Usualmente trabajé con PHP-FPM al utilizar PHP y Nginx.',
       },
     },
     {
@@ -359,9 +360,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'Connecting with SSH here and there and handling SSH keys is something I know.',
+          'I have experience connecting via SSH and handling SSH keys.',
         es:
-          'Conectar por SSH aquí y allí y tratar con claves SSH es algo que domino.',
+          'Tengo experiencia en conectarme mediante SSH y manejar claves SSH.',
       },
     },
     {
@@ -369,9 +370,9 @@ const skills = {
       level: 3,
       isRecent: false,
       description: {
-        en: 'Used this tool for backups and deploying some static websites.',
+        en: 'I used Rsync for backups and deploying static websites.',
         es:
-          'Usé esta herramienta para backups y desplegar sitios web estáticos.',
+          'Utilicé Rsync para realizar copias de seguridad y desplegar sitios web estáticos.',
       },
     },
     {
@@ -380,9 +381,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          "I've used Docker a lot but never in a enterprise environment. It's a really good tool so I also use it for my personal projects.",
+          "I've used Docker extensively for personal projects but not in an enterprise environment.",
         es:
-          'He usado Docker bastante pero nunca en entorno enterprise. Es una buena herramienta asi que la utilizo incluso en mis proyectos personales.',
+          'He utilizado Docker ampliamente en proyectos personales, pero no en entornos empresariales.',
       },
     },
     {
@@ -391,9 +392,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "Bash isn't easy but I made a lot of scripts with it. With Google close nothing is impossible.",
+          "I've created many BASH scripts with the help of Google.",
         es:
-          'Bash no es fácil pero ya he creado muchos scripts con Google cerca.',
+          'He creado varios scripts BASH con la ayuda de Google.',
       },
     },
     {
@@ -402,9 +403,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'This is and was my option of choice for web servers. I know more about it than apache httpd.',
+          'Nginx has been my preferred choice for web servers. I have more knowledge about Nginx than Apache HTTPd.',
         es:
-          'Esta era y es mi opción a la hora de instalar web server. Conozco más sobre él que sobre apache httpd.',
+          'Nginx ha sido mi opción preferida para servidores web. Tengo más conocimientos sobre Nginx que sobre Apache HTTPd.',
       },
     },
     {
@@ -413,9 +414,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I know enough about git to operate with it without making a mess but I lack a good professional and team background. Always used svn in the past.',
+          'I can operate Git without issues but lack professional team experience. I used SVN in the past.',
         es:
-          'Conozco lo suficiente sobre git para manejarlo sin romper nada pero me falta un background profesional. Siempre he usado SVN (subversion).',
+          'Puedo manejar Git sin problemas, pero me falta experiencia en equipos profesionales. En el pasado, utilicé SVN.',
       },
     },
     {
@@ -423,9 +424,9 @@ const skills = {
       level: 4,
       isRecent: false,
       description: {
-        en: 'This was the norm when I worked for Panaworld for 8 years.',
+        en: 'Subversion was the standard when I worked at Panaworld for 8 years.',
         es:
-          'Esto era lo que usábamos cuando trabajé en Panaworld durante 8 años.',
+          'Subversion era el estándar cuando trabajé en Panaworld durante 8 años.',
       },
     },
     {
@@ -433,8 +434,8 @@ const skills = {
       level: 2,
       isRecent: true,
       description: {
-        en: 'Good tool for CSS in JS. Used it on this website.',
-        es: 'Buena herramienta para CSS en JS. La usé en esta web.',
+        en: 'Glamor is a useful tool for CSS in JS. I used it on this website.',
+        es: 'Glamor es una herramienta útil para CSS en JS. La utilicé en este sitio web.',
       },
     },
     {
@@ -443,9 +444,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I only used it once for saving a form while using their free tier.',
+          'I used Firebase once for saving a form using their free tier.',
         es:
-          'Solo lo he usado una vez para grabar un formulario usando el paquete gratuíto.',
+          'Usé Firebase una vez para guardar un formulario con su plan gratuito.',
       },
     },
   ],
@@ -455,8 +456,8 @@ const skills = {
       level: 3,
       isRecent: false,
       description: {
-        en: "I know the REST fundamentals and I've used it for APIs",
-        es: 'Conozco los fundamentos de REST y lo he usado para crear APIs',
+        en: "I'm familiar with REST fundamentals and have used it for creating APIs.",
+        es: 'Estoy familiarizado con los fundamentos de REST y lo he utilizado para crear APIs.',
       },
     },
     {
@@ -465,9 +466,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "This is something I am really doing at the moment. TDD is the norm these days. I'm learning more and more about it.",
+          "I'm currently practicing TDD as it has become the standard. I'm continually learning more about it.",
         es:
-          'Es algo que estoy aplicando ahora mismo. TDD se ha vuelto el estándar hoy en día. Estoy aprendiendo más y más sobre ello.',
+          'Actualmente estoy aplicando TDD ya que se ha convertido en el estándar. Continuamente aprendo más sobre ello.',
       },
     },
     {
@@ -476,9 +477,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "Nothing to fear about. I've made enough responsive sites by using CSS alone with media queries.",
+          "I have ample experience in creating responsive sites using CSS and media queries.",
         es:
-          'Nada que temer. He creado suficientes sitios web usando CSS y media query.',
+          'Tengo amplia experiencia en la creación de sitios web responsivos usando CSS y media queries.',
       },
     },
     {
@@ -487,9 +488,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I know and understand the principles and I always try to make my classes comply with them.',
+          'I understand SOLID principles and strive to make my classes adhere to them.',
         es:
-          'Conozco y entiendo los principios y siempre intento que mis clases encajen en éstos.',
+          'Entiendo los principios SOLID y me esfuerzo por hacer que mis clases se ajusten a ellos.',
       },
     },
     {
@@ -498,9 +499,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'OOP is very powerful but you can make bad designs with it. I know about composition, inheritance, polymorfism, interfaces, coupling, cohesion and SOLID.',
+          'I have a strong understanding of OOP concepts, such as composition, inheritance, polymorphism, interfaces, coupling, cohesion, and SOLID.',
         es:
-          'OOP es muy poderoso pero puedes crear diseños de código que no escalan. Conozco sobre composición, herencia, polimorfismo, interfaces, acoplamiento, cohesión y SOLID.',
+          'Tengo un sólido conocimiento de los conceptos OOP, como la composición, herencia, polimorfismo, interfaces, acoplamiento, cohesión y SOLID.',
       },
     },
     {
@@ -509,9 +510,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I have a decent eye for UX and UI design. I learned about it through my experience.',
+          'I have a good eye for UX and UI design, which I developed through years of experience.',
         es:
-          'Tengo un ojo decente para el UX y diseño de UI. Aprendí con los años de experiencia.',
+          'Tengo buen criterio para el diseño de UX y UI, habilidad que he desarrollado a lo largo de los años.',
       },
     },
     {
@@ -519,8 +520,8 @@ const skills = {
       level: 4,
       isRecent: false,
       description: {
-        en: 'I used this IDE for PHP, for many years.',
-        es: 'Usé este IDE para PHP durante años.',
+        en: 'I used Netbeans as my IDE for PHP for many years.',
+        es: 'Utilicé Netbeans como mi IDE para PHP durante muchos años.',
       },
     },
     {
@@ -529,9 +530,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'The best "non IDE" at the moment. I use it a lot for javascript, for example for this website.',
+          'VSCode is my go-to "non-IDE" for tasks like JavaScript development, including this website.',
         es:
-          'El mejor "no IDE" del momento. Lo uso bastante para javascript, por ejemplo para esta web.',
+          'VSCode es mi "no IDE" preferido para tareas como el desarrollo de JavaScript, incluido este sitio web.',
       },
     },
     {
@@ -540,9 +541,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'My skill with VIM is good enough to be able to code with it. Maybe I lack about the ultimate hardcore stuff.',
+          'My skill with VIM is sufficient for coding, although I may not know all the advanced tricks.',
         es:
-          'Mi habilidad con VIM es lo suficientemente buena para programar con él. Quizás fallo en cuanto a truquitos muy avanzados.',
+          'Mi habilidad con VIM es suficiente para programar, aunque quizás no conozca todos los trucos avanzados.',
       },
     },
     {
@@ -551,9 +552,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'My Visual Studio experience comes from C# when I created Unity games.',
+          'My experience with Visual Studio comes from working with C# while developing Unity games.',
         es:
-          'Mi experiencia con Visual Studio viene de C# cuando hice Juegos con Unity.',
+          'Mi experiencia con Visual Studio proviene de trabajar con C# en el desarrollo de juegos en Unity.',
       },
     },
     {
@@ -562,9 +563,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I made a few mobile 2D games so I know some fundamentals of game development and how to make them.',
+          'Having developed several mobile 2D games, I understand the fundamentals of game development.',
         es:
-          'Hice algunos juegos 2D por eso conozco los fundamentos de como se hacen.',
+          'Después de desarrollar varios juegos móviles en 2D, entiendo los fundamentos del desarrollo de juegos.',
       },
     },
     {
@@ -573,9 +574,9 @@ const skills = {
       isRecent: true,
       description: {
         en:
-          'I consider myself a web stack specialist, and its something I made a lot during my career.',
+          'I consider myself a web stack specialist with extensive experience in the field.',
         es:
-          'Me considero a mi mismo del especialista del Stack Web. Es algo que hice durante mi carrera.',
+          'Me considero un especialista en el stack web, con amplia experiencia en el área.',
       },
     },
     {
@@ -584,9 +585,9 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          "To be honest I don't like SEO, its a very risky field but I was responsible for technical SEO in a company that required the best possible optimization so I know about a lot of things. Including UX benefits.",
+          "Though I'm not fond of SEO due to its risks, I was responsible for technical SEO in a company that required top optimization, so I have extensive knowledge, including UX benefits.",
         es:
-          'Para ser honestos no me gusta el SEO, es muy arriesgado pero fuí responsable del SEO técnico en una empresa que requería la máxima optimización posible asi que conozco bastante sobre conceptos SEO, incluídos los beneficios del UX.',
+          'Aunque no me gusta el SEO debido a sus riesgos, fui responsable del SEO técnico en una empresa que requería la mejor optimización posible, por lo que tengo un amplio conocimiento, incluidos los beneficios del UX.',
       },
     },
     {
@@ -595,11 +596,12 @@ const skills = {
       isRecent: false,
       description: {
         en:
-          'I worked with facebook, twitter and the old google plus apis for a while.',
+          'I have experience working with Facebook, Twitter, and the deprecated Google Plus APIs.',
         es:
-          'He tenido que lidiar con apis de facebook, twitter y el muerto google plus.',
+          'Tengo experiencia trabajando con las APIs de Facebook, Twitter y el extinto Google Plus.',
       },
     },
+
   ],
 }
 

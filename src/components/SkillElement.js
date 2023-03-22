@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 const SkillElement = props => {
   const { skill, level, leveling, wordLevel, description } = props
-  let [viewDescription, setViewDescription] = useState(false)
-  let [changeHeight, setChangeHeight] = useState(false)
+  let [viewDescription, setViewDescription] = useState(true)
+  let [changeHeight, setChangeHeight] = useState(true)
 
   const showDescription = () => {
     setViewDescription(true)
@@ -51,6 +51,7 @@ const SkillElement = props => {
             transition: 'opacity 1s',
             overflow: 'hidden',
             display: 'none',
+            fontSize: '0.8rem'
           }}
           style={{
             display: viewDescription === true ? 'block' : 'none',
