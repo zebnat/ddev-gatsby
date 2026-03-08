@@ -9,6 +9,30 @@ const translation = {
     more: 'Learn more',
     moreabout: 'About me',
     skills: 'Technical capabilities',
+    quick_paths_title: 'Start here',
+    quick_paths_subtitle:
+      'Choose the path that best matches what you want to evaluate first.',
+    skills_path_title: 'Technical Skills',
+    skills_path_desc:
+      'Architecture, cloud workflows, AI/MLOps experimentation, and delivery practices in one concise section.',
+    skills_path_cta: 'Open technical skills',
+    projects_path_title: 'Projects & case studies',
+    projects_path_desc:
+      'Review production work, technical decisions, and outcomes across multiple domains.',
+    projects_path_cta: 'Explore projects',
+    about_path_title: 'Leadership profile',
+    about_path_desc:
+      'See my evolution from senior engineer to technical lead with AI responsibilities.',
+    about_path_cta: 'Read about me',
+    capabilities_brief:
+      'I lead engineering strategy while remaining hands-on. The focus is shipping reliable systems, scaling team execution, and accelerating delivery with practical AI adoption.',
+    capability_bullets: [
+      'System architecture and technical strategy',
+      'CI/CD, cloud operations, and observability',
+      'Team mentoring and engineering standards',
+      'AI-enabled workflows with measurable impact',
+    ],
+    resources_title: 'Professional resources',
     skillsInfo:
       '<p>My core strengths include software architecture, cloud-ready systems, CI/CD automation, and maintainable full stack development.</p><p>I work across Node.js/TypeScript services, frontend delivery, observability, and AI-oriented experimentation in product workflows.</p><p>Explore the <Link>skills section</Link> for a detailed breakdown.</p>',
     fullSkills: 'Technical Skills',
@@ -39,6 +63,30 @@ const translation = {
     more: 'Aprende mas',
     moreabout: 'Sobre mi',
     skills: 'Capacidades tecnicas',
+    quick_paths_title: 'Empieza aqui',
+    quick_paths_subtitle:
+      'Elige la ruta que mejor encaja con lo que quieres evaluar primero.',
+    skills_path_title: 'Habilidades tecnicas',
+    skills_path_desc:
+      'Arquitectura, workflows cloud, experimentacion AI/MLOps y practicas de entrega en una seccion concisa.',
+    skills_path_cta: 'Ver habilidades tecnicas',
+    projects_path_title: 'Proyectos y casos',
+    projects_path_desc:
+      'Revisa trabajo en produccion, decisiones tecnicas y resultados en distintos dominios.',
+    projects_path_cta: 'Explorar proyectos',
+    about_path_title: 'Perfil de liderazgo',
+    about_path_desc:
+      'Conoce mi evolucion de senior engineer a technical lead con responsabilidad en IA.',
+    about_path_cta: 'Leer sobre mi',
+    capabilities_brief:
+      'Lidero estrategia de ingenieria manteniendo impacto hands-on. El foco es entregar sistemas fiables, escalar la ejecucion del equipo y acelerar entregas con adopcion realista de IA.',
+    capability_bullets: [
+      'Arquitectura de sistemas y estrategia tecnica',
+      'CI/CD, operaciones cloud y observabilidad',
+      'Mentoring de equipo y estandares de ingenieria',
+      'Workflows con IA orientados a impacto medible',
+    ],
+    resources_title: 'Recursos profesionales',
     skillsInfo:
       '<p>Mis fortalezas clave incluyen arquitectura de software, sistemas cloud-ready, automatizacion CI/CD y desarrollo full stack mantenible.</p><p>Trabajo entre servicios Node.js/TypeScript, entrega frontend, observabilidad y experimentacion orientada a IA dentro de producto.</p><p>Consulta la <Link>seccion de skills</Link> para ver el detalle completo.</p>',
     fullSkills: 'Habilidades tecnicas',

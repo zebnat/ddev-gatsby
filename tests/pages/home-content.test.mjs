@@ -23,11 +23,29 @@ test('bilingual home pages render through shared HomeContent component', async (
   )
 })
 
-test('home shared component composes hero and proof strip blocks', async () => {
+test('home shared component composes hero with action and capability blocks', async () => {
   const homeContent = await readText('../../src/components/home/HomeContent.js')
 
   assert.equal(homeContent.includes('import HeroPanel'), true)
-  assert.equal(homeContent.includes('import ProofStrip'), true)
+  assert.equal(homeContent.includes('import HomeActionGrid'), true)
+  assert.equal(homeContent.includes('import CapabilitySnapshot'), true)
   assert.equal(homeContent.includes('<HeroPanel'), true)
-  assert.equal(homeContent.includes('<ProofStrip'), true)
+  assert.equal(homeContent.includes('<HomeActionGrid'), true)
+  assert.equal(homeContent.includes('<CapabilitySnapshot'), true)
+  assert.equal(homeContent.includes('ProofStrip'), false)
+})
+
+test('home translations include concise conversion-first keys', async () => {
+  const source = await readText('../../data/translations/homePage.js')
+
+  assert.equal(source.includes('quick_paths_title'), true)
+  assert.equal(source.includes('capabilities_brief'), true)
+  assert.equal(source.includes('capability_bullets'), true)
+})
+
+test('home action grid omits heading and subtitle text block', async () => {
+  const source = await readText('../../src/components/home/HomeActionGrid.js')
+
+  assert.equal(source.includes('translation.quick_paths_subtitle'), false)
+  assert.equal(source.includes('<h2'), false)
 })
