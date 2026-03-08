@@ -14,8 +14,16 @@ export default function ContactPageEs() {
       <h1>Ponte en contacto</h1>
       <p>Formulario de contacto y otros datos.</p>
       <p>
-        Puedes escribirme a <code>contacto@danieldev.es</code> o usar los
-        enlaces sociales.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum
+        nunc diam. Pellentesque malesuada velit in nisl venenatis consequat.
+        Aliquam pharetra massa nisl, eget dignissim turpis lacinia nec. Morbi
+        quis rhoncus arcu. Pellentesque eleifend, urna nec hendrerit lobortis,
+        sem ipsum imperdiet purus, dapibus molestie sem ipsum vel leo.
+        Vestibulum hendrerit fringilla ipsum id dictum. Mauris vel erat
+        accumsan, mattis erat at, lobortis odio. Phasellus in dolor bibendum,
+        placerat velit vel, feugiat justo. Morbi hendrerit a purus sit amet
+        congue. Nulla gravida dignissim velit vitae ultrices. Integer euismod
+        dignissim lectus nec posuere. Suspendisse potenti. Nam a aliquam magna.
       </p>
     </section>
   )

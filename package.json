@@ -58,12 +58,12 @@
     "parity:routes": "node scripts/parity/extract-routes.mjs",
     "parity:verify-phase1": "node scripts/parity/verify-phase1.mjs",
     "format": "prettier --write \"src/**/*.js\" && prettier --write \"data/translations/*.js\"",
-    "test": "node --test",
+    "test": "npm run next:sync-static && npm run next:generate-sitemap && node --test",
     "test:next-foundation": "node --test tests/config/next-foundation.test.mjs",
     "test:parity-routes": "node --test tests/parity/routes-baseline.test.mjs",
     "test:verify-phase1": "node --test tests/parity/verify-phase1.test.mjs",
-    "test:static-assets": "node --test tests/parity/static-assets.test.mjs",
-    "test:sitemap": "node --test tests/parity/sitemap.test.mjs",
+    "test:static-assets": "npm run next:sync-static && node --test tests/parity/static-assets.test.mjs",
+    "test:sitemap": "npm run next:generate-sitemap && node --test tests/parity/sitemap.test.mjs",
     "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id EFIL5MU5HFHL4 --paths \"/*\""
   },
   "devDependencies": {

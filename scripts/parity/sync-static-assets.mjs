@@ -1,4 +1,4 @@
-import { cp, mkdir, rm } from 'node:fs/promises'
+import { cp, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -26,7 +26,6 @@ function shouldCopyPortfolioFile(sourcePath) {
 }
 
 async function main() {
-  await rm(TARGET_DIR, { recursive: true, force: true })
   await mkdir(TARGET_DIR, { recursive: true })
   await cp(SOURCE_DIR, TARGET_DIR, { recursive: true, force: true })
   await mkdir(PORTFOLIO_TARGET_DIR, { recursive: true })

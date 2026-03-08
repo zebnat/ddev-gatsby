@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict'
-import { execFileSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
@@ -7,10 +6,6 @@ import test from 'node:test'
 const packageJson = JSON.parse(
   await readFile(new URL('../../package.json', import.meta.url), 'utf8')
 )
-
-execFileSync('node', ['scripts/parity/generate-sitemap.mjs'], {
-  stdio: 'ignore',
-})
 
 test('package scripts include sitemap generation', () => {
   assert.equal(typeof packageJson.scripts['next:generate-sitemap'], 'string')

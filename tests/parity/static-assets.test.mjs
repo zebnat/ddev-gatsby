@@ -1,12 +1,7 @@
 import assert from 'node:assert/strict'
-import { execFileSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import test from 'node:test'
-
-execFileSync('node', ['scripts/parity/sync-static-assets.mjs'], {
-  stdio: 'ignore',
-})
 
 const packageJson = JSON.parse(
   await readFile(new URL('../../package.json', import.meta.url), 'utf8')

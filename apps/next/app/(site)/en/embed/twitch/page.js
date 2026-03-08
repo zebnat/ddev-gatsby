@@ -1,4 +1,4 @@
-import StreamCardLite from '../../../../../src/components/stream/StreamCardLite'
+import StreamCard from '../../../../../src/components/stream/StreamCard'
 import config from '../../../../../../../data/config.js'
 import metadataHelpers from '../../../../../../../src/lib/seo/metadata.js'
 
@@ -17,7 +17,7 @@ export default function TwitchEmbedEn() {
   return (
     <>
       <style>{`body{background: transparent;}`}</style>
-      <StreamCardLite lang="en" />
+      <StreamCard lang="en" />
     </>
   )
 }

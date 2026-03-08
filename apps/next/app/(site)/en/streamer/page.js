@@ -1,6 +1,6 @@
 import { streamerPage } from '../../../../src/content/translations'
 import staticPageMetadata from '../../../../src/content/static-page-metadata.js'
-import StreamCardLite from '../../../../src/components/stream/StreamCardLite'
+import StreamCard from '../../../../src/components/stream/StreamCard'
 
 const t = streamerPage.en
 const { buildStaticPageMetadata } = staticPageMetadata
@@ -16,7 +16,7 @@ export default function StreamerPageEn() {
     <section>
       <h1>{t.h1}</h1>
       <p>{t.h2}</p>
-      <StreamCardLite lang="en" />
+      <StreamCard lang="en" />
       <p>{t.intro1}</p>
       <p>{t.intro2}</p>
       <p>{t.intro3}</p>
