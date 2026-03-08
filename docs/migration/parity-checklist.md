@@ -2,6 +2,11 @@
 
 Use this checklist before removing Gatsby implementation.
 
+## Automated gate
+
+- [ ] `npm run parity:verify-phase1` returns PASS.
+- [ ] `npm run test:verify-phase1` passes.
+
 ## Routing
 
 - [ ] All static routes from `src/pages/` exist in Next output.
