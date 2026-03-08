@@ -14,18 +14,22 @@
 
 **Files:**
 
-- Create: `next.config.mjs`
-- Create: `app/layout.js`
-- Create: `app/page.js`
+- Create: `apps/next/package.json`
+- Create: `apps/next/next.config.mjs`
+- Create: `apps/next/app/layout.js`
+- Create: `apps/next/app/page.js`
+- Create: `apps/next/app/en/page.js`
+- Create: `apps/next/src/i18n/routing.mjs`
+- Create: `apps/next/src/i18n/next-intl-routing.mjs`
 - Modify: `package.json`
-- Test: `tests/config/next-config.test.mjs`
+- Test: `tests/config/next-foundation.test.mjs`
 
 **Step 1: Write the failing test**
 
 ```js
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import config from '../../next.config.mjs'
+import config from '../../apps/next/next.config.mjs'
 
 test('next config enforces static export and trailing slash', () => {
   assert.equal(config.output, 'export')
@@ -35,13 +39,13 @@ test('next config enforces static export and trailing slash', () => {
 
 **Step 2: Run test to verify it fails**
 
-Run: `node --test tests/config/next-config.test.mjs`
-Expected: FAIL because `next.config.mjs` does not exist yet.
+Run: `node --test tests/config/next-foundation.test.mjs`
+Expected: FAIL because `apps/next/next.config.mjs` does not exist yet.
 
 **Step 3: Write minimal implementation**
 
 ```js
-// next.config.mjs
+// apps/next/next.config.mjs
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -52,13 +56,13 @@ export default nextConfig
 
 **Step 4: Run test to verify it passes**
 
-Run: `node --test tests/config/next-config.test.mjs`
+Run: `node --test tests/config/next-foundation.test.mjs`
 Expected: PASS.
 
 **Step 5: Commit**
 
 ```bash
-git add next.config.mjs app/layout.js app/page.js package.json tests/config/next-config.test.mjs
+git add apps/next/package.json apps/next/next.config.mjs apps/next/app/layout.js apps/next/app/page.js apps/next/app/en/page.js apps/next/src/i18n/routing.mjs apps/next/src/i18n/next-intl-routing.mjs package.json tests/config/next-foundation.test.mjs
 git commit -m "chore: bootstrap next static export baseline"
 ```
 

@@ -28,9 +28,10 @@ Move the current Gatsby-based personal site to latest Next.js with static export
 
 ### Application runtime
 
-- Next.js App Router.
+- Next.js App Router in isolated package `apps/next/`.
 - Static export mode for S3 hosting.
 - Explicit trailing slash config to match current behavior.
+- Keep Gatsby root package untouched during parity phase to avoid React peer conflicts.
 
 ### Data layer
 

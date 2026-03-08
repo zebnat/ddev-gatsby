@@ -12,6 +12,17 @@ Migrate `ddev-gatsby` from GatsbyJS to the latest stable Next.js while keeping s
 - Current route source: `src/pages/` + markdown `path` frontmatter
 - Current deploy model: static build uploaded to S3 + CloudFront invalidation
 
+## Repository strategy during migration
+
+- Keep Gatsby at repository root for parity comparison while migration is in progress.
+- Build Next.js in an isolated app package at `apps/next/` to avoid React peer dependency conflicts.
+- Use root scripts as wrappers for Next commands (`npm --prefix apps/next ...`).
+
+## Tooling prerequisite
+
+- Latest stable Next.js currently requires Node.js `>=20.9.0`.
+- If local or CI uses older Node (for example `20.5.0`), `next build` will fail until runtime is upgraded.
+
 ## Migration principles
 
 - Keep strict URL parity including trailing slash behavior.

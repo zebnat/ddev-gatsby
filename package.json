@@ -49,8 +49,15 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby clean && gatsby develop",
+    "next:build": "npm --prefix apps/next run build",
+    "next:dev": "npm --prefix apps/next run dev",
+    "next:start": "npm --prefix apps/next run start",
+    "next:install": "npm --prefix apps/next install",
+    "parity:routes": "node scripts/parity/extract-routes.mjs",
     "format": "prettier --write \"src/**/*.js\" && prettier --write \"data/translations/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test",
+    "test:next-foundation": "node --test tests/config/next-foundation.test.mjs",
+    "test:parity-routes": "node --test tests/parity/routes-baseline.test.mjs",
     "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id EFIL5MU5HFHL4 --paths \"/*\""
   },
   "devDependencies": {
