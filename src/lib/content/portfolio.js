@@ -1,7 +1,28 @@
 const { readdir, readFile } = require('node:fs/promises')
+const { existsSync } = require('node:fs')
 const path = require('node:path')
 
-const PORTFOLIO_DIR = path.resolve(process.cwd(), 'data', 'portfolio')
+function resolvePortfolioDir() {
+  let cursor = process.cwd()
+
+  for (let i = 0; i < 12; i += 1) {
+    const candidate = path.join(cursor, 'data', 'portfolio')
+    if (existsSync(candidate)) {
+      return candidate
+    }
+
+    const parent = path.dirname(cursor)
+    if (parent === cursor) {
+      break
+    }
+
+    cursor = parent
+  }
+
+  throw new Error(`Unable to locate data/portfolio from cwd: ${process.cwd()}`)
+}
+
+const PORTFOLIO_DIR = resolvePortfolioDir()
 
 function getFrontmatterBlock(markdown) {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/)

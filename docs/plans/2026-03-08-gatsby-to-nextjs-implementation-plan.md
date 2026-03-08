@@ -370,7 +370,8 @@ git commit -m "feat: add static markdown project detail routing"
 
 **Files:**
 
-- Create/Copy: `public/*` from existing `static/*`
+- Create: `scripts/parity/sync-static-assets.mjs`
+- Create/Copy: `apps/next/public/*` from existing `static/*`
 - Modify: deployment scripts in `package.json`
 - Create: `docs/migration/deployment-next-static.md`
 - Test: `tests/parity/static-assets.test.mjs`
@@ -383,8 +384,8 @@ import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
 
 test('critical public assets exist', () => {
-  assert.ok(existsSync('public/robots.txt'))
-  assert.ok(existsSync('public/docs/cv.pdf'))
+  assert.ok(existsSync('apps/next/public/robots.txt'))
+  assert.ok(existsSync('apps/next/public/docs/cv.pdf'))
 })
 ```
 
@@ -395,7 +396,7 @@ Expected: FAIL before asset copy.
 
 **Step 3: Write minimal implementation**
 
-Copy required static files into Next `public/` and document S3 + CloudFront deployment commands.
+Copy required static files into `apps/next/public/` and document S3 + CloudFront deployment commands.
 
 **Step 4: Run test to verify it passes**
 
@@ -405,7 +406,7 @@ Expected: PASS.
 **Step 5: Commit**
 
 ```bash
-git add public package.json docs/migration/deployment-next-static.md tests/parity/static-assets.test.mjs
+git add scripts/parity/sync-static-assets.mjs apps/next/public package.json docs/migration/deployment-next-static.md tests/parity/static-assets.test.mjs
 git commit -m "chore: migrate static assets and next deploy contract"
 ```
 

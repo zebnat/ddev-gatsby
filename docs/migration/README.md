@@ -50,6 +50,7 @@ Migrate `ddev-gatsby` from GatsbyJS to the latest stable Next.js while keeping s
 - `docs/migration/route-inventory.md`
 - `docs/migration/content-model.md`
 - `docs/migration/parity-checklist.md`
+- `docs/migration/deployment-next-static.md`
 - `docs/plans/2026-03-08-gatsby-to-nextjs-design.md`
 - `docs/plans/2026-03-08-gatsby-to-nextjs-implementation-plan.md`
 

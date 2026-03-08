@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict'
+import { createRequire } from 'node:module'
+import process from 'node:process'
 import test from 'node:test'
 
 import portfolioLoader from '../../src/lib/content/portfolio.js'
@@ -31,4 +33,21 @@ test('keeps a stable route from source markdown frontmatter', async () => {
   assert.ok(ytrendsEs)
   assert.equal(ytrendsEs.lang, 'es')
   assert.equal(typeof ytrendsEs.description, 'string')
+})
+
+test('loads portfolio items even when cwd is apps/next', async () => {
+  const require = createRequire(import.meta.url)
+  const originalCwd = process.cwd()
+
+  process.chdir('apps/next')
+  try {
+    const modulePath = require.resolve('../../src/lib/content/portfolio.js')
+    delete require.cache[modulePath]
+    const isolatedLoader = require(modulePath)
+
+    const items = await isolatedLoader.getPortfolioItems()
+    assert.ok(items.length >= 60)
+  } finally {
+    process.chdir(originalCwd)
+  }
 })
