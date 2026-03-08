@@ -1,0 +1,383 @@
+{
+  "generatedAt": "2026-03-08T13:36:52.884Z",
+  "source": {
+    "staticPagesDir": "src/pages",
+    "portfolioDir": "data/portfolio"
+  },
+  "counts": {
+    "static": 16,
+    "markdown": 60,
+    "markdownByLanguage": {
+      "en": 30,
+      "es": 30
+    }
+  },
+  "static": [
+    {
+      "route": "/",
+      "file": "src/pages/index.js"
+    },
+    {
+      "route": "/404/",
+      "file": "src/pages/404.js"
+    },
+    {
+      "route": "/acerca-de-mi/",
+      "file": "src/pages/acerca-de-mi.js"
+    },
+    {
+      "route": "/articulos/",
+      "file": "src/pages/articulos.js"
+    },
+    {
+      "route": "/contacto/",
+      "file": "src/pages/contacto.js"
+    },
+    {
+      "route": "/directos/",
+      "file": "src/pages/directos.js"
+    },
+    {
+      "route": "/embed/twitch/",
+      "file": "src/pages/embed/twitch.js"
+    },
+    {
+      "route": "/en/",
+      "file": "src/pages/en/index.js"
+    },
+    {
+      "route": "/en/about-me/",
+      "file": "src/pages/en/about-me.js"
+    },
+    {
+      "route": "/en/embed/twitch/",
+      "file": "src/pages/en/embed/twitch.js"
+    },
+    {
+      "route": "/en/projects/",
+      "file": "src/pages/en/projects.js"
+    },
+    {
+      "route": "/en/skills/",
+      "file": "src/pages/en/skills.js"
+    },
+    {
+      "route": "/en/streamer/",
+      "file": "src/pages/en/streamer.js"
+    },
+    {
+      "route": "/estudios-y-empresas/",
+      "file": "src/pages/estudios-y-empresas.js"
+    },
+    {
+      "route": "/proyectos/",
+      "file": "src/pages/proyectos.js"
+    },
+    {
+      "route": "/tecnologias/",
+      "file": "src/pages/tecnologias.js"
+    }
+  ],
+  "markdown": [
+    {
+      "route": "/en/projects/ab-layout-testing-for-macrojuegos-ux/",
+      "lang": "en",
+      "file": "data/portfolio/2012-12-10-ab-layout-testing-for-macrojuegos-ux/2012-12-10.en.md"
+    },
+    {
+      "route": "/en/projects/achievements-system-and-gamification/",
+      "lang": "en",
+      "file": "data/portfolio/2015-11-22-achievements-system-and-gamification/2015-11-22.en.md"
+    },
+    {
+      "route": "/en/projects/backend-and-frontend-deliciosi-development/",
+      "lang": "en",
+      "file": "data/portfolio/2017-04-12-backend-and-frontend-deliciosi-development/2017-04-12.en.md"
+    },
+    {
+      "route": "/en/projects/bigpoint-api-integration-third-party-mmo-games/",
+      "lang": "en",
+      "file": "data/portfolio/2014-02-06-bigpoint-api-integration-third-party-mmo-games/2014-02-05.en.md"
+    },
+    {
+      "route": "/en/projects/building-new-mvc-based-custom-framework-ragnet/",
+      "lang": "en",
+      "file": "data/portfolio/2010-06-02-building-new-mvc-based-custom-framework-ragnet/2010-06-02.en.md"
+    },
+    {
+      "route": "/en/projects/cleaning-up-backlinks-from-seo-attack/",
+      "lang": "en",
+      "file": "data/portfolio/2013-10-03-cleaning-up-backlinks-from-seo-attack/2013-10-03.en.md"
+    },
+    {
+      "route": "/en/projects/community-moderation-system/",
+      "lang": "en",
+      "file": "data/portfolio/2015-06-02-community-moderation-system/2015-06-02.en.md"
+    },
+    {
+      "route": "/en/projects/content-recommendation-system-for-macrojuegos/",
+      "lang": "en",
+      "file": "data/portfolio/2013-07-02-content-recommendation-system-for-macrojuegos/2013-07-02.en.md"
+    },
+    {
+      "route": "/en/projects/creating-an-avatar-system-backend-and-panel/",
+      "lang": "en",
+      "file": "data/portfolio/2012-03-07-creating-an-avatar-system-backend-and-panel/2012-03-07.en.md"
+    },
+    {
+      "route": "/en/projects/creating-search-suggestion-for-a-search-engine/",
+      "lang": "en",
+      "file": "data/portfolio/2011-10-05-creating-search-suggestion-for-a-search-engine/2011-10-05.en.md"
+    },
+    {
+      "route": "/en/projects/danieldev-a-react-powered-website/",
+      "lang": "en",
+      "file": "data/portfolio/2018-07-08-danieldev-a-react-powered-website/2018-07-08.en.md"
+    },
+    {
+      "route": "/en/projects/deliciosi-project-plan-and-management/",
+      "lang": "en",
+      "file": "data/portfolio/2017-03-03-deliciosi-project-plan-and-management/2017-03-03.en.md"
+    },
+    {
+      "route": "/en/projects/design-and-build-a-big-social-database/",
+      "lang": "en",
+      "file": "data/portfolio/2010-05-15-designing-big-database-for-macrojuegos/2010-05-15.en.md"
+    },
+    {
+      "route": "/en/projects/developing-custom-search-solution-inverted-index/",
+      "lang": "en",
+      "file": "data/portfolio/2011-09-01-developing-custom-search-inverted-index/2011-09-01.en.md"
+    },
+    {
+      "route": "/en/projects/developing-the-new-backend-for-the-new-macrojuegos/",
+      "lang": "en",
+      "file": "data/portfolio/2010-09-01-developing-the-new-backend-for-the-new-macrojuegos/2010-09-01.en.md"
+    },
+    {
+      "route": "/en/projects/google-ima3-sdk-integration/",
+      "lang": "en",
+      "file": "data/portfolio/2014-03-11-google-ima3-sdk-integration/2014-03-11.en.md"
+    },
+    {
+      "route": "/en/projects/improving-panagen-performance/",
+      "lang": "en",
+      "file": "data/portfolio/2009-11-06-improving-panagen-performance/2009-11-06.en.md"
+    },
+    {
+      "route": "/en/projects/integrating-multiple-mobile-games-publishers-api/",
+      "lang": "en",
+      "file": "data/portfolio/2015-09-05-integrating-multiple-mobile-games-publishers-api/2015-09-05.en.md"
+    },
+    {
+      "route": "/en/projects/macrojuegos-keyword-research-and-gathering/",
+      "lang": "en",
+      "file": "data/portfolio/2012-11-08-macrojuegoscom-keyword-research/2012-11-08.en.md"
+    },
+    {
+      "route": "/en/projects/responsive-mobile-dynamic-html-serving-website/",
+      "lang": "en",
+      "file": "data/portfolio/2014-09-04-responsive-mobile-dynamic-html-serving-website/2014-09-04.en.md"
+    },
+    {
+      "route": "/en/projects/revamping-the-layout-design-from-macrojuegos/",
+      "lang": "en",
+      "file": "data/portfolio/2009-09-20-macrojuegos-new-design/2009-09-20.en.md"
+    },
+    {
+      "route": "/en/projects/scaling-layouts-to-desktop-responsive/",
+      "lang": "en",
+      "file": "data/portfolio/2013-11-04-scaling-layouts-to-desktop-responsive/2013-11-04.en.md"
+    },
+    {
+      "route": "/en/projects/scratch-and-win-a-unity3d-minigame/",
+      "lang": "en",
+      "file": "data/portfolio/2016-05-14-scratch-and-win-a-unity3d-minigame/2016-05-14.en.md"
+    },
+    {
+      "route": "/en/projects/seonet-a-custom-seo-tool-and-spider/",
+      "lang": "en",
+      "file": "data/portfolio/2012-01-13-seonet-a-custom-seo-tool-and-spider/2012-01-13.en.md"
+    },
+    {
+      "route": "/en/projects/spinwheel-mobile-game-for-macrojuegos-app/",
+      "lang": "en",
+      "file": "data/portfolio/2016-09-03-spinwheel-mobile-game-for-macrojuegos-app/2016-09-03.en.md"
+    },
+    {
+      "route": "/en/projects/torafishing-a-unity-mobile-game/",
+      "lang": "en",
+      "file": "data/portfolio/2016-10-10-torafishing-a-unity-mobile-game/2016-10-10.en.md"
+    },
+    {
+      "route": "/en/projects/upgrading-main-product-line-to-panagen/",
+      "lang": "en",
+      "file": "data/portfolio/2010-01-15-upgrading-main-product-using-panagen/2010-01-15.en.md"
+    },
+    {
+      "route": "/en/projects/warrior-web-system/",
+      "lang": "en",
+      "file": "data/portfolio/2012-07-04-warrior-web-system/2012-07-04.en.md"
+    },
+    {
+      "route": "/en/projects/your-own-rankings-in-your-website/",
+      "lang": "en",
+      "file": "data/portfolio/2013-05-03-your-own-rankings-in-your-website/2013-05-03.en.md"
+    },
+    {
+      "route": "/en/projects/ytrends-an-alternative-for-youtube-trends/",
+      "lang": "en",
+      "file": "data/portfolio/2019-07-01-ytrends-an-alternative-for-youtube-trends/2019-07-01.en.md"
+    },
+    {
+      "route": "/proyectos/ab-tests-para-mejorar-el-ux-de-macrojuegos/",
+      "lang": "es",
+      "file": "data/portfolio/2012-12-10-ab-layout-testing-for-macrojuegos-ux/2012-12-10.md"
+    },
+    {
+      "route": "/proyectos/adaptando-producto-principal-a-panagen/",
+      "lang": "es",
+      "file": "data/portfolio/2010-01-15-upgrading-main-product-using-panagen/2010-01-15.md"
+    },
+    {
+      "route": "/proyectos/creando-sistema-de-avatares-backend-y-panel/",
+      "lang": "es",
+      "file": "data/portfolio/2012-03-07-creating-an-avatar-system-backend-and-panel/2012-03-07.md"
+    },
+    {
+      "route": "/proyectos/creando-sugerencias-de-busqueda-para-buscador-interno/",
+      "lang": "es",
+      "file": "data/portfolio/2011-10-05-creating-search-suggestion-for-a-search-engine/2011-10-05.md"
+    },
+    {
+      "route": "/proyectos/danieldev-una-web-creada-con-react/",
+      "lang": "es",
+      "file": "data/portfolio/2018-07-08-danieldev-a-react-powered-website/2018-07-08.md"
+    },
+    {
+      "route": "/proyectos/desarrollo-de-ragnet-un-nuevo-mvc-framework/",
+      "lang": "es",
+      "file": "data/portfolio/2010-06-02-building-new-mvc-based-custom-framework-ragnet/2010-06-02.md"
+    },
+    {
+      "route": "/proyectos/desarrollo-del-nuevo-backend-para-macrojuegos/",
+      "lang": "es",
+      "file": "data/portfolio/2010-09-01-developing-the-new-backend-for-the-new-macrojuegos/2010-09-01.md"
+    },
+    {
+      "route": "/proyectos/desarrollo-frontend-y-backend-para-deliciosi/",
+      "lang": "es",
+      "file": "data/portfolio/2017-04-12-backend-and-frontend-deliciosi-development/2017-04-12.md"
+    },
+    {
+      "route": "/proyectos/desarrollo-sistema-personalizado-busquedas/",
+      "lang": "es",
+      "file": "data/portfolio/2011-09-01-developing-custom-search-inverted-index/2011-09-01.md"
+    },
+    {
+      "route": "/proyectos/disenar-y-crear-una-gran-base-de-datos-social/",
+      "lang": "es",
+      "file": "data/portfolio/2010-05-15-designing-big-database-for-macrojuegos/2010-05-15.md"
+    },
+    {
+      "route": "/proyectos/escalando-diseños-desktop-a-responsive/",
+      "lang": "es",
+      "file": "data/portfolio/2013-11-04-scaling-layouts-to-desktop-responsive/2013-11-04.md"
+    },
+    {
+      "route": "/proyectos/integracion-de-api-de-multiples-empresas-de-juegos-html5/",
+      "lang": "es",
+      "file": "data/portfolio/2015-09-05-integrating-multiple-mobile-games-publishers-api/2015-09-05.md"
+    },
+    {
+      "route": "/proyectos/integracion-del-api-de-bigpoint-juegos-mmo-de-terceros/",
+      "lang": "es",
+      "file": "data/portfolio/2014-02-06-bigpoint-api-integration-third-party-mmo-games/2014-02-05.md"
+    },
+    {
+      "route": "/proyectos/integracion-ima3-sdk-de-google/",
+      "lang": "es",
+      "file": "data/portfolio/2014-03-11-google-ima3-sdk-integration/2014-03-11.md"
+    },
+    {
+      "route": "/proyectos/limpiando-enlaces-externos-de-un-ataque-seo/",
+      "lang": "es",
+      "file": "data/portfolio/2013-10-03-cleaning-up-backlinks-from-seo-attack/2013-10-03.md"
+    },
+    {
+      "route": "/proyectos/maquetacion-diseno-macrojuegos/",
+      "lang": "es",
+      "file": "data/portfolio/2009-09-20-macrojuegos-new-design/2009-09-20.md"
+    },
+    {
+      "route": "/proyectos/optimizacion-rendimiento-panagen/",
+      "lang": "es",
+      "file": "data/portfolio/2009-11-06-improving-panagen-performance/2009-11-06.md"
+    },
+    {
+      "route": "/proyectos/planificacion-de-proyecto-deliciosi/",
+      "lang": "es",
+      "file": "data/portfolio/2017-03-03-deliciosi-project-plan-and-management/2017-03-03.md"
+    },
+    {
+      "route": "/proyectos/rasca-y-gana-un-minijuego-hecho-en-unity3d/",
+      "lang": "es",
+      "file": "data/portfolio/2016-05-14-scratch-and-win-a-unity3d-minigame/2016-05-14.md"
+    },
+    {
+      "route": "/proyectos/recopilacion-palabras-clave-macrojuegos/",
+      "lang": "es",
+      "file": "data/portfolio/2012-11-08-macrojuegoscom-keyword-research/2012-11-08.md"
+    },
+    {
+      "route": "/proyectos/seonet-una-herramienta-y-araña-seo/",
+      "lang": "es",
+      "file": "data/portfolio/2012-01-13-seonet-a-custom-seo-tool-and-spider/2012-01-13.md"
+    },
+    {
+      "route": "/proyectos/sistema-de-logros-y-gamificacion/",
+      "lang": "es",
+      "file": "data/portfolio/2015-11-22-achievements-system-and-gamification/2015-11-22.md"
+    },
+    {
+      "route": "/proyectos/sistema-de-moderacion-de-usuarios/",
+      "lang": "es",
+      "file": "data/portfolio/2015-06-02-community-moderation-system/2015-06-02.md"
+    },
+    {
+      "route": "/proyectos/sistema-de-recomendaciones-para-macrojuegos/",
+      "lang": "es",
+      "file": "data/portfolio/2013-07-02-content-recommendation-system-for-macrojuegos/2013-07-02.md"
+    },
+    {
+      "route": "/proyectos/sistema-de-webs-de-batalla/",
+      "lang": "es",
+      "file": "data/portfolio/2012-07-04-warrior-web-system/2012-07-04.md"
+    },
+    {
+      "route": "/proyectos/sitio-web-mobile-responsive-con-dynamic-html-serving/",
+      "lang": "es",
+      "file": "data/portfolio/2014-09-04-responsive-mobile-dynamic-html-serving-website/2014-09-04.md"
+    },
+    {
+      "route": "/proyectos/spinwheel-un-juego-de-movil-para-la-macrojuegos-app/",
+      "lang": "es",
+      "file": "data/portfolio/2016-09-03-spinwheel-mobile-game-for-macrojuegos-app/2016-09-03.md"
+    },
+    {
+      "route": "/proyectos/torafishing-un-juego-para-moviles-en-unity/",
+      "lang": "es",
+      "file": "data/portfolio/2016-10-10-torafishing-a-unity-mobile-game/2016-10-10.md"
+    },
+    {
+      "route": "/proyectos/tu-propio-algoritmo-de-google-en-tus-webs/",
+      "lang": "es",
+      "file": "data/portfolio/2013-05-03-your-own-rankings-in-your-website/2013-05-03.md"
+    },
+    {
+      "route": "/proyectos/ytrends-una-alternativa-para-tendencias-de-youtube/",
+      "lang": "es",
+      "file": "data/portfolio/2019-07-01-ytrends-an-alternative-for-youtube-trends/2019-07-01.md"
+    }
+  ]
+}

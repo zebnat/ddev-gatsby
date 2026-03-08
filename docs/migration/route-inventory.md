@@ -8,6 +8,7 @@ This document is the baseline route inventory for the Gatsby -> Next.js migratio
 - Markdown project detail routes from `data/portfolio/**/*.md`: **60**
   - `es`: 30
   - `en`: 30
+- Machine-generated artifact: `docs/migration/baseline-routes.json`
 
 ## Static page routes (source: `src/pages/`)
 
@@ -51,6 +52,8 @@ These rewrites must be preserved in final CloudFront/S3 behavior.
 Use these commands to refresh route inventory counts when content changes.
 
 ```bash
+node scripts/parity/extract-routes.mjs
+
 python -c "import pathlib; root=pathlib.Path('src/pages'); routes=[]
 for f in sorted(root.rglob('*.js')):
     rel=f.relative_to(root).as_posix()
