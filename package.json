@@ -49,11 +49,12 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby clean && gatsby develop",
-    "next:build": "npm run next:sync-static && npm --prefix apps/next run build",
+    "next:build": "npm run next:sync-static && npm run next:generate-sitemap && npm --prefix apps/next run build",
     "next:dev": "npm --prefix apps/next run dev",
     "next:start": "npm --prefix apps/next run start",
     "next:install": "npm --prefix apps/next install",
     "next:sync-static": "node scripts/parity/sync-static-assets.mjs",
+    "next:generate-sitemap": "node scripts/parity/generate-sitemap.mjs",
     "parity:routes": "node scripts/parity/extract-routes.mjs",
     "parity:verify-phase1": "node scripts/parity/verify-phase1.mjs",
     "format": "prettier --write \"src/**/*.js\" && prettier --write \"data/translations/*.js\"",
@@ -62,6 +63,7 @@
     "test:parity-routes": "node --test tests/parity/routes-baseline.test.mjs",
     "test:verify-phase1": "node --test tests/parity/verify-phase1.test.mjs",
     "test:static-assets": "node --test tests/parity/static-assets.test.mjs",
+    "test:sitemap": "node --test tests/parity/sitemap.test.mjs",
     "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id EFIL5MU5HFHL4 --paths \"/*\""
   },
   "devDependencies": {

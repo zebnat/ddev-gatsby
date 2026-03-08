@@ -1,11 +1,15 @@
 import { streamerPage } from '../../../../src/content/translations'
+import staticPageMetadata from '../../../../src/content/static-page-metadata.js'
 import StreamCardLite from '../../../../src/components/stream/StreamCardLite'
 
 const t = streamerPage.en
+const { buildStaticPageMetadata } = staticPageMetadata
 
-export const metadata = {
+export const metadata = buildStaticPageMetadata({
+  lang: 'en',
+  uniqueId: 'streamer',
   title: t.title,
-}
+})
 
 export default function StreamerPageEn() {
   return (

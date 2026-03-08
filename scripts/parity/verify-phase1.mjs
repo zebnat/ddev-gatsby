@@ -82,6 +82,26 @@ function checkStaticAssets() {
   )
 }
 
+async function checkSitemap() {
+  const sitemapPath = path.join(REPO_ROOT, 'apps', 'next', 'out', 'sitemap.xml')
+  if (!existsSync(sitemapPath)) {
+    return createCheck('sitemap', false, 'Missing apps/next/out/sitemap.xml')
+  }
+
+  const xml = await readFile(sitemapPath, 'utf8')
+  const hasEsRoot = xml.includes('<loc>https://www.danieldev.es/</loc>')
+  const hasEnRoot = xml.includes('<loc>https://www.danieldev.es/en/</loc>')
+
+  const ok = hasEsRoot && hasEnRoot
+  return createCheck(
+    'sitemap',
+    ok,
+    ok
+      ? 'Sitemap exists and includes bilingual root URLs'
+      : 'Sitemap exists but missing expected bilingual root URLs'
+  )
+}
+
 function checkRequiredDocs() {
   const requiredDocs = [
     'docs/migration/parity-checklist.md',
@@ -109,6 +129,7 @@ export async function verifyPhase1() {
     await checkStaticRouteParity(baseline),
     await checkProjectRouteParity(baseline),
     checkStaticAssets(),
+    await checkSitemap(),
     checkRequiredDocs(),
   ]
 

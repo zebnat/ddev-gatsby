@@ -1,6 +1,12 @@
-export const metadata = {
+import staticPageMetadata from '../../../src/content/static-page-metadata.js'
+
+const { buildStaticPageMetadata } = staticPageMetadata
+
+export const metadata = buildStaticPageMetadata({
+  lang: 'es',
+  uniqueId: 'contact',
   title: 'Ponte en contacto',
-}
+})
 
 export default function ContactPageEs() {
   return (

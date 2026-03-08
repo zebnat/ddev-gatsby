@@ -33,6 +33,17 @@ test('keeps a stable route from source markdown frontmatter', async () => {
   assert.ok(ytrendsEs)
   assert.equal(ytrendsEs.lang, 'es')
   assert.equal(typeof ytrendsEs.description, 'string')
+  assert.equal(typeof ytrendsEs.body, 'string')
+  assert.equal(
+    ytrendsEs.body.includes('Una alternativa a las tendencias de Youtube'),
+    true
+  )
+  assert.equal(
+    ytrendsEs.body.includes(
+      '(/portfolio/2019-07-01-ytrends-an-alternative-for-youtube-trends/ytrends-mobile-home.png)'
+    ),
+    true
+  )
 })
 
 test('loads portfolio items even when cwd is apps/next', async () => {

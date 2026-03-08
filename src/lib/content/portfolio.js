@@ -60,6 +60,39 @@ function parseArray(frontmatter, key) {
   return values
 }
 
+function parseMarkdownBody(markdown) {
+  const match = markdown.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/)
+  if (!match) {
+    return markdown.trim()
+  }
+
+  return markdown.slice(match[0].length).trim()
+}
+
+function isAbsoluteOrRemoteUrl(value) {
+  return /^(https?:\/\/|\/|#|mailto:)/i.test(value)
+}
+
+function rewriteRelativeImageUrls(markdownBody, sourceFile) {
+  const relativeDir = path
+    .relative(PORTFOLIO_DIR, path.dirname(sourceFile))
+    .replace(/\\/g, '/')
+
+  return markdownBody.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    (full, alt, rawUrl) => {
+      const cleanUrl = rawUrl.trim()
+
+      if (isAbsoluteOrRemoteUrl(cleanUrl)) {
+        return full
+      }
+
+      const rewritten = `/portfolio/${relativeDir}/${cleanUrl}`
+      return `![${alt}](${rewritten})`
+    }
+  )
+}
+
 async function walkMarkdownFiles(dirPath) {
   const entries = await readdir(dirPath, { withFileTypes: true })
   const files = await Promise.all(
@@ -109,6 +142,7 @@ async function getPortfolioItems(options = {}) {
       lang: parseScalar(frontmatter, 'lang'),
       tags: parseArray(frontmatter, 'tags'),
       hreflangs: parseArray(frontmatter, 'hreflangs'),
+      body: rewriteRelativeImageUrls(parseMarkdownBody(markdown), filePath),
       sourceFile: filePath,
     }
 

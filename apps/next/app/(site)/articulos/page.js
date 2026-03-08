@@ -1,6 +1,12 @@
-export const metadata = {
+import staticPageMetadata from '../../../src/content/static-page-metadata.js'
+
+const { buildStaticPageMetadata } = staticPageMetadata
+
+export const metadata = buildStaticPageMetadata({
+  lang: 'es',
+  uniqueId: 'articles',
   title: 'Indice de articulos',
-}
+})
 
 export default function ArticlesPageEs() {
   return (

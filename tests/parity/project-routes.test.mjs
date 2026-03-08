@@ -4,7 +4,8 @@ import test from 'node:test'
 
 import projectRoutesLoader from '../../src/lib/content/project-routes.js'
 
-const { getProjectPaths, pathToSlugSegments } = projectRoutesLoader
+const { getProjectPaths, pathToSlugSegments, getProjectByPath } =
+  projectRoutesLoader
 
 test('project route count matches markdown route count', async () => {
   const routes = await getProjectPaths()
@@ -25,4 +26,14 @@ test('next dynamic project detail route file exists', () => {
     existsSync('apps/next/app/(site)/(project-detail)/[...slug]/page.js'),
     true
   )
+})
+
+test('project route loader includes markdown body for detail rendering', async () => {
+  const project = await getProjectByPath(
+    '/proyectos/ytrends-una-alternativa-para-tendencias-de-youtube/'
+  )
+
+  assert.ok(project)
+  assert.equal(typeof project.body, 'string')
+  assert.equal(project.body.length > 200, true)
 })
