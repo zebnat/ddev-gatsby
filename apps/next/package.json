@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "danieldev": "file:../..",
+    "markdown-to-jsx": "^7.7.16",
     "next": "latest",
     "next-intl": "latest",
     "react": "^19.0.0",

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-08T13:48:42.749Z",
+  "generatedAt": "2026-03-08T17:00:13.665Z",
   "source": {
-    "staticPagesDir": "src/pages",
+    "nextSiteAppDir": "apps/next/app/(site)",
     "portfolioDir": "data/portfolio"
   },
   "counts": {
@@ -15,67 +15,67 @@
   "static": [
     {
       "route": "/",
-      "file": "src/pages/index.js"
+      "file": "apps/next/app/(site)/page.js"
     },
     {
       "route": "/404/",
-      "file": "src/pages/404.js"
+      "file": "apps/next/out/404/index.html"
     },
     {
       "route": "/acerca-de-mi/",
-      "file": "src/pages/acerca-de-mi.js"
+      "file": "apps/next/app/(site)/acerca-de-mi/page.js"
     },
     {
       "route": "/articulos/",
-      "file": "src/pages/articulos.js"
+      "file": "apps/next/app/(site)/articulos/page.js"
     },
     {
       "route": "/contacto/",
-      "file": "src/pages/contacto.js"
+      "file": "apps/next/app/(site)/contacto/page.js"
     },
     {
       "route": "/directos/",
-      "file": "src/pages/directos.js"
+      "file": "apps/next/app/(site)/directos/page.js"
     },
     {
       "route": "/embed/twitch/",
-      "file": "src/pages/embed/twitch.js"
+      "file": "apps/next/app/(site)/embed/twitch/page.js"
     },
     {
       "route": "/en/",
-      "file": "src/pages/en/index.js"
+      "file": "apps/next/app/(site)/en/page.js"
     },
     {
       "route": "/en/about-me/",
-      "file": "src/pages/en/about-me.js"
+      "file": "apps/next/app/(site)/en/about-me/page.js"
     },
     {
       "route": "/en/embed/twitch/",
-      "file": "src/pages/en/embed/twitch.js"
+      "file": "apps/next/app/(site)/en/embed/twitch/page.js"
     },
     {
       "route": "/en/projects/",
-      "file": "src/pages/en/projects.js"
+      "file": "apps/next/app/(site)/en/projects/page.js"
     },
     {
       "route": "/en/skills/",
-      "file": "src/pages/en/skills.js"
+      "file": "apps/next/app/(site)/en/skills/page.js"
     },
     {
       "route": "/en/streamer/",
-      "file": "src/pages/en/streamer.js"
+      "file": "apps/next/app/(site)/en/streamer/page.js"
     },
     {
       "route": "/estudios-y-empresas/",
-      "file": "src/pages/estudios-y-empresas.js"
+      "file": "apps/next/app/(site)/estudios-y-empresas/page.js"
     },
     {
       "route": "/proyectos/",
-      "file": "src/pages/proyectos.js"
+      "file": "apps/next/app/(site)/proyectos/page.js"
     },
     {
       "route": "/tecnologias/",
-      "file": "src/pages/tecnologias.js"
+      "file": "apps/next/app/(site)/tecnologias/page.js"
     }
   ],
   "markdown": [

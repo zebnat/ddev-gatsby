@@ -2,7 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const ROOT = process.cwd()
-const STATIC_PAGES_DIR = path.join(ROOT, 'src', 'pages')
+const NEXT_SITE_APP_DIR = path.join(ROOT, 'apps', 'next', 'app', '(site)')
 const PORTFOLIO_DIR = path.join(ROOT, 'data', 'portfolio')
 const OUTPUT_FILE = path.join(ROOT, 'docs', 'migration', 'baseline-routes.json')
 
@@ -25,22 +25,32 @@ function normalizeSlashes(value) {
   return value.replace(/\\/g, '/')
 }
 
-function pageFileToRoute(relativeFile) {
+function appPageFileToRoute(relativeFile) {
   const rel = normalizeSlashes(relativeFile)
 
-  if (rel === '404.js') {
-    return '/404/'
-  }
-
-  if (rel === 'index.js') {
+  if (rel === 'page.js') {
     return '/'
   }
 
-  if (rel.endsWith('/index.js')) {
-    return `/${rel.slice(0, -'/index.js'.length)}/`
+  if (!rel.endsWith('/page.js')) {
+    return null
   }
 
-  return `/${rel.slice(0, -'.js'.length)}/`
+  const withoutLeaf = rel.slice(0, -'/page.js'.length)
+  const segments = withoutLeaf
+    .split('/')
+    .filter(Boolean)
+    .filter((segment) => !segment.startsWith('('))
+
+  if (segments.some((segment) => segment.startsWith('['))) {
+    return null
+  }
+
+  if (segments.length === 0) {
+    return '/'
+  }
+
+  return `/${segments.join('/')}/`
 }
 
 function parseFrontmatterField(markdown, fieldName) {
@@ -50,21 +60,33 @@ function parseFrontmatterField(markdown, fieldName) {
 }
 
 async function extractStaticRoutes() {
-  const files = (await walkFiles(STATIC_PAGES_DIR)).filter((filePath) =>
+  const files = (await walkFiles(NEXT_SITE_APP_DIR)).filter((filePath) =>
     filePath.endsWith('.js')
   )
 
   const routes = files
     .map((filePath) => {
       const relativeFile = normalizeSlashes(
-        path.relative(STATIC_PAGES_DIR, filePath)
+        path.relative(NEXT_SITE_APP_DIR, filePath)
       )
+      const route = appPageFileToRoute(relativeFile)
+      if (!route) {
+        return null
+      }
+
       return {
-        route: pageFileToRoute(relativeFile),
-        file: `src/pages/${relativeFile}`,
+        route,
+        file: `apps/next/app/(site)/${relativeFile}`,
       }
     })
-    .sort((a, b) => a.route.localeCompare(b.route))
+    .filter(Boolean)
+
+  routes.push({
+    route: '/404/',
+    file: 'apps/next/out/404/index.html',
+  })
+
+  routes.sort((a, b) => a.route.localeCompare(b.route))
 
   return routes
 }
@@ -111,7 +133,7 @@ async function main() {
   const payload = {
     generatedAt: new Date().toISOString(),
     source: {
-      staticPagesDir: 'src/pages',
+      nextSiteAppDir: 'apps/next/app/(site)',
       portfolioDir: 'data/portfolio',
     },
     counts: {

@@ -9,7 +9,7 @@ Use this checklist before removing Gatsby implementation.
 
 ## Routing
 
-- [ ] All static routes from `src/pages/` exist in Next output.
+- [ ] All static routes from `apps/next/app/(site)/` exist in Next output.
 - [ ] All markdown detail routes from `data/portfolio/**/*.md` exist in Next output.
 - [ ] Trailing slash behavior matches current production behavior.
 - [ ] `/` and `/en/` language trees are preserved.

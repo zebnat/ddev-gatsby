@@ -18,9 +18,11 @@ From repository root:
 ```bash
 npm run next:install
 npm run next:build
+npm run deploy
 ```
 
 `next:build` includes asset sync via `next:sync-static` and then runs the Next static build.
+`deploy` runs `next:build`, then executes AWS S3 sync and CloudFront invalidation using `S3_BUCKET_NAME` and `CLOUDFRONT_DISTRIBUTION_ID` environment variables.
 
 ## Deployment commands (AWS CLI)
 

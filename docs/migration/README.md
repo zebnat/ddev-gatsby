@@ -6,16 +6,15 @@ Migrate `ddev-gatsby` from GatsbyJS to the latest stable Next.js while keeping s
 
 ## Current baseline
 
-- Framework: Gatsby 3 + React 17
+- Framework: Next.js 16 static export in `apps/next/`
 - Content model: markdown-driven portfolio entries in `data/portfolio/**/*.md`
 - Language model: Spanish default (`/`) and English under `/en/`
-- Current route source: `src/pages/` + markdown `path` frontmatter
+- Current route source: `apps/next/app/(site)/` + markdown `path` frontmatter
 - Current deploy model: static build uploaded to S3 + CloudFront invalidation
 
 ## Repository strategy during migration
 
-- Keep Gatsby at repository root for parity comparison while migration is in progress.
-- Build Next.js in an isolated app package at `apps/next/` to avoid React peer dependency conflicts.
+- Build Next.js in an isolated app package at `apps/next/`.
 - Use root scripts as wrappers for Next commands (`npm --prefix apps/next ...`).
 
 ## Tooling prerequisite
@@ -28,7 +27,7 @@ Migrate `ddev-gatsby` from GatsbyJS to the latest stable Next.js while keeping s
 - Keep strict URL parity including trailing slash behavior.
 - Keep canonical/hreflang/metadata parity in Phase 1.
 - Keep markdown files as source of truth for project details.
-- Migrate incrementally; do not remove Gatsby until parity checks pass.
+- Migrate incrementally and keep parity checks green after Gatsby decommission.
 
 ## Phases
 

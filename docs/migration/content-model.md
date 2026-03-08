@@ -4,13 +4,13 @@
 
 - Portfolio content: `data/portfolio/**/*.md`
 - Locale + menu metadata: `data/localeGlobals.js`
-- Site defaults: `data/config.js`, `gatsby-config.js`
+- Site defaults: `data/config.js`, `apps/next/next.config.mjs`
 - UI copy/translations: `data/translations/*.js`
 - Skills dataset: `data/skills.js`
 
 ## Markdown frontmatter schema (portfolio)
 
-Required fields currently used by Gatsby templates:
+Required fields currently used by Next portfolio rendering:
 
 - `path` (string): final route URL for detail page
 - `date` (string/date): publication/project date
@@ -20,7 +20,7 @@ Required fields currently used by Gatsby templates:
 - `tags` (string[]): project tags and labels
 - `hreflangs` (string[]): language alternates using `locale%%/url/` format
 
-Rendered template baseline is in `src/templates/portfolio.js`.
+Rendered detail page baseline is in `apps/next/app/(site)/(project-detail)/[...slug]/page.js`.
 
 ## Locale and navigation model
 
@@ -34,7 +34,7 @@ Rendered template baseline is in `src/templates/portfolio.js`.
   - `sortOrder`
   - `disabled`
 
-In Gatsby, `gatsby-node.js` builds per-menu `hrefLangs` arrays used by layout and topbar language switchers.
+In Next, `src/lib/content/locales.js` builds normalized menu data with per-menu `hrefLangs` arrays for shell navigation.
 
 ## Translation model
 

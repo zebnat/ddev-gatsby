@@ -20,17 +20,17 @@ User will commit himself, but you can recommend commits to the user.
 ### Execution strategy
 
 - Use an incremental migration approach.
-- Do not remove Gatsby implementation until parity checklist is passed.
+- Gatsby implementation has been removed after parity checklist passed; keep parity checks green.
 - Execute in two phases:
   1. Technical migration and parity baseline.
   2. Full redesign on top of stable Next.js foundation.
 
 ### Source-of-truth files for parity
 
-- Routes and static pages: `src/pages/`
+- Routes and static pages: `apps/next/app/(site)/`
 - Dynamic project routes/content: `data/portfolio/**/*.md`
 - Language/menu metadata: `data/localeGlobals.js`
-- Shared config: `data/config.js`, `gatsby-config.js`
+- Shared config: `data/config.js`, `apps/next/next.config.mjs`
 - Translations and page copy: `data/translations/*.js`
 
 ### Required docs artifacts before and during implementation

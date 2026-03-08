@@ -1,16 +1,16 @@
 # Route Inventory (Parity Baseline)
 
-This document is the baseline route inventory for the Gatsby -> Next.js migration.
+This document is the baseline route inventory for the Next.js static parity gate.
 
 ## Route totals
 
-- Static page routes from `src/pages/**/*.js`: **16**
+- Static page routes from `apps/next/app/(site)/**/page.js` (excluding dynamic segments): **16**
 - Markdown project detail routes from `data/portfolio/**/*.md`: **60**
   - `es`: 30
   - `en`: 30
 - Machine-generated artifact: `docs/migration/baseline-routes.json`
 
-## Static page routes (source: `src/pages/`)
+## Static page routes (source: `apps/next/app/(site)/`)
 
 - `/`
 - `/404/`
@@ -54,14 +54,15 @@ Use these commands to refresh route inventory counts when content changes.
 ```bash
 node scripts/parity/extract-routes.mjs
 
-python -c "import pathlib; root=pathlib.Path('src/pages'); routes=[]
-for f in sorted(root.rglob('*.js')):
-    rel=f.relative_to(root).as_posix()
-    if rel=='404.js': route='/404/'
-    elif rel=='index.js': route='/'
-    elif rel.endswith('/index.js'): route='/' + rel[:-9] + '/'
-    else: route='/' + rel[:-3] + '/'
+python -c "import pathlib; root=pathlib.Path('apps/next/app/(site)'); routes=[]
+for f in sorted(root.rglob('page.js')):
+    rel=f.relative_to(root).as_posix().replace('/page.js','')
+    parts=[p for p in rel.split('/') if p and not p.startswith('(')]
+    if any(p.startswith('[') for p in parts):
+        continue
+    route='/' if not parts else '/' + '/'.join(parts) + '/'
     routes.append(route)
+routes.append('/404/')
 print('static_pages',len(routes))"
 
 python -c "import pathlib,re,collections; root=pathlib.Path('data/portfolio');
