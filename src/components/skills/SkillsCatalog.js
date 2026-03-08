@@ -1,17 +1,92 @@
 import skills from '../../../data/skills.js'
 import skillsUtils from '../../lib/content/skills-utils.js'
 
+import Badge from '../ui/badge'
+import { Card, CardContent } from '../ui/card'
+
 const { sortSkillsByLevelAndRecency } = skillsUtils
 
 function SkillCard({ skill, wordLevel, description, recent }) {
   return (
-    <article style={styles.card}>
-      <h4 style={styles.title}>
-        {skill} {recent ? <span style={styles.recentDot}>●</span> : null}
-      </h4>
-      <p style={styles.level}>{wordLevel}</p>
-      <p style={styles.description}>{description}</p>
-    </article>
+    <Card
+      as="article"
+      className="h-full border-cyan-300/20 bg-slate-950/75 p-0 transition hover:border-cyan-300/45"
+    >
+      <CardContent className="space-y-3 p-4">
+        <h4 className="m-0 text-lg font-semibold text-slate-100">{skill}</h4>
+        <div className="flex flex-wrap gap-2">
+          <Badge variant="accent" className="normal-case tracking-normal">
+            {wordLevel}
+          </Badge>
+          {recent ? (
+            <Badge variant="warning" className="normal-case tracking-normal">
+              Recent
+            </Badge>
+          ) : null}
+        </div>
+        <p className="m-0 text-sm leading-relaxed text-slate-300">
+          {description}
+        </p>
+      </CardContent>
+    </Card>
+  )
+}
+
+function SkillsLevelGuide({ translation }) {
+  return (
+    <Card className="border-cyan-300/25 bg-slate-900/70">
+      <CardContent className="space-y-4 p-5">
+        <h3 className="m-0 text-xl font-semibold text-slate-100">
+          {translation.levels_explained}
+        </h3>
+        <ol className="m-0 list-decimal space-y-2 pl-5 text-sm text-slate-300">
+          <li>
+            <strong className="text-slate-100">
+              {translation.wordLevel[0]}:
+            </strong>{' '}
+            {translation.help_l1}
+          </li>
+          <li>
+            <strong className="text-slate-100">
+              {translation.wordLevel[1]}:
+            </strong>{' '}
+            {translation.help_l2}
+          </li>
+          <li>
+            <strong className="text-slate-100">
+              {translation.wordLevel[2]}:
+            </strong>{' '}
+            {translation.help_l3}
+          </li>
+          <li>
+            <strong className="text-slate-100">
+              {translation.wordLevel[3]}:
+            </strong>{' '}
+            {translation.help_l4}
+          </li>
+          <li>
+            <strong className="text-slate-100">
+              {translation.wordLevel[4]}:
+            </strong>{' '}
+            {translation.help_l5}
+          </li>
+        </ol>
+        <p className="m-0 text-sm text-slate-300">
+          <span className="font-semibold text-amber-200">
+            {translation.blinking}:
+          </span>{' '}
+          {translation.help_blinking}
+        </p>
+      </CardContent>
+    </Card>
+  )
+}
+
+function SkillGroupTitle({ title }) {
+  return (
+    <h3 className="m-0 inline-flex items-center rounded-full border border-cyan-300/45 bg-cyan-400/10 px-4 py-1 text-sm font-semibold uppercase tracking-[0.14em] text-cyan-100">
+      {title}
+    </h3>
   )
 }
 
@@ -19,9 +94,9 @@ function SkillGroup({ title, items, lang, translation }) {
   const sortedItems = sortSkillsByLevelAndRecency(items)
 
   return (
-    <section>
-      <h3 style={styles.groupTitle}>{title}</h3>
-      <div style={styles.grid}>
+    <section className="space-y-3">
+      <SkillGroupTitle title={title} />
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {sortedItems.map((item) => (
           <SkillCard
             key={item.skill}
@@ -38,30 +113,8 @@ function SkillGroup({ title, items, lang, translation }) {
 
 export default function SkillsCatalog({ lang, translation }) {
   return (
-    <>
-      <section>
-        <h3>{translation.levels_explained}</h3>
-        <ol>
-          <li>
-            <strong>{translation.wordLevel[0]}:</strong> {translation.help_l1}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[1]}:</strong> {translation.help_l2}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[2]}:</strong> {translation.help_l3}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[3]}:</strong> {translation.help_l4}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[4]}:</strong> {translation.help_l5}
-          </li>
-        </ol>
-        <p>
-          {translation.blinking}: {translation.help_blinking}
-        </p>
-      </section>
+    <div className="space-y-7">
+      <SkillsLevelGuide translation={translation} />
 
       <SkillGroup
         title={translation.languages}
@@ -87,44 +140,6 @@ export default function SkillsCatalog({ lang, translation }) {
         lang={lang}
         translation={translation}
       />
-    </>
+    </div>
   )
-}
-
-const styles = {
-  groupTitle: {
-    background: '#0a61ff',
-    color: '#fff',
-    padding: '4px 8px',
-    display: 'inline-block',
-    transform: 'skew(-14deg)',
-    marginTop: 24,
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-    gap: 12,
-    marginTop: 12,
-  },
-  card: {
-    border: '1px solid #d4d4d4',
-    borderRadius: 6,
-    background: '#fff',
-    padding: 12,
-  },
-  title: {
-    margin: '0 0 6px 0',
-  },
-  level: {
-    margin: '0 0 8px 0',
-    fontWeight: 700,
-    color: '#194f9a',
-  },
-  description: {
-    margin: 0,
-    fontSize: 14,
-  },
-  recentDot: {
-    color: '#f07f00',
-  },
 }

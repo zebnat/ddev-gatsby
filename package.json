@@ -8,10 +8,12 @@
     "url": "https://github.com/zebnat/ddev-gatsby.git"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "markdown-to-jsx": "^7.7.16",
     "next": "latest",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.4.0"
   },
   "keywords": [
     ""
@@ -37,6 +39,9 @@
     "deploy": "npm run next:build && node scripts/parity/deploy-next-static.mjs"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "prettier": "^2.3.2"
   }
 }

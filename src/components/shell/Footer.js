@@ -1,13 +1,7 @@
 export default function Footer() {
-  return <footer style={styles.footer}>Migrating from Gatsby to Next.js</footer>
-}
-
-const styles = {
-  footer: {
-    marginTop: 24,
-    paddingTop: 16,
-    borderTop: '1px solid #d7d7d7',
-    fontSize: 14,
-    color: '#444',
-  },
+  return (
+    <footer className="mt-10 border-t border-cyan-300/20 pt-5 text-xs uppercase tracking-[0.15em] text-slate-400">
+      Migrating from Gatsby to Next.js
+    </footer>
+  )
 }

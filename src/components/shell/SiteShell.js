@@ -6,24 +6,10 @@ import TopBar from './TopBar'
 import { usePathname } from 'next/navigation'
 
 import localesLoader from '../../lib/content/locales.js'
+import shellUtils from './shell-utils.js'
 
 const { getDefaultLang, getMenuByLang } = localesLoader
-
-function getLanguageLinks(menuItems, defaultLang) {
-  const home = menuItems.find((item) => item.uniqueId === 'home')
-  if (home && Array.isArray(home.hrefLangs) && home.hrefLangs.length > 0) {
-    return home.hrefLangs
-  }
-
-  return [
-    { locale: defaultLang, url: '/' },
-    { locale: 'en', url: '/en/' },
-  ]
-}
-
-function detectCurrentLang(pathname) {
-  return pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'es'
-}
+const { detectCurrentLang, getLanguageLinks } = shellUtils
 
 export default function SiteShell({ children }) {
   const pathname = usePathname() || '/'
@@ -33,19 +19,11 @@ export default function SiteShell({ children }) {
   const languageLinks = getLanguageLinks(menuItems, defaultLang)
 
   return (
-    <div style={styles.wrapper}>
+    <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-10">
       <TopBar languages={languageLinks} currentLang={currentLang} />
       <Menu menuItems={menuItems} />
-      <main>{children}</main>
+      <main className="pt-3">{children}</main>
       <Footer />
     </div>
   )
-}
-
-const styles = {
-  wrapper: {
-    maxWidth: 920,
-    margin: '0 auto',
-    padding: '16px',
-  },
 }
