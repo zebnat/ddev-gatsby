@@ -21,21 +21,21 @@ test('next static routes include key bilingual pages', () => {
 
 test('next site static pages exist for migration baseline', () => {
   const pageFiles = [
-    'apps/next/app/(site)/page.js',
-    'apps/next/app/(site)/acerca-de-mi/page.js',
-    'apps/next/app/(site)/articulos/page.js',
-    'apps/next/app/(site)/contacto/page.js',
-    'apps/next/app/(site)/directos/page.js',
-    'apps/next/app/(site)/estudios-y-empresas/page.js',
-    'apps/next/app/(site)/embed/twitch/page.js',
-    'apps/next/app/(site)/tecnologias/page.js',
-    'apps/next/app/(site)/proyectos/page.js',
-    'apps/next/app/(site)/en/page.js',
-    'apps/next/app/(site)/en/about-me/page.js',
-    'apps/next/app/(site)/en/embed/twitch/page.js',
-    'apps/next/app/(site)/en/skills/page.js',
-    'apps/next/app/(site)/en/projects/page.js',
-    'apps/next/app/(site)/en/streamer/page.js',
+    'app/(site)/page.js',
+    'app/(site)/acerca-de-mi/page.js',
+    'app/(site)/articulos/page.js',
+    'app/(site)/contacto/page.js',
+    'app/(site)/directos/page.js',
+    'app/(site)/estudios-y-empresas/page.js',
+    'app/(site)/embed/twitch/page.js',
+    'app/(site)/tecnologias/page.js',
+    'app/(site)/proyectos/page.js',
+    'app/(site)/en/page.js',
+    'app/(site)/en/about-me/page.js',
+    'app/(site)/en/embed/twitch/page.js',
+    'app/(site)/en/skills/page.js',
+    'app/(site)/en/projects/page.js',
+    'app/(site)/en/streamer/page.js',
   ]
 
   for (const filePath of pageFiles) {

@@ -11,12 +11,12 @@ test('phase1 verifier returns pass only when all checks pass', async () => {
   assert.equal(result.checks.length > 0, true)
 })
 
-test('phase1 verifier requires decommission readiness document', async () => {
+test('phase1 verifier requires migration summary documents', async () => {
   const result = await verifyPhase1()
   const requiredDocsCheck = result.checks.find(
     (check) => check.id === 'required-docs'
   )
 
   assert.equal(requiredDocsCheck.ok, true)
-  assert.equal(requiredDocsCheck.details.includes('(4 files)'), true)
+  assert.equal(requiredDocsCheck.details.includes('(2 files)'), true)
 })

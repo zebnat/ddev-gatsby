@@ -13,13 +13,7 @@ const BASELINE_PATH = path.join(
   'migration',
   'baseline-routes.json'
 )
-const SITEMAP_PATH = path.join(
-  REPO_ROOT,
-  'apps',
-  'next',
-  'public',
-  'sitemap.xml'
-)
+const SITEMAP_PATH = path.join(REPO_ROOT, 'public', 'sitemap.xml')
 
 const require = createRequire(import.meta.url)
 const config = require('../../data/config.js')

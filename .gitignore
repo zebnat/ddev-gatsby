@@ -2,9 +2,9 @@
 .cache
 node_modules
 yarn-error.log
-apps/next/.next
-apps/next/out
 
-# Build directory
-/public
+# Next.js build artifacts
+.next
+out
+
 .DS_Store

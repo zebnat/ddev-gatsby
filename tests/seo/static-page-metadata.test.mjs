@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import staticPageMetadata from '../../apps/next/src/content/static-page-metadata.js'
+import staticPageMetadata from '../../src/content/static-page-metadata.js'
 
 const { buildStaticPageMetadata } = staticPageMetadata
 

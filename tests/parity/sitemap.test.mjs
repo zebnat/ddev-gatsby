@@ -12,7 +12,7 @@ test('package scripts include sitemap generation', () => {
 })
 
 test('sitemap is generated with core static and project routes', async () => {
-  const sitemapPath = 'apps/next/public/sitemap.xml'
+  const sitemapPath = 'public/sitemap.xml'
   assert.equal(existsSync(sitemapPath), true)
 
   const xml = await readFile(sitemapPath, 'utf8')

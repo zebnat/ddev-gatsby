@@ -8,13 +8,13 @@ const packageJson = JSON.parse(
 )
 
 test('critical public assets exist in next app', () => {
-  assert.equal(existsSync('apps/next/public/robots.txt'), true)
-  assert.equal(existsSync('apps/next/public/docs/cv.pdf'), true)
-  assert.equal(existsSync('apps/next/public/site.webmanifest'), true)
-  assert.equal(existsSync('apps/next/public/scripts/vimrc.cfg'), true)
+  assert.equal(existsSync('public/robots.txt'), true)
+  assert.equal(existsSync('public/docs/cv.pdf'), true)
+  assert.equal(existsSync('public/site.webmanifest'), true)
+  assert.equal(existsSync('public/scripts/vimrc.cfg'), true)
   assert.equal(
     existsSync(
-      'apps/next/public/portfolio/2019-07-01-ytrends-an-alternative-for-youtube-trends/ytrends-mobile-home.png'
+      'public/portfolio/2019-07-01-ytrends-an-alternative-for-youtube-trends/ytrends-mobile-home.png'
     ),
     true
   )

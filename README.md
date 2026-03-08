@@ -1,13 +1,30 @@
 # danieldev.es
 
-Just a personal website created with GatsbyJS.
+Personal website built with Next.js static export.
 
-## What is this
+## Stack
 
-[Gatsby](https://www.gatsbyjs.org/) is a free and open source framework based on React that helps developers build blazing fast websites and apps.
+- Next.js App Router (static export)
+- React 19
+- Markdown-driven portfolio content from `data/portfolio/**/*.md`
 
-With Gatsby you can create SEO friendly websites using React, GraphQL and community plugins for pulling external data into React. Gatsby builds your website into static files, optimized for performance and SEO.
+## Run locally
 
-It can also be hosted anywhere because they are just normal html, css and javascript files.
+```bash
+npm install
+npm run next:build
+```
 
-You can also scale any page to behave like a clientside React app but with HTML served by your webserver for better SEO and performance.
+For development:
+
+```bash
+npm run next:dev
+```
+
+## Verification
+
+```bash
+npm test
+npm run next:build
+npm run parity:verify-phase1
+```

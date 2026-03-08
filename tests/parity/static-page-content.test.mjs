@@ -8,19 +8,17 @@ async function readPage(relativePath) {
 }
 
 test('articles page keeps baseline lorem content block', async () => {
-  const source = await readPage('apps/next/app/(site)/articulos/page.js')
+  const source = await readPage('app/(site)/articulos/page.js')
   assert.equal(source.includes('Lorem ipsum dolor sit amet'), true)
 })
 
 test('contact page keeps baseline lorem content block', async () => {
-  const source = await readPage('apps/next/app/(site)/contacto/page.js')
+  const source = await readPage('app/(site)/contacto/page.js')
   assert.equal(source.includes('Lorem ipsum dolor sit amet'), true)
 })
 
 test('resume page keeps both baseline content blocks', async () => {
-  const source = await readPage(
-    'apps/next/app/(site)/estudios-y-empresas/page.js'
-  )
+  const source = await readPage('app/(site)/estudios-y-empresas/page.js')
   assert.equal(source.includes('Lorem ipsum dolor sit amet'), true)
   assert.equal(
     source.includes('Proin tempus, ex quis dignissim tincidunt'),

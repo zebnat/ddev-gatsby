@@ -10,11 +10,11 @@ const REPO_ROOT = path.resolve(__dirname, '..', '..')
 
 function normalizeRouteToOutputPath(route) {
   if (route === '/') {
-    return path.join('apps', 'next', 'out', 'index.html')
+    return path.join('out', 'index.html')
   }
 
   const normalized = route.replace(/^\/+|\/+$/g, '')
-  return path.join('apps', 'next', 'out', normalized, 'index.html')
+  return path.join('out', normalized, 'index.html')
 }
 
 async function readJsonFile(relativePath) {
@@ -38,7 +38,7 @@ async function checkStaticRouteParity(baseline) {
     'static-route-parity',
     missing.length === 0,
     missing.length === 0
-      ? `All ${staticRoutes.length} static routes exist in apps/next/out`
+      ? `All ${staticRoutes.length} static routes exist in out`
       : `Missing ${missing.length}/${
           staticRoutes.length
         } static routes: ${missing.slice(0, 8).join(', ')}`
@@ -56,17 +56,17 @@ async function checkProjectRouteParity(baseline) {
     'project-route-parity',
     missing.length === 0,
     missing.length === 0
-      ? `All ${markdownRoutes.length} markdown routes exist in apps/next/out`
+      ? `All ${markdownRoutes.length} markdown routes exist in out`
       : `Missing ${missing.length}/${markdownRoutes.length} markdown routes`
   )
 }
 
 function checkStaticAssets() {
   const requiredAssets = [
-    'apps/next/out/robots.txt',
-    'apps/next/out/site.webmanifest',
-    'apps/next/out/docs/cv.pdf',
-    'apps/next/out/scripts/vimrc.cfg',
+    'out/robots.txt',
+    'out/site.webmanifest',
+    'out/docs/cv.pdf',
+    'out/scripts/vimrc.cfg',
   ]
 
   const missing = requiredAssets.filter(
@@ -83,9 +83,9 @@ function checkStaticAssets() {
 }
 
 async function checkSitemap() {
-  const sitemapPath = path.join(REPO_ROOT, 'apps', 'next', 'out', 'sitemap.xml')
+  const sitemapPath = path.join(REPO_ROOT, 'out', 'sitemap.xml')
   if (!existsSync(sitemapPath)) {
-    return createCheck('sitemap', false, 'Missing apps/next/out/sitemap.xml')
+    return createCheck('sitemap', false, 'Missing out/sitemap.xml')
   }
 
   const xml = await readFile(sitemapPath, 'utf8')
@@ -104,10 +104,8 @@ async function checkSitemap() {
 
 function checkRequiredDocs() {
   const requiredDocs = [
+    'docs/migration/README.md',
     'docs/migration/parity-checklist.md',
-    'docs/migration/deployment-next-static.md',
-    'docs/migration/cutover-plan.md',
-    'docs/migration/gatsby-decommission-readiness.md',
   ]
 
   const missing = requiredDocs.filter(

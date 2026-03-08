@@ -46,11 +46,11 @@ test('keeps a stable route from source markdown frontmatter', async () => {
   )
 })
 
-test('loads portfolio items even when cwd is apps/next', async () => {
+test('loads portfolio items even when cwd is app', async () => {
   const require = createRequire(import.meta.url)
   const originalCwd = process.cwd()
 
-  process.chdir('apps/next')
+  process.chdir('app')
   try {
     const modulePath = require.resolve('../../src/lib/content/portfolio.js')
     delete require.cache[modulePath]

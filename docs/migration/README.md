@@ -1,62 +1,26 @@
-# Gatsby to Next.js Migration
+# Migration Status
 
-## Objective
+Phase 1 is complete.
 
-Migrate `ddev-gatsby` from GatsbyJS to the latest stable Next.js while keeping static hosting on AWS S3 + CloudFront and preserving current SEO-critical behavior.
+## Finalized outcomes
 
-## Current baseline
+- Gatsby runtime and Gatsby-only source files were removed.
+- Next.js App Router now runs from repository root (`app/`, `src/`, `public/`, `next.config.mjs`).
+- Static export behavior is preserved (`next build` outputs to `out/`).
+- Language route parity is preserved (`/` for Spanish, `/en/` for English).
+- Markdown portfolio files in `data/portfolio/**/*.md` remain the source of truth.
 
-- Framework: Next.js 16 static export in `apps/next/`
-- Content model: markdown-driven portfolio entries in `data/portfolio/**/*.md`
-- Language model: Spanish default (`/`) and English under `/en/`
-- Current route source: `apps/next/app/(site)/` + markdown `path` frontmatter
-- Current deploy model: static build uploaded to S3 + CloudFront invalidation
+## Phase 1 verification commands
 
-## Repository strategy during migration
+- `npm test`
+- `npm run next:build`
+- `npm run parity:verify-phase1`
 
-- Build Next.js in an isolated app package at `apps/next/`.
-- Use root scripts as wrappers for Next commands (`npm --prefix apps/next ...`).
+## Deferred items
 
-## Tooling prerequisite
+- Staging/production deploy validation is deferred to a later session.
+- Visual redesign/styling work is deferred to a later session.
 
-- Latest stable Next.js currently requires Node.js `>=20.9.0`.
-- If local or CI uses older Node (for example `20.5.0`), `next build` will fail until runtime is upgraded.
+## Parity artifact
 
-## Migration principles
-
-- Keep strict URL parity including trailing slash behavior.
-- Keep canonical/hreflang/metadata parity in Phase 1.
-- Keep markdown files as source of truth for project details.
-- Migrate incrementally and keep parity checks green after Gatsby decommission.
-
-## Phases
-
-### Phase 1: Technical migration and parity baseline
-
-- Introduce Next.js static export foundation.
-- Port data loading from Gatsby GraphQL to filesystem/content helpers.
-- Port routes and page rendering with parity-first metadata.
-- Validate route/content/SEO parity.
-
-### Phase 2: Full redesign
-
-- Redesign UI and visual system on top of stable Next.js routes/content.
-- Preserve route and content parity guarantees from Phase 1.
-
-## Required artifacts
-
-- `docs/migration/baseline-routes.json`
-- `docs/migration/route-inventory.md`
-- `docs/migration/content-model.md`
-- `docs/migration/parity-checklist.md`
-- `docs/migration/deployment-next-static.md`
-- `docs/plans/2026-03-08-gatsby-to-nextjs-design.md`
-- `docs/plans/2026-03-08-gatsby-to-nextjs-implementation-plan.md`
-
-## Definition of done for Phase 1
-
-- Next.js static export builds successfully.
-- Route parity confirmed for static pages and markdown project pages.
-- Canonical/hreflang/title/description behavior matches current baseline.
-- Static assets and downloadable docs remain accessible under same URLs.
-- Gatsby runtime and dependencies can be safely removed.
+- Route baseline snapshot: `docs/migration/baseline-routes.json`

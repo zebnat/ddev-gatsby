@@ -23,7 +23,7 @@ function main() {
   const bucket = getRequiredEnv('S3_BUCKET_NAME')
   const distributionId = getRequiredEnv('CLOUDFRONT_DISTRIBUTION_ID')
 
-  run('aws', ['s3', 'sync', 'apps/next/out', `s3://${bucket}`, '--delete'])
+  run('aws', ['s3', 'sync', 'out', `s3://${bucket}`, '--delete'])
   run('aws', [
     'cloudfront',
     'create-invalidation',

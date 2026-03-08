@@ -8,7 +8,7 @@ const REPO_ROOT = path.resolve(__dirname, '..', '..')
 
 const SOURCE_DIR = path.join(REPO_ROOT, 'static')
 const PORTFOLIO_SOURCE_DIR = path.join(REPO_ROOT, 'data', 'portfolio')
-const TARGET_DIR = path.join(REPO_ROOT, 'apps', 'next', 'public')
+const TARGET_DIR = path.join(REPO_ROOT, 'public')
 const PORTFOLIO_TARGET_DIR = path.join(TARGET_DIR, 'portfolio')
 
 const MEDIA_EXTENSIONS = new Set([

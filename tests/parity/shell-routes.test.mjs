@@ -27,5 +27,5 @@ test('all enabled menu routes are in baseline static routes', () => {
 })
 
 test('next site shell layout exists for route group', () => {
-  assert.equal(existsSync('apps/next/app/(site)/layout.js'), true)
+  assert.equal(existsSync('app/(site)/layout.js'), true)
 })

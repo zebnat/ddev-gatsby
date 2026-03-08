@@ -23,7 +23,7 @@ test('converts project routes into catch-all slug segments', () => {
 
 test('next dynamic project detail route file exists', () => {
   assert.equal(
-    existsSync('apps/next/app/(site)/(project-detail)/[...slug]/page.js'),
+    existsSync('app/(site)/(project-detail)/[...slug]/page.js'),
     true
   )
 })

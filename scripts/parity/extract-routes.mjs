@@ -2,7 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const ROOT = process.cwd()
-const NEXT_SITE_APP_DIR = path.join(ROOT, 'apps', 'next', 'app', '(site)')
+const NEXT_SITE_APP_DIR = path.join(ROOT, 'app', '(site)')
 const PORTFOLIO_DIR = path.join(ROOT, 'data', 'portfolio')
 const OUTPUT_FILE = path.join(ROOT, 'docs', 'migration', 'baseline-routes.json')
 
@@ -76,14 +76,14 @@ async function extractStaticRoutes() {
 
       return {
         route,
-        file: `apps/next/app/(site)/${relativeFile}`,
+        file: `app/(site)/${relativeFile}`,
       }
     })
     .filter(Boolean)
 
   routes.push({
     route: '/404/',
-    file: 'apps/next/out/404/index.html',
+    file: 'out/404/index.html',
   })
 
   routes.sort((a, b) => a.route.localeCompare(b.route))
@@ -133,7 +133,7 @@ async function main() {
   const payload = {
     generatedAt: new Date().toISOString(),
     source: {
-      nextSiteAppDir: 'apps/next/app/(site)',
+      nextSiteAppDir: 'app/(site)',
       portfolioDir: 'data/portfolio',
     },
     counts: {

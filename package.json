@@ -7,7 +7,12 @@
     "type": "git",
     "url": "https://github.com/zebnat/ddev-gatsby.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "markdown-to-jsx": "^7.7.16",
+    "next": "latest",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "keywords": [
     ""
   ],
@@ -15,15 +20,14 @@
   "scripts": {
     "build": "npm run next:build",
     "develop": "npm run next:dev",
-    "next:build": "npm run next:sync-static && npm run next:generate-sitemap && npm --prefix apps/next run build",
-    "next:dev": "npm --prefix apps/next run dev",
-    "next:start": "npm --prefix apps/next run start",
-    "next:install": "npm --prefix apps/next install",
+    "next:build": "npm run next:sync-static && npm run next:generate-sitemap && next build",
+    "next:dev": "next dev",
+    "next:start": "next start",
     "next:sync-static": "node scripts/parity/sync-static-assets.mjs",
     "next:generate-sitemap": "node scripts/parity/generate-sitemap.mjs",
     "parity:routes": "node scripts/parity/extract-routes.mjs",
     "parity:verify-phase1": "node scripts/parity/verify-phase1.mjs",
-    "format": "prettier --write \"src/**/*.js\" && prettier --write \"data/translations/*.js\"",
+    "format": "prettier --write \"app/**/*.js\" && prettier --write \"src/**/*.js\" && prettier --write \"data/translations/*.js\"",
     "test": "npm run next:sync-static && npm run next:generate-sitemap && node --test",
     "test:next-foundation": "node --test tests/config/next-foundation.test.mjs",
     "test:parity-routes": "node --test tests/parity/routes-baseline.test.mjs",
