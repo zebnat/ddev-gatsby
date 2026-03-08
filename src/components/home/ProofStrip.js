@@ -14,10 +14,10 @@ const proofByLang = {
       detail: 'Bilingual project portfolio sourced from markdown content.',
     },
     {
-      value: 'ES/EN',
-      label: 'Route parity',
+      value: 'AI + MLOps',
+      label: 'Systems mindset',
       detail:
-        'Static pages maintain language consistency and canonical routing.',
+        'Engineering focus on reliability, observability, and iterative delivery.',
     },
   ],
   es: [
@@ -32,9 +32,10 @@ const proofByLang = {
       detail: 'Portfolio bilingue de proyectos con origen en markdown.',
     },
     {
-      value: 'ES/EN',
-      label: 'Paridad de rutas',
-      detail: 'Paginas estaticas con consistencia de idioma y rutas canonicas.',
+      value: 'IA + MLOps',
+      label: 'Mentalidad de sistemas',
+      detail:
+        'Foco en fiabilidad, observabilidad y mejora iterativa de producto.',
     },
   ],
 }
@@ -50,7 +51,7 @@ export default function ProofStrip({ lang }) {
       {proofItems.map((item) => (
         <Card
           key={item.label}
-          className="border-slate-700/70 bg-slate-900/70 p-0"
+          className="motion-fade-up border-slate-700/70 bg-slate-900/70 p-0"
         >
           <CardContent className="space-y-2 p-4">
             <p className="font-mono text-2xl font-semibold text-cyan-100">

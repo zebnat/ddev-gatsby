@@ -2,12 +2,20 @@ import Link from 'next/link'
 
 import cn from '../../lib/ui/cn.js'
 
-export default function TopBar({ languages, currentLang }) {
+export default function TopBar({
+  languages,
+  currentLang,
+  menuOpen,
+  onToggleMenu,
+}) {
   return (
     <header className="mb-4 flex items-center justify-between rounded-xl border border-cyan-300/20 bg-slate-950/70 px-4 py-3 shadow-[var(--surface-shadow)] backdrop-blur">
-      <span className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-100">
+      <Link
+        href={currentLang === 'en' ? '/en/' : '/'}
+        className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-100"
+      >
         Danieldev
-      </span>
+      </Link>
       <div className="flex items-center gap-2">
         {languages.map((item) => (
           <Link
@@ -24,6 +32,17 @@ export default function TopBar({ languages, currentLang }) {
             {item.locale.toUpperCase()}
           </Link>
         ))}
+
+        <button
+          type="button"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-site-menu"
+          onClick={onToggleMenu}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-cyan-300/45 bg-cyan-400/10 text-cyan-100 transition hover:bg-cyan-300/20 md:hidden"
+        >
+          <span className="text-lg leading-none">{menuOpen ? '×' : '☰'}</span>
+        </button>
       </div>
     </header>
   )
