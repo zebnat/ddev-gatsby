@@ -107,6 +107,7 @@ function checkRequiredDocs() {
     'docs/migration/parity-checklist.md',
     'docs/migration/deployment-next-static.md',
     'docs/migration/cutover-plan.md',
+    'docs/migration/gatsby-decommission-readiness.md',
   ]
 
   const missing = requiredDocs.filter(
