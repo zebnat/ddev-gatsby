@@ -36,6 +36,8 @@ test('3D cloud component uses canvas and drag rotation controls', async () => {
   assert.equal(component.includes('useRef(null)'), true)
   assert.equal(component.includes('setAutoRotateEnabled(false)'), true)
   assert.equal(component.includes('setAutoRotateEnabled(true)'), true)
+  assert.equal(component.includes('scheduleAutoRotateResume'), true)
+  assert.equal(component.includes('onChange={handleControlChange}'), true)
   assert.equal(component.includes('setTimeout'), true)
   assert.equal(component.includes('onStart={handleControlStart}'), true)
   assert.equal(component.includes('onEnd={handleControlEnd}'), true)

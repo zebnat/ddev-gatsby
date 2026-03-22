@@ -137,6 +137,12 @@ export default function SkillsTagCloud3D({ items }) {
     scheduleAutoRotateResume()
   }, [scheduleAutoRotateResume])
 
+  const handleControlChange = useCallback(() => {
+    if (!autoRotateEnabled) {
+      scheduleAutoRotateResume()
+    }
+  }, [autoRotateEnabled, scheduleAutoRotateResume])
+
   useEffect(() => {
     return () => {
       clearResumeTimer()
@@ -166,6 +172,7 @@ export default function SkillsTagCloud3D({ items }) {
           enableDamping
           dampingFactor={0.06}
           onStart={handleControlStart}
+          onChange={handleControlChange}
           onEnd={handleControlEnd}
           touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE }}
         />
