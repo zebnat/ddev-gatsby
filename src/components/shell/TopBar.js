@@ -7,6 +7,7 @@ export default function TopBar({
   currentLang,
   menuOpen,
   onToggleMenu,
+  translation,
 }) {
   return (
     <header className="mb-4 flex items-center justify-between rounded-xl border border-cyan-300/20 bg-slate-950/70 px-4 py-3 shadow-[var(--surface-shadow)] backdrop-blur">
@@ -35,7 +36,7 @@ export default function TopBar({
 
         <button
           type="button"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={menuOpen ? translation.closeMenu : translation.openMenu}
           aria-expanded={menuOpen}
           aria-controls="mobile-site-menu"
           onClick={onToggleMenu}

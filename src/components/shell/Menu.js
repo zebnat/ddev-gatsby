@@ -8,7 +8,7 @@ import menuGestureUtils from './menu-gesture-utils.js'
 
 const { isClosingSwipe } = menuGestureUtils
 
-export default function Menu({ menuItems, isOpen, onClose }) {
+export default function Menu({ menuItems, isOpen, onClose, translation }) {
   const touchStartRef = useRef(null)
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function Menu({ menuItems, isOpen, onClose }) {
   return (
     <>
       <nav
-        aria-label="Primary navigation"
+        aria-label={translation.primaryNavigation}
         className="mb-6 hidden overflow-x-auto rounded-xl border border-cyan-300/20 bg-slate-950/65 p-2 shadow-[var(--surface-shadow)] md:block"
       >
         <ul className="m-0 flex list-none flex-wrap gap-1 p-0">
@@ -95,7 +95,7 @@ export default function Menu({ menuItems, isOpen, onClose }) {
       >
         <button
           type="button"
-          aria-label="Close menu"
+          aria-label={translation.closeMenu}
           onClick={onClose}
           className={cn(
             'absolute inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity duration-300',
@@ -106,7 +106,7 @@ export default function Menu({ menuItems, isOpen, onClose }) {
         <aside
           id="mobile-site-menu"
           role="dialog"
-          aria-label="Mobile navigation menu"
+          aria-label={translation.mobileNavigationMenu}
           aria-modal="true"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
@@ -117,11 +117,11 @@ export default function Menu({ menuItems, isOpen, onClose }) {
         >
           <div className="mb-4 flex items-center justify-between border-b border-cyan-300/20 pb-3">
             <p className="m-0 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100">
-              Navigation
+              {translation.navigation}
             </p>
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label={translation.closeMenu}
               onClick={onClose}
               className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-cyan-300/45 bg-cyan-400/10 text-cyan-100 transition hover:bg-cyan-300/20"
             >
@@ -143,7 +143,9 @@ export default function Menu({ menuItems, isOpen, onClose }) {
             ))}
           </ul>
 
-          <p className="mt-5 text-xs text-slate-400">Swipe right to close</p>
+          <p className="mt-5 text-xs text-slate-400">
+            {translation.swipeRightToClose}
+          </p>
         </aside>
       </div>
     </>

@@ -2,23 +2,25 @@ const translation = {
   en: {
     bioquote: 'Damn you COVID x_x',
     h1: 'Zebnat - Twitch Streamer',
-    h2: 'I do streaming on Twitch!',
+    h2: 'I also stream on Twitch!',
     title: 'Zebnat - Twitch Streamer',
-    intro1: `Hi! I decided to use Twitch as another social network. We have passed 2020 and today getting in touch with people that follows you is essential.`,
-    intro2: `At first Twitch was all about gaming but today things are different. You can even do programming courses over there.`,
-    intro3: `I give my audience what they want. Sometimes we just play together. Sometimes they just watch me playing. Sometimes they are my fellow pupils and they learn about programming. No limits!`,
+    intro1:
+      'Hi! I decided to use Twitch as another social platform. After 2020, staying connected with people who follow you became essential.',
+    intro2:
+      'At first Twitch was mostly about gaming, but things have changed. You can even teach programming there now.',
+    intro3:
+      'I try to give my audience what they enjoy: sometimes we play together, sometimes they watch gameplay, and sometimes we dive into programming as a learning group.',
     visits: `Concurrent viewers`,
     done: `Done!`,
     reachable: `Can we do it?`,
-    newModerator: `We will chose new moderators`,
+    newModerator: 'We will choose new moderators',
     newArt: `Zeb will contact an art professional and order new icons and assets`,
     isLive: `@zebnat is live on Twitch!`,
     isNotLive: `@zebnat is not live`,
-    checkIsLive: `Checking @zebnat stream...`,
+    checkIsLive: "Checking @zebnat's stream...",
     visitStream: `Visit the stream`,
     goals: `Stream Goals`,
-    program: `What we will do?`
-
+    program: 'What will we do?',
   },
   es: {
     bioquote: 'Nos ha jodido bien el COVID x_x',
@@ -38,7 +40,7 @@ const translation = {
     checkIsLive: `¡Comprobando!`,
     visitStream: `Unirse`,
     goals: `Objetivos`,
-    program: `¿Qué haremos?`
+    program: `¿Qué haremos?`,
   },
 }
 

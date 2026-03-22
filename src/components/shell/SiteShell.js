@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import localesLoader from '../../lib/content/locales.js'
+import { shell as shellTranslation } from '../../content/translations'
 import shellUtils from './shell-utils.js'
 
 const { getDefaultLang, getMenuByLang } = localesLoader
@@ -24,6 +25,7 @@ export default function SiteShell({ children }) {
   const defaultLang = getDefaultLang()
   const menuItems = getMenuByLang(currentLang, { includeDisabled: false })
   const languageLinks = getLanguageLinks(menuItems, defaultLang)
+  const shell = shellTranslation[currentLang] || shellTranslation.es
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-10">
@@ -32,14 +34,16 @@ export default function SiteShell({ children }) {
         currentLang={currentLang}
         menuOpen={mobileMenuOpen}
         onToggleMenu={() => setMobileMenuOpen((state) => !state)}
+        translation={shell}
       />
       <Menu
         menuItems={menuItems}
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
+        translation={shell}
       />
       <main className="pt-3">{children}</main>
-      <Footer />
+      <Footer translation={shell} />
     </div>
   )
 }
