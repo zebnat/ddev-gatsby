@@ -1,58 +1,130 @@
-const SUMMARY_RULES = [
+const ROLE_RULES = [
   {
-    id: 'ai_automation',
-    pattern: /\b(ai|llm|agent|automation)\b/i,
+    roleId: 'tech_lead',
+    patterns: [
+      /technical leadership/i,
+      /software architecture/i,
+      /team mentoring/i,
+      /(domain-driven design|ddd)/i,
+      /microservices architecture/i,
+      /ci\/cd strategy/i,
+      /observability/i,
+    ],
   },
   {
-    id: 'cloud_devops',
-    pattern:
-      /\b(aws|azure|cloud|docker|container|orchestration|kubernetes|linux|nginx|github actions|ci\/cd|devops|ssh|rsync|bash|php-fpm|observability)\b/i,
+    roleId: 'senior_fullstack',
+    patterns: [
+      /javascript/i,
+      /typescript/i,
+      /reactjs/i,
+      /nextjs/i,
+      /nodejs/i,
+      /rest/i,
+      /(testing library|jest)/i,
+    ],
   },
   {
-    id: 'software_architecture',
-    pattern:
-      /\b(architecture|technical leadership|team mentoring|domain-driven|ddd|microservices|solid|oop|stakeholder|clean architecture|software design patterns)\b/i,
-  },
-  {
-    id: 'data_integration',
-    pattern:
-      /\b(mysql|postgresql|sql|graphql|rest|message bus|social api|regexp)\b/i,
-  },
-  {
-    id: 'quality_testing',
-    pattern: /\b(testing|jest|testing library|agile testing)\b/i,
-  },
-  {
-    id: 'web_engineering',
-    pattern:
-      /\b(react|nextjs|javascript|typescript|php|nodejs|html|css|tailwind|gatsby|express|laravel|jquery|bootstrap|ui design|ux|responsive|web development)\b/i,
+    roleId: 'cloud_devops',
+    patterns: [
+      /azure cloud/i,
+      /aws/i,
+      /docker/i,
+      /container orchestration/i,
+      /github actions/i,
+      /nginx/i,
+      /(debian linux|arch linux|linux)/i,
+      /ssh/i,
+    ],
   },
 ]
 
-function getCategoryId(skillName) {
-  const matched = SUMMARY_RULES.find((rule) => rule.pattern.test(skillName))
-  return matched ? matched.id : 'web_engineering'
+function getFitTier(weightedScore) {
+  if (weightedScore >= 75) {
+    return 'strong'
+  }
+
+  if (weightedScore >= 55) {
+    return 'good'
+  }
+
+  return 'developing'
+}
+
+function getDepthBuckets(matchedItems) {
+  return matchedItems.reduce(
+    (acc, item) => {
+      if (item.level >= 4) {
+        acc.advancedPlus += 1
+      } else if (item.level === 3) {
+        acc.intermediate += 1
+      } else {
+        acc.foundational += 1
+      }
+
+      return acc
+    },
+    {
+      advancedPlus: 0,
+      intermediate: 0,
+      foundational: 0,
+    }
+  )
+}
+
+function buildRoleSummary(items, roleRule) {
+  const matchedPatternIndexes = new Set()
+  const matchedItems = items.filter((item) => {
+    const isMatch = roleRule.patterns.some((pattern, index) => {
+      const matched = pattern.test(item.skill)
+      if (matched) {
+        matchedPatternIndexes.add(index)
+      }
+
+      return matched
+    })
+
+    return isMatch
+  })
+
+  const totalCount = matchedItems.length
+  const recentCount = matchedItems.filter((item) => item.isRecent).length
+  const totalLevels = matchedItems.reduce((sum, item) => sum + item.level, 0)
+  const averageLevel = totalCount === 0 ? 0 : totalLevels / totalCount
+  const depthScore = (averageLevel / 5) * 100
+  const relevanceScore =
+    (matchedPatternIndexes.size / roleRule.patterns.length) * 100
+  const recencyScore = totalCount === 0 ? 0 : (recentCount / totalCount) * 100
+  const weightedScore =
+    depthScore * 0.5 + relevanceScore * 0.35 + recencyScore * 0.15
+
+  const keyEvidence = matchedItems
+    .slice()
+    .sort((left, right) => {
+      if (right.level !== left.level) {
+        return right.level - left.level
+      }
+
+      if (left.isRecent !== right.isRecent) {
+        return left.isRecent ? -1 : 1
+      }
+
+      return left.skill.localeCompare(right.skill)
+    })
+    .slice(0, 3)
+    .map((item) => item.skill)
+
+  return {
+    roleId: roleRule.roleId,
+    fit: getFitTier(weightedScore),
+    keyEvidence,
+    recentCount,
+    totalCount,
+    depth: getDepthBuckets(matchedItems),
+  }
 }
 
 function buildSkillMapSummary(items) {
-  const summary = new Map(
-    SUMMARY_RULES.map((rule) => [rule.id, { id: rule.id, count: 0, total: 0 }])
-  )
-
-  items.forEach((item) => {
-    const categoryId = getCategoryId(item.skill)
-    const target = summary.get(categoryId)
-
-    target.count += 1
-    target.total += item.level
-  })
-
-  return [...summary.values()].map((item) => ({
-    id: item.id,
-    count: item.count,
-    average:
-      item.count === 0 ? 0 : Number((item.total / item.count).toFixed(1)),
-  }))
+  return ROLE_RULES.map((roleRule) => buildRoleSummary(items, roleRule))
 }
 
 module.exports = {
