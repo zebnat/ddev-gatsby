@@ -19,6 +19,7 @@ Phase 1 is complete.
 ## Deferred items
 
 - Staging/production deploy validation is deferred to a later session.
+- Deploy mechanism is now available via `npm run deploy` using `scripts/deploy/cloudfront-static.mjs`.
 - Visual redesign/styling work is deferred to a later session.
 
 ## Parity artifact
