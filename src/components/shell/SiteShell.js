@@ -2,6 +2,7 @@
 
 import Footer from './Footer'
 import Menu from './Menu'
+import ScrollToTopButton from './ScrollToTopButton'
 import TopBar from './TopBar'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -44,6 +45,7 @@ export default function SiteShell({ children }) {
       />
       <main className="pt-3">{children}</main>
       <Footer translation={shell} />
+      <ScrollToTopButton label={shell.scrollToTop} />
     </div>
   )
 }

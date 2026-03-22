@@ -6,6 +6,7 @@ const translation = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     swipeRightToClose: 'Swipe right to close',
+    scrollToTop: 'Scroll to top',
     migrationNotice: 'Migrating from Gatsby to Next.js',
   },
   es: {
@@ -15,6 +16,7 @@ const translation = {
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
     swipeRightToClose: 'Desliza a la derecha para cerrar',
+    scrollToTop: 'Volver arriba',
     migrationNotice: 'Migración de Gatsby a Next.js',
   },
 }
