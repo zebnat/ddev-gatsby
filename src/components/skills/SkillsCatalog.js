@@ -1,10 +1,13 @@
 import skills from '../../../data/skills.js'
+import skillsCloudUtils from '../../lib/content/skills-cloud-utils.js'
 import skillsUtils from '../../lib/content/skills-utils.js'
 
 import Badge from '../ui/badge'
 import { Card, CardContent } from '../ui/card'
+import SkillMapSummary from './SkillMapSummary'
 
 const { sortSkillsByLevelAndRecency } = skillsUtils
+const { getSkillCloudItems } = skillsCloudUtils
 
 function SkillCard({ skill, wordLevel, description, recent }) {
   return (
@@ -112,9 +115,13 @@ function SkillGroup({ title, items, lang, translation }) {
 }
 
 export default function SkillsCatalog({ lang, translation }) {
+  const cloudItems = getSkillCloudItems(skills)
+
   return (
     <div className="space-y-7">
       <SkillsLevelGuide translation={translation} />
+
+      <SkillMapSummary items={cloudItems} translation={translation} />
 
       <SkillGroup
         title={translation.languages}

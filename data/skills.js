@@ -367,6 +367,42 @@ const skills = {
       },
     },
     {
+      skill: 'GitHub Actions',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I design and maintain CI/CD workflows in GitHub Actions to improve delivery speed, reliability, and release safety across multiple projects.',
+        es: 'Diseño y mantengo flujos CI/CD en GitHub Actions para mejorar velocidad de entrega, fiabilidad y seguridad en los releases de varios proyectos.',
+      },
+    },
+    {
+      skill: 'Azure Cloud',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I use Azure services to run production workloads, integrate cloud resources, and align infrastructure decisions with business constraints.',
+        es: 'Utilizo servicios de Azure para operar cargas en producción, integrar recursos cloud y alinear decisiones de infraestructura con necesidades de negocio.',
+      },
+    },
+    {
+      skill: 'Container Orchestration',
+      level: 3,
+      isRecent: true,
+      description: {
+        en: 'I work with container orchestration patterns for scalable deployments, service resilience, and safer production releases.',
+        es: 'Trabajo con patrones de orquestación de contenedores para despliegues escalables, resiliencia de servicios y releases más seguros.',
+      },
+    },
+    {
+      skill: 'Message Bus Platforms',
+      level: 3,
+      isRecent: true,
+      description: {
+        en: 'I integrate message-bus and event-driven communication patterns to decouple services and improve reliability in distributed systems.',
+        es: 'Integro plataformas de mensajería y patrones event-driven para desacoplar servicios y mejorar fiabilidad en sistemas distribuidos.',
+      },
+    },
+    {
       skill: 'Subversion',
       level: 4,
       isRecent: false,
@@ -402,6 +438,87 @@ const skills = {
       description: {
         en: 'I have a solid understanding of fundamental concepts and best practices for designing, implementing, and consuming RESTful APIs. I have expertise in creating routes, resources, and HTTP verbs, as well as authentication and authorization of users in a REST API. I have experience with various data exchange formats and tools, including Axios and Fetch API, and am knowledgeable in error and exception handling for REST APIs.',
         es: 'Tengo una comprensión sólida de los conceptos fundamentales y las mejores prácticas para diseñar, implementar y consumir APIs RESTful. Tengo experiencia en la creación de rutas, recursos y verbos HTTP, así como en la autenticación y autorización de usuarios en una API REST. He trabajado con varios formatos de intercambio de datos y herramientas, incluyendo Axios y Fetch API, y tengo conocimientos en el manejo de errores y excepciones en una API REST.',
+      },
+    },
+    {
+      skill: 'Technical Leadership',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'As Technical Lead, I align architecture, people, and process, mentoring engineers and guiding execution to deliver measurable business value.',
+        es: 'Como Technical Lead, alineo arquitectura, personas y procesos, mentorizando ingenieros y guiando la ejecución para entregar valor de negocio medible.',
+      },
+    },
+    {
+      skill: 'Software Architecture',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I design end-to-end architectures focused on scalability, resilience, maintainability, and integration across services and domains.',
+        es: 'Diseño arquitecturas end-to-end enfocadas en escalabilidad, resiliencia, mantenibilidad e integración entre servicios y dominios.',
+      },
+    },
+    {
+      skill: 'Domain-Driven Design (DDD)',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I apply DDD patterns to model business domains, establish clear boundaries, and keep software aligned with evolving product language.',
+        es: 'Aplico patrones de DDD para modelar dominios de negocio, establecer límites claros y mantener el software alineado con el lenguaje del producto.',
+      },
+    },
+    {
+      skill: 'Microservices Architecture',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I build and evolve microservice ecosystems with clear contracts, autonomous deployment units, and disciplined integration practices.',
+        es: 'Construyo y evoluciono ecosistemas de microservicios con contratos claros, unidades de despliegue autónomas y prácticas de integración disciplinadas.',
+      },
+    },
+    {
+      skill: 'Observability',
+      level: 3,
+      isRecent: true,
+      description: {
+        en: 'I promote observability with logging, metrics, and tracing to improve incident response, reliability, and delivery confidence.',
+        es: 'Impulso observabilidad con logs, métricas y trazas para mejorar respuesta a incidentes, fiabilidad y confianza en la entrega.',
+      },
+    },
+    {
+      skill: 'CI/CD Strategy',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I define CI/CD strategy and release workflows that balance speed, quality, and operational risk in production environments.',
+        es: 'Defino estrategia CI/CD y flujos de release que equilibran velocidad, calidad y riesgo operativo en producción.',
+      },
+    },
+    {
+      skill: 'Team Mentoring',
+      level: 4,
+      isRecent: true,
+      description: {
+        en: 'I mentor engineers through competency frameworks, feedback loops, and growth plans to raise team autonomy and execution quality.',
+        es: 'Mentorizo ingenieros con marcos de competencias, feedback continuo y planes de crecimiento para elevar autonomía y calidad de ejecución del equipo.',
+      },
+    },
+    {
+      skill: 'AI Agent Orchestration',
+      level: 3,
+      isRecent: true,
+      description: {
+        en: 'I design and evaluate agent-oriented workflows, defining guardrails and orchestration patterns to make AI execution reliable.',
+        es: 'Diseño y evalúo flujos orientados a agentes, definiendo guardrails y patrones de orquestación para hacer fiable la ejecución con IA.',
+      },
+    },
+    {
+      skill: 'LLM Integration',
+      level: 3,
+      isRecent: true,
+      description: {
+        en: 'I integrate LLM capabilities into product and process pipelines with attention to validation, quality, and operational impact.',
+        es: 'Integro capacidades LLM en pipelines de producto y proceso con foco en validación, calidad e impacto operativo.',
       },
     },
     {

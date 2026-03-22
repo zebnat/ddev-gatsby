@@ -8,12 +8,15 @@
     "url": "https://github.com/zebnat/ddev-gatsby.git"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "clsx": "^2.1.1",
     "markdown-to-jsx": "^7.7.16",
     "next": "latest",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.183.2"
   },
   "keywords": [
     ""
