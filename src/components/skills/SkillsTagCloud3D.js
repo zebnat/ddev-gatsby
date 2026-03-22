@@ -3,7 +3,7 @@
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { Billboard, OrbitControls, Text } from '@react-three/drei'
-import { useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 function categoryColor(category, isRecent) {
   if (category === 'languages') {
@@ -109,6 +109,40 @@ function SkillLabels({ items }) {
 }
 
 export default function SkillsTagCloud3D({ items }) {
+  const [autoRotateEnabled, setAutoRotateEnabled] = useState(true)
+  const resumeTimerRef = useRef(null)
+
+  const clearResumeTimer = useCallback(() => {
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current)
+      resumeTimerRef.current = null
+    }
+  }, [])
+
+  const scheduleAutoRotateResume = useCallback(() => {
+    clearResumeTimer()
+
+    resumeTimerRef.current = setTimeout(() => {
+      setAutoRotateEnabled(true)
+      resumeTimerRef.current = null
+    }, 4000)
+  }, [clearResumeTimer])
+
+  const handleControlStart = useCallback(() => {
+    clearResumeTimer()
+    setAutoRotateEnabled(false)
+  }, [clearResumeTimer])
+
+  const handleControlEnd = useCallback(() => {
+    scheduleAutoRotateResume()
+  }, [scheduleAutoRotateResume])
+
+  useEffect(() => {
+    return () => {
+      clearResumeTimer()
+    }
+  }, [clearResumeTimer])
+
   return (
     <div
       className="h-[24rem] w-full touch-none rounded-xl border border-cyan-300/30 bg-slate-950/70 sm:h-[30rem]"
@@ -126,11 +160,13 @@ export default function SkillsTagCloud3D({ items }) {
           enableZoom={true}
           minDistance={10}
           maxDistance={24}
-          autoRotate
+          autoRotate={autoRotateEnabled}
           autoRotateSpeed={0.35}
           rotateSpeed={0.7}
           enableDamping
           dampingFactor={0.06}
+          onStart={handleControlStart}
+          onEnd={handleControlEnd}
           touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE }}
         />
       </Canvas>
