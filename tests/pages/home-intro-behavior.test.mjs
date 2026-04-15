@@ -113,6 +113,10 @@ test('reduced-motion media query listener has modern and legacy fallback', async
     true
   )
   assert.equal(
+    source.includes("typeof mediaQuery.addListener === 'function'"),
+    true
+  )
+  assert.equal(
     source.includes(
       "mediaQuery.addEventListener('change', updateReducedMotion)"
     ),
@@ -127,6 +131,10 @@ test('reduced-motion media query listener has modern and legacy fallback', async
     true
   )
   assert.equal(
+    source.includes("typeof mediaQuery.removeListener === 'function'"),
+    true
+  )
+  assert.equal(
     source.includes(
       "mediaQuery.removeEventListener('change', updateReducedMotion)"
     ),
@@ -136,4 +144,10 @@ test('reduced-motion media query listener has modern and legacy fallback', async
     source.includes('mediaQuery.removeListener(updateReducedMotion)'),
     true
   )
+  assert.equal(
+    source.includes("if (typeof window.matchMedia !== 'function')"),
+    true
+  )
+  assert.equal(source.includes('try {'), true)
+  assert.equal(source.includes('} catch {'), true)
 })

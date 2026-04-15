@@ -95,22 +95,26 @@ export default function HomeEntryExperience({ lang, translation }) {
       return undefined
     }
 
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const updateReducedMotion = () => setReducedMotion(mediaQuery.matches)
+    try {
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+      const updateReducedMotion = () => setReducedMotion(mediaQuery.matches)
 
-    updateReducedMotion()
-    if (typeof mediaQuery.addEventListener === 'function') {
-      mediaQuery.addEventListener('change', updateReducedMotion)
-    } else {
-      mediaQuery.addListener(updateReducedMotion)
-    }
-
-    return () => {
-      if (typeof mediaQuery.removeEventListener === 'function') {
-        mediaQuery.removeEventListener('change', updateReducedMotion)
-      } else {
-        mediaQuery.removeListener(updateReducedMotion)
+      updateReducedMotion()
+      if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', updateReducedMotion)
+      } else if (typeof mediaQuery.addListener === 'function') {
+        mediaQuery.addListener(updateReducedMotion)
       }
+
+      return () => {
+        if (typeof mediaQuery.removeEventListener === 'function') {
+          mediaQuery.removeEventListener('change', updateReducedMotion)
+        } else if (typeof mediaQuery.removeListener === 'function') {
+          mediaQuery.removeListener(updateReducedMotion)
+        }
+      }
+    } catch {
+      return undefined
     }
   }, [])
 
