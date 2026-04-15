@@ -1,68 +1,12 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import HomeContent from './HomeContent'
 import HomeIntroOverlay from './HomeIntroOverlay'
 
-const INTRO_TIMELINE_MS = 2200
-const INTRO_REDUCED_MOTION_CLOSE_MS = 1200
-const INTRO_DEBUG_ALWAYS_SHOW = true
-
-const introStorageKeyByLang = {
-  en: 'homeIntroSeen_en',
-  es: 'homeIntroSeen_es',
-}
-
-const introSeenInMemory = {
-  en: false,
-  es: false,
-}
-
-function getIntroStorageKey(lang) {
-  return introStorageKeyByLang[lang] || introStorageKeyByLang.es
-}
-
-function isLocalStorageAvailable() {
-  try {
-    if (typeof window === 'undefined') {
-      return false
-    }
-
-    const probeKey = '__home_intro_probe__'
-    window.localStorage.setItem(probeKey, '1')
-    window.localStorage.removeItem(probeKey)
-    return true
-  } catch {
-    return false
-  }
-}
-
-function hasSeenIntro(lang, canUseLocalStorage) {
-  const key = getIntroStorageKey(lang)
-
-  if (canUseLocalStorage) {
-    try {
-      return window.localStorage.getItem(key) === '1'
-    } catch {
-      return introSeenInMemory[lang] === true
-    }
-  }
-
-  return introSeenInMemory[lang] === true
-}
-
-function markIntroSeen(lang, canUseLocalStorage) {
-  const key = getIntroStorageKey(lang)
-  introSeenInMemory[lang] = true
-
-  if (canUseLocalStorage) {
-    try {
-      window.localStorage.setItem(key, '1')
-    } catch {
-      // no-op and keep in-memory fallback
-    }
-  }
-}
+const INTRO_TIMELINE_MS = 4500
+const INTRO_EXIT_MS = 300
+const INTRO_REDUCED_MOTION_CLOSE_MS = 2600
 
 function getPrefersReducedMotion() {
   if (
@@ -81,69 +25,66 @@ function getPrefersReducedMotion() {
 
 export default function HomeEntryExperience({ lang, translation }) {
   const [introActive, setIntroActive] = useState(false)
+  const [introExiting, setIntroExiting] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
-  const closeTimerRef = useRef(null)
-
-  const canUseLocalStorage = useMemo(() => isLocalStorageAvailable(), [])
+  const closeTimerRef = useRef()
+  const exitTimerRef = useRef()
 
   const closeIntro = useCallback(() => {
+    if (exitTimerRef.current) {
+      window.clearTimeout(exitTimerRef.current)
+      exitTimerRef.current = null
+    }
+
     if (closeTimerRef.current) {
       window.clearTimeout(closeTimerRef.current)
       closeTimerRef.current = null
     }
 
-    if (!INTRO_DEBUG_ALWAYS_SHOW) {
-      markIntroSeen(lang, canUseLocalStorage)
-    }
-    setIntroActive(false)
-  }, [canUseLocalStorage, lang])
+    setIntroExiting(true)
+
+    exitTimerRef.current = window.setTimeout(() => {
+      setIntroActive(false)
+      setIntroExiting(false)
+    }, INTRO_EXIT_MS)
+  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined') {
       return undefined
     }
 
-    const introQueryValue = new URLSearchParams(window.location.search).get(
-      'intro'
-    )
-    const shouldForceIntro = introQueryValue === '1'
-    const shouldSkipIntro = introQueryValue === '0'
-
-    if (shouldSkipIntro) {
-      setIntroActive(false)
-      return undefined
-    }
-
-    if (
-      !INTRO_DEBUG_ALWAYS_SHOW &&
-      !shouldForceIntro &&
-      hasSeenIntro(lang, canUseLocalStorage)
-    ) {
-      setIntroActive(false)
-      return undefined
-    }
-
     const prefersReducedMotion = getPrefersReducedMotion()
+    const closeDelay = prefersReducedMotion
+      ? INTRO_REDUCED_MOTION_CLOSE_MS
+      : INTRO_TIMELINE_MS
+    const beginExitDelay = Math.max(closeDelay - INTRO_EXIT_MS, 0)
 
     setReducedMotion(prefersReducedMotion)
     setIntroActive(true)
+    setIntroExiting(false)
 
-    const closeDelay =
-      INTRO_DEBUG_ALWAYS_SHOW || !prefersReducedMotion
-        ? INTRO_TIMELINE_MS
-        : INTRO_REDUCED_MOTION_CLOSE_MS
+    exitTimerRef.current = window.setTimeout(() => {
+      setIntroExiting(true)
+    }, beginExitDelay)
 
     closeTimerRef.current = window.setTimeout(() => {
-      closeIntro()
+      setIntroActive(false)
+      setIntroExiting(false)
     }, closeDelay)
 
     return () => {
+      if (exitTimerRef.current) {
+        window.clearTimeout(exitTimerRef.current)
+        exitTimerRef.current = null
+      }
+
       if (closeTimerRef.current) {
         window.clearTimeout(closeTimerRef.current)
         closeTimerRef.current = null
       }
     }
-  }, [canUseLocalStorage, closeIntro, lang])
+  }, [lang])
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -192,6 +133,7 @@ export default function HomeEntryExperience({ lang, translation }) {
       <HomeIntroOverlay
         translation={translation}
         active={introActive}
+        exiting={introExiting}
         reducedMotion={reducedMotion}
         onSkip={closeIntro}
       />

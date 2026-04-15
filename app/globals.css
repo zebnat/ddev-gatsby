@@ -154,7 +154,7 @@
       linear-gradient(to bottom, rgba(45, 212, 191, 0.08) 1px, transparent 1px);
     background-size: 54px 54px;
     opacity: 0.26;
-    animation: hud-grid-pulse 2.2s ease-in-out both;
+    animation: hud-grid-pulse 4.5s ease-in-out both;
   }
 
   .hud-intro-scanline {
@@ -167,32 +167,91 @@
     );
     opacity: 0;
     transform: translateY(-120%);
-    animation: hud-scan-sweep 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: hud-scan-sweep 4.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
 
   .hud-intro-phase {
+    position: relative;
+    overflow: hidden;
     opacity: 0;
     transform: translateY(12px) scale(0.985);
     filter: blur(6px);
-    animation: hud-phase-reveal 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation: hud-phase-reveal 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .hud-intro-phase-label {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    animation: hud-text-shimmer 2.4s ease-in-out infinite;
+  }
+
+  .hud-intro-phase-sweep {
+    pointer-events: none;
+    position: absolute;
+    inset: -18% -36%;
+    opacity: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(34, 211, 238, 0) 30%,
+      rgba(125, 211, 252, 0.42) 50%,
+      rgba(34, 211, 238, 0) 70%
+    );
+    transform: translateX(-120%) skewX(-12deg);
+    animation: hud-sweep-pass 920ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
   .hud-intro-phase-1 {
     animation-delay: 0ms;
   }
 
+  .hud-intro-phase-1 .hud-intro-phase-label {
+    animation-delay: 720ms;
+  }
+
+  .hud-intro-phase-1 .hud-intro-phase-sweep {
+    animation-delay: 220ms;
+  }
+
   .hud-intro-phase-2 {
-    animation-delay: 600ms;
+    animation-delay: 1200ms;
+    animation-name: hud-phase-reveal, hud-phase-dim;
+    animation-duration: 640ms, 2.2s;
+    animation-delay: 1200ms, 2200ms;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1), ease-in-out;
+    animation-fill-mode: both, both;
+  }
+
+  .hud-intro-phase-2 .hud-intro-phase-label {
+    animation-delay: 1750ms;
+  }
+
+  .hud-intro-phase-2 .hud-intro-phase-sweep {
+    animation-delay: 1500ms;
   }
 
   .hud-intro-phase-3 {
-    animation: hud-phase-reveal 560ms cubic-bezier(0.2, 0.8, 0.2, 1) 1500ms both,
-      hud-lock-pulse 500ms ease-in-out 1900ms both;
+    animation: hud-phase-reveal 640ms cubic-bezier(0.2, 0.8, 0.2, 1) 3000ms both,
+      hud-lock-pulse 560ms ease-in-out 3340ms both;
+  }
+
+  .hud-intro-phase-3 .hud-intro-phase-label {
+    animation-delay: 3500ms;
+  }
+
+  .hud-intro-phase-3 .hud-intro-phase-sweep {
+    animation-delay: 3220ms;
+  }
+
+  .hud-intro-overlay-exit {
+    animation: hud-overlay-exit 300ms ease-out both;
   }
 
   .hud-intro-overlay-reduced .hud-intro-grid,
   .hud-intro-overlay-reduced .hud-intro-scanline,
-  .hud-intro-overlay-reduced .hud-intro-phase {
+  .hud-intro-overlay-reduced .hud-intro-phase,
+  .hud-intro-overlay-reduced .hud-intro-phase-label,
+  .hud-intro-overlay-reduced .hud-intro-phase-sweep {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -220,7 +279,9 @@
   .motion-stagger > *,
   .hud-intro-grid,
   .hud-intro-scanline,
-  .hud-intro-phase {
+  .hud-intro-phase,
+  .hud-intro-phase-label,
+  .hud-intro-phase-sweep {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -295,9 +356,14 @@
     transform: scale(1.015);
   }
 
-  42% {
+  35% {
     opacity: 0.3;
     transform: scale(1);
+  }
+
+  76% {
+    opacity: 0.27;
+    transform: scale(1.002);
   }
 
   100% {
@@ -312,12 +378,26 @@
     transform: translateY(-120%);
   }
 
-  15% {
+  10% {
     opacity: 0.34;
   }
 
-  70% {
+  32% {
     opacity: 0.2;
+  }
+
+  48% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+
+  62% {
+    opacity: 0;
+    transform: translateY(-120%);
+  }
+
+  76% {
+    opacity: 0.28;
   }
 
   100% {
@@ -343,5 +423,75 @@
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
+  }
+}
+
+@keyframes hud-sweep-pass {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) skewX(-12deg);
+  }
+
+  35% {
+    opacity: 0.58;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(120%) skewX(-12deg);
+  }
+}
+
+@keyframes hud-text-shimmer {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 rgba(34, 211, 238, 0);
+  }
+
+  45% {
+    opacity: 0.94;
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.22);
+  }
+
+  70% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(125, 211, 252, 0.18);
+  }
+}
+
+@keyframes hud-phase-dim {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.88;
+  }
+}
+
+@keyframes hud-overlay-exit {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hud-intro-phase {
+    filter: blur(4px);
+  }
+
+  .hud-intro-phase-label {
+    animation-duration: 2.8s;
+  }
+
+  .hud-intro-phase-sweep {
+    opacity: 0.32;
   }
 }

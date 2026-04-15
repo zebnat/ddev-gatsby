@@ -6,54 +6,57 @@ async function readText(path) {
   return readFile(new URL(path, import.meta.url), 'utf8')
 }
 
-test('intro first-visit persistence uses locale-specific storage keys', async () => {
+test('intro timing uses 4.5 second default with exit phase', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
 
-  assert.equal(source.includes("en: 'homeIntroSeen_en'"), true)
-  assert.equal(source.includes("es: 'homeIntroSeen_es'"), true)
+  assert.equal(source.includes('const INTRO_TIMELINE_MS = 4500'), true)
+  assert.equal(source.includes('const INTRO_EXIT_MS = 300'), true)
+  assert.equal(
+    source.includes(
+      'const beginExitDelay = Math.max(closeDelay - INTRO_EXIT_MS, 0)'
+    ),
+    true
+  )
 })
 
-test('repeat visits skip intro and skip action marks intro as seen', async () => {
+test('intro always displays on homepage without storage or query gating', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
 
-  assert.equal(source.includes('const INTRO_DEBUG_ALWAYS_SHOW = true'), true)
-  assert.equal(source.includes('!INTRO_DEBUG_ALWAYS_SHOW &&'), true)
-  assert.equal(source.includes('markIntroSeen(lang, canUseLocalStorage)'), true)
+  assert.equal(source.includes('homeIntroSeen_en'), false)
+  assert.equal(source.includes('homeIntroSeen_es'), false)
+  assert.equal(
+    source.includes('new URLSearchParams(window.location.search)'),
+    false
+  )
+  assert.equal(source.includes('setIntroActive(true)'), true)
 })
 
-test('reduced motion path bypasses long intro timeline', async () => {
+test('reduced motion path uses a dedicated shorter close duration', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
 
   assert.equal(source.includes('prefers-reduced-motion: reduce'), true)
-  assert.equal(source.includes('INTRO_REDUCED_MOTION_CLOSE_MS'), true)
   assert.equal(
-    source.includes('const INTRO_REDUCED_MOTION_CLOSE_MS = 1200'),
+    source.includes('const INTRO_REDUCED_MOTION_CLOSE_MS = 2600'),
     true
   )
-  assert.equal(source.includes('INTRO_TIMELINE_MS'), true)
+  assert.equal(source.includes('const closeDelay = prefersReducedMotion'), true)
 })
 
-test('intro query override supports force and skip modes', async () => {
+test('intro uses separate exit and close timers', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
 
-  assert.equal(
-    source.includes("const shouldForceIntro = introQueryValue === '1'"),
-    true
-  )
-  assert.equal(
-    source.includes("const shouldSkipIntro = introQueryValue === '0'"),
-    true
-  )
-  assert.equal(source.includes('if (shouldSkipIntro)'), true)
-  assert.equal(source.includes('!INTRO_DEBUG_ALWAYS_SHOW &&'), true)
+  assert.equal(source.includes('const closeTimerRef = useRef()'), true)
+  assert.equal(source.includes('const exitTimerRef = useRef()'), true)
+  assert.equal(source.includes('setIntroExiting(true)'), true)
+  assert.equal(source.includes('setIntroActive(false)'), true)
 })
 
 test('intro applies temporary scroll lock and restores on cleanup', async () => {
@@ -72,14 +75,17 @@ test('intro applies temporary scroll lock and restores on cleanup', async () => 
   )
 })
 
-test('overlay keeps active guard and exposes skip with phase copy', async () => {
+test('overlay keeps active guard and adds richer phase animation hooks', async () => {
   const source = await readText('../../src/components/home/HomeIntroOverlay.js')
 
   assert.equal(source.includes('if (!active)'), true)
+  assert.equal(source.includes('exiting,'), true)
   assert.equal(source.includes('translation.intro_skip'), true)
   assert.equal(source.includes('translation.intro_phase_1'), true)
   assert.equal(source.includes('translation.intro_phase_2'), true)
   assert.equal(source.includes('translation.intro_phase_3'), true)
+  assert.equal(source.includes('hud-intro-phase-label'), true)
+  assert.equal(source.includes('hud-intro-phase-sweep'), true)
   assert.equal(source.includes('aria-modal="true"'), true)
 })
 

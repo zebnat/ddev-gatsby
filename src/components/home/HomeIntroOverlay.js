@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react'
 export default function HomeIntroOverlay({
   translation,
   active,
+  exiting,
   reducedMotion,
   onSkip,
 }) {
@@ -95,7 +96,7 @@ export default function HomeIntroOverlay({
       ref={overlayRef}
       className={`hud-intro-overlay fixed inset-0 z-50 flex items-center justify-center px-6 ${
         reducedMotion ? 'hud-intro-overlay-reduced' : ''
-      }`}
+      } ${exiting ? 'hud-intro-overlay-exit' : ''}`}
       role="dialog"
       aria-modal="true"
       aria-label={introRegionLabel}
@@ -120,13 +121,22 @@ export default function HomeIntroOverlay({
         className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center gap-4 text-center"
       >
         <p className="hud-intro-phase hud-intro-phase-1 text-xs font-semibold uppercase tracking-[0.26em] text-cyan-100 sm:text-sm">
-          {translation.intro_phase_1}
+          <span className="hud-intro-phase-label">
+            {translation.intro_phase_1}
+          </span>
+          <span className="hud-intro-phase-sweep" aria-hidden="true" />
         </p>
         <p className="hud-intro-phase hud-intro-phase-2 text-xl font-semibold uppercase tracking-[0.08em] text-cyan-50 sm:text-3xl">
-          {translation.intro_phase_2}
+          <span className="hud-intro-phase-label">
+            {translation.intro_phase_2}
+          </span>
+          <span className="hud-intro-phase-sweep" aria-hidden="true" />
         </p>
         <p className="hud-intro-phase hud-intro-phase-3 text-sm uppercase tracking-[0.16em] text-cyan-200 sm:text-base">
-          {translation.intro_phase_3}
+          <span className="hud-intro-phase-label">
+            {translation.intro_phase_3}
+          </span>
+          <span className="hud-intro-phase-sweep" aria-hidden="true" />
         </p>
       </div>
     </section>
