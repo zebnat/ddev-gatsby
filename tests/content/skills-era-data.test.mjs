@@ -3,7 +3,7 @@ import test from 'node:test'
 
 import skills from '../../data/skills.js'
 
-const VALID_ERAS = new Set(['monolith', 'framework', 'spa', 'platform'])
+const VALID_ERAS = new Set(['monolith', 'framework', 'spa', 'platform', 'ai'])
 
 function getAllSkills() {
   return [...skills.languages, ...skills.libs, ...skills.tools, ...skills.other]
@@ -49,4 +49,15 @@ test('linkedin-derived platform and leadership skills are present', () => {
   assert.equal(names.has('Azure App Service'), true)
   assert.equal(names.has('Microsoft SQL Server'), true)
   assert.equal(names.has('AWS Lambda'), true)
+})
+
+test('ai era skills are present and labeled with ai era key', () => {
+  const items = getAllSkills()
+  const aiItems = items.filter((item) => item.era === 'ai')
+  const aiNames = new Set(aiItems.map((item) => item.skill))
+
+  assert.equal(aiItems.length > 0, true)
+  assert.equal(aiNames.has('Spec-Driven Development for AI Agents'), true)
+  assert.equal(aiNames.has('Autonomous Agent Loop Operations'), true)
+  assert.equal(aiNames.has('LLM API Inference Integration'), true)
 })

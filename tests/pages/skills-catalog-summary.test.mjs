@@ -15,6 +15,8 @@ test('skills catalog renders era menu and inline expansion UI', async () => {
   assert.equal(source.includes('aria-label={translation.era_menu_label}'), true)
   assert.equal(source.includes('setExpandedSkill'), true)
   assert.equal(source.includes('translation.tap_skill'), true)
+  assert.equal(source.includes("'ai'"), true)
+  assert.equal(source.includes('era_ai'), true)
   assert.equal(source.includes('scrollIntoView'), true)
   assert.equal(source.includes("matchMedia('(max-width: 639px)')"), true)
 })

@@ -8,7 +8,7 @@ import skillsUtils from '../../lib/content/skills-utils.js'
 import Badge from '../ui/badge'
 import { Card, CardContent } from '../ui/card'
 
-const ERA_ORDER = ['monolith', 'framework', 'spa', 'platform']
+const ERA_ORDER = ['monolith', 'framework', 'spa', 'platform', 'ai']
 const { getCatalogSkillItems } = skillsUtils
 
 const ERA_LABEL_KEYS = {
@@ -16,6 +16,7 @@ const ERA_LABEL_KEYS = {
   framework: 'era_framework',
   spa: 'era_spa',
   platform: 'era_platform',
+  ai: 'era_ai',
 }
 
 const CATEGORY_LABEL_KEYS = {
@@ -74,7 +75,7 @@ export default function SkillsCatalog({ lang, translation }) {
           {translation.era_menu_label}
         </span>
         <div className="w-full" aria-label={translation.era_menu_label}>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
             {ERA_ORDER.map((era) => {
               const isActive = era === activeEra
 
