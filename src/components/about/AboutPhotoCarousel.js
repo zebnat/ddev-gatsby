@@ -22,8 +22,8 @@ export default function AboutPhotoCarousel({ translation }) {
   }, [])
 
   return (
-    <Card className="motion-fade-up motion-delay-1 mx-auto w-full max-w-xl overflow-hidden border-cyan-300/35 bg-slate-950/80 p-0 lg:max-w-md xl:max-w-sm">
-      <CardContent className="space-y-3 p-5">
+    <Card className="motion-fade-up motion-delay-1 mx-auto w-full max-w-[18rem] overflow-hidden border-cyan-300/35 bg-slate-950/80 p-0 sm:max-w-sm lg:max-w-md xl:max-w-sm">
+      <CardContent className="space-y-3 p-4 sm:p-5">
         <div className="relative overflow-hidden rounded-full border border-cyan-300/35 bg-slate-900/70 shadow-[0_0_0_1px_rgba(103,232,249,0.16),0_0_32px_rgba(34,211,238,0.24)] transition-shadow duration-700 hover:shadow-[0_0_0_1px_rgba(103,232,249,0.35),0_0_42px_rgba(34,211,238,0.34)]">
           <div className="relative aspect-square w-full">
             {portraitAssets.map((portrait, index) => {
