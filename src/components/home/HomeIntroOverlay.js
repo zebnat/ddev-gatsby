@@ -94,7 +94,7 @@ export default function HomeIntroOverlay({
   return (
     <section
       ref={overlayRef}
-      className={`hud-intro-overlay fixed inset-0 z-50 flex items-center justify-center px-6 ${
+      className={`hud-intro-overlay fixed inset-0 z-[70] flex items-center justify-center px-6 ${
         reducedMotion ? 'hud-intro-overlay-reduced' : ''
       } ${exiting ? 'hud-intro-overlay-exit' : ''}`}
       role="dialog"

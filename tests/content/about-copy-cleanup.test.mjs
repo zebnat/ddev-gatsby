@@ -53,6 +53,16 @@ test('about translation defines recruiter-first proof structure', async () => {
   assert.equal(source.includes('proof_links'), true)
 })
 
+test('about translation uses updated LinkedIn profile URL', async () => {
+  const source = await readText('../../data/translations/aboutPage.js')
+
+  assert.equal(
+    source.includes('https://www.linkedin.com/in/daniel-developer-seo/'),
+    true
+  )
+  assert.equal(source.includes('https://www.linkedin.com/in/zebnat/'), false)
+})
+
 test('home proof strip avoids route parity messaging', async () => {
   const source = await readText('../../src/components/home/ProofStrip.js')
 

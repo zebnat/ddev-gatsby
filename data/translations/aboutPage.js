@@ -101,7 +101,7 @@ const translation = {
       { label: 'GitHub profile', href: 'https://github.com/zebnat' },
       {
         label: 'LinkedIn profile',
-        href: 'https://www.linkedin.com/in/zebnat/',
+        href: 'https://www.linkedin.com/in/daniel-developer-seo/',
       },
     ],
     lifestyle_title: 'Outside of work',
@@ -232,7 +232,7 @@ const translation = {
       { label: 'Perfil de GitHub', href: 'https://github.com/zebnat' },
       {
         label: 'Perfil de LinkedIn',
-        href: 'https://www.linkedin.com/in/zebnat/',
+        href: 'https://www.linkedin.com/in/daniel-developer-seo/',
       },
     ],
     lifestyle_title: 'Fuera del trabajo',

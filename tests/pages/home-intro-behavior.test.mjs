@@ -103,6 +103,12 @@ test('overlay includes focus trap and focus restore safeguards', async () => {
   assert.equal(source.includes('previousFocus?.focus()'), true)
 })
 
+test('intro overlay uses a higher layer than mobile menu overlay', async () => {
+  const source = await readText('../../src/components/home/HomeIntroOverlay.js')
+
+  assert.equal(source.includes('z-[70]'), true)
+})
+
 test('reduced-motion media query listener has modern and legacy fallback', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
