@@ -1,5 +1,5 @@
 import { homePage } from '../../src/content/translations'
-import HomeContent from '../../src/components/home/HomeContent'
+import HomeEntryExperience from '../../src/components/home/HomeEntryExperience'
 import staticPageMetadata from '../../src/content/static-page-metadata.js'
 
 const t = homePage.es
@@ -12,5 +12,5 @@ export const metadata = buildStaticPageMetadata({
 })
 
 export default function HomePageEs() {
-  return <HomeContent lang="es" translation={t} />
+  return <HomeEntryExperience lang="es" translation={t} />
 }

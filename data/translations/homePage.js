@@ -4,6 +4,10 @@ const translation = {
     h2: 'Leading architecture and delivery in fintech while driving practical AI adoption.',
     title: 'Technical Lead (Barcelona) - Daniel Dominguez',
     quote: 'Architecture, execution, and team growth with measurable outcomes.',
+    intro_phase_1: 'DANIEL DOMINGUEZ // TECHNICAL LEAD',
+    intro_phase_2: 'FROM TECHNICAL DECISIONS TO BUSINESS IMPACT',
+    intro_phase_3: 'APPLIED AI FOCUSED ON VALUE AND EXECUTION',
+    intro_skip: 'Skip intro',
     intro:
       '<p>I currently lead technical direction in fintech, balancing hands-on engineering with leadership responsibilities.</p><p>I mentor a team of 3 engineers and align architecture with business goals. For personal context, visit my <Link>about page</Link>.</p>',
     more: 'Learn more',
@@ -58,6 +62,10 @@ const translation = {
     title: 'Technical Lead (Barcelona) - Daniel Domínguez',
     quote:
       'Arquitectura, ejecución y crecimiento del equipo con impacto medible.',
+    intro_phase_1: 'DANIEL DOMINGUEZ // TECHNICAL LEAD',
+    intro_phase_2: 'DE DECISIONES TECNICAS A IMPACTO DE NEGOCIO',
+    intro_phase_3: 'IA APLICADA CON FOCO EN VALOR Y EJECUCION',
+    intro_skip: 'Saltar intro',
     intro:
       '<p>Actualmente lidero la dirección técnica en fintech, combinando trabajo hands-on con responsabilidades de liderazgo.</p><p>Mentorizo a un equipo de 3 ingenieros y alineo la arquitectura con los objetivos de negocio. Si quieres más contexto personal, visita <Link>sobre mí</Link>.</p>',
     more: 'Aprende más',

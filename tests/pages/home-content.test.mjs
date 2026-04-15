@@ -6,19 +6,19 @@ async function readText(path) {
   return readFile(new URL(path, import.meta.url), 'utf8')
 }
 
-test('bilingual home pages render through shared HomeContent component', async () => {
+test('bilingual home pages render through shared HomeEntryExperience component', async () => {
   const homeEs = await readText('../../app/(site)/page.js')
   const homeEn = await readText('../../app/(site)/en/page.js')
 
-  assert.equal(homeEs.includes('import HomeContent'), true)
+  assert.equal(homeEs.includes('import HomeEntryExperience'), true)
   assert.equal(
-    homeEs.includes('<HomeContent lang="es" translation={t} />'),
+    homeEs.includes('<HomeEntryExperience lang="es" translation={t} />'),
     true
   )
 
-  assert.equal(homeEn.includes('import HomeContent'), true)
+  assert.equal(homeEn.includes('import HomeEntryExperience'), true)
   assert.equal(
-    homeEn.includes('<HomeContent lang="en" translation={t} />'),
+    homeEn.includes('<HomeEntryExperience lang="en" translation={t} />'),
     true
   )
 })
@@ -41,6 +41,10 @@ test('home translations include concise conversion-first keys', async () => {
   assert.equal(source.includes('quick_paths_title'), true)
   assert.equal(source.includes('capabilities_brief'), true)
   assert.equal(source.includes('capability_bullets'), true)
+  assert.equal(source.includes('intro_phase_1'), true)
+  assert.equal(source.includes('intro_phase_2'), true)
+  assert.equal(source.includes('intro_phase_3'), true)
+  assert.equal(source.includes('intro_skip'), true)
 })
 
 test('home action grid omits heading and subtitle text block', async () => {
