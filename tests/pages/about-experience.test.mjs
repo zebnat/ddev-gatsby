@@ -36,6 +36,31 @@ test('shared AboutContent renders top-level photo carousel and timeline cards', 
   assert.equal(aboutContent.includes('translation.timeline.map'), true)
 })
 
+test('shared AboutContent renders expertise, cases, and proof links', async () => {
+  const aboutContent = await readText(
+    '../../src/components/about/AboutContent.js'
+  )
+
+  assert.equal(aboutContent.includes('translation.expertise_areas.map'), true)
+  assert.equal(aboutContent.includes('translation.case_studies.map'), true)
+  assert.equal(aboutContent.includes('translation.proof_links.map'), true)
+})
+
+test('shared AboutContent places carousel before the about snapshot card', async () => {
+  const aboutContent = await readText(
+    '../../src/components/about/AboutContent.js'
+  )
+
+  const carouselIndex = aboutContent.indexOf(
+    '<AboutPhotoCarousel translation={translation} />'
+  )
+  const snapshotCardIndex = aboutContent.indexOf('translation.snapshot_title')
+
+  assert.equal(carouselIndex !== -1, true)
+  assert.equal(snapshotCardIndex !== -1, true)
+  assert.equal(carouselIndex < snapshotCardIndex, true)
+})
+
 test('photo carousel rotates one image every 2 seconds', async () => {
   const carouselSource = await readText(
     '../../src/components/about/AboutPhotoCarousel.js'

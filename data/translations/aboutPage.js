@@ -4,15 +4,87 @@ const translation = {
     h1: 'About Me',
     h2: 'Technical Lead in Barcelona focused on architecture, delivery, and AI-driven engineering.',
     title: 'About Me - Daniel Dominguez',
+    snapshot_title: 'Current chapter',
+    snapshot_body:
+      'I work at the intersection of architecture, delivery, and team growth, with a practical approach to AI adoption.',
+    snapshot_points: [
+      '15+ years across search-era products, ecommerce, and fintech systems.',
+      'Hands-on technical lead: architecture direction, critical modules, and mentoring.',
+      'Guiding principle: adopt technology intentionally, keep what creates durable value.',
+    ],
     intro1:
       "I'm Daniel, a Technical Lead with 15+ years building and evolving production software.",
     intro2:
       'Today I lead engineering strategy in fintech, own architecture decisions, and mentor a team of 3 engineers while staying hands-on in critical modules.',
+    expertise_title: 'Expertise areas',
+    expertise_areas: [
+      {
+        title: 'Architecture & Strategy',
+        detail:
+          'End-to-end system design, resilient communication patterns, observability, and scalable engineering decisions tied to product outcomes.',
+      },
+      {
+        title: 'Team & Culture',
+        detail:
+          'Mentoring engineers, clarifying expectations, and building growth roadmaps that improve ownership and execution quality.',
+      },
+      {
+        title: 'Cloud & DevOps',
+        detail:
+          'CI/CD automation, container-first workflows, and platform cloud operations focused on safer releases and delivery consistency.',
+      },
+      {
+        title: 'AI & Innovation',
+        detail:
+          'Applied experimentation with agent systems and LLM inference in process pipelines to improve team productivity and decision support.',
+      },
+      {
+        title: 'Quality Practices',
+        detail:
+          'DDD, design patterns, migration strategy, and disciplined release management for maintainable distributed systems.',
+      },
+    ],
     focus_title: 'Current focus',
     focus_items: [
       'Tech Lead with AI responsibilities',
       'Team leadership and mentoring (3 direct reports)',
       'Cloud, CI/CD, and scalable architecture',
+    ],
+    case_studies_title: 'Selected case capsules',
+    case_studies: [
+      {
+        title: 'Fintech architecture evolution',
+        context:
+          'High-accountability fintech platform with reliability and compliance constraints.',
+        challenge:
+          'Scale delivery and architecture quality while keeping business operations stable.',
+        approach:
+          'Introduced clearer architecture boundaries, release discipline, and observability-driven technical decisions.',
+        outcome:
+          'Improved delivery confidence, stronger cross-team alignment, and more predictable technical execution.',
+      },
+      {
+        title: 'Cloud and DevOps enablement',
+        context:
+          'Multi-team workflows requiring faster iteration with lower operational friction.',
+        challenge:
+          'Keep release speed and safety balanced across changing product priorities.',
+        approach:
+          'Consolidated CI/CD practices, container workflows, and operational standards with shared engineering ownership.',
+        outcome:
+          'Cleaner deployment routines and better day-to-day delivery flow for developers and stakeholders.',
+      },
+      {
+        title: 'Practical AI adoption path',
+        context:
+          'Teams exploring agentic and LLM-based workflows in real delivery pipelines.',
+        challenge:
+          'Separate useful AI patterns from hype while preserving maintainability and quality.',
+        approach:
+          'Framed AI experiments as architecture decisions with clear constraints, review loops, and iterative validation.',
+        outcome:
+          'Higher signal-to-noise in AI initiatives and better integration with existing engineering practices.',
+      },
     ],
     why_title: 'Why programming?',
     why_answer:
@@ -20,6 +92,18 @@ const translation = {
     how_i_work_title: 'How I work',
     how_i_work:
       'I align architecture, process, and people: clear specs, reliable execution, observability, and continuous improvement across releases.',
+    proof_title: 'Explore further',
+    proof_intro:
+      'If you want more context, these links provide the full project history, code samples, and profile details.',
+    proof_links: [
+      { label: 'Resume (CV)', href: '/docs/cv-en.pdf' },
+      { label: 'Projects archive', href: '/en/projects/' },
+      { label: 'GitHub profile', href: 'https://github.com/zebnat' },
+      {
+        label: 'LinkedIn profile',
+        href: 'https://www.linkedin.com/in/zebnat/',
+      },
+    ],
     lifestyle_title: 'Outside of work',
     lifestyle:
       'My background is rooted in self-learning, curiosity, and continuous improvement. That mindset still drives how I learn new tools and disciplines.',
@@ -51,15 +135,87 @@ const translation = {
     h1: 'Sobre mí',
     h2: 'Technical Lead en Barcelona, centrado en arquitectura, entrega y evolución con IA.',
     title: 'Sobre mí - Daniel Domínguez',
+    snapshot_title: 'Capitulo actual',
+    snapshot_body:
+      'Trabajo en la interseccion entre arquitectura, entrega y crecimiento del equipo, con un enfoque practico para adoptar IA.',
+    snapshot_points: [
+      '15+ anos entre productos de la era buscadores, ecommerce y sistemas fintech.',
+      'Technical Lead hands-on: direccion de arquitectura, modulos criticos y mentoring.',
+      'Principio de trabajo: adoptar tecnologia con criterio y mantener lo que genera valor duradero.',
+    ],
     intro1:
       'Soy Daniel, Technical Lead con más de 15 años construyendo y evolucionando software en producción.',
     intro2:
       'Actualmente lidero la estrategia técnica en fintech, tomo decisiones de arquitectura y mentorizo a un equipo de 3 ingenieros sin dejar el trabajo hands-on.',
+    expertise_title: 'Areas de expertise',
+    expertise_areas: [
+      {
+        title: 'Arquitectura y estrategia',
+        detail:
+          'Diseno end-to-end, patrones de comunicacion resilientes, observabilidad y decisiones tecnicas escalables conectadas al producto.',
+      },
+      {
+        title: 'Equipo y cultura',
+        detail:
+          'Mentoria tecnica, expectativas claras y roadmaps de crecimiento para mejorar ownership y calidad de ejecucion.',
+      },
+      {
+        title: 'Cloud y DevOps',
+        detail:
+          'Automatizacion CI/CD, flujos con contenedores y operaciones cloud orientadas a entregas mas seguras y consistentes.',
+      },
+      {
+        title: 'IA e innovacion',
+        detail:
+          'Experimentacion aplicada con sistemas de agentes y LLM en pipelines reales para mejorar productividad y soporte a decisiones.',
+      },
+      {
+        title: 'Practicas de calidad',
+        detail:
+          'DDD, patrones de diseno, estrategia de migracion y disciplina de releases para sistemas distribuidos mantenibles.',
+      },
+    ],
     focus_title: 'Foco actual',
     focus_items: [
       'Technical Lead con responsabilidad en IA',
       'Liderazgo técnico y mentoring (3 personas)',
       'Cloud, CI/CD y arquitectura escalable',
+    ],
+    case_studies_title: 'Capsulas de casos',
+    case_studies: [
+      {
+        title: 'Evolucion de arquitectura en fintech',
+        context:
+          'Plataforma fintech con alta exigencia de fiabilidad y requisitos de compliance.',
+        challenge:
+          'Escalar la entrega y la calidad de arquitectura sin afectar estabilidad operativa.',
+        approach:
+          'Defini limites de arquitectura mas claros, disciplina de release y decisiones tecnicas guiadas por observabilidad.',
+        outcome:
+          'Mayor confianza en la entrega, mejor alineacion entre equipos y ejecucion tecnica mas predecible.',
+      },
+      {
+        title: 'Habilitacion cloud y DevOps',
+        context:
+          'Flujos entre varios equipos con necesidad de iterar rapido y reducir friccion operativa.',
+        challenge:
+          'Mantener equilibrio entre velocidad de release y seguridad en cambios continuos.',
+        approach:
+          'Consolide practicas de CI/CD, flujos de contenedores y estandares operativos con ownership compartido.',
+        outcome:
+          'Rutinas de despliegue mas limpias y un flujo diario de entrega mas estable para equipo y negocio.',
+      },
+      {
+        title: 'Ruta de adopcion realista de IA',
+        context:
+          'Equipos evaluando workflows con agentes y LLM dentro de pipelines reales.',
+        challenge:
+          'Separar patrones utiles del ruido de mercado sin perder mantenibilidad ni calidad.',
+        approach:
+          'Trate los experimentos de IA como decisiones de arquitectura con restricciones claras y validacion iterativa.',
+        outcome:
+          'Mayor claridad en iniciativas de IA e integracion mas solida con practicas de ingenieria existentes.',
+      },
     ],
     why_title: '¿Por qué programación?',
     why_answer:
@@ -67,6 +223,18 @@ const translation = {
     how_i_work_title: 'Cómo trabajo',
     how_i_work:
       'Alineo arquitectura, procesos y personas: especificaciones claras, ejecución fiable, observabilidad y mejora continua release tras release.',
+    proof_title: 'Explora mas',
+    proof_intro:
+      'Si quieres ampliar contexto, estos enlaces muestran historial de proyectos, muestras de codigo y perfil profesional.',
+    proof_links: [
+      { label: 'Curriculum Vitae (CV)', href: '/docs/cv.pdf' },
+      { label: 'Archivo de proyectos', href: '/proyectos/' },
+      { label: 'Perfil de GitHub', href: 'https://github.com/zebnat' },
+      {
+        label: 'Perfil de LinkedIn',
+        href: 'https://www.linkedin.com/in/zebnat/',
+      },
+    ],
     lifestyle_title: 'Fuera del trabajo',
     lifestyle:
       'Mi trayectoria está marcada por el autoaprendizaje, la curiosidad y la mejora continua. Ese enfoque sigue guiando mi evolución técnica.',

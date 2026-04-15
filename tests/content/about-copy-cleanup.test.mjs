@@ -38,6 +38,21 @@ test('about translation defines concise storytelling keys', async () => {
   )
 })
 
+test('about translation defines recruiter-first proof structure', async () => {
+  const source = await readText('../../data/translations/aboutPage.js')
+
+  assert.equal(source.includes('snapshot_title'), true)
+  assert.equal(source.includes('snapshot_body'), true)
+  assert.equal(source.includes('snapshot_points'), true)
+  assert.equal(source.includes('expertise_title'), true)
+  assert.equal(source.includes('expertise_areas'), true)
+  assert.equal(source.includes('case_studies_title'), true)
+  assert.equal(source.includes('case_studies'), true)
+  assert.equal(source.includes('proof_title'), true)
+  assert.equal(source.includes('proof_intro'), true)
+  assert.equal(source.includes('proof_links'), true)
+})
+
 test('home proof strip avoids route parity messaging', async () => {
   const source = await readText('../../src/components/home/ProofStrip.js')
 
