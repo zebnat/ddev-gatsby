@@ -63,8 +63,8 @@ const translation = {
     quote:
       'Arquitectura, ejecución y crecimiento del equipo con impacto medible.',
     intro_phase_1: 'DANIEL DOMINGUEZ // TECHNICAL LEAD',
-    intro_phase_2: 'DE DECISIONES TECNICAS A IMPACTO DE NEGOCIO',
-    intro_phase_3: 'IA APLICADA CON FOCO EN VALOR Y EJECUCION',
+    intro_phase_2: 'DE DECISIONES TÉCNICAS A IMPACTO DE NEGOCIO',
+    intro_phase_3: 'IA APLICADA CON FOCO EN VALOR Y EJECUCIÓN',
     intro_skip: 'Saltar intro',
     intro:
       '<p>Actualmente lidero la dirección técnica en fintech, combinando trabajo hands-on con responsabilidades de liderazgo.</p><p>Mentorizo a un equipo de 3 ingenieros y alineo la arquitectura con los objetivos de negocio. Si quieres más contexto personal, visita <Link>sobre mí</Link>.</p>',

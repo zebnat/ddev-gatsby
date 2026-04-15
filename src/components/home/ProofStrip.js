@@ -24,12 +24,12 @@ const proofByLang = {
     {
       value: '9a+',
       label: 'Ownership de producto',
-      detail: 'Entrega en startup, evolucion de plataforma y mejora continua.',
+      detail: 'Entrega en startup, evolución de plataforma y mejora continua.',
     },
     {
       value: '60',
       label: 'Casos documentados',
-      detail: 'Portfolio bilingue de proyectos con origen en markdown.',
+      detail: 'Portfolio bilingüe de proyectos con origen en markdown.',
     },
     {
       value: 'IA + MLOps',

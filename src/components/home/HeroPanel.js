@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 
 const focusByLang = {
   en: ['AI Engineering', 'MLOps Foundations', 'Platform Thinking'],
-  es: ['Ingenieria de IA', 'Fundamentos MLOps', 'Pensamiento de Plataforma'],
+  es: ['Ingeniería de IA', 'Fundamentos MLOps', 'Pensamiento de Plataforma'],
 }
 
 export default function HeroPanel({

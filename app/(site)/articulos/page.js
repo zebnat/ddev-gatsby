@@ -5,14 +5,14 @@ const { buildStaticPageMetadata } = staticPageMetadata
 export const metadata = buildStaticPageMetadata({
   lang: 'es',
   uniqueId: 'articles',
-  title: 'Indice de articulos',
+  title: 'Índice de artículos',
 })
 
 export default function ArticlesPageEs() {
   return (
     <section>
-      <h1>Indice de articulos</h1>
-      <p>Hablo de tecnologias, SEO, consejos y opinion.</p>
+      <h1>Índice de artículos</h1>
+      <p>Hablo de tecnologías, SEO, consejos y opinión.</p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum
         nunc diam. Pellentesque malesuada velit in nisl venenatis consequat.

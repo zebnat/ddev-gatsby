@@ -135,44 +135,44 @@ const translation = {
     h1: 'Sobre mí',
     h2: 'Technical Lead en Barcelona, centrado en arquitectura, entrega y evolución con IA.',
     title: 'Sobre mí - Daniel Domínguez',
-    snapshot_title: 'Capitulo actual',
+    snapshot_title: 'Capítulo actual',
     snapshot_body:
-      'Trabajo en la interseccion entre arquitectura, entrega y crecimiento del equipo, con un enfoque practico para adoptar IA.',
+      'Trabajo en la intersección entre arquitectura, entrega y crecimiento del equipo, con un enfoque práctico para adoptar IA.',
     snapshot_points: [
-      '15+ anos entre productos de la era buscadores, ecommerce y sistemas fintech.',
-      'Technical Lead hands-on: direccion de arquitectura, modulos criticos y mentoring.',
-      'Principio de trabajo: adoptar tecnologia con criterio y mantener lo que genera valor duradero.',
+      '15+ años entre productos de la era buscadores, ecommerce y sistemas fintech.',
+      'Technical Lead hands-on: dirección de arquitectura, módulos críticos y mentoring.',
+      'Principio de trabajo: adoptar tecnología con criterio y mantener lo que genera valor duradero.',
     ],
     intro1:
       'Soy Daniel, Technical Lead con más de 15 años construyendo y evolucionando software en producción.',
     intro2:
       'Actualmente lidero la estrategia técnica en fintech, tomo decisiones de arquitectura y mentorizo a un equipo de 3 ingenieros sin dejar el trabajo hands-on.',
-    expertise_title: 'Areas de expertise',
+    expertise_title: 'Áreas de expertise',
     expertise_areas: [
       {
         title: 'Arquitectura y estrategia',
         detail:
-          'Diseno end-to-end, patrones de comunicacion resilientes, observabilidad y decisiones tecnicas escalables conectadas al producto.',
+          'Diseño end-to-end, patrones de comunicación resilientes, observabilidad y decisiones técnicas escalables conectadas al producto.',
       },
       {
         title: 'Equipo y cultura',
         detail:
-          'Mentoria tecnica, expectativas claras y roadmaps de crecimiento para mejorar ownership y calidad de ejecucion.',
+          'Mentoría técnica, expectativas claras y roadmaps de crecimiento para mejorar ownership y calidad de ejecución.',
       },
       {
         title: 'Cloud y DevOps',
         detail:
-          'Automatizacion CI/CD, flujos con contenedores y operaciones cloud orientadas a entregas mas seguras y consistentes.',
+          'Automatización CI/CD, flujos con contenedores y operaciones cloud orientadas a entregas más seguras y consistentes.',
       },
       {
-        title: 'IA e innovacion',
+        title: 'IA e innovación',
         detail:
-          'Experimentacion aplicada con sistemas de agentes y LLM en pipelines reales para mejorar productividad y soporte a decisiones.',
+          'Experimentación aplicada con sistemas de agentes y LLM en pipelines reales para mejorar productividad y soporte a decisiones.',
       },
       {
-        title: 'Practicas de calidad',
+        title: 'Prácticas de calidad',
         detail:
-          'DDD, patrones de diseno, estrategia de migracion y disciplina de releases para sistemas distribuidos mantenibles.',
+          'DDD, patrones de diseño, estrategia de migración y disciplina de releases para sistemas distribuidos mantenibles.',
       },
     ],
     focus_title: 'Foco actual',
@@ -181,40 +181,40 @@ const translation = {
       'Liderazgo técnico y mentoring (3 personas)',
       'Cloud, CI/CD y arquitectura escalable',
     ],
-    case_studies_title: 'Capsulas de casos',
+    case_studies_title: 'Cápsulas de casos',
     case_studies: [
       {
-        title: 'Evolucion de arquitectura en fintech',
+        title: 'Evolución de arquitectura en fintech',
         context:
           'Plataforma fintech con alta exigencia de fiabilidad y requisitos de compliance.',
         challenge:
           'Escalar la entrega y la calidad de arquitectura sin afectar estabilidad operativa.',
         approach:
-          'Defini limites de arquitectura mas claros, disciplina de release y decisiones tecnicas guiadas por observabilidad.',
+          'Definí límites de arquitectura más claros, disciplina de release y decisiones técnicas guiadas por observabilidad.',
         outcome:
-          'Mayor confianza en la entrega, mejor alineacion entre equipos y ejecucion tecnica mas predecible.',
+          'Mayor confianza en la entrega, mejor alineación entre equipos y ejecución técnica más predecible.',
       },
       {
-        title: 'Habilitacion cloud y DevOps',
+        title: 'Habilitación cloud y DevOps',
         context:
-          'Flujos entre varios equipos con necesidad de iterar rapido y reducir friccion operativa.',
+          'Flujos entre varios equipos con necesidad de iterar rápido y reducir fricción operativa.',
         challenge:
           'Mantener equilibrio entre velocidad de release y seguridad en cambios continuos.',
         approach:
-          'Consolide practicas de CI/CD, flujos de contenedores y estandares operativos con ownership compartido.',
+          'Consolidé prácticas de CI/CD, flujos de contenedores y estándares operativos con ownership compartido.',
         outcome:
-          'Rutinas de despliegue mas limpias y un flujo diario de entrega mas estable para equipo y negocio.',
+          'Rutinas de despliegue más limpias y un flujo diario de entrega más estable para equipo y negocio.',
       },
       {
-        title: 'Ruta de adopcion realista de IA',
+        title: 'Ruta de adopción realista de IA',
         context:
           'Equipos evaluando workflows con agentes y LLM dentro de pipelines reales.',
         challenge:
-          'Separar patrones utiles del ruido de mercado sin perder mantenibilidad ni calidad.',
+          'Separar patrones útiles del ruido de mercado sin perder mantenibilidad ni calidad.',
         approach:
-          'Trate los experimentos de IA como decisiones de arquitectura con restricciones claras y validacion iterativa.',
+          'Traté los experimentos de IA como decisiones de arquitectura con restricciones claras y validación iterativa.',
         outcome:
-          'Mayor claridad en iniciativas de IA e integracion mas solida con practicas de ingenieria existentes.',
+          'Mayor claridad en iniciativas de IA e integración más sólida con prácticas de ingeniería existentes.',
       },
     ],
     why_title: '¿Por qué programación?',
@@ -223,9 +223,9 @@ const translation = {
     how_i_work_title: 'Cómo trabajo',
     how_i_work:
       'Alineo arquitectura, procesos y personas: especificaciones claras, ejecución fiable, observabilidad y mejora continua release tras release.',
-    proof_title: 'Explora mas',
+    proof_title: 'Explora más',
     proof_intro:
-      'Si quieres ampliar contexto, estos enlaces muestran historial de proyectos, muestras de codigo y perfil profesional.',
+      'Si quieres ampliar contexto, estos enlaces muestran historial de proyectos, muestras de código y perfil profesional.',
     proof_links: [
       { label: 'Curriculum Vitae (CV)', href: '/docs/cv.pdf' },
       { label: 'Archivo de proyectos', href: '/proyectos/' },
@@ -248,7 +248,7 @@ const translation = {
       '1998-2001 · Primeras webs y aprendizaje constante con práctica.',
       '2009 · Primer puesto profesional como frontend developer.',
       '2010 · Evolución a responsabilidades full stack.',
-      '2013 · Ownership de producto sin dejar la programacion.',
+      '2013 · Ownership de producto sin dejar la programación.',
       '2019-2022 · Trabajo remoto full stack mientras continúo formación oficial.',
       '2023 · Inicio en fintech como Senior Full Stack Developer.',
       '2025 · Promoción a Technical Lead en fintech.',

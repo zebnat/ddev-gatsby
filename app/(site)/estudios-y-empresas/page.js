@@ -12,7 +12,7 @@ export default function ResumePageEs() {
   return (
     <section>
       <h1>Mi carrera, estudios, empresas...</h1>
-      <p>Conoce donde he trabajado y mi nivel academico.</p>
+      <p>Conoce dónde he trabajado y mi nivel académico.</p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum
         nunc diam. Pellentesque malesuada velit in nisl venenatis consequat.
