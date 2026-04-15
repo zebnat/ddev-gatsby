@@ -1,3 +1,5 @@
+const skillsUtils = require('./skills-utils.js')
+
 const categoryBySource = {
   languages: 'languages',
   libs: 'frameworks',
@@ -5,35 +7,42 @@ const categoryBySource = {
   other: 'concepts',
 }
 
+const { getCatalogSkillItems } = skillsUtils
+
 function getSkillCloudItems(skills) {
   const dedupe = new Map()
 
-  Object.entries(categoryBySource).forEach(([sourceKey, category]) => {
-    const list = Array.isArray(skills[sourceKey]) ? skills[sourceKey] : []
+  getCatalogSkillItems(skills).forEach((item) => {
+    const category = categoryBySource[item.category]
+    const key = item.skill.toLowerCase()
 
-    list.forEach((item) => {
-      const key = item.skill.toLowerCase()
+    if (!dedupe.has(key)) {
+      dedupe.set(key, {
+        skill: item.skill,
+        level: item.level,
+        isRecent: item.isRecent,
+        category,
+      })
+      return
+    }
 
-      if (!dedupe.has(key)) {
-        dedupe.set(key, {
-          skill: item.skill,
-          level: item.level,
-          isRecent: item.isRecent,
-          category,
-        })
-        return
-      }
+    const existing = dedupe.get(key)
+    if (item.level > existing.level) {
+      dedupe.set(key, {
+        ...existing,
+        level: item.level,
+        isRecent: item.isRecent || existing.isRecent,
+        category,
+      })
+      return
+    }
 
-      const existing = dedupe.get(key)
-      if (item.level > existing.level) {
-        dedupe.set(key, {
-          ...existing,
-          level: item.level,
-          isRecent: item.isRecent || existing.isRecent,
-          category,
-        })
-      }
-    })
+    if (item.isRecent && !existing.isRecent) {
+      dedupe.set(key, {
+        ...existing,
+        isRecent: true,
+      })
+    }
   })
 
   return [...dedupe.values()]

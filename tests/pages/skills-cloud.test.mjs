@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 
 import skillsCloudUtils from '../../src/lib/content/skills-cloud-utils.js'
+import skills from '../../data/skills.js'
 
 const { getSkillCloudItems } = skillsCloudUtils
 
@@ -70,4 +71,20 @@ test('skills data includes linkedin-derived leadership and AI skills', async () 
   assert.equal(source.includes('Technical Leadership'), true)
   assert.equal(source.includes('AI Agent Orchestration'), true)
   assert.equal(source.includes('GitHub Actions'), true)
+})
+
+test('3D cloud dataset includes every unique skill shown as badges', () => {
+  const cloudItems = getSkillCloudItems(skills)
+  const cloudNames = new Set(cloudItems.map((item) => item.skill.toLowerCase()))
+  const catalogNames = new Set(
+    [...skills.languages, ...skills.libs, ...skills.tools, ...skills.other].map(
+      (item) => item.skill.toLowerCase()
+    )
+  )
+
+  assert.equal(cloudItems.length, catalogNames.size)
+
+  catalogNames.forEach((name) => {
+    assert.equal(cloudNames.has(name), true)
+  })
 })
