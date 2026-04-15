@@ -34,8 +34,8 @@ export default function AboutContent({ lang, translation }) {
               {translation.focus_title}
             </h2>
             <div className="flex flex-wrap gap-2">
-              {translation.focus_items.map((item) => (
-                <FocusPill key={item} value={item} />
+              {translation.focus_items.map((item, index) => (
+                <FocusPill key={`focus-${index}-${item}`} value={item} />
               ))}
             </div>
           </section>
@@ -94,9 +94,9 @@ export default function AboutContent({ lang, translation }) {
           {translation.timeline_title}
         </h2>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {translation.timeline.map((item) => (
+          {translation.timeline.map((item, index) => (
             <Card
-              key={item}
+              key={`timeline-${index}-${item}`}
               className="motion-fade-up border-cyan-300/20 bg-slate-950/70 p-0"
             >
               <CardContent className="p-4">

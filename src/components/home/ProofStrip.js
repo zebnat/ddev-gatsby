@@ -48,9 +48,9 @@ export default function ProofStrip({ lang }) {
       className="grid gap-3 md:grid-cols-3"
       aria-label="Proof highlights"
     >
-      {proofItems.map((item) => (
+      {proofItems.map((item, index) => (
         <Card
-          key={item.label}
+          key={`proof-${index}-${item.label}`}
           className="motion-fade-up border-slate-700/70 bg-slate-900/70 p-0"
         >
           <CardContent className="space-y-2 p-4">

@@ -48,7 +48,7 @@ export default function SkillMapSummary({ items, translation }) {
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {summary.map((item) => (
           <Card
-            key={item.id}
+            key={item.roleId}
             className="border-cyan-300/20 bg-slate-950/70 p-0"
           >
             <CardContent className="space-y-2 p-4">

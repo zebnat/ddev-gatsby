@@ -41,9 +41,9 @@ export default function HeroPanel({
         </blockquote>
 
         <div className="flex flex-wrap gap-2">
-          {focus.map((item) => (
+          {focus.map((item, index) => (
             <Badge
-              key={item}
+              key={`focus-${index}-${item}`}
               variant="neutral"
               className="normal-case tracking-normal"
             >

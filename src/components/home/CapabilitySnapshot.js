@@ -14,8 +14,8 @@ export default function CapabilitySnapshot({ translation, routes }) {
 
       <CardContent className="space-y-5">
         <ul className="m-0 grid list-disc gap-2 pl-5 text-sm text-slate-300 sm:grid-cols-2 sm:text-base">
-          {translation.capability_bullets.map((item) => (
-            <li key={item}>{item}</li>
+          {translation.capability_bullets.map((item, index) => (
+            <li key={`capability-${index}-${item}`}>{item}</li>
           ))}
         </ul>
 

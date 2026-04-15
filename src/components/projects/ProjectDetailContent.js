@@ -14,8 +14,11 @@ export default function ProjectDetailContent({ project, translation }) {
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <Badge key={tag} className="normal-case tracking-normal">
+          {project.tags.map((tag, index) => (
+            <Badge
+              key={`${project.path || project.title}-tag-${index}-${tag}`}
+              className="normal-case tracking-normal"
+            >
               {tag}
             </Badge>
           ))}

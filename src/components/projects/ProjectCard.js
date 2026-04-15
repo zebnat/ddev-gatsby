@@ -8,8 +8,11 @@ export default function ProjectCard({ project }) {
     <Card as="li" className="list-none border-cyan-300/25 bg-slate-950/70 p-0">
       <CardHeader className="space-y-3 p-5 pb-2">
         <div className="flex flex-wrap items-center gap-2">
-          {project.tags.slice(0, 4).map((tag) => (
-            <Badge key={tag} className="normal-case tracking-normal">
+          {project.tags.slice(0, 4).map((tag, index) => (
+            <Badge
+              key={`${project.path}-tag-${index}-${tag}`}
+              className="normal-case tracking-normal"
+            >
               {tag}
             </Badge>
           ))}
