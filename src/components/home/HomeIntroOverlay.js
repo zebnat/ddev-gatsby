@@ -6,6 +6,7 @@ export default function HomeIntroOverlay({
   translation,
   active,
   exiting,
+  animated,
   reducedMotion,
   onSkip,
 }) {
@@ -95,8 +96,10 @@ export default function HomeIntroOverlay({
     <section
       ref={overlayRef}
       className={`hud-intro-overlay fixed inset-0 z-[70] flex items-center justify-center px-6 ${
-        reducedMotion ? 'hud-intro-overlay-reduced' : ''
-      } ${exiting ? 'hud-intro-overlay-exit' : ''}`}
+        animated ? 'hud-intro-overlay-animated' : ''
+      } ${reducedMotion ? 'hud-intro-overlay-reduced' : ''} ${
+        exiting ? 'hud-intro-overlay-exit' : ''
+      }`}
       role="dialog"
       aria-modal="true"
       aria-label={introRegionLabel}
@@ -111,7 +114,7 @@ export default function HomeIntroOverlay({
         type="button"
         onClick={onSkip}
         autoFocus
-        className="hud-intro-skip absolute right-4 top-4 z-20 rounded-md border border-cyan-300/45 bg-slate-950/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100 transition hover:border-cyan-200/80 hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:right-6 sm:top-6"
+        className="hud-intro-skip absolute z-20 rounded-md border border-cyan-300/45 bg-slate-950/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100 transition hover:border-cyan-200/80 hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
       >
         {translation.intro_skip}
       </button>
