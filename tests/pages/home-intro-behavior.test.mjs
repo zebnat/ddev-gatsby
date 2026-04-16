@@ -195,4 +195,10 @@ test('intro overlay and global css include animation opt-in class and iOS safe-a
     cssSource.includes('right: max(1rem, env(safe-area-inset-right));'),
     true
   )
+  assert.equal(
+    cssSource.includes(
+      '@media (max-width: 640px) {\n  .hud-intro-phase {\n    filter: blur(4px);'
+    ),
+    false
+  )
 })

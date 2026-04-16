@@ -354,10 +354,12 @@
 
 @keyframes hud-phase-reveal {
   from {
+    opacity: 0.56;
     transform: translateY(12px) scale(0.985);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
@@ -489,10 +491,6 @@
 }
 
 @media (max-width: 640px) {
-  .hud-intro-phase {
-    filter: blur(4px);
-  }
-
   .hud-intro-phase-label {
     animation-duration: 2.8s;
   }
