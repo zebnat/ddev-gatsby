@@ -76,3 +76,31 @@ test('.env deploy example includes required keys', async () => {
   assert.equal(file.includes('S3_BUCKET_NAME='), true)
   assert.equal(file.includes('CLOUDFRONT_DISTRIBUTION_ID='), true)
 })
+
+test('package scripts expose deploy:easy command', async () => {
+  const packageJson = await readFile(
+    new URL('../../package.json', import.meta.url),
+    'utf8'
+  )
+
+  assert.equal(packageJson.includes('"deploy:easy"'), true)
+  assert.equal(
+    packageJson.includes('node scripts/deploy/easy-deploy.mjs'),
+    true
+  )
+})
+
+test('easy deploy orchestrator runs checks and deploy flow', async () => {
+  const source = await readFile(
+    new URL('../../scripts/deploy/easy-deploy.mjs', import.meta.url),
+    'utf8'
+  )
+
+  assert.equal(source.includes("runNpmScript('test')"), true)
+  assert.equal(source.includes("runNpmScript('next:build')"), true)
+  assert.equal(source.includes("runNpmScript('parity:verify-phase1')"), true)
+  assert.equal(source.includes("runNpmScript('deploy:dry-run')"), true)
+  assert.equal(source.includes("runNpmScript('deploy')"), true)
+  assert.equal(source.includes('cloudfront'), true)
+  assert.equal(source.includes('list-invalidations'), true)
+})

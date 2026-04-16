@@ -40,7 +40,8 @@
     "test:static-assets": "npm run next:sync-static && node --test tests/parity/static-assets.test.mjs",
     "test:sitemap": "npm run next:generate-sitemap && node --test tests/parity/sitemap.test.mjs",
     "deploy": "npm run next:build && node scripts/deploy/cloudfront-static.mjs",
-    "deploy:dry-run": "npm run next:build && node scripts/deploy/cloudfront-static.mjs --dry-run"
+    "deploy:dry-run": "npm run next:build && node scripts/deploy/cloudfront-static.mjs --dry-run",
+    "deploy:easy": "node scripts/deploy/easy-deploy.mjs"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

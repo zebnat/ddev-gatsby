@@ -3,7 +3,7 @@
 This project already includes a safe deploy flow that builds the static site, syncs it to S3, and invalidates CloudFront.
 
 - Deploy script: `scripts/deploy/cloudfront-static.mjs`
-- NPM commands: `npm run deploy` and `npm run deploy:dry-run`
+- NPM commands: `npm run deploy`, `npm run deploy:dry-run`, and `npm run deploy:easy`
 - Static output: `out/` (from `next build` with static export)
 
 ---
@@ -159,6 +159,26 @@ aws s3 ls s3://danieldev --recursive
 
 ---
 
+## Fast path: one command end-to-end
+
+If `.env.deploy` already exists and AWS auth is valid, run:
+
+```bash
+npm run deploy:easy
+```
+
+This command runs the full safe flow in order:
+
+1. Loads `.env.deploy`
+2. Runs `npm test`
+3. Runs `npm run next:build`
+4. Runs `npm run parity:verify-phase1`
+5. Runs `npm run deploy:dry-run`
+6. Runs `npm run deploy`
+7. Prints latest CloudFront invalidations
+
+---
+
 ## Troubleshooting
 
 ### Missing env vars
@@ -210,7 +230,5 @@ Fix:
 
 1. Pull latest code
 2. `npm install` (if dependencies changed)
-3. Load `.env.deploy`
-4. `npm run deploy:dry-run`
-5. `npm run deploy`
-6. Verify `/` and `/en/`
+3. `npm run deploy:easy`
+4. Verify `/` and `/en/`
