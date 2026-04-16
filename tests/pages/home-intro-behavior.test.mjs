@@ -158,28 +158,19 @@ test('reduced-motion media query listener has modern and legacy fallback', async
   assert.equal(source.includes('} catch {'), true)
 })
 
-test('intro defaults to static-safe rendering and only opts into animation when runtime allows it', async () => {
+test('intro enables animation when reduced motion is off', async () => {
   const source = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
 
-  assert.equal(source.includes('const INTRO_STATIC_CLOSE_MS = 2200'), true)
+  assert.equal(source.includes('const INTRO_TIMELINE_MS = 4500'), true)
   assert.equal(
-    source.includes(
-      'const [motionEnabled, setMotionEnabled] = useState(false)'
-    ),
-    true
-  )
-  assert.equal(
-    source.includes('const motionSupported = supportsIntroAnimation()'),
+    source.includes('const INTRO_REDUCED_MOTION_CLOSE_MS = 2600'),
     true
   )
   assert.equal(source.includes('const closeDelay = prefersReducedMotion'), true)
-  assert.equal(source.includes(': !motionSupported'), true)
-  assert.equal(
-    source.includes('animated={motionEnabled && !reducedMotion}'),
-    true
-  )
+  assert.equal(source.includes('animated={!reducedMotion}'), true)
+  assert.equal(source.includes('supportsIntroAnimation'), false)
 })
 
 test('intro overlay and global css include animation opt-in class and iOS safe-area offsets', async () => {
@@ -191,7 +182,9 @@ test('intro overlay and global css include animation opt-in class and iOS safe-a
   assert.equal(overlaySource.includes('animated,'), true)
   assert.equal(overlaySource.includes('hud-intro-overlay-animated'), true)
   assert.equal(
-    cssSource.includes('.hud-intro-overlay-animated .hud-intro-phase'),
+    cssSource.includes(
+      '.hud-intro-overlay-animated .hud-intro-phase {\n    animation: hud-phase-reveal'
+    ),
     true
   )
   assert.equal(

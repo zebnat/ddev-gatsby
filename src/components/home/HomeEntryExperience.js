@@ -7,23 +7,6 @@ import HomeIntroOverlay from './HomeIntroOverlay'
 const INTRO_TIMELINE_MS = 4500
 const INTRO_EXIT_MS = 300
 const INTRO_REDUCED_MOTION_CLOSE_MS = 2600
-const INTRO_STATIC_CLOSE_MS = 2200
-
-function supportsIntroAnimation() {
-  if (typeof window === 'undefined') {
-    return false
-  }
-
-  const cssApi = window.CSS
-  if (!cssApi || typeof cssApi.supports !== 'function') {
-    return true
-  }
-
-  return (
-    cssApi.supports('animation-name', 'hud-phase-reveal') &&
-    cssApi.supports('transform', 'translateY(2px)')
-  )
-}
 
 function getPrefersReducedMotion() {
   if (
@@ -44,7 +27,6 @@ export default function HomeEntryExperience({ lang, translation }) {
   const [introActive, setIntroActive] = useState(false)
   const [introExiting, setIntroExiting] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
-  const [motionEnabled, setMotionEnabled] = useState(false)
   const closeTimerRef = useRef()
   const exitTimerRef = useRef()
 
@@ -73,16 +55,12 @@ export default function HomeEntryExperience({ lang, translation }) {
     }
 
     const prefersReducedMotion = getPrefersReducedMotion()
-    const motionSupported = supportsIntroAnimation()
     const closeDelay = prefersReducedMotion
       ? INTRO_REDUCED_MOTION_CLOSE_MS
-      : !motionSupported
-      ? INTRO_STATIC_CLOSE_MS
       : INTRO_TIMELINE_MS
     const beginExitDelay = Math.max(closeDelay - INTRO_EXIT_MS, 0)
 
     setReducedMotion(prefersReducedMotion)
-    setMotionEnabled(motionSupported)
     setIntroActive(true)
     setIntroExiting(false)
 
@@ -160,7 +138,7 @@ export default function HomeEntryExperience({ lang, translation }) {
         translation={translation}
         active={introActive}
         exiting={introExiting}
-        animated={motionEnabled && !reducedMotion}
+        animated={!reducedMotion}
         reducedMotion={reducedMotion}
         onSkip={closeIntro}
       />
