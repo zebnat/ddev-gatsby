@@ -49,7 +49,7 @@ test('reduced motion path uses a dedicated shorter close duration', async () => 
     true
   )
   assert.equal(
-    source.includes('const forceSafeMode = prefersReducedMotion || iosWebKit'),
+    source.includes('const forceSafeMode = prefersReducedMotion'),
     true
   )
   assert.equal(source.includes('const closeDelay = forceSafeMode'), true)
@@ -213,25 +213,18 @@ test('intro overlay and global css include animation opt-in class and iOS safe-a
   )
 })
 
-test('iOS WebKit falls back to guaranteed-safe intro rendering path', async () => {
+test('iPhone WebKit bypasses intro overlay to avoid blank-screen failures', async () => {
   const entrySource = await readText(
     '../../src/components/home/HomeEntryExperience.js'
   )
-  const overlaySource = await readText(
-    '../../src/components/home/HomeIntroOverlay.js'
-  )
 
-  assert.equal(entrySource.includes('function isIOSWebKitBrowser()'), true)
+  assert.equal(entrySource.includes('function isIPhoneWebKitBrowser()'), true)
   assert.equal(
-    entrySource.includes(
-      'const [safeIntroMode, setSafeIntroMode] = useState(false)'
-    ),
+    entrySource.includes('const isIPhoneWebKit = isIPhoneWebKitBrowser()'),
     true
   )
-  assert.equal(
-    entrySource.includes('setSafeIntroMode(isIOSWebKitBrowser())'),
-    true
-  )
-  assert.equal(overlaySource.includes('safeMode,'), true)
-  assert.equal(overlaySource.includes('data-intro-mode={safeMode ?'), true)
+  assert.equal(entrySource.includes('if (isIPhoneWebKit) {'), true)
+  assert.equal(entrySource.includes('setIntroActive(false)'), true)
+  assert.equal(entrySource.includes('setIntroExiting(false)'), true)
+  assert.equal(entrySource.includes('setSafeIntroMode(false)'), true)
 })

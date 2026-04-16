@@ -8,16 +8,16 @@ const INTRO_TIMELINE_MS = 4500
 const INTRO_EXIT_MS = 300
 const INTRO_REDUCED_MOTION_CLOSE_MS = 2600
 
-function isIOSWebKitBrowser() {
+function isIPhoneWebKitBrowser() {
   if (typeof navigator === 'undefined') {
     return false
   }
 
   const userAgent = navigator.userAgent || ''
-  const isIOSDevice = /iPhone|iPad|iPod/i.test(userAgent)
+  const isIPhone = /iPhone/i.test(userAgent)
   const hasAppleWebKit = /AppleWebKit/i.test(userAgent)
 
-  return isIOSDevice && hasAppleWebKit
+  return isIPhone && hasAppleWebKit
 }
 
 function getPrefersReducedMotion() {
@@ -68,14 +68,23 @@ export default function HomeEntryExperience({ lang, translation }) {
     }
 
     const prefersReducedMotion = getPrefersReducedMotion()
-    const iosWebKit = isIOSWebKitBrowser()
-    const forceSafeMode = prefersReducedMotion || iosWebKit
+    const isIPhoneWebKit = isIPhoneWebKitBrowser()
+
+    if (isIPhoneWebKit) {
+      setReducedMotion(prefersReducedMotion)
+      setSafeIntroMode(false)
+      setIntroActive(false)
+      setIntroExiting(false)
+      return undefined
+    }
+
+    const forceSafeMode = prefersReducedMotion
     const closeDelay = forceSafeMode
       ? INTRO_REDUCED_MOTION_CLOSE_MS
       : INTRO_TIMELINE_MS
     const beginExitDelay = Math.max(closeDelay - INTRO_EXIT_MS, 0)
 
-    setSafeIntroMode(isIOSWebKitBrowser())
+    setSafeIntroMode(false)
     setReducedMotion(forceSafeMode)
     setIntroActive(true)
     setIntroExiting(false)
