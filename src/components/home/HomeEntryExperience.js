@@ -36,7 +36,7 @@ function getPrefersReducedMotion() {
 }
 
 export default function HomeEntryExperience({ lang, translation }) {
-  const [introActive, setIntroActive] = useState(false)
+  const [introActive, setIntroActive] = useState(true)
   const [introExiting, setIntroExiting] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
   const [safeIntroMode, setSafeIntroMode] = useState(false)

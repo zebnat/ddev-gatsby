@@ -101,6 +101,14 @@ export default function HomeIntroOverlay({
       } ${reducedMotion ? 'hud-intro-overlay-reduced' : ''} ${
         exiting ? 'hud-intro-overlay-exit' : ''
       }`}
+      style={
+        safeMode
+          ? {
+              background: '#020617',
+              color: '#ecfeff',
+            }
+          : undefined
+      }
       role="dialog"
       aria-modal="true"
       aria-label={introRegionLabel}
@@ -117,6 +125,9 @@ export default function HomeIntroOverlay({
         onClick={onSkip}
         autoFocus
         className="hud-intro-skip absolute z-20 rounded-md border border-cyan-300/45 bg-slate-950/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100 transition hover:border-cyan-200/80 hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+        style={
+          safeMode ? { borderColor: '#67e8f9', color: '#ecfeff' } : undefined
+        }
       >
         {translation.intro_skip}
       </button>
