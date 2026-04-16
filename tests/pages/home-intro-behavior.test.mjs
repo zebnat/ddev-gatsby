@@ -33,9 +33,10 @@ test('intro always displays on homepage without storage or query gating', async 
     false
   )
   assert.equal(
-    source.includes('const [introActive, setIntroActive] = useState(true)'),
+    source.includes('const [introActive, setIntroActive] = useState(false)'),
     true
   )
+  assert.equal(source.includes('setIntroActive(true)'), true)
 })
 
 test('reduced motion path uses a dedicated shorter close duration', async () => {
