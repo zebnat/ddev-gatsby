@@ -354,15 +354,11 @@
 
 @keyframes hud-phase-reveal {
   from {
-    opacity: 0;
     transform: translateY(12px) scale(0.985);
-    filter: blur(6px);
   }
 
   to {
-    opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0);
   }
 }
 
@@ -424,21 +420,15 @@
 
 @keyframes hud-lock-pulse {
   0% {
-    opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0);
   }
 
   45% {
-    opacity: 0.82;
     transform: translateY(0) scale(1.02);
-    filter: blur(0.3px);
   }
 
   100% {
-    opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0);
   }
 }
 
