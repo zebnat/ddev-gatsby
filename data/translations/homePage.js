@@ -1,52 +1,119 @@
 const translation = {
   en: {
-    h1: 'Barcelona-Based Full Stack Developer',
-    h2: 'Crafting Seamless Digital Experiences',
-    title: 'Full Stack Developer (Barcelona) - Daniel Domínguez',
-    quote: 'Crafting Solutions and Ensuring Code Quality',
-    intro: '<p>With years of experience in the web industry, I have gained extensive knowledge across various fields.</p><p>Discover more about my <Link>personal interests</Link>.</p>',
+    h1: 'Technical Lead with 15+ years in software engineering',
+    h2: 'Leading architecture and delivery in fintech while driving practical AI adoption.',
+    title: 'Technical Lead (Barcelona) - Daniel Dominguez',
+    quote: 'Architecture, execution, and team growth with measurable outcomes.',
+    intro_phase_1: 'DANIEL DOMINGUEZ // TECHNICAL LEAD',
+    intro_phase_2: 'FROM TECHNICAL DECISIONS TO BUSINESS IMPACT',
+    intro_phase_3: 'APPLIED AI FOCUSED ON VALUE AND EXECUTION',
+    intro_skip: 'Skip intro',
+    intro:
+      '<p>I currently lead technical direction in fintech, balancing hands-on engineering with leadership responsibilities.</p><p>I mentor a team of 3 engineers and align architecture with business goals. For personal context, visit my <Link>about page</Link>.</p>',
     more: 'Learn more',
-    moreabout: 'More about me',
-    skills: 'My technical skills',
-    skillsInfo: '<p>My expertise in web technologies is highly versatile, encompassing both backend and frontend skillsets. I have developed API services, worked with databases, crafted visually appealing frontend layouts, and created complex JavaScript applications using ES6.</p><p>As a Linux enthusiast, I have been exploring it since childhood. While I primarily work with Debian/Ubuntu servers, I am also familiar with Arch distributions.</p><p>Although not my primary focus, I have developed games using the Unity Engine for a company.</p><p>Regarding programming languages, I am proficient in PHP, JavaScript ES5/6, and Java. I invite you to explore this <Link>detailed list</Link> for more information.</p>',
+    moreabout: 'About me',
+    skills: 'Technical capabilities',
+    quick_paths_title: 'Start here',
+    quick_paths_subtitle:
+      'Choose the path that best matches what you want to evaluate first.',
+    skills_path_title: 'Technical Skills',
+    skills_path_desc:
+      'Architecture, cloud workflows, AI/MLOps experimentation, and delivery practices in one concise section.',
+    skills_path_cta: 'Open technical skills',
+    projects_path_title: 'Projects & case studies',
+    projects_path_desc:
+      'Review production work, technical decisions, and outcomes across multiple domains.',
+    projects_path_cta: 'Explore projects',
+    about_path_title: 'Leadership profile',
+    about_path_desc:
+      'See my evolution from senior engineer to technical lead with AI responsibilities.',
+    about_path_cta: 'Read about me',
+    capabilities_brief:
+      'I lead engineering strategy while remaining hands-on. The focus is shipping reliable systems, scaling team execution, and accelerating delivery with practical AI adoption.',
+    capability_bullets: [
+      'System architecture and technical strategy',
+      'CI/CD, cloud operations, and observability',
+      'Team mentoring and engineering standards',
+      'AI-enabled workflows with measurable impact',
+    ],
+    resources_title: 'Professional resources',
+    skillsInfo:
+      '<p>My core strengths include software architecture, cloud-ready systems, CI/CD automation, and maintainable full stack development.</p><p>I work across Node.js/TypeScript services, frontend delivery, observability, and AI-oriented experimentation in product workflows.</p><p>Explore the <Link>skills section</Link> for a detailed breakdown.</p>',
     fullSkills: 'Technical Skills',
-    projects: "Projects I've Successfully Developed",
-    projectInfo: '<p>In summary, my primary experience comes from working on a significant product at a startup for nearly 9 years. During that time, I developed numerous projects, including creating new features, fixing bugs, refactoring code, and addressing business concerns such as SEO and IT technology planning. I also built smaller products and intranets for the company.</p><p>Beyond that, I have worked on side projects like this website, utilizing cutting-edge technologies.</p><p>Feel free to explore the <Link>full list of projects</Link> and check out <a href="https://github.com/zebnat" target="_blank">my GitHub profile</a>.</p>',
-    fullProjects: 'Projects Section',
-    academic: 'Academics',
-    academicInfo: '<p>I always wanted to study software engineering, but due to life hardships, I had to pursue other paths. I started as a self-taught learner but eventually obtained an official education. I practiced and learned theory from books since a young age and ended up working in the industry without even having formal education.</p><p>Check my CV/Resume and other certifications below.</p>',
+    projects: 'Selected projects and outcomes',
+    projectInfo:
+      '<p>My background spans SEO/e-commerce ecosystems, fintech systems with reliability and compliance needs, and platform-oriented architecture work.</p><p>You can review the <Link>full project archive</Link> and check <a href="https://github.com/zebnat" target="_blank">my GitHub profile</a>.</p>',
+    fullProjects: 'Explore projects',
+    academic: 'Education and credentials',
+    academicInfo:
+      '<p>I started as a self-taught developer, then completed formal training while already working in the industry. This mix shaped both my practical and theoretical approach.</p><p>Below you can access resume and supporting documents.</p>',
     resume: 'Resume (CV)',
     recommendationPW: "Panaworld's recommendation letter (Spanish)",
     certificate: "Panaworld's Job Tasks Certificate (Spanish)",
-    daw: 'Higher Technician in Development of Web Applications',
-    certIssue: 'I am waiting for the %certName% certificate to be issued (Contact me)',
+    daw: 'Higher Technician in Web Application Development',
+    certIssue:
+      'I am waiting for the %certName% certificate to be issued (Contact me)',
     file: 'File',
-    download: 'Download'
+    download: 'Download',
   },
   es: {
-    h1: 'Desarrollador Full Stack con base en Barcelona',
-    h2: 'Creando Experiencias Digitales',
-    title: 'Desarrollador Full Stack (Barcelona) - Daniel Domínguez',
-    quote: 'Creando Soluciones y Asegurando la Calidad del Código',
-    intro: '<p>Con años de experiencia en la industria web, he adquirido amplios conocimientos en diversos campos.</p><p>Descubre más sobre mis <Link>intereses personales</Link>.</p>',
+    h1: 'Technical Lead con 15+ años en ingeniería de software',
+    h2: 'Liderando arquitectura y entrega en fintech mientras impulso la adopción real de IA.',
+    title: 'Technical Lead (Barcelona) - Daniel Domínguez',
+    quote:
+      'Arquitectura, ejecución y crecimiento del equipo con impacto medible.',
+    intro_phase_1: 'DANIEL DOMINGUEZ // TECHNICAL LEAD',
+    intro_phase_2: 'DE DECISIONES TÉCNICAS A IMPACTO DE NEGOCIO',
+    intro_phase_3: 'IA APLICADA CON FOCO EN VALOR Y EJECUCIÓN',
+    intro_skip: 'Saltar intro',
+    intro:
+      '<p>Actualmente lidero la dirección técnica en fintech, combinando trabajo hands-on con responsabilidades de liderazgo.</p><p>Mentorizo a un equipo de 3 ingenieros y alineo la arquitectura con los objetivos de negocio. Si quieres más contexto personal, visita <Link>sobre mí</Link>.</p>',
     more: 'Aprende más',
-    moreabout: 'Más sobre mí',
-    skills: 'Mis habilidades técnicas',
-    skillsInfo: '<p>Mi experiencia en tecnologías web es altamente versátil, abarcando tanto habilidades de backend como de frontend. He desarrollado servicios API, trabajado con bases de datos, diseñado interfaces frontend atractivas y creado aplicaciones JavaScript complejas utilizando ES6.</p><p>Como entusiasta de Linux, lo he estado explorando desde la infancia. Aunque principalmente trabajo con servidores Debian/Ubuntu, también estoy familiarizado con las distribuciones Arch.</p><p>Aunque no es mi enfoque principal, he desarrollado juegos utilizando el motor Unity para una empresa.</p><p>En cuanto a lenguajes de programación, tengo dominio en PHP, JavaScript ES5/6 y Java. Te invito a explorar esta <Link>lista detallada</Link> para obtener más información.</p>',
-    fullSkills: 'Habilidades Técnicas',
-    projects: "Proyectos que he desarrollado con éxito",
-    projectInfo: '<p>En resumen, mi experiencia principal proviene de trabajar en un producto importante en una startup durante casi 9 años. Durante ese tiempo, desarrollé numerosos proyectos, incluyendo la creación de nuevas funcionalidades, solución de errores, refactorización de código y abordando preocupaciones empresariales como SEO y planificación de tecnología IT. También construí productos e intranets más pequeñas para la empresa.</p><p>Más allá de eso, he trabajado en proyectos paralelos como este sitio web, utilizando tecnologías de vanguardia.</p><p>No dudes en explorar la <Link>lista completa de proyectos</Link> y echar un vistazo a <a href="https://github.com/zebnat" target="_blank">mi perfil de GitHub</a>.</p>',
-    fullProjects: 'Sección de Proyectos',
-    academic: 'Formación Académica',
-    academicInfo: '<p>Siempre quise estudiar ingeniería de software, pero debido a las dificultades de la vida, tuve que seguir otros caminos. Comencé como autodidacta pero finalmente obtuve una educación oficial. Practiqué y aprendí teoría de libros desde temprana edad y terminé trabajando en la industria sin tener educación formal.</p><p>Consulta mi currículum y otras certificaciones a continuación.</p>',
-    resume: 'Currículum Vitae (CV)',
-    recommendationPW: "Carta de recomendación de Panaworld (en español)",
-    certificate: "Certificado de Tareas Laborales de Panaworld (en español)",
+    moreabout: 'Sobre mí',
+    skills: 'Capacidades técnicas',
+    quick_paths_title: 'Empieza aquí',
+    quick_paths_subtitle:
+      'Elige la ruta que mejor encaja con lo que quieres evaluar primero.',
+    skills_path_title: 'Habilidades técnicas',
+    skills_path_desc:
+      'Arquitectura, workflows cloud, experimentación AI/MLOps y prácticas de entrega en una sección concisa.',
+    skills_path_cta: 'Ver habilidades técnicas',
+    projects_path_title: 'Proyectos y casos',
+    projects_path_desc:
+      'Revisa trabajo en producción, decisiones técnicas y resultados en distintos dominios.',
+    projects_path_cta: 'Explorar proyectos',
+    about_path_title: 'Perfil de liderazgo',
+    about_path_desc:
+      'Conoce mi evolución de senior engineer a technical lead con responsabilidad en IA.',
+    about_path_cta: 'Leer sobre mí',
+    capabilities_brief:
+      'Lidero estrategia de ingeniería manteniendo impacto hands-on. El foco es entregar sistemas fiables, escalar la ejecución del equipo y acelerar entregas con adopción realista de IA.',
+    capability_bullets: [
+      'Arquitectura de sistemas y estrategia técnica',
+      'CI/CD, operaciones cloud y observabilidad',
+      'Mentoring de equipo y estándares de ingeniería',
+      'Workflows con IA orientados a impacto medible',
+    ],
+    resources_title: 'Recursos profesionales',
+    skillsInfo:
+      '<p>Mis fortalezas clave incluyen arquitectura de software, sistemas cloud-ready, automatización CI/CD y desarrollo full stack mantenible.</p><p>Trabajo entre servicios Node.js/TypeScript, entrega frontend, observabilidad y experimentación orientada a IA dentro de producto.</p><p>Consulta la <Link>sección de habilidades</Link> para ver el detalle completo.</p>',
+    fullSkills: 'Habilidades técnicas',
+    projects: 'Proyectos destacados y resultados',
+    projectInfo:
+      '<p>Mi experiencia cubre ecosistemas SEO/e-commerce, sistemas fintech con necesidades de fiabilidad y cumplimiento, y trabajo de arquitectura orientada a plataforma.</p><p>Puedes revisar el <Link>archivo completo de proyectos</Link> y visitar <a href="https://github.com/zebnat" target="_blank">mi perfil de GitHub</a>.</p>',
+    fullProjects: 'Explorar proyectos',
+    academic: 'Formación y credenciales',
+    academicInfo:
+      '<p>Empecé como autodidacta y después completé formación oficial mientras ya trabajaba en la industria. Esa combinación define mi enfoque práctico y teórico.</p><p>Aquí puedes acceder al CV y a documentos de soporte.</p>',
+    resume: 'Curriculum Vitae (CV)',
+    recommendationPW: 'Carta de recomendación de Panaworld (en español)',
+    certificate: 'Certificado de tareas laborales de Panaworld (en español)',
     daw: 'Técnico Superior en Desarrollo de Aplicaciones Web',
-    certIssue: 'Estoy esperando que se emita el certificado %certName% (Contáctame)',
+    certIssue:
+      'Estoy esperando que se emita el certificado %certName% (Contáctame)',
     file: 'Fichero',
-    download: 'Descarga'
-  }
+    download: 'Descargar',
+  },
 }
 
 export default translation

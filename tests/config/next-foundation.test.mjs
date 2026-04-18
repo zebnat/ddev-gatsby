@@ -8,6 +8,10 @@ import { localeRouting } from '../../src/i18n/routing.mjs'
 const packageJson = JSON.parse(
   await readFile(new URL('../../package.json', import.meta.url), 'utf8')
 )
+const globalsCss = await readFile(
+  new URL('../../app/globals.css', import.meta.url),
+  'utf8'
+)
 
 test('next uses static export with trailing slash', () => {
   assert.equal(nextConfig.output, 'export')
@@ -24,4 +28,16 @@ test('next runtime dependencies are present', () => {
   assert.equal(typeof packageJson.dependencies.next, 'string')
   assert.equal(typeof packageJson.dependencies['markdown-to-jsx'], 'string')
   assert.equal(packageJson.dependencies.react.startsWith('^19'), true)
+})
+
+test('tailwind toolchain dependencies are present', () => {
+  assert.equal(typeof packageJson.devDependencies?.tailwindcss, 'string')
+  assert.equal(typeof packageJson.devDependencies?.postcss, 'string')
+  assert.equal(typeof packageJson.devDependencies?.autoprefixer, 'string')
+})
+
+test('global stylesheet defines base ai-lab theme tokens', () => {
+  assert.equal(globalsCss.includes('--bg'), true)
+  assert.equal(globalsCss.includes('--fg'), true)
+  assert.equal(globalsCss.includes('--accent'), true)
 })

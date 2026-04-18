@@ -2,50 +2,50 @@
 
 import Footer from './Footer'
 import Menu from './Menu'
+import ScrollToTopButton from './ScrollToTopButton'
 import TopBar from './TopBar'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import localesLoader from '../../lib/content/locales.js'
+import { shell as shellTranslation } from '../../content/translations'
+import shellUtils from './shell-utils.js'
 
 const { getDefaultLang, getMenuByLang } = localesLoader
-
-function getLanguageLinks(menuItems, defaultLang) {
-  const home = menuItems.find((item) => item.uniqueId === 'home')
-  if (home && Array.isArray(home.hrefLangs) && home.hrefLangs.length > 0) {
-    return home.hrefLangs
-  }
-
-  return [
-    { locale: defaultLang, url: '/' },
-    { locale: 'en', url: '/en/' },
-  ]
-}
-
-function detectCurrentLang(pathname) {
-  return pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'es'
-}
+const { detectCurrentLang, getLanguageLinks } = shellUtils
 
 export default function SiteShell({ children }) {
   const pathname = usePathname() || '/'
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
+
   const currentLang = detectCurrentLang(pathname)
   const defaultLang = getDefaultLang()
   const menuItems = getMenuByLang(currentLang, { includeDisabled: false })
   const languageLinks = getLanguageLinks(menuItems, defaultLang)
+  const shell = shellTranslation[currentLang] || shellTranslation.es
 
   return (
-    <div style={styles.wrapper}>
-      <TopBar languages={languageLinks} currentLang={currentLang} />
-      <Menu menuItems={menuItems} />
-      <main>{children}</main>
-      <Footer />
+    <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-10">
+      <TopBar
+        languages={languageLinks}
+        currentLang={currentLang}
+        menuOpen={mobileMenuOpen}
+        onToggleMenu={() => setMobileMenuOpen((state) => !state)}
+        translation={shell}
+      />
+      <Menu
+        menuItems={menuItems}
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        translation={shell}
+      />
+      <main className="pt-3">{children}</main>
+      <Footer translation={shell} />
+      <ScrollToTopButton label={shell.scrollToTop} />
     </div>
   )
-}
-
-const styles = {
-  wrapper: {
-    maxWidth: 920,
-    margin: '0 auto',
-    padding: '16px',
-  },
 }

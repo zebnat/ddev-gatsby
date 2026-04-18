@@ -1,130 +1,172 @@
+'use client'
+
+import { useEffect, useMemo, useRef, useState } from 'react'
+
 import skills from '../../../data/skills.js'
 import skillsUtils from '../../lib/content/skills-utils.js'
 
-const { sortSkillsByLevelAndRecency } = skillsUtils
+import Badge from '../ui/badge'
+import { Card, CardContent } from '../ui/card'
 
-function SkillCard({ skill, wordLevel, description, recent }) {
-  return (
-    <article style={styles.card}>
-      <h4 style={styles.title}>
-        {skill} {recent ? <span style={styles.recentDot}>●</span> : null}
-      </h4>
-      <p style={styles.level}>{wordLevel}</p>
-      <p style={styles.description}>{description}</p>
-    </article>
-  )
+const ERA_ORDER = ['monolith', 'framework', 'spa', 'platform', 'ai']
+const { getCatalogSkillItems } = skillsUtils
+
+const ERA_LABEL_KEYS = {
+  monolith: 'era_monolith',
+  framework: 'era_framework',
+  spa: 'era_spa',
+  platform: 'era_platform',
+  ai: 'era_ai',
 }
 
-function SkillGroup({ title, items, lang, translation }) {
-  const sortedItems = sortSkillsByLevelAndRecency(items)
-
-  return (
-    <section>
-      <h3 style={styles.groupTitle}>{title}</h3>
-      <div style={styles.grid}>
-        {sortedItems.map((item) => (
-          <SkillCard
-            key={item.skill}
-            skill={item.skill}
-            wordLevel={translation.wordLevel[item.level - 1] || '---'}
-            description={item.description[lang]}
-            recent={item.isRecent}
-          />
-        ))}
-      </div>
-    </section>
-  )
+const CATEGORY_LABEL_KEYS = {
+  languages: 'languages',
+  libs: 'frameworks',
+  tools: 'other_tools',
+  other: 'other_concepts',
 }
 
 export default function SkillsCatalog({ lang, translation }) {
-  return (
-    <>
-      <section>
-        <h3>{translation.levels_explained}</h3>
-        <ol>
-          <li>
-            <strong>{translation.wordLevel[0]}:</strong> {translation.help_l1}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[1]}:</strong> {translation.help_l2}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[2]}:</strong> {translation.help_l3}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[3]}:</strong> {translation.help_l4}
-          </li>
-          <li>
-            <strong>{translation.wordLevel[4]}:</strong> {translation.help_l5}
-          </li>
-        </ol>
-        <p>
-          {translation.blinking}: {translation.help_blinking}
-        </p>
-      </section>
+  const allSkills = useMemo(() => getCatalogSkillItems(skills), [])
+  const [activeEra, setActiveEra] = useState('platform')
+  const [expandedSkill, setExpandedSkill] = useState(null)
+  const expandedPanelRef = useRef(null)
 
-      <SkillGroup
-        title={translation.languages}
-        items={skills.languages}
-        lang={lang}
-        translation={translation}
-      />
-      <SkillGroup
-        title={translation.frameworks}
-        items={skills.libs}
-        lang={lang}
-        translation={translation}
-      />
-      <SkillGroup
-        title={translation.other_tools}
-        items={skills.tools}
-        lang={lang}
-        translation={translation}
-      />
-      <SkillGroup
-        title={translation.other_concepts}
-        items={skills.other}
-        lang={lang}
-        translation={translation}
-      />
-    </>
+  const sortedItems = useMemo(
+    () => [...allSkills].sort((a, b) => a.skill.localeCompare(b.skill)),
+    [allSkills]
   )
-}
 
-const styles = {
-  groupTitle: {
-    background: '#0a61ff',
-    color: '#fff',
-    padding: '4px 8px',
-    display: 'inline-block',
-    transform: 'skew(-14deg)',
-    marginTop: 24,
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-    gap: 12,
-    marginTop: 12,
-  },
-  card: {
-    border: '1px solid #d4d4d4',
-    borderRadius: 6,
-    background: '#fff',
-    padding: 12,
-  },
-  title: {
-    margin: '0 0 6px 0',
-  },
-  level: {
-    margin: '0 0 8px 0',
-    fontWeight: 700,
-    color: '#194f9a',
-  },
-  description: {
-    margin: 0,
-    fontSize: 14,
-  },
-  recentDot: {
-    color: '#f07f00',
-  },
+  const expandedItem = sortedItems.find((item) => item.skill === expandedSkill)
+
+  const handleToggleExpand = (skillName) => {
+    setExpandedSkill((current) => (current === skillName ? null : skillName))
+  }
+
+  useEffect(() => {
+    if (
+      !expandedSkill ||
+      !expandedPanelRef.current ||
+      typeof window === 'undefined'
+    ) {
+      return
+    }
+
+    if (!window.matchMedia('(max-width: 639px)').matches) {
+      return
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      expandedPanelRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+    }
+  }, [expandedSkill])
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/90">
+          {translation.era_menu_label}
+        </span>
+        <div className="w-full" aria-label={translation.era_menu_label}>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+            {ERA_ORDER.map((era) => {
+              const isActive = era === activeEra
+
+              return (
+                <button
+                  key={era}
+                  type="button"
+                  onClick={() => setActiveEra(era)}
+                  className={`w-full rounded-full border px-4 py-1.5 text-center text-xs font-semibold uppercase tracking-[0.14em] transition ${
+                    isActive
+                      ? 'border-cyan-200/70 bg-cyan-300/20 text-cyan-50 shadow-[0_0_20px_rgba(34,211,238,0.35)]'
+                      : 'border-slate-400/30 bg-slate-900/70 text-slate-300 hover:border-cyan-300/45 hover:text-cyan-100'
+                  }`}
+                  aria-pressed={isActive}
+                >
+                  {translation[ERA_LABEL_KEYS[era]]}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      <p className="m-0 text-sm text-slate-300">{translation.tap_skill}</p>
+
+      <div className="flex flex-wrap gap-2">
+        {sortedItems.map((item) => {
+          const isEraMatch = item.era === activeEra
+          const isExpanded = expandedSkill === item.skill
+
+          return (
+            <Badge
+              key={item.skill}
+              as="button"
+              type="button"
+              variant={isEraMatch ? 'accent' : 'neutral'}
+              onClick={() => handleToggleExpand(item.skill)}
+              className={`normal-case tracking-normal transition ${
+                isEraMatch
+                  ? 'border-cyan-200/70 shadow-[0_0_20px_rgba(34,211,238,0.32)]'
+                  : 'opacity-50'
+              } ${
+                isExpanded
+                  ? 'ring-2 ring-cyan-300/65 ring-offset-2 ring-offset-slate-950'
+                  : ''
+              }`}
+              aria-expanded={isExpanded}
+            >
+              {item.skill}
+            </Badge>
+          )
+        })}
+      </div>
+
+      {expandedItem ? (
+        <div ref={expandedPanelRef} className="scroll-mt-24 sm:scroll-mt-20">
+          <Card className="border-cyan-300/35 bg-slate-900/80 p-0 transition-all">
+            <CardContent className="space-y-3 p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="m-0 mr-1 text-lg font-semibold text-slate-100">
+                  {expandedItem.skill}
+                </h3>
+                <Badge variant="accent" className="normal-case tracking-normal">
+                  {translation.wordLevel[expandedItem.level - 1] || '---'}
+                </Badge>
+                {expandedItem.isRecent ? (
+                  <Badge
+                    variant="warning"
+                    className="normal-case tracking-normal"
+                  >
+                    {translation.recent_label}
+                  </Badge>
+                ) : null}
+              </div>
+
+              <p className="m-0 text-sm leading-relaxed text-slate-200/90">
+                {expandedItem.description[lang]}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                <Badge className="normal-case tracking-normal">
+                  {translation[ERA_LABEL_KEYS[expandedItem.era]]}
+                </Badge>
+                <Badge className="normal-case tracking-normal">
+                  {translation[CATEGORY_LABEL_KEYS[expandedItem.category]]}
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      ) : null}
+    </div>
+  )
 }

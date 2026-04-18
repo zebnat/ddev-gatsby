@@ -8,10 +8,15 @@
     "url": "https://github.com/zebnat/ddev-gatsby.git"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "clsx": "^2.1.1",
     "markdown-to-jsx": "^7.7.16",
     "next": "latest",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.183.2"
   },
   "keywords": [
     ""
@@ -34,9 +39,14 @@
     "test:verify-phase1": "node --test tests/parity/verify-phase1.test.mjs",
     "test:static-assets": "npm run next:sync-static && node --test tests/parity/static-assets.test.mjs",
     "test:sitemap": "npm run next:generate-sitemap && node --test tests/parity/sitemap.test.mjs",
-    "deploy": "npm run next:build && node scripts/parity/deploy-next-static.mjs"
+    "deploy": "npm run next:build && node scripts/deploy/cloudfront-static.mjs",
+    "deploy:dry-run": "npm run next:build && node scripts/deploy/cloudfront-static.mjs --dry-run",
+    "deploy:easy": "node scripts/deploy/easy-deploy.mjs"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "prettier": "^2.3.2"
   }
 }

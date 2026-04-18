@@ -3,7 +3,7 @@ import test from 'node:test'
 
 import skillsUtils from '../../src/lib/content/skills-utils.js'
 
-const { sortSkillsByLevelAndRecency } = skillsUtils
+const { sortSkillsByLevelAndRecency, getCatalogSkillItems } = skillsUtils
 
 test('sorts higher level skills first', () => {
   const sorted = sortSkillsByLevelAndRecency([
@@ -27,5 +27,24 @@ test('prioritizes recent skills when levels tie', () => {
   assert.deepEqual(
     sorted.map((item) => item.skill),
     ['B', 'A']
+  )
+})
+
+test('flattens all skill groups for catalog and cloud parity', () => {
+  const items = getCatalogSkillItems({
+    languages: [{ skill: 'PHP', level: 4, isRecent: true }],
+    libs: [{ skill: 'React', level: 4, isRecent: true }],
+    tools: [{ skill: 'Docker', level: 3, isRecent: true }],
+    other: [{ skill: 'Technical Leadership', level: 4, isRecent: true }],
+  })
+
+  assert.deepEqual(
+    items.map((item) => `${item.category}:${item.skill}`),
+    [
+      'languages:PHP',
+      'libs:React',
+      'tools:Docker',
+      'other:Technical Leadership',
+    ]
   )
 })
