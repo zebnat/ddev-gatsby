@@ -1,0 +1,24 @@
+npm warn Unknown user config "msvs_version". This will stop working in the next major version of npm.
+
+> danieldev@1.13.0 next:dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.0.0.1:3000
+
+✓ Starting...
+✓ Ready in 9.9s
+○ Compiling / ...
+ HEAD / 200 in 8.2s (compile: 8.0s, render: 129ms)
+ GET / 200 in 70ms (compile: 6ms, render: 63ms)
+⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 41ms (compile: 3ms, render: 38ms)
+ GET / 200 in 41ms (compile: 2ms, render: 38ms)
+ GET / 200 in 41ms (compile: 3ms, render: 38ms)
+ GET / 200 in 46ms (compile: 3ms, render: 43ms)
+ GET / 200 in 42ms (compile: 6ms, render: 36ms)
+ GET / 200 in 40ms (compile: 2ms, render: 37ms)
+ HEAD / 200 in 32ms (compile: 3ms, render: 29ms)
+ GET / 200 in 41ms (compile: 3ms, render: 38ms)
